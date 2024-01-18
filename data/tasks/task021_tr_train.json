@@ -1,0 +1,4046 @@
+{
+  "Contributors": [
+    "Swaroop Mishra",
+    "Daniel Khashabi"
+  ],
+  "Source": [
+    "MultiLexNorm: Multilingual Lexical Normalization"
+  ],
+  "URL": [
+    "https://noisy-text.github.io/2021/multi-lexnorm.html"
+  ],
+  "Categories": [
+    "Lexical Normalization"
+  ],
+  "Reasoning": [
+    "Temporal Reasoning",
+    "Commonsense Reasoning"
+  ],
+  "Definition": [
+    "Lexical norm"
+  ],
+  "Input_language": [
+    "Multilanguage"
+  ],
+  "Output_language": [
+    "Multilanguage"
+  ],
+  "Instruction_language": [
+    "Multilanguage"
+  ],
+  "Domains": [
+    "Twitter",
+    "Arto",
+    "sms",
+    "forum"
+  ],
+  "Positive Examples": [
+    {
+      "input": "@Evrimsevver aghaaaaaa adam dinlene dinlene jetliyo",
+      "output": "@Evrimsevver Aha adam dinlene dinlene jetliyor",
+      "explanation": "The text is now lexically normalized and correct."
+    }
+  ],
+  "Negative Examples": [
+    {
+      "input": "Çıkartın sigaraIarı , bu gece hayaI kuracağız …!",
+      "output": "Çıkartındsf sigaraIarıss , bub gecc hayaI kuracağız …!",
+      "explanation": "The text is not lexically normalized and it is incorrect."
+    }
+  ],
+  "Instances": [
+    {
+      "id": "task021-0",
+      "input": "Keske zamani geri alip bazi insanlarla hic muhatap olmama sansimiz olsaydi",
+      "output": [
+        "Keşke zamanı geri alıp bazı insanlarla hiç muhatap olmama şansımız olsaydı"
+      ]
+    },
+    {
+      "id": "task021-1",
+      "input": "adama bak twitterda beni sevmeyen var mıdır yazmıs , allahın dünyasında allahı sevmeyen var sen kimsin aq",
+      "output": [
+        "Adama bak Twitter'da beni sevmeyen var mıdır yazmış , Allah'ın dünyasında Allah'ı sevmeyen var sen kimsin amına koyayım"
+      ]
+    },
+    {
+      "id": "task021-2",
+      "input": "Avrupa ve amerikada VALENTİNA DAY diye geçer .",
+      "output": [
+        "Avrupa ve Amerika'da Valentina Day diye geçer ."
+      ]
+    },
+    {
+      "id": "task021-3",
+      "input": "✔️🍁Sözünüz___ Dünyanyadan EL Çekmiş İnsanLarın Sözü Gibi ✔️🍁DuyuLurken__ ✔️🍁İşiniz, İçiniz__ __ \"Dünyaya TapanLar Gibi ✔️🍁 OLmasın ! 🍁✔️ _- Bir BiLen Var ELbet -_",
+      "output": [
+        "Sözünüz dünyadan el çekmiş insanların sözü gibi duyulurken işiniz içiniz __ dünyaya tapanlar gibi ✔️🍁 olmasın ! 🍁✔️ _- Bir bilen var elbet -_"
+      ]
+    },
+    {
+      "id": "task021-4",
+      "input": "Birazbazı özellikler @Sariii_Kralicee Müzk kralçesi @tripiliceNaz1 son gömücü @TubaTrkan12 şen kahkaha @svnsrp “ N ” vurgucusu @bayanyikik Kaotika @hatun_delidir PubG güzeli @tnjtfnn Duygularn efendisi @sedatxsx Harbici delüğanlı",
+      "output": [
+        "Biraz bazı özellikler @Sariii_Kralicee müzik kraliçesi @tripiliceNaz1 son gömücü @TubaTrkan12 şen kahkaha @svnsrp “ N ” vurgucusu @bayanyikik Kaotika @hatun_delidir PUBG güzeli @tnjtfnn duyguların efendisi @sedatxsx harbici delikanlı"
+      ]
+    },
+    {
+      "id": "task021-5",
+      "input": "Staj sıgortası sıgorta başlangıcı sayılmalıdır poşet kadar değerimiz yokmu",
+      "output": [
+        "Staj sigortası sigorta başlangıcı sayılmalıdır poşet kadar değerimiz yok mu"
+      ]
+    },
+    {
+      "id": "task021-6",
+      "input": "Kicinizi yirttiniz ama ben hala superim inanilir gibi değil",
+      "output": [
+        "Kıçınızı yırttınız ama ben hala süperim inanılır gibi değil"
+      ]
+    },
+    {
+      "id": "task021-7",
+      "input": "Acun senin de sorvayvir izlemedigini biliyoz abi yayinlayip durma artik",
+      "output": [
+        "Acun senin de Survivor izlemediğini biliyoruz abi yayınlayıp durma artık"
+      ]
+    },
+    {
+      "id": "task021-8",
+      "input": "tum gece sarki sozu paylassam napabilirsiniz ki abi tutamiyorum kendimi cok guzel sozler yazmislar aaaa",
+      "output": [
+        "Tüm gece şarkı sözü paylaşsam ne yapabilirsiniz ki abi tutamıyorum kendimi çok güzel sözler yazmışlar aaaa"
+      ]
+    },
+    {
+      "id": "task021-9",
+      "input": "GENC PASIFIM . CIDDI YERI OLAN OLGUN AKLI BAŞINDA AKTIF ARIYORUM #adanagay #adanapasif #adanaaktif",
+      "output": [
+        "Genç pasifim . Ciddi yeri olan olgun aklı başında aktif arıyorum #adanagay #adanapasif #adanaaktif"
+      ]
+    },
+    {
+      "id": "task021-10",
+      "input": "@duyguguc1 Her alanda oldugu gibi bu apandada vizyonsuzlugun ornegidir bu . Bence hemsireler gdip imamlar gelsin . #diyalizhemsiresizolmaz",
+      "output": [
+        "@duyguguc1 Her alanda olduğu gibi bu alanda da vizyonsuzluğun örneğidir bu . Bence hemşireler gidip imamlar gelsin . #diyalizhemsiresizolmaz"
+      ]
+    },
+    {
+      "id": "task021-11",
+      "input": "\"Unutmak en iyi intikamdır . \" - Jorge Luis Borges",
+      "output": [
+        "Unutmak en iyi intikamdır . \" - Jorge Luis Borges"
+      ]
+    },
+    {
+      "id": "task021-12",
+      "input": "İslâm'a âşık gençlere ... Âşık vazgeçebilir mi ? Vazgeçen âşık olabilir mi ?",
+      "output": [
+        "İslam'a aşık gençlere ... Aşık vazgeçebilir mi ? Vazgeçen aşık olabilir mi ?"
+      ]
+    },
+    {
+      "id": "task021-13",
+      "input": "bence vmin shiplemeliyim nasıl olsa her gün selca atıyolar slxösşcöslclemcöd",
+      "output": [
+        "Bence vmin shiplemeliyim nasıl olsa her gün selca atıyorlar slxösşcöslclemcöd"
+      ]
+    },
+    {
+      "id": "task021-14",
+      "input": "it girl olacak iken that bitch olmak sadece gercek ikonlar hisseder bunu",
+      "output": [
+        "İt girl olacak iken that bitch olmak sadece gerçek ikonlar hisseder bunu"
+      ]
+    },
+    {
+      "id": "task021-15",
+      "input": "birisinden gercekten vazgectiginde ben niye bunla ugrasiyodum ki zaten farkindaligi ile birlikte gelen gulme krizi ... hahahahahahahahahahahahahahahahaha",
+      "output": [
+        "Birisinden gerçekten vazgeçtiğinde ben niye bununla uğraşıyordum ki zaten farkındalığı ile birlikte gelen gülme krizi ... hahahahahahahahahahahahahahahahaha"
+      ]
+    },
+    {
+      "id": "task021-16",
+      "input": "@miyaohyeah Sunmi madem bunu paylaştın alırız bi istanbul konserini",
+      "output": [
+        "@miyaohyeah Sunmi madem bunu paylaştın alırız bir İstanbul konserini"
+      ]
+    },
+    {
+      "id": "task021-17",
+      "input": "@ziyaselcuk Çocuklarımızın yaninda olup dur demek iateriz sayın bakanim 1000 km uzaktan degil 958 öğretmen hala ailesine kavusmayi bekliyor",
+      "output": [
+        "@ziyaselcuk Çocuklarımızın yanında olup dur demek isteriz sayın bakanım 1000 km uzaktan değil 958 öğretmen hala ailesine kavuşmayı bekliyor"
+      ]
+    },
+    {
+      "id": "task021-18",
+      "input": "birinin sana yaptiklarindan sonra perisan olmasi izlemesi keyifli seylerde bugun diyebilir miyiz",
+      "output": [
+        "Birinin sana yaptıklarından sonra perişan olması izlemesi keyifli şeylerde bugün diyebilir miyiz"
+      ]
+    },
+    {
+      "id": "task021-19",
+      "input": "@mert_metin0632 @banuvemert Kilemelerin kifayetsiz kaldığı kadin",
+      "output": [
+        "@mert_metin0632 @banuvemert Kelimelerin kifayetsiz kaldığı kadın"
+      ]
+    },
+    {
+      "id": "task021-20",
+      "input": "\"\" Kişinin kelâmı , aklının beyânı , faziletinin tercümanıdır ... \"\" ~~~ Hz Ebu Bekir ( r . a ) ~~~",
+      "output": [
+        "\"\" Kişinin kelamı , aklının beyanı , faziletinin tercümanıdır ... \"\" ~~~ Hz. Ebu Bekir ( R . A ) ~~~"
+      ]
+    },
+    {
+      "id": "task021-21",
+      "input": "Sonumuz morg aç bi tuborg",
+      "output": [
+        "Sonumuz morg aç bir Tuborg"
+      ]
+    },
+    {
+      "id": "task021-22",
+      "input": "Günaydın lar hemen gorusek yeri olan kisiler yer yok",
+      "output": [
+        "Günaydınlar  hemen görüşecek yeri olan kişiler yer yok"
+      ]
+    },
+    {
+      "id": "task021-23",
+      "input": "@karabey38 @UlviYonter durmak yok haklari alana kadar devam kadro 3600 dogu gorev suresi",
+      "output": [
+        "@karabey38 @UlviYonter durmak yok hakları alana kadar devam kadro 3600 doğu görev süresi"
+      ]
+    },
+    {
+      "id": "task021-24",
+      "input": "Allâhumme salli Alâ seyyidinâ Muhammedin ve Alâ Âli Seyyidinâ Muhammed 3 kez okuyup RT ederek birçok insanın salavat getirmesine vesile oll !",
+      "output": [
+        "Allahümme salli ala seyyidina Muhammedin ve ala ali seyyidina Muhammed 3 kez okuyup RT ederek birçok insanın salavat getirmesine vesile ol !"
+      ]
+    },
+    {
+      "id": "task021-25",
+      "input": "@Efsane084 @enkemalyazici kemmal abiler candir asil sen aramiza girme",
+      "output": [
+        "@Efsane084 @enkemalyazici Kemal abiler candır asıl sen aramıza girme"
+      ]
+    },
+    {
+      "id": "task021-26",
+      "input": "Kendini büyük sananlar ; ALLÂH'ın büyüklüğünü unutanlardır . Aşk - ı Â'zam",
+      "output": [
+        "Kendini büyük sananlar ; Allah'ın büyüklüğünü unutanlardır . Aşk - ı Azam"
+      ]
+    },
+    {
+      "id": "task021-27",
+      "input": "Havaya bak yine gunese aldanip ciktik gotum basim donuyo hava tarafindan bile aldatiliyoz bu ne aq",
+      "output": [
+        "Havaya bak yine güneşe aldanıp çıktık götüm başım donuyor hava tarafından bile aldatılıyoruz bu ne amına koyayım"
+      ]
+    },
+    {
+      "id": "task021-28",
+      "input": "ders calisiyodum bi anda aklima sen geldin hic kirar miyim seni hemen calismayi birakip seni dusunmeye devam ettim",
+      "output": [
+        "Ders çalışıyordum bir anda aklıma sen geldin hiç kırar mıyım seni hemen çalışmayı bırakıp seni düşünmeye devam ettim"
+      ]
+    },
+    {
+      "id": "task021-29",
+      "input": "Karısına koca arayan yokmu 68 aksaray",
+      "output": [
+        "Karısına koca arayan yok mu 68 Aksaray"
+      ]
+    },
+    {
+      "id": "task021-30",
+      "input": "FutboL takımLarındaki herifLer paraLı cukka yapsın siz burda birbirinize hakaret edin küfredin 👏",
+      "output": [
+        "Futbol takımlarındaki herifler paralı cukka yapsın siz burada birbirinize hakaret edin küfredin 👏"
+      ]
+    },
+    {
+      "id": "task021-31",
+      "input": "Seyma subasinin yeni cikaricagi kitaba isim onerileri alalim ilk ben soyluyom diriliş şeyma subaşı",
+      "output": [
+        "Şeyma Subaşı'nın yeni çıkaracağı kitaba isim önerileri alalım ilk ben söylüyorum Diriliş Şeyma Subaşı"
+      ]
+    },
+    {
+      "id": "task021-32",
+      "input": "@NumanKurtulmus YHS nin direniş destanını yazma sırası #yardımcıhizmetlerGİHistiyor",
+      "output": [
+        "@NumanKurtulmus YHS nin direniş destanını yazma sırası #yardımcıhizmetlerGİHistiyor"
+      ]
+    },
+    {
+      "id": "task021-33",
+      "input": "Bu gece 6 alatasaray Yusuf namoglusuz İlk maçına çıkıcak Bakalım Yusuf Yusuf Diyeceklermi 👍🙄😀",
+      "output": [
+        "Bu gece 6 Galatasaray Yusuf Namoğlu'suz ilk maçına çıkacak bakalım Yusuf Yusuf diyecekler mi 👍🙄😀"
+      ]
+    },
+    {
+      "id": "task021-34",
+      "input": "en iyi ozelligim gulmek boyle her seye guluyorum cok iyi ozellik",
+      "output": [
+        "En iyi özelliğim gülmek böyle her şeye gülüyorum çok iyi özellik"
+      ]
+    },
+    {
+      "id": "task021-35",
+      "input": "EYT li sadece EYT li dir . şucu bucu filan değildir . Mağdurdur , Mazlumdur , Mahrur dur . #EYTyeSahipÇıkREİS #EmeklilikteYasaTakıIanIar",
+      "output": [
+        "EYT'li  sadece EYT'lidir   . Şucu bucu filan değildir . Mağdurdur , mazlumdur , mağrurdur  . #EYTyeSahipÇıkREİS #EmeklilikteYasaTakıIanIar"
+      ]
+    },
+    {
+      "id": "task021-36",
+      "input": "@mursiozberk Mursi Bey gecis hakkina sahipken bile suruculere guvenemiyorsunuz . Hakli olarak , suruculer trafik kuralarini umursamiyor malesef . 😡😡😡😡",
+      "output": [
+        "@mursiozberk Mursi Bey geçiş hakkına sahipken bile sürücülere güvenemiyorsunuz . Haklı olarak , sürücüler trafik kurallarını umursamıyor maalesef . 😡😡😡😡"
+      ]
+    },
+    {
+      "id": "task021-37",
+      "input": "Kimi İnsan Gecmişle Gecmemişi Karıştırır Gecmiş İz bırakır Gecmemiş yara",
+      "output": [
+        "Kimi insan geçmişle geçmemişi karıştırır geçmiş iz bırakır geçmemiş yara"
+      ]
+    },
+    {
+      "id": "task021-38",
+      "input": "nebçim imsannarsınıs ya , 14 şubata da mı merağınıs yok",
+      "output": [
+        "Ne biçim insanlarsınız ya , 14 Şubat'a da mı merakınız yok"
+      ]
+    },
+    {
+      "id": "task021-39",
+      "input": "Eyvah ! Yaralarım ruhumu hissizleştirdi . Furuğ Ferruhzad",
+      "output": [
+        "Eyvah ! Yaralarım ruhumu hissizleştirdi . Furuğ Ferruhzad"
+      ]
+    },
+    {
+      "id": "task021-40",
+      "input": "#Bedellide21GunKaldirilsin kaldirin madem okasar gyzellikler yaptiniz onceki bedellilere bize de gerek",
+      "output": [
+        "#Bedellide21GunKaldirilsin kaldırın madem o kadar güzellikler yaptınız önceki bedellilere bize de gerek"
+      ]
+    },
+    {
+      "id": "task021-41",
+      "input": "SözLerimin kıfayetsiz kaLması Senin beynini kullanmak istememenden .",
+      "output": [
+        "Sözlerimin kifayetsiz kalması senin beynini kullanmak istememenden ."
+      ]
+    },
+    {
+      "id": "task021-42",
+      "input": "Rasûlullah ﷺ şöyle buyurdu : \"Ağızların tadını kaçıran ölümü çokça hatırlayın . \" Tirmizi 2307",
+      "output": [
+        "Resulullah ﷺ şöyle buyurdu : \"Ağızların tadını kaçıran ölümü çokça hatırlayın . \" Tirmizi 2307"
+      ]
+    },
+    {
+      "id": "task021-43",
+      "input": "4.82 nin uzerinde durabilmesi onemli . yukarıda sırasıyla 4.82 / 5.07 / 5.39 aşağıda sırasıyla 4.27 / 4.02 / 3.83 #beyaz",
+      "output": [
+        "4.82'nin  üzerinde durabilmesi önemli . Yukarıda sırasıyla 4.82 / 5.07 / 5.39 aşağıda sırasıyla 4.27 / 4.02 / 3.83 #beyaz"
+      ]
+    },
+    {
+      "id": "task021-44",
+      "input": "Artık aşk siirleri yazmaa karar virdim 🙈🙈",
+      "output": [
+        "Artık aşk şiirleri yazmaya karar verdim 🙈🙈"
+      ]
+    },
+    {
+      "id": "task021-45",
+      "input": "Nefsini bilmeyenin Allah Teâlâ’yı bilmesine imkan yoktur . — Mehmed Zahid Kotku ( k . s )",
+      "output": [
+        "Nefsini bilmeyenin Allah Teala'yı bilmesine imkan yoktur . — Mehmed Zahid Kotku ( K . S )"
+      ]
+    },
+    {
+      "id": "task021-46",
+      "input": "@BasevirgenBekir @bitkiciii Allah razı olsun . Maaşallah ilginize . Gonlumuzdesiniz",
+      "output": [
+        "@BasevirgenBekir @bitkiciii Allah razı olsun . Maşallah ilginize . Gönlümüzdesiniz"
+      ]
+    },
+    {
+      "id": "task021-47",
+      "input": "su an hakan altun'un telefon sarkisini dinliyorum serenay sarikaya kendisinden daha duygulu soylemis onu fark ettim",
+      "output": [
+        "Şu an Hakan Altun'un telefon şarkısını dinliyorum Serenay Sarıkaya kendisinden daha duygulu söylemiş onu fark ettim"
+      ]
+    },
+    {
+      "id": "task021-48",
+      "input": "sanane be yarrak neyim varsa var allah allaaah tribe sokmayın beni",
+      "output": [
+        "Sana ne be yarak neyim varsa var Allah Allah tribe sokmayın beni"
+      ]
+    },
+    {
+      "id": "task021-49",
+      "input": "Erkek kardesiyle saglikli iletisim kurabilen var mi ben kibarca bisi soylesem bile taklidimi yapiyo",
+      "output": [
+        "Erkek kardeşiyle sağlıklı iletişim kurabilen var mı ben kibarca bir şey söylesem bile taklidimi yapıyor"
+      ]
+    },
+    {
+      "id": "task021-50",
+      "input": "Yoluna koyamıyacağım herşeyin amınakoyacağım izleyin .",
+      "output": [
+        "Yoluna koyamayacağım her şeyin amına koyacağım izleyin ."
+      ]
+    },
+    {
+      "id": "task021-51",
+      "input": "Çikolatayi çay kaşığiyla yiyom ki çabuk bitmesin hgjghjlk",
+      "output": [
+        "Çikolatayı çay kaşığıyla yiyorum ki çabuk bitmesin hgjghjlk"
+      ]
+    },
+    {
+      "id": "task021-52",
+      "input": "insta storymde yanlışlıkla nude paylaştım az daha kestaneyi çizdiriyorduk",
+      "output": [
+        "Insta storymde yanlışlıkla nude paylaştım az daha kestaneyi çizdiriyorduk"
+      ]
+    },
+    {
+      "id": "task021-53",
+      "input": "Butçeye ek maliyeti mizde yok #KadroSözleşmeliyeHaktır @MHP_Bilgi @Akparti",
+      "output": [
+        "Bütçeye ek maliyetimiz de  yok #KadroSözleşmeliyeHaktır @MHP_Bilgi @Akparti"
+      ]
+    },
+    {
+      "id": "task021-54",
+      "input": "Çıkartın sigaraIarı , bu gece hayaI kuracağız …!",
+      "output": [
+        "Çıkartın sigaraIarı , bu gece hayaI kuracağız …!"
+      ]
+    },
+    {
+      "id": "task021-55",
+      "input": "Bu tiviti sağ baş parmağınla favladın",
+      "output": [
+        "Bu tweeti sağ baş parmağınla favladın"
+      ]
+    },
+    {
+      "id": "task021-56",
+      "input": "Hadi bu Tweet'in altına İnstagram kullanıcı adınızı atın takipleselim ? ✍️",
+      "output": [
+        "Hadi bu tweetin altına Instagram kullanıcı adınızı atın takipleşelim ? ✍️"
+      ]
+    },
+    {
+      "id": "task021-57",
+      "input": "Arkadaşlar profilde sabitledigim ankete katılın sonuçları İbrahim kalina ulaştırmaya çalışicaz @Zeynomnom @SnmzGorkem @EvlatlikBoy @moonlight_ozzy @ikalin1 @YildizFeti @RT_Erdogan @dbdevletbahceli @kmlklctrgluChp @meral_aksener @HDPgenelmerkezi",
+      "output": [
+        "Arkadaşlar profilde sabitlediğim ankete katılın sonuçları İbrahim Kalın'a ulaştırmaya çalışacağız @Zeynomnom @SnmzGorkem @EvlatlikBoy @moonlight_ozzy @ikalin1 @YildizFeti @RT_Erdogan @dbdevletbahceli @kmlklctrgluChp @meral_aksener @HDPgenelmerkezi"
+      ]
+    },
+    {
+      "id": "task021-58",
+      "input": "Galatasarayın maçı var bizene 14 şubattan",
+      "output": [
+        "Galatasaray'ın maçı var bize ne 14 Şubat'tan"
+      ]
+    },
+    {
+      "id": "task021-59",
+      "input": "Bütün sevgililerin 14 şubat dünya öykü günüsüleri fıtı fıtı olsun .",
+      "output": [
+        "Bütün sevgililerin 14 Şubat dünya öykü günüsüleri fıtı fıtı olsun ."
+      ]
+    },
+    {
+      "id": "task021-60",
+      "input": "Alacaktım zincir desenli bi göynek , bulamadım .!",
+      "output": [
+        "Alacaktım zincir desenli bir gömlek , bulamadım .!"
+      ]
+    },
+    {
+      "id": "task021-61",
+      "input": "eve gitsem de harry potter izlesem #TakiTaki #BestMusicVideo #iHeartAwards",
+      "output": [
+        "Eve gitsem de Harry Potter izlesem #TakiTaki #BestMusicVideo #iHeartAwards"
+      ]
+    },
+    {
+      "id": "task021-62",
+      "input": "Anaskm bu soguk nedir boyle gene hanginiz zina isledi amkodumunlar",
+      "output": [
+        "Ananı sikeyim bu soğuk nedir böyle gene hanginiz zina işledi amına koyduklarım"
+      ]
+    },
+    {
+      "id": "task021-63",
+      "input": "cok kolay bulunulucagi dusunulen ama oyle olmayan parcalar : beyaz tisort gri esofman alti",
+      "output": [
+        "Çok kolay bulunulacağı düşünülen ama öyle olmayan parçalar : beyaz tişört gri eşofman altı"
+      ]
+    },
+    {
+      "id": "task021-64",
+      "input": "Bu arada unutmadan yaziyim sevgililer gününde sevgilini s2yim ibne cinbombom",
+      "output": [
+        "Bu arada unutmadan yazayım Sevgililer Günü'nde sevgilini sikeyim ibne Cimbombom"
+      ]
+    },
+    {
+      "id": "task021-65",
+      "input": "Sen uyuyunca diger flortumu isinmiya yolladim",
+      "output": [
+        "Sen uyuyunca diğer flörtümü ısınmaya yolladım"
+      ]
+    },
+    {
+      "id": "task021-66",
+      "input": "beni cikardiginda anlamin bozulmuyorsa bundan böyle ayri yazilalim",
+      "output": [
+        "Beni çıkardığında anlamın bozulmuyorsa bundan böyle ayrı yazılalım"
+      ]
+    },
+    {
+      "id": "task021-67",
+      "input": "İşe gitmeyecem izinliyim yuppi",
+      "output": [
+        "İşe gitmeyeceğim izinliyim yuppi"
+      ]
+    },
+    {
+      "id": "task021-68",
+      "input": "@siktirdeliiii Babam kel , babama sordum soruyu allaha şükür bizim alamayacagimiz hiçbişey yok evel allah dedi",
+      "output": [
+        "@siktirdeliiii Babam kel , babama sordum soruyu Allah'a şükür bizim alamayacağımız hiçbir şey yok evelallah  dedi"
+      ]
+    },
+    {
+      "id": "task021-69",
+      "input": "@saracihan4 SAYIN BASKANIM BEDELLI 21 GUN SECIM ONCESI KALKICAKMI UZAKTAN EGITIME DONEBILCEKMI CEVABINIZ NEDIR CUNKU BIZ COK MAGDURUZ",
+      "output": [
+        "@saracihan4 Sayın başkanım bedelli 21 gün seçim öncesi kalkacak mı uzaktan eğitime dönebilecek mi cevabınız nedir çünkü biz çok mağduruz"
+      ]
+    },
+    {
+      "id": "task021-70",
+      "input": "Sadwce cok guzel kadınlardan oluşan bi whatsapp dedikodulu grup kurdum gelmek isteyen fav",
+      "output": [
+        "Sadece çok güzel kadınlardan oluşan bir WhatsApp dedikodulu grup kurdum gelmek isteyen fav"
+      ]
+    },
+    {
+      "id": "task021-71",
+      "input": "#BideDerlerKi İNCİTME İNCİNME ... \"Ey hıyânetten daha zâlim olan merhâmet ... \"",
+      "output": [
+        "#BideDerlerKi İncitme incinme ... \"Ey hıyanetten daha zalim olan merhamet ... \""
+      ]
+    },
+    {
+      "id": "task021-72",
+      "input": "Sabaha trendyol siparişim dogru duzgun adam gibi bisey gelirse en guzel sevgililer gunu hediyem olur .",
+      "output": [
+        "Sabaha Trendyol siparişim doğru düzgün adam gibi bir şey gelirse en güzel Sevgililer Günü hediyem olur ."
+      ]
+    },
+    {
+      "id": "task021-73",
+      "input": "Rasûlullah ﷺ şöyle duâ ederdi : Allahım ! Ümmetimden erken kalkanların işlerine bereket ver .” Tirmizi , Buyû ’ 6 #Perşembe",
+      "output": [
+        "Resulullah ﷺ şöyle dua ederdi : Allah'ım ! Ümmetimden erken kalkanların işlerine bereket ver .” Tirmizi , Buyu ’ 6 #Perşembe"
+      ]
+    },
+    {
+      "id": "task021-74",
+      "input": "#DiyalizHemsiresizOlmaz @ drfahrettinkoca @ saglikbakanligi @RT_Erdogan teknikerler olmasada oluuuuur zaten yoktular ...... #DiyalizUEnitesiTeknikerindir bilginize",
+      "output": [
+        "#DiyalizHemsiresizOlmaz @ drfahrettinkoca @ saglikbakanligi @RT_Erdogan Teknikerler olmasa da olur zaten yoktular ...... #DiyalizUEnitesiTeknikerindir bilginize"
+      ]
+    },
+    {
+      "id": "task021-75",
+      "input": "Sende bensiz okadar güzel değilsin yanii 😘 #Valentines",
+      "output": [
+        "Sen de bensiz o kadar güzel değilsin yani 😘 #Valentines"
+      ]
+    },
+    {
+      "id": "task021-76",
+      "input": "kadikoy metrosunda ayaga kalkip devrim basaran nerde aq diye bagirmak istiyorum surekli gelmiyoz buraya bari ünlü gorelim bi tane",
+      "output": [
+        "Kadıköy metrosunda ayağa kalkıp devrim başaran nerede amına koyayım diye bağırmak istiyorum sürekli gelmiyoruz buraya bari ünlü görelim bir tane"
+      ]
+    },
+    {
+      "id": "task021-77",
+      "input": "Dun kiz arkadasimla disaridayiz biri geldi dedi ki kusura bakmayin arkadasiniz sanirim ama size askla bakiyo gdshsjshsj",
+      "output": [
+        "Dün kız arkadaşımla dışarıdayız biri geldi dedi ki kusura bakmayın arkadaşınız sanırım ama size aşkla bakıyo gdshsjshsj"
+      ]
+    },
+    {
+      "id": "task021-78",
+      "input": "ف َفِرُّوا إ ِلَى الل َّهِ Allah'a koşun ! Allah'a kaçın ! Allah'a ilticâ edin !",
+      "output": [
+        "ف َفِرُّوا إ ِلَى الل َّهِ Allah'a koşun ! Allah'a kaçın ! Allah'a iltica edin !"
+      ]
+    },
+    {
+      "id": "task021-79",
+      "input": "Sabahları bi göz aşağı bi göz yukarı . He günaydın",
+      "output": [
+        "Sabahları bir göz aşağı bir göz yukarı . He günaydın"
+      ]
+    },
+    {
+      "id": "task021-80",
+      "input": "Reis , ihlas finans zedeleri bu milletin evlatlari , 15 temmuz gazi sehit yakinlarini hayal kirikligina ugrattiniz , milletin yaninda olmani beklerdik @DrRecepAkdag @RT_Erdogan @tcbestepe @tbmm",
+      "output": [
+        "Reis , İhlas Finans zedeleri bu milletin evlatları , 15 Temmuz gazi şehit yakınlarını hayal kırıklığına uğrattınız , milletin yanında olmanı beklerdik @DrRecepAkdag @RT_Erdogan @tcbestepe @tbmm"
+      ]
+    },
+    {
+      "id": "task021-81",
+      "input": "Sevgili twitter arkideşlerim , Günaydınlar olsun 🤗",
+      "output": [
+        "Sevgili Twitter arkadaşlarım , Günaydınlar olsun 🤗"
+      ]
+    },
+    {
+      "id": "task021-82",
+      "input": "Sevgi , sevdigimiz şeyin büyüyüp yaşaması icin gösterdigimiz etken ilgidir . Eric Fromm",
+      "output": [
+        "Sevgi , sevdiğimiz şeyin büyüyüp yaşaması için gösterdiğimiz etken ilgidir . Eric Fromm"
+      ]
+    },
+    {
+      "id": "task021-83",
+      "input": "Gideyim Anneme hediye alayim gerci babam kizar ama olsun 🤣🤣🤣 adam kiskaniyor bide herkes sevgilisine hediye alsin diye 🤣🤣🤣",
+      "output": [
+        "Gideyim anneme hediye alayım gerçi babam kızar ama olsun 🤣🤣🤣 adam kıskanıyor bir de herkes sevgilisine hediye alsın diye 🤣🤣🤣"
+      ]
+    },
+    {
+      "id": "task021-84",
+      "input": "@elimibirakmatv @trt1 @UsYapimStudyo Admin ne ettin sen duygulandım mutlumusun : \"",
+      "output": [
+        "@elimibirakmatv @trt1 @UsYapimStudyo Admin ne ettin sen duygulandım mutlu musun : \""
+      ]
+    },
+    {
+      "id": "task021-85",
+      "input": "@elimibirakmatv @trt1 @UsYapimStudyo Teşekkürederiz admincim Ayyy çok güzel olmuş , sanada kutlu olsun &lt;3 . #ElimiBırakma #AzCen",
+      "output": [
+        "@elimibirakmatv @trt1 @UsYapimStudyo Teşekkür ederiz adminciğim ay çok güzel olmuş , sana da kutlu olsun &lt;3 . #ElimiBırakma #AzCen"
+      ]
+    },
+    {
+      "id": "task021-86",
+      "input": "Rasûlullah ﷺ şöyle duâ ederdi : ” Allahım ! Yıkıntı altında kalmaktan Sana sığınırım , yüksek yerden düşmekten Sana sığınırım .“ ( Nesâî , İstiâze 61 )",
+      "output": [
+        "Resulullah ﷺ şöyle dua ederdi : ” Allah'ım ! Yıkıntı altında kalmaktan sana sığınırım , yüksek yerden düşmekten sana sığınırım .“ ( Nesâî , İstiâze 61 )"
+      ]
+    },
+    {
+      "id": "task021-87",
+      "input": "Akşama bi süpriz bekliyorum gelmezse olay çıkarıcam 😬😬",
+      "output": [
+        "Akşama bir sürpriz bekliyorum gelmezse olay çıkaracağım 😬😬"
+      ]
+    },
+    {
+      "id": "task021-88",
+      "input": "Bu tweeti favlayana sevgililer günü hediyesi olarak porno atıcağım ...",
+      "output": [
+        "Bu tweeti favlayana sevgililer günü hediyesi olarak porno atacağım ..."
+      ]
+    },
+    {
+      "id": "task021-89",
+      "input": "@Minex4595443541 @A_V_Severler BU NE ZENGINLIK BÖYLE MAŞAALLAH",
+      "output": [
+        "@Minex4595443541 @A_V_Severler Bu ne zenginlik böyle maşallah"
+      ]
+    },
+    {
+      "id": "task021-90",
+      "input": "Her bir dinin kendine has bir ahlâkı vardır . İslâm’ın ahlâkı hayadır . ( Muvatta , Hüsnü’l- Hulk , 9",
+      "output": [
+        "Her bir dinin kendine has bir ahlakı vardır . İslam'ın ahlakı hayadır . ( Muvatta , Hüsnü'l- Hulk , 9"
+      ]
+    },
+    {
+      "id": "task021-91",
+      "input": "Utanmaaağ cınım sıkılmaaağğ cınım bana beni sevdiğini söyleeeeğ",
+      "output": [
+        "Utanma canım sıkılma canım bana beni sevdiğini söyle"
+      ]
+    },
+    {
+      "id": "task021-92",
+      "input": "Galatasaray - Benfica Saat 20.55 beIN SPORTS HD 1 Yayında görüşmek dileğiyle , sevgiler ...",
+      "output": [
+        "Galatasaray - Benfica saat 20.55 beIN Sports HD 1 yayında görüşmek dileğiyle , sevgiler ..."
+      ]
+    },
+    {
+      "id": "task021-93",
+      "input": "demek bangtana erisim engeli yıl olmus 2019 ulke hala milat oncesinde dinozorlarla yasiyo",
+      "output": [
+        "Demek Bangtan'a erişim engeli yıl olmuş 2019 ülke hala milat öncesinde dinozorlarla yaşıyor"
+      ]
+    },
+    {
+      "id": "task021-94",
+      "input": "... Asıl αcı Anlαttıklarımız değil , Anlαtαmαdıklαrımız . Asıl αcı Anlαtılαmαчαcαk kαdαr Büyük αcılαr чαşαmış insαnlαrα Gönül vermiş olmαmız ... 🔹c. ѕüяєчα 🔹",
+      "output": [
+        "... Asıl acı anlattıklarımız değil , anlatamadıklarımız . Asıl acı anlatılamayacak kadar büyük acılar yaşamış insanlara gönül vermiş olmamız ... 🔹C. Süreya 🔹"
+      ]
+    },
+    {
+      "id": "task021-95",
+      "input": "@ZeybekciNihat Tüm dualarinizin kabul olmasi dileğiyle ... bir ömür maaşalllah ..",
+      "output": [
+        "@ZeybekciNihat Tüm dualarınızın kabul olması dileğiyle ... Bir ömür maşallah .."
+      ]
+    },
+    {
+      "id": "task021-96",
+      "input": "@zucchini3536 @BmkSohbet usta corel draw cıı oc dekiler hep corel",
+      "output": [
+        "@zucchini3536 @BmkSohbet Usta Corel Draw'cı  OC'dekiler  hep Corel"
+      ]
+    },
+    {
+      "id": "task021-97",
+      "input": "millet aşerdim diye tivit atar adresine 1 kutu popkek gönderirler biz şurda bi tvite fav toplayamıyoz",
+      "output": [
+        "Millet aşerdim diye tweet atar adresine 1 kutu Popkek gönderirler biz şurada bir tweete fav toplayamıyoruz"
+      ]
+    },
+    {
+      "id": "task021-98",
+      "input": "Bazen küçük bişiler yapmak lazım . Ne gibi biliyomusun küçükpark gibi",
+      "output": [
+        "Bazen küçük bir şeyler yapmak lazım . Ne gibi biliyor musun Küçük Park gibi"
+      ]
+    },
+    {
+      "id": "task021-99",
+      "input": "Allah sivaslılarla karşılaştırmasın djdjdj",
+      "output": [
+        "Allah Sivaslılarla karşılaştırmasın djdjdj"
+      ]
+    },
+    {
+      "id": "task021-100",
+      "input": "Her taraf mıç mıç",
+      "output": [
+        "Her taraf mıç mıç"
+      ]
+    },
+    {
+      "id": "task021-101",
+      "input": "@arzuerdemDB @MhpTbmmGrubu @Emin_Haber @mhp_haberleri @MHP_Gundemi @ayyildirim1 @ISTANBULOCAK @MHP_Sosyal @MHP_Bilgi @CamurMehmet123 Sayin vekilim biktik artik hergun gundemdeyiz biz artik somut haber somut adim bekliyoruz lutfen verin KADRO haberini",
+      "output": [
+        "@arzuerdemDB @MhpTbmmGrubu @Emin_Haber @mhp_haberleri @MHP_Gundemi @ayyildirim1 @ISTANBULOCAK @MHP_Sosyal @MHP_Bilgi @CamurMehmet123 Sayın vekilim bıktık artık her gün gündemdeyiz biz artık somut haber somut adım bekliyoruz lütfen verin kadro haberini"
+      ]
+    },
+    {
+      "id": "task021-102",
+      "input": "Yine Jagged - Siktimin Sevgililer Günü",
+      "output": [
+        "Yine Jagged - siktiğimin Sevgililer Günü"
+      ]
+    },
+    {
+      "id": "task021-103",
+      "input": "@zord_hard @allabal1 en güzeli bi de dimitra 🙈",
+      "output": [
+        "@zord_hard @allabal1 En güzeli bir de Dimitra 🙈"
+      ]
+    },
+    {
+      "id": "task021-104",
+      "input": "gul hayatım bunu ben begendım nasıl guzel degılmı",
+      "output": [
+        "Gül hayatım bunu ben beğendim nasıl güzel değil mi"
+      ]
+    },
+    {
+      "id": "task021-105",
+      "input": "Aga be bi gül alanımız yok 😂",
+      "output": [
+        "Ağa be bir gül alanımız yok 😂"
+      ]
+    },
+    {
+      "id": "task021-106",
+      "input": "@pLussizediLara Ah canım yanlızlık Zor senle olurcesıne olmak ısterım",
+      "output": [
+        "@pLussizediLara Ah canım yalnızlık zor seninle ölürcesine olmak isterim"
+      ]
+    },
+    {
+      "id": "task021-107",
+      "input": "@bogaicincal tam 15 dk sonra yapiyoruz bak",
+      "output": [
+        "@bogaicincal Tam 15 dakika sonra yapıyoruz bak"
+      ]
+    },
+    {
+      "id": "task021-108",
+      "input": "@_biImemkinemsin Yemek yapcam ben yeter daaa 😂😂😂",
+      "output": [
+        "@_biImemkinemsin Yemek yapacağım ben yeter da 😂😂😂"
+      ]
+    },
+    {
+      "id": "task021-109",
+      "input": "@avalonbet_tr @kimsesizzzzzzz_ @ArhanCalba @alLcerin @denizisk @Mucahit3302 Galatasaray 2 - 1 Benfica Kullanıcı adım : davut70 #Avalonbet",
+      "output": [
+        "@avalonbet_tr @kimsesizzzzzzz_ @ArhanCalba @alLcerin @denizisk @Mucahit3302 Galatasaray 2 - 1 Benfica kullanıcı adım : davut70 #Avalonbet"
+      ]
+    },
+    {
+      "id": "task021-110",
+      "input": "@Hallacogluuu Siz yorum atmadiginiz için cocuk hayaletten çıkamayacak yazıklar olsun msjxnxjbxydksnshhxndn",
+      "output": [
+        "@Hallacogluuu Siz yorum atmadığınız için çocuk hayaletten çıkamayacak yazıklar olsun msjxnxjbxydksnshhxndn"
+      ]
+    },
+    {
+      "id": "task021-111",
+      "input": "Alisverise ciktik , mevcut olan butun hersey minimum 1000 tl’ye sabitlenmis . Kriz yoq .",
+      "output": [
+        "Alışverişe çıktık , mevcut olan bütün her şey minimum 1000 TL'ye sabitlenmiş . Kriz yok ."
+      ]
+    },
+    {
+      "id": "task021-112",
+      "input": "fransız bozması cincona karşı BENFİCA'yı yürekten destekliyoruzzz ... vurduğun gol olsun ,, fetösaray göt olsun .....!!!",
+      "output": [
+        "Fransız bozması Cincon'a karşı Benfica'yı yürekten destekliyoruz ... Vurduğun gol olsun ,, Fetösaray göt olsun .....!!!"
+      ]
+    },
+    {
+      "id": "task021-113",
+      "input": "#AşktaNasılsın Sevgililier gününde ona unutamıyacağı bir sey yapın onu terkedin 🤣",
+      "output": [
+        "#AşktaNasılsın Sevgililer Günü'nde ona unutamayacağı bir şey yapın onu terk edin 🤣"
+      ]
+    },
+    {
+      "id": "task021-114",
+      "input": "Kediler kediler köpüşler köpüşler yine sevdi pıtırcığı oldum sayenizdeee",
+      "output": [
+        "Kediler kediler köpüşler köpüşler yine sevgi pıtırcığı oldum sayenizde"
+      ]
+    },
+    {
+      "id": "task021-115",
+      "input": "Bugün GSSTORE Gratis'ten daha kalabalık 😍 #YellowRedDay #SaldirGALATASARAY",
+      "output": [
+        "Bugün GS Store Gratis'ten daha kalabalık 😍 #YellowRedDay #SaldirGALATASARAY"
+      ]
+    },
+    {
+      "id": "task021-116",
+      "input": "@fenerkolikorg Ultratravestiler olsa sikmiş atmıstı bizdeki gevşek gfb ve digerleri sadece sussun amk",
+      "output": [
+        "@fenerkolikorg Ultratravestiler olsa sikmiş atmıştı bizdeki gevşek GFB ve diğerleri sadece sussun amına koyayım"
+      ]
+    },
+    {
+      "id": "task021-117",
+      "input": "bence yeni bolumde kendimizi sevmemizi saglayan BTS'e edilen laflari konu almalisin @OguzhanUgur nolur bak noloooor",
+      "output": [
+        "Bence yeni bölümde kendimizi sevmemizi sağlayan BTS'e edilen lafları konu almalısın @OguzhanUgur ne olur bak ne olur"
+      ]
+    },
+    {
+      "id": "task021-118",
+      "input": "cube allah için teaser fotoğraflarını hd at ya ölecek misin hd atsan",
+      "output": [
+        "Cube Allah için teaser fotoğraflarını HD at ya ölecek misin HD atsan"
+      ]
+    },
+    {
+      "id": "task021-119",
+      "input": "@A_Metin001 İnşALLAH soğanı seviyordur zalımın gızı .",
+      "output": [
+        "@A_Metin001 İnşallah soğanı seviyordur zalimin kızı ."
+      ]
+    },
+    {
+      "id": "task021-120",
+      "input": "@serhatoz Valla yaa . Elalemin tivitine salöa olmiyim diye attım . Çiçek yapıp duruyorum 🌸",
+      "output": [
+        "@serhatoz Vallahi ya . Elalemin tweetine salça olmayayım diye attım . Çiçek yapıp duruyorum 🌸"
+      ]
+    },
+    {
+      "id": "task021-121",
+      "input": "sinif arkadasim 5 tlye iki kisilik netflix hesabi buldu yasiyorum bu hayati",
+      "output": [
+        "Sınıf arkadaşım 5 TL'ye iki kişilik Netflix hesabı buldu yaşıyorum bu hayatı"
+      ]
+    },
+    {
+      "id": "task021-122",
+      "input": "@eellffii Doğum gününde sana kırmızı helyum balon alıcaktım oysaki almıyım bari 😛",
+      "output": [
+        "@eellffii Doğum gününde sana kırmızı helyum balon alacaktım oysaki almayayım bari 😛"
+      ]
+    },
+    {
+      "id": "task021-123",
+      "input": "@ugurkuzimari @Besiktas Sen daha cok hırsıza benziyosun aq",
+      "output": [
+        "@ugurkuzimari @Besiktas Sen daha çok hırsıza benziyorsun amına koyayım"
+      ]
+    },
+    {
+      "id": "task021-124",
+      "input": "bı de jürim şey olurmuş herdal erdal 😱",
+      "output": [
+        "bir de jürim şey olurmuş herdal Erdal 😱"
+      ]
+    },
+    {
+      "id": "task021-125",
+      "input": "@GlYigit6 Bu nasıl tweet aq",
+      "output": [
+        "@GlYigit6 Bu nasıl tweet amına koyayım"
+      ]
+    },
+    {
+      "id": "task021-126",
+      "input": "@tgturkceci Vallahi müthiş olurdu , stalklarken fav atıp geri çekmek delikanlılığa sığar mı ulen ndndmdmdm",
+      "output": [
+        "@tgturkceci Vallahi müthiş olurdu , stalklarken fav atıp geri çekmek delikanlılığa sığar mı ulan ndndmdmdm"
+      ]
+    },
+    {
+      "id": "task021-127",
+      "input": "@ugrcnclskan Tam sekkiz saat gafası var",
+      "output": [
+        "@ugrcnclskan Tam sekiz saat kafası var"
+      ]
+    },
+    {
+      "id": "task021-128",
+      "input": "Sen aşkı çiçek böcek güneş bulut sanmissin .s .s .s",
+      "output": [
+        "Sen aşkı çiçek böcek güneş bulut sanmışsın .s .s .s"
+      ]
+    },
+    {
+      "id": "task021-129",
+      "input": "@dbdevletbahceli #SözümSözOYumCezaİndirimine sartli tahliye esit yasa bekliyoruz aglayan yasli hasta tek basina anne",
+      "output": [
+        "@dbdevletbahceli #SözümSözOYumCezaİndirimine Şartlı tahliye eşit yasa bekliyoruz ağlayan yaşlı hasta tek başına anne"
+      ]
+    },
+    {
+      "id": "task021-130",
+      "input": "@BullPoweR4Life Tt yapcez tt 😂😂😂😂 ve gunaydinla tt olan ilk kisi olarak tweetter tarihine adini yazdircaz",
+      "output": [
+        "@BullPoweR4Life TT yapacağız TT 😂😂😂😂 ve günaydınla TT olan ilk kişi olarak Twitter tarihine adını yazdıracağız"
+      ]
+    },
+    {
+      "id": "task021-131",
+      "input": "@Ayhancuk Teşekkür ederiiim yine babuuuuş sende olmasan ölecuk",
+      "output": [
+        "@Ayhancuk Teşekkür ederim yine babuş sen de olmasan öleceğiz"
+      ]
+    },
+    {
+      "id": "task021-132",
+      "input": "@Mavi____Kelebek Değdi ablam fazlasıyla rabbime şükür geçicek allahın izniyle 🙏",
+      "output": [
+        "@Mavi____Kelebek Değdi ablam fazlasıyla rabbime şükür geçecek Allah'ın izniyle 🙏"
+      ]
+    },
+    {
+      "id": "task021-133",
+      "input": "@G_I_DLE çOK GÜZELSİN KAFAYI SIYIRICAM",
+      "output": [
+        "@G_I_DLE Çok güzelsin kafayı sıyıracağım"
+      ]
+    },
+    {
+      "id": "task021-134",
+      "input": "Knk bizim bi video vardı 🤔 @tvdizicarpisma #Çarpışma #CemKer",
+      "output": [
+        "Kanka bizim bir video vardı 🤔 @tvdizicarpisma #Çarpışma #CemKer"
+      ]
+    },
+    {
+      "id": "task021-135",
+      "input": "@timblnt Ajax ın kadroya bak aq .",
+      "output": [
+        "@timblnt Ajax'ın  kadroya bak amına koyayım ."
+      ]
+    },
+    {
+      "id": "task021-136",
+      "input": "2000 ' lerin başı : Bu rockçı gençler kedi kesiyor bunlar satantist 2019 : Bu kpopçı gençler gay , narsist",
+      "output": [
+        "2000 ' lerin başı : Bu rockçı gençler kedi kesiyor bunlar satanist 2019 : Bu kpopçı gençler gay , narsist"
+      ]
+    },
+    {
+      "id": "task021-137",
+      "input": "Ah şu okul kapansada bi el Pubg girsek #PUBGMOBILE #Pubg",
+      "output": [
+        "Ah şu okul kapansa da bir el PUBG girsek #PUBGMOBILE #Pubg"
+      ]
+    },
+    {
+      "id": "task021-138",
+      "input": "@BullPoweR4Life Haydi bunu tt yapalim 😂😂",
+      "output": [
+        "@BullPoweR4Life Haydi bunu TT yapalım 😂😂"
+      ]
+    },
+    {
+      "id": "task021-139",
+      "input": "Ya Neymar Jr sizcede Beşiktaş'a gelmemeli mi ? @neymarjr #BeşiktaşAşkına #Beşiktaş @Besiktas #ComeToBesiktas",
+      "output": [
+        "Ya Neymar Jr sizce de Beşiktaş'a gelmemeli mi ? @neymarjr #BeşiktaşAşkına #Beşiktaş @Besiktas #ComeToBesiktas"
+      ]
+    },
+    {
+      "id": "task021-140",
+      "input": "@uiandmessi Ahsjdj doğru diyorsun imza atmayacaktim",
+      "output": [
+        "@uiandmessi Ahsjdj doğru diyorsun imza atmayacaktım"
+      ]
+    },
+    {
+      "id": "task021-141",
+      "input": "@arzuerdemDB @MhpTbmmGrubu @Emin_Haber @mhp_haberleri @MHP_Gundemi @ayyildirim1 @ISTANBULOCAK @MHP_Sosyal @MHP_Bilgi @CamurMehmet123 Sayın vekilim BIZIM SESIMIZ OLACAGINIZDAN EMINIZ SAGOLUN VAROLUN VEKILIM",
+      "output": [
+        "@arzuerdemDB @MhpTbmmGrubu @Emin_Haber @mhp_haberleri @MHP_Gundemi @ayyildirim1 @ISTANBULOCAK @MHP_Sosyal @MHP_Bilgi @CamurMehmet123 Sayın vekilim bizim sesimiz olacağınızdan eminiz sağ olun var olun vekilim"
+      ]
+    },
+    {
+      "id": "task021-142",
+      "input": "#1erkekatasözü memlekette delikanlı kalmamış . Evrim gerçek oluyor . Kanal D atv'ye evriliyor .",
+      "output": [
+        "#1erkekatasözü Memlekette delikanlı kalmamış . Evrim gerçek oluyor . Kanal D ATV'ye eviriliyor ."
+      ]
+    },
+    {
+      "id": "task021-143",
+      "input": "@birDeli_birDolu Ne tatli olmussunuz siz",
+      "output": [
+        "@birDeli_birDolu Ne tatlı olmuşsunuz siz"
+      ]
+    },
+    {
+      "id": "task021-144",
+      "input": "İnsta her story de sevgılıler var ola . Var olmayan var amk",
+      "output": [
+        "Insta her story de sevgililer var ola . Var olmayan var amına koyayım"
+      ]
+    },
+    {
+      "id": "task021-145",
+      "input": "@TvDunyasii Kıvo yerıne bugün #EnginAkyürek ızlemek nasıl bır duygu 😜😂😂",
+      "output": [
+        "@TvDunyasii Kıvo yerine bugün #EnginAkyürek izlemek nasıl bir duygu 😜😂😂"
+      ]
+    },
+    {
+      "id": "task021-146",
+      "input": "Var mi yeni biriyle konusmaya baslayinca tanisma faslini seven bir insan evladi",
+      "output": [
+        "Var mı yeni biriyle konuşmaya başlayınca tanışma faslını seven bir insan evladı"
+      ]
+    },
+    {
+      "id": "task021-147",
+      "input": "@karaca5216 Oyle bi takim hala var mi ya",
+      "output": [
+        "@karaca5216 Öyle bir takım hala var mı ya"
+      ]
+    },
+    {
+      "id": "task021-148",
+      "input": "@Evrimsevver aghaaaaaa adam dinlene dinlene jetliyo",
+      "output": [
+        "@Evrimsevver Aha adam dinlene dinlene jetliyor"
+      ]
+    },
+    {
+      "id": "task021-149",
+      "input": "@Zalimliquee Olum valla bişey yapmadım aaaa",
+      "output": [
+        "@Zalimliquee Oğlum vallahi bir şey yapmadım aaaa"
+      ]
+    },
+    {
+      "id": "task021-150",
+      "input": "@yyasmin1402 Nice uzun sağlıklı musmutlu yıllara çiğerim 🎉🎉🎂🎂🎂",
+      "output": [
+        "@yyasmin1402 Nice uzun sağlıklı musmutlu yıllara ciğerim 🎉🎉🎂🎂🎂"
+      ]
+    },
+    {
+      "id": "task021-151",
+      "input": "@arzuerdemDB @MhpTbmmGrubu @Emin_Haber @mhp_haberleri @MHP_Gundemi @ayyildirim1 @ISTANBULOCAK @MHP_Sosyal @MHP_Bilgi @CamurMehmet123 @arzuerdemDB yarınki adalet komisyonunda ceza indirimi sunulacakmı yada sartlı tahliye konusunda bizleri bilgilwndirirmisinşz @afyoksaoydayok tesk .",
+      "output": [
+        "@arzuerdemDB @MhpTbmmGrubu @Emin_Haber @mhp_haberleri @MHP_Gundemi @ayyildirim1 @ISTANBULOCAK @MHP_Sosyal @MHP_Bilgi @CamurMehmet123 @arzuerdemDB Yarınki adalet komisyonunda ceza indirimi sunulacak mı ya da şartlı tahliye konusunda bizleri bilgilendirir misiniz @afyoksaoydayok TESK ."
+      ]
+    },
+    {
+      "id": "task021-152",
+      "input": "@nepenthaee Sabah gazeteai tğm kpop için erişim yasağı istiyo rezillik",
+      "output": [
+        "@nepenthaee Sabah gazetesi tğm kpop için erişim yasağı istiyor rezillik"
+      ]
+    },
+    {
+      "id": "task021-153",
+      "input": "@AnadoluEfesSK Adamsiniz lan cok iyi döndünüz 👍",
+      "output": [
+        "@AnadoluEfesSK Adamsınız lan çok iyi döndünüz 👍"
+      ]
+    },
+    {
+      "id": "task021-154",
+      "input": "tan tasci bi dur allahini seversen zaten ortalik karisik",
+      "output": [
+        "Tan Taşçı bir dur Allah'ını seversen zaten ortalık karışık"
+      ]
+    },
+    {
+      "id": "task021-155",
+      "input": "Xiu perim biz seninle ne yapicaz ❤❤ @weareoneEXO",
+      "output": [
+        "Xiu Perim biz seninle ne yapacağız ❤❤ @weareoneEXO"
+      ]
+    },
+    {
+      "id": "task021-156",
+      "input": "uuuuuu diye daglarda yankılanan ses Allahuuuuuuu oldu türkün sırtı yere degmedi",
+      "output": [
+        "Uu diye dağlarda yankılanan ses Allahu oldu Türk'ün sırtı yere değmedi"
+      ]
+    },
+    {
+      "id": "task021-157",
+      "input": "@oksijengrup Rabbim sizede tüm hastalarada şifa versin",
+      "output": [
+        "@oksijengrup Rabbim size de tüm hastalara da şifa versin"
+      ]
+    },
+    {
+      "id": "task021-158",
+      "input": "Evet Goebbels oturup bunu dusunmus 70 sene once aq boomerlari sizi",
+      "output": [
+        "Evet Goebbels oturup bunu düşünmüş 70 sene önce amına koyduğumun boomerları sizi"
+      ]
+    },
+    {
+      "id": "task021-159",
+      "input": "Üniversite sınavı üniversite sınavı neymiş bu üniversite sınavı ( read with berat albayraktar's voice )",
+      "output": [
+        "Üniversite sınavı üniversite sınavı neymiş bu üniversite sınavı ( read with Berat Albayraktar's voice )"
+      ]
+    },
+    {
+      "id": "task021-160",
+      "input": "s a n a n a s ı l y e t e m e d i m",
+      "output": [
+        "Sana    nasıl     yetemedim        "
+      ]
+    },
+    {
+      "id": "task021-161",
+      "input": "Iciyorum .. nescafe IKIsi bir arada ;')",
+      "output": [
+        "İçiyorum .. Nescafe ikisi bir arada ;')"
+      ]
+    },
+    {
+      "id": "task021-162",
+      "input": "@gulduriza O makarnali misirli sey iste",
+      "output": [
+        "@gulduriza O makarnalı mısırlı şey işte"
+      ]
+    },
+    {
+      "id": "task021-163",
+      "input": "@brahimSS3 Benim uzuldugum tek bi nokta var oda beni tanimadan bu denli elestri yapabilme curretinde bulunman",
+      "output": [
+        "@brahimSS3 Benim üzüldüğüm tek bir nokta var o da benim tanımadan bu denli eleştiri yapabilme cüretinde bulunman"
+      ]
+    },
+    {
+      "id": "task021-164",
+      "input": "@CapaMagMagazinn Aaa kocasi sevmiyormuymus yelizi . niye evlenmis k o zaman .",
+      "output": [
+        "@CapaMagMagazinn Aaa kocası sevmiyor muymuş Yeliz'i . Niye evlenmiş ki o zaman ."
+      ]
+    },
+    {
+      "id": "task021-165",
+      "input": "@_bejno Vayy ! Hiç bu yorumu beklemiyordum . Spas 😎",
+      "output": [
+        "@_bejno Vay ! Hiç bu yorumu beklemiyordum . Spas 😎"
+      ]
+    },
+    {
+      "id": "task021-166",
+      "input": "beck bunlari hak etmedi joe sen iyi misin ya agliyorum",
+      "output": [
+        "Beck bunları hak etmedi Joe sen iyi misin ya ağlıyorum"
+      ]
+    },
+    {
+      "id": "task021-167",
+      "input": "@tribunGS @ahmetcakar1 @ertemsener Bunadi bence . Bunlarin artik yeri huzur evi 😊",
+      "output": [
+        "@tribunGS @ahmetcakar1 @ertemsener Bunadı bence . Bunların artık yeri huzur evi 😊"
+      ]
+    },
+    {
+      "id": "task021-168",
+      "input": "tae coşarken bile sexy amk",
+      "output": [
+        "Tae coşarken bile seksi amına koyayım"
+      ]
+    },
+    {
+      "id": "task021-169",
+      "input": "@watchiingyou Hatceden baslayalim bence 🤣🤣 melek ne bilmiyi herhalde admin 😄 seytan da bi melektir kanks 🤣",
+      "output": [
+        "@watchiingyou Hatce'den başlayalım bence 🤣🤣 Melek ne bilmiyor herhalde admin 😄 şeytan da bir melektir kanka 🤣"
+      ]
+    },
+    {
+      "id": "task021-170",
+      "input": "@cekubaIim Havuz problemleri kalkti artik fksmfjdkfd",
+      "output": [
+        "@cekubaIim Havuz problemleri kalktı artık fksmfjdkfd"
+      ]
+    },
+    {
+      "id": "task021-171",
+      "input": "Leş gibi maklubeli Fetoşlu toplantılar ..",
+      "output": [
+        "Leş gibi Maklube'li Fetoş'lu toplantılar .."
+      ]
+    },
+    {
+      "id": "task021-172",
+      "input": "@svvltrgt Yeni geldim muğlaya bide cenaze için gelmiyim boşuna masraf",
+      "output": [
+        "@svvltrgt Yeni geldim Muğla'ya bir de cenaze için gelmeyeyim boşuna masraf"
+      ]
+    },
+    {
+      "id": "task021-173",
+      "input": "@EsraTugrulbas Kusursuz baska bir sey soyleyemiyorum cunku soylecek kelime yok",
+      "output": [
+        "@EsraTugrulbas Kusursuz başka bir şey söyleyemiyorum çünkü söyleyecek kelime yok"
+      ]
+    },
+    {
+      "id": "task021-174",
+      "input": "He o dediyin suala cvb verdim",
+      "output": [
+        "He o dediğin suale cevap verdim"
+      ]
+    },
+    {
+      "id": "task021-175",
+      "input": "Bugun benim dogum gunum ! Beni uzenin alnini karislarim . O kadar ❣️",
+      "output": [
+        "Bugün benim doğum günüm ! benim üzenin alnını karışlarım . O kadar ❣️"
+      ]
+    },
+    {
+      "id": "task021-176",
+      "input": "Kızların çoğu g🌸t🌸me yer ediyim sana neler ediyim",
+      "output": [
+        "Kızların çoğu g🌸t🌸me yer edeyim sana neler edeyim"
+      ]
+    },
+    {
+      "id": "task021-177",
+      "input": "@dygtmzyrk3 Diyet diye tutturmayaydin her sey guzel olabilirdi",
+      "output": [
+        "@dygtmzyrk3 Diyet diye tutturmayaydın her şey güzel olabilirdi"
+      ]
+    },
+    {
+      "id": "task021-178",
+      "input": "@istetamburasi Eglenceli bir seyler paylas zaten mutsuzuz",
+      "output": [
+        "@istetamburasi Eğlenceli bir şeyler paylaş zaten mutsuzuz"
+      ]
+    },
+    {
+      "id": "task021-179",
+      "input": "@OtomatikKahve Bosver dedik diye gercekten bosvermeniz gerekmiyorrr hemen ...",
+      "output": [
+        "@OtomatikKahve Boşver dedik diye gerçekten boşvermeniz gerekmiyor hemen ..."
+      ]
+    },
+    {
+      "id": "task021-180",
+      "input": "@themarginale Velev ki babasi iskence yapti , oglunu niye baglasin . Tunc Soyerin yaptiklari sicili ortada . Arguman mi bu .",
+      "output": [
+        "@themarginale Velev ki babası işkence yaptı , oğlunu niye bağlasın . Tunç Soyer'in yaptıkları sicili ortada . Argüman mı bu ."
+      ]
+    },
+    {
+      "id": "task021-181",
+      "input": "@sufleptn Ne sandindi xxx hanım 😂😂",
+      "output": [
+        "@sufleptn Ne sandıydın xxx hanım 😂😂"
+      ]
+    },
+    {
+      "id": "task021-182",
+      "input": "@cosmobet10 Youtube kanal cekilisi ne oldu ?",
+      "output": [
+        "@cosmobet10 YouTube kanal çekilişi ne oldu ?"
+      ]
+    },
+    {
+      "id": "task021-183",
+      "input": "İnstagram'a yeni fotoğraf attım 🙃 🚥İnstagram : utkuoz_demir",
+      "output": [
+        "Instagram'a yeni fotoğraf attım 🙃 🚥Instagram : utkuoz_demir"
+      ]
+    },
+    {
+      "id": "task021-184",
+      "input": "Youtube ta bi videoyu izlemeye başlamadan önce dislike atarım . Beğenirsem dislike ı kaldırırım .",
+      "output": [
+        "YouTube'da  bir videoyu izlemeye başlamadan önce dislike atarım . Beğenirsem dislike'ı  kaldırırım ."
+      ]
+    },
+    {
+      "id": "task021-185",
+      "input": "@time4bets_ofc Bı mac sonucu bıldık neden 5 tl yukledınız 20 yukleyevksınkz duzeltın sunu",
+      "output": [
+        "@time4bets_ofc Bir maç sonucu bildik neden 5 TL yüklediniz 20 yükleyeceksiniz düzeltin şunu"
+      ]
+    },
+    {
+      "id": "task021-186",
+      "input": "#orospuçocuğueskisevgilim hashtag in kralı aq burdan yürüyün",
+      "output": [
+        "#orospuçocuğueskisevgilim Hashtag'in  kralı amına koyayım buradan yürüyün"
+      ]
+    },
+    {
+      "id": "task021-187",
+      "input": "Cizıs fakin kırayst ! Ne okudum lan ben az önce ?",
+      "output": [
+        "Cizıs fakin kırayst ! Ne okudum lan ben az önce ?"
+      ]
+    },
+    {
+      "id": "task021-188",
+      "input": "@TulinMls Hahha Aynen bende öyleyim ya Guns N roses’dan müslüme geçebilirim yani",
+      "output": [
+        "@TulinMls Hahha aynen ben de öyleyim ya Guns N Roses'dan Müslüm'e geçebilirim yani"
+      ]
+    },
+    {
+      "id": "task021-189",
+      "input": "@bellatrxpoison adam haklı ne dıyım dfdsfds",
+      "output": [
+        "@bellatrxpoison Adam haklı ne diyeyim dfdsfds"
+      ]
+    },
+    {
+      "id": "task021-190",
+      "input": "@nurozkanerbay Cok tesekkur ederim Nur Hanim .",
+      "output": [
+        "@nurozkanerbay Çok teşekkür ederim Nur Hanım ."
+      ]
+    },
+    {
+      "id": "task021-191",
+      "input": "@saidnaci MasaAllah masaAllah rabbim muhafaza etsin ve İslam'a bağışlasın . :)",
+      "output": [
+        "@saidnaci Maşallah maşallah rabbim muhafaza etsin ve İslam'a bağışlasın . :)"
+      ]
+    },
+    {
+      "id": "task021-192",
+      "input": "bugun arkadasimla karsilikli pizza yiyorduk am biti agzinda pizza varken bir seye guldu butun salyalarini yuzume tukurdu resmen",
+      "output": [
+        "Bugün arkadaşımla karşılıklı pizza yiyorduk am biti ağzında pizza varken bir şeye güldü bütün salyalarını yüzüme tükürdü resmen"
+      ]
+    },
+    {
+      "id": "task021-193",
+      "input": "@Oner0313 @keskinbeyii Yemek ye tamlarsinn ksjajakajaja",
+      "output": [
+        "@Oner0313 @keskinbeyii Yemek ye tamlarsın ksjajakajaja"
+      ]
+    },
+    {
+      "id": "task021-194",
+      "input": "@NTVPara @ntv Ntvpara ismin para vaybe biraz bana ver para ntv paraaaa",
+      "output": [
+        "@NTVPara @ntv NTVPara ismin para vay be biraz bana ver para NTV para"
+      ]
+    },
+    {
+      "id": "task021-195",
+      "input": "@lagrimacanta 19 ton ne la kırkayak scania amk altı üstü bi kırkayak malı gönderen ihraçatcının amk masrafını çıkarmaz",
+      "output": [
+        "@lagrimacanta 19 ton ne ulan kırkayak Scania amına koyayım altı üstü bir kırkayak malı gönderen ihracatçının amına koyayım masrafını çıkarmaz"
+      ]
+    },
+    {
+      "id": "task021-196",
+      "input": "@yasamiyorrum h a y ı r . Bir klü öğrencisi olarak buna karşı duruyorum !!",
+      "output": [
+        "@yasamiyorrum Hayır     . Bir KLÜ öğrencisi olarak buna karşı duruyorum !!"
+      ]
+    },
+    {
+      "id": "task021-197",
+      "input": "saturday ve momoland kiyaslamaniz bittiginde sosyal medyaya geri doneceğim",
+      "output": [
+        "Saturday ve Momoland kıyaslamanız bittiğinde sosyal medyaya geri döneceğim"
+      ]
+    },
+    {
+      "id": "task021-198",
+      "input": "minnie nicha ya fotoğrafına bakınca bile wreck yiyorum nasıl bi olay bu",
+      "output": [
+        "Minnie Nicha ya fotoğrafına bakınca bile wreck yiyorum nasıl bir olay bu"
+      ]
+    },
+    {
+      "id": "task021-199",
+      "input": "@EmreUslu yorumlara baktım ne salako akp liler var hepsi davargiller cinsinden :))",
+      "output": [
+        "@EmreUslu Yorumlara baktım ne salako AKP'liler  var hepsi davargiller cinsinden :))"
+      ]
+    },
+    {
+      "id": "task021-200",
+      "input": "soyeon nolur daha fazla kilo verme hatta biraz al gercekten minicik kaldin umarim kendine iyi bakiyorsundur",
+      "output": [
+        "Soyeon ne olur daha fazla kilo verme hatta biraz az gerçekten minicik kaldın umarım kendime iyi bakıyorsundur"
+      ]
+    },
+    {
+      "id": "task021-201",
+      "input": "Hic soru sormadan hayati anlatmak , ne kadar buyuk bir yuk ...",
+      "output": [
+        "Hiç soru sormadan hayatı anlatmak , ne kadar büyük bir yük ..."
+      ]
+    },
+    {
+      "id": "task021-202",
+      "input": "KALBİME GOMERİM O ZAMAAAAAANNNNNNNN",
+      "output": [
+        "Kalbime gömerim o zaman"
+      ]
+    },
+    {
+      "id": "task021-203",
+      "input": "Admin nolur bu hafta bir azcen önizlemesi at yalvarıyorum @elimibirakmatv",
+      "output": [
+        "Admin ne olur bu hafta bir Azcen önizlemesi at yalvarıyorum @elimibirakmatv"
+      ]
+    },
+    {
+      "id": "task021-204",
+      "input": "@merabaaslan @AkturkGFB Bahis reklamlarina taptiginiz gibi mi ?",
+      "output": [
+        "@merabaaslan @AkturkGFB Bahis reklamlarına taptığınız gibi mi ?"
+      ]
+    },
+    {
+      "id": "task021-205",
+      "input": "@aliercan90 @cagatay_sahinn Kac tane oyuncu altyapindan yetistirip 11 milyon euroya sattin gerizekali biladerim",
+      "output": [
+        "@aliercan90 @cagatay_sahinn Kaç tane oyuncu altyapından yetiştirip 11 milyon euroya sattın gerizekalı biraderim"
+      ]
+    },
+    {
+      "id": "task021-206",
+      "input": "Zedd , Katy Pery 365 - Sezen Aksu Manifesto kopyasıdır . Rez alın bunu anlık müthiş tespit",
+      "output": [
+        "Zedd , Katy Perry 365 - Sezen Aksu manifesto kopyasıdır . Rez alın bunu anlık müthiş tespit"
+      ]
+    },
+    {
+      "id": "task021-207",
+      "input": "@saIhurde @murat_gkmn Aynen güzel tweet atar beyefendi kshdmdjdm",
+      "output": [
+        "@saIhurde @murat_gkmn Aynen güzel tweet atar beyefendi kshdmdjdm"
+      ]
+    },
+    {
+      "id": "task021-208",
+      "input": "Fenerbahçe Düşmanı Nagatomo nun fuck off unu görmez",
+      "output": [
+        "Fenerbahçe düşmanı Nagatomo'nun  fuck off'unu  görmez"
+      ]
+    },
+    {
+      "id": "task021-209",
+      "input": "amerikan aksaniyla soylenmis kelimeler duydukca mutlu oluyorum .. bu yuzden gunlerce amerikan muzigi dinleyebilirim ve gercekteb kopegi olmusum galiba",
+      "output": [
+        "Amerikan aksanıyla söylenmiş kelimeler duydukça mutlu oluyorum .. Bu yüzden günlerce Amerikan müziği dinleyebilirim ve gerçekten köpeği olmuşum galiba"
+      ]
+    },
+    {
+      "id": "task021-210",
+      "input": "Ohhh iyi dedin ne ekersen içinde boğulursun oç oğlu oç 😅",
+      "output": [
+        "Oh iyi dedin ne ekersen içinde boğulursun orospu çocuğu oğlu orospu çocuğu 😅"
+      ]
+    },
+    {
+      "id": "task021-211",
+      "input": "Annem yemege cagiriyo cagirma anne yemege falan biz yicegimizi yedik 🤬🤬🤬",
+      "output": [
+        "Annem yemeğe çağırıyor çağırma Annem yemeğe falan biz yiyeceğimizi yedik 🤬🤬🤬"
+      ]
+    },
+    {
+      "id": "task021-212",
+      "input": "@kkrsli @VBelensay @banderas1650924 Cemaş a bende nikah kıydım gardasım 👍🏽🧿",
+      "output": [
+        "@kkrsli @VBelensay @banderas1650924 Cemaş'a  ben de nikah kıydım kardeşim 👍🏽🧿"
+      ]
+    },
+    {
+      "id": "task021-213",
+      "input": "@_EmiNe_K__ Deşifre etmelisiniz sizin #EYT konusundaki çabalariniz ve fedakarliginiz ortada . sonuna . sonunakadar arkanızdayiz #EmeklilikteYasaTakilanlar",
+      "output": [
+        "@_EmiNe_K__ Deşifre etmelisiniz sizin #EYT konusundaki çabalarınız ve fedakarlığınız ortada . Sonuna . Sonuna kadar arkanızdayız #EmeklilikteYasaTakilanlar"
+      ]
+    },
+    {
+      "id": "task021-214",
+      "input": "umarim eglenir herkeshsjks ne diyim kesin bu yil yok dunya turu",
+      "output": [
+        "Umarım eğlenir herkeshsjks ne diyeyim kesin bu yıl yok dünya turu"
+      ]
+    },
+    {
+      "id": "task021-215",
+      "input": "@mfharmanli Çok güzelsin ama napiiim ahahaha",
+      "output": [
+        "@mfharmanli Çok güzelsin ama ne yapayım ahahaha"
+      ]
+    },
+    {
+      "id": "task021-216",
+      "input": "baskanım sizi seviyoruz mehmetcikleri unutmayın 😐 #TekTipAskerlik",
+      "output": [
+        "Başkanım sizi seviyoruz mehmetçikleri unutmayın 😐 #TekTipAskerlik"
+      ]
+    },
+    {
+      "id": "task021-217",
+      "input": "Aklima Seckin’in dogumgunu pastam geldiginde bi anda ayaga kalkip beni alkislamasi geldi fjdjdkkddl",
+      "output": [
+        "Aklıma Seçkin'in doğum günü pastam geldiğinde bir anda ayağa kalkıp beni alkışlaması geldi fjdjdkkddl"
+      ]
+    },
+    {
+      "id": "task021-218",
+      "input": "21 cm kalın damarlı & gt ;d iğer yarraklar",
+      "output": [
+        "21 cm kalın damarlı & gt ;d iğer yaraklar"
+      ]
+    },
+    {
+      "id": "task021-219",
+      "input": "@umitozdag Dilin kemiği yok . Yalancıyı'da s***miyorlar . Oh meydan boş sallayın",
+      "output": [
+        "@umitozdag Dilin kemiği yok . Yalancıyı da s***miyorlar . Oh meydan boş sallayın"
+      ]
+    },
+    {
+      "id": "task021-220",
+      "input": "Yil olmus 2019. Halen sevgililer gunu kutlayanlar var . Yetmiyor bir de paylasim yapiyorlar . Beyler hanimlar . Biraz sayginiz olsun kendinize lutfen .",
+      "output": [
+        "Yıl olmuş 2019 Halen Sevgililer Günü kutlayanlar var . Yetmiyor bir de paylaşım yapıyorlar . Beyler hanımlar . Biraz saygınız olsun kendinize lütfen ."
+      ]
+    },
+    {
+      "id": "task021-221",
+      "input": "Patates 6 tl Soğan 5 tl Salatalık 4.5 tl Domates 4.5 tl Biber 7 tl Acı biber 10 tl Portakal 5 tl Havuç 2.50 tl pırasa 3 tl",
+      "output": [
+        "Patates 6 TL soğan 5 TL salatalık 4.5 TL domates 4.5 TL biber 7 TL acı biber 10 TL portakal 5 TL havuç 2.50 TL pırasa 3 TL"
+      ]
+    },
+    {
+      "id": "task021-222",
+      "input": "@buketaydin ayip be kardesim . Yalayin tamam maasinizi onlar veriyorda birde utanmadan hatanizi savunacaksiniz . Ozur dilemekte bir erdem @KanalD",
+      "output": [
+        "@buketaydin Ayıp be kardeşim . Yalayın tamam maaşınızı onlar veriyor da bir de utanmadan hatanızı savunacaksınız . Özür dilemek de bir erdem @KanalD"
+      ]
+    },
+    {
+      "id": "task021-223",
+      "input": "@buzzspor oynatma kardesim oynatma zorunlu mu aw",
+      "output": [
+        "@buzzspor Oynatma kardeşim oynatma zorunlu mu ya"
+      ]
+    },
+    {
+      "id": "task021-224",
+      "input": "@SheLikesChaos Valla ıce ile izlicez biz sovuk biralar eşliğinde",
+      "output": [
+        "@SheLikesChaos Vallahi ice ile izleyeceğiz biz soğuk biralar eşliğinde"
+      ]
+    },
+    {
+      "id": "task021-225",
+      "input": "@LOONATurkey Hepsine bayildimmm yalniz bir az \"Colors\" tam alisamadim ama eminim onu da sevicem 😍🤧",
+      "output": [
+        "@LOONATurkey Hepsine bayıldım yalnız biraz  \"Colors\" tam alışamadım ama eminim onu da seveceğim 😍🤧"
+      ]
+    },
+    {
+      "id": "task021-226",
+      "input": "@matbazel34 @ntvspor Fuck Off ! ( Nagatomo'nun dediği gibi , küfür olarak algılama )",
+      "output": [
+        "@matbazel34 @ntvspor Fuck off ! ( Nagatomo'nun dediği gibi , küfür olarak algılama )"
+      ]
+    },
+    {
+      "id": "task021-227",
+      "input": "@lostcIub @reacthor cidden ne demis bu deli kuzi ?",
+      "output": [
+        "@lostcIub @reacthor Cidden ne demiş bu deli kuzi ?"
+      ]
+    },
+    {
+      "id": "task021-228",
+      "input": "@1_huzun_masali Bu uzun havadan sonra güzel bir halayda çekilir teyyy tey tey tey tey 💃💃💃🙈😂😂",
+      "output": [
+        "@1_huzun_masali Bu uzun havadan sonra güzel bir halay da çekilir tey tey tey tey tey 💃💃💃🙈😂😂"
+      ]
+    },
+    {
+      "id": "task021-229",
+      "input": "@yikildimdostlar winston slender mentol yokluğu aratmıyor ama ben davidoff slime döndüm ...",
+      "output": [
+        "@yikildimdostlar Winston slender mentol yokluğu aratmıyor ama ben Davidoff Slim'e döndüm ..."
+      ]
+    },
+    {
+      "id": "task021-230",
+      "input": "@MBS_KSA90 Geleceginiz varsa göreceginizde var Ermeni piçleri",
+      "output": [
+        "@MBS_KSA90 Geleceğiniz varsa göreceğiniz de varsa Ermeni piçleri"
+      ]
+    },
+    {
+      "id": "task021-231",
+      "input": "@kittenude ISICEM AQ BU NE AHZBABSJJNENSNXAJXNSNCJSKDJSKSNXKAJKSNAJZIAJDJABJD",
+      "output": [
+        "@kittenude İşeyeceğim amına koyayım bu ne AHZBABSJJNENSNXAJXNSNCJSKDJSKSNXKAJKSNAJZIAJDJABJD"
+      ]
+    },
+    {
+      "id": "task021-232",
+      "input": "@zgryldz1905 Şimdi anlaşıldı o rt atmayın dedıgın tweetler 😂😂😂",
+      "output": [
+        "@zgryldz1905 Şimd anlaşıldı o RT atmayın dediğin tweetler 😂😂😂"
+      ]
+    },
+    {
+      "id": "task021-233",
+      "input": "@FENERLIsmail12 Ağ be başkanım kimetini bilemediler ne diyelim yolun bahtin açik olsun birdaha fenerin başına dönmen dileyiyle hoscakal",
+      "output": [
+        "@FENERLIsmail12 Ah be başkanım kıymetini bilemediler ne diyelim yolun bahtın açık olsun bir daha Fener'in başına dönmen dileğiyle hoşçakal"
+      ]
+    },
+    {
+      "id": "task021-234",
+      "input": "@kacsaatolduturk @fatmacumhurefe Babasından biliyor pzv gin oğlu ..",
+      "output": [
+        "@kacsaatolduturk @fatmacumhurefe Babasından biliyor pezevengin  oğlu .."
+      ]
+    },
+    {
+      "id": "task021-235",
+      "input": "şu sıralar tek eğlencem Red Hot chili peppers dinlemek",
+      "output": [
+        "Şu sıralar tek eğlencem Red Hot Chili Peppers dinlemek"
+      ]
+    },
+    {
+      "id": "task021-236",
+      "input": "@chanvibes eski fotolarina bakip zirliom jikookuda sikim",
+      "output": [
+        "@chanvibes Eski fotolarına bakıp zırlıyorum Jikook'u da sikeyim"
+      ]
+    },
+    {
+      "id": "task021-237",
+      "input": "@HkuEgitim @snrbuyukozturk @hkunv @Mhmmtgms Ödülün bende Muhammetcim . Geldiginde buyuk bir keyifle teslim edicem .",
+      "output": [
+        "@HkuEgitim @snrbuyukozturk @hkunv @Mhmmtgms Ödülün bende Muhammet'çiğim . Geldiğinde büyük bir keyifle teslim edeceğim ."
+      ]
+    },
+    {
+      "id": "task021-238",
+      "input": "@EnaArici Nerelerdeydin bakim . Yaramazlik mi yaptin yoksa ...",
+      "output": [
+        "@EnaArici Nerelerdeydin bakayım . Yaramazlık mı yaptın yoksa ..."
+      ]
+    },
+    {
+      "id": "task021-239",
+      "input": "@padisahb3t Alayiniz hastasiniz olum sizi bakırköye bekliyolar",
+      "output": [
+        "@padisahb3t Alayınız hastasınız oğlum sizi Bakırköy'e bekliyorlar"
+      ]
+    },
+    {
+      "id": "task021-240",
+      "input": "@eseryenenler Dogum gununuz kutlu olsun",
+      "output": [
+        "@eseryenenler Doğum gününüz kutlu olsun"
+      ]
+    },
+    {
+      "id": "task021-241",
+      "input": "Sev günümü sadece tinderdakiler kutladı bide bi erkek arkım",
+      "output": [
+        "Sev günümü sadece Tinder'dakiler kutladı bir de bir erkek arkım"
+      ]
+    },
+    {
+      "id": "task021-242",
+      "input": "@gencmert9 @TFF_Org Powerade yasak sadece extra icicekler",
+      "output": [
+        "@gencmert9 @TFF_Org Powerade yasak sadece ekstra içecekler"
+      ]
+    },
+    {
+      "id": "task021-243",
+      "input": "galiba yanlıș fotoğraf kullanmıșsınız ...",
+      "output": [
+        "Galiba yanlış fotoğraf kullanmışsınız ..."
+      ]
+    },
+    {
+      "id": "task021-244",
+      "input": "@MerveHayta Nereye gidiyosun seyfo seni soruyodu jfjffkfk",
+      "output": [
+        "@MerveHayta Nereye gidiyorsun Seyfo seni soruyordu jfjffkfk"
+      ]
+    },
+    {
+      "id": "task021-245",
+      "input": "@Podolski10 cok özledim seni minik panzerimmmmmmmmmmmmm & lt ; 3",
+      "output": [
+        "@Podolski10 Çok özledim seni minik panzerim & lt ; 3"
+      ]
+    },
+    {
+      "id": "task021-246",
+      "input": "@KKundakcioglu Off , bi ahmet demir bıyığı yaptırmanın zamanı gelmişti , 28 şubatta oradayım .",
+      "output": [
+        "@KKundakcioglu Of , bir Ahmet Demir bıyığı yaptırmanın zamanı gelmişti , 28 Şubat'ta oradayım ."
+      ]
+    },
+    {
+      "id": "task021-247",
+      "input": "Sevgililer hediyesi kendime kinder joy aldım cok sevimli",
+      "output": [
+        "Sevgililer hediyesi kendime Kinder Joy aldım çok sevimli"
+      ]
+    },
+    {
+      "id": "task021-248",
+      "input": "uyuyakalmisim AHA OKULA GEC KALDIK diye uyandim .. vatani bu kadar sevmesemm mii",
+      "output": [
+        "Uyuyakalmışım AHA okula geç kaldık diye uyandım .. Vatanı bu kadar sevmesem mi"
+      ]
+    },
+    {
+      "id": "task021-249",
+      "input": "@muggiyy Gossip girl gibi bi şi arıyorum kaos ve entrika konusunda hala bulamadım ajsjskdkls",
+      "output": [
+        "@muggiyy Gossip Girl gibi bir şey arıyorum kaos ve entrika konusunda hala bulamadım ajsjskdkls"
+      ]
+    },
+    {
+      "id": "task021-250",
+      "input": "@Beriloktay @clubokey @farkindayimelis Dur ben daha cok cekmedim be Bero ... hahsjsjs",
+      "output": [
+        "@Beriloktay @clubokey @farkindayimelis Dur ben daha çok çekmedim be Bero ... hahsjsjs"
+      ]
+    },
+    {
+      "id": "task021-251",
+      "input": "@NOMOTAKACHI @_BasakAkiN_ @berfugre beklentileri sıfırladın bi anda assjjjs",
+      "output": [
+        "@NOMOTAKACHI @_BasakAkiN_ @berfugre Beklentileri sıfırladın bir anda assjjjs"
+      ]
+    },
+    {
+      "id": "task021-252",
+      "input": "ses tonuna b i t t i m",
+      "output": [
+        "Ses tonuna bittim     "
+      ]
+    },
+    {
+      "id": "task021-253",
+      "input": "@ozgur_gln Mrh sedat ben nasılsınız resim için dm kapalı açarmısınız",
+      "output": [
+        "@ozgur_gln Merhaba Sedat ben nasılsınız resim için DM kapalı açar mısınız"
+      ]
+    },
+    {
+      "id": "task021-254",
+      "input": "hahahh al bi tanesinide sana hediye ediyorummm 🥳🥳",
+      "output": [
+        "hahahh al bir tanesini de sana hediye ediyorum 🥳🥳"
+      ]
+    },
+    {
+      "id": "task021-255",
+      "input": "Galatasaray - Benfica maçi ne olur tahminler .",
+      "output": [
+        "Galatasaray - Benfica maçı ne olur tahminler ."
+      ]
+    },
+    {
+      "id": "task021-256",
+      "input": "Aq buna çok güldüm ya ajsjdkdjskdjsldkslsmsl",
+      "output": [
+        "Amına koyayım buna çok güldüm ya ajsjdkdjskdjsldkslsmsl"
+      ]
+    },
+    {
+      "id": "task021-257",
+      "input": "@kararsizponciko Sil gitsin suan cok utanıyorum fkkddkkdkff",
+      "output": [
+        "@kararsizponciko Sil gitsin şu an çok utanıyorum fkkddkkdkff"
+      ]
+    },
+    {
+      "id": "task021-258",
+      "input": "@ZeynepNoyan20 @1nurullahyldz @usseem @smgetpl Tamama dogum gununde sana boyle bir sey yapticam 😂",
+      "output": [
+        "@ZeynepNoyan20 @1nurullahyldz @usseem @smgetpl Tamam doğum gününde sana böyle bir şey yaptıracağım 😂"
+      ]
+    },
+    {
+      "id": "task021-259",
+      "input": "@AradhyaArora5 Almak için sınamaya gıtmemız gerekıyo galıba 😂",
+      "output": [
+        "@AradhyaArora5 Almak için sınamaya gitmemiz gerekiyor galiba 😂"
+      ]
+    },
+    {
+      "id": "task021-260",
+      "input": "nenem daha kaç kez mortingen olcan #avludarövanş",
+      "output": [
+        "Nenem daha kaç kez mortingen olacaksın #avludarövanş"
+      ]
+    },
+    {
+      "id": "task021-261",
+      "input": "@ulanbela @ulabisusarmiyim @AllahKitapFB @safiyecim @Yesribes @Metastazo @sekicetea @sananesenden @btlcicekk @cekikfatma @tur_kansiz sifir kilometre yeni bi araba alirim",
+      "output": [
+        "@ulanbela @ulabisusarmiyim @AllahKitapFB @safiyecim @Yesribes @Metastazo @sekicetea @sananesenden @btlcicekk @cekikfatma @tur_kansiz Sıfır kilometre yeni bir araba alırım"
+      ]
+    },
+    {
+      "id": "task021-262",
+      "input": "Aaahh çok gereksiz laflar yuttuk halbuki hadise ne güzel demişti SIFIR TOLERAAANS HADİ GİİT DURMAA giitt hadiii yallaaah gggiiiitttt",
+      "output": [
+        "Aaahh çok gereksiz laflar yuttuk halbuki hadise ne güzel demişti sıfır tolerans haydi git durma git haydi yallah git"
+      ]
+    },
+    {
+      "id": "task021-263",
+      "input": "ben bu ulkeden gitmek istiyorum lutfen gerekirse yuzerek gideyim vapursan simit falan atarsiniz",
+      "output": [
+        "Ben bu ülkeden gitmek istiyorum lütfen gerekirse yüzerek gideyim vapurdan simit falan atarsınız"
+      ]
+    },
+    {
+      "id": "task021-264",
+      "input": "@Ilyasb1 Malesef öyle , Ülke öyle bir felakete sürükleniyorki kimse bunun farkinda degil",
+      "output": [
+        "@Ilyasb1 Maalesef öyle , ülke öyle bir felakete sürükleniyor ki kimse bunun farkında değil"
+      ]
+    },
+    {
+      "id": "task021-265",
+      "input": "Keşke Ankaradaki dolmuşları otobüsleride çoğaltsanız ... eve gidene kadar oksijensizlikten öleceeğiimm",
+      "output": [
+        "Keşke Ankara'daki dolmuşları otobüsleri de çoğaltsanız ... Eve gidene kadar oksijensizlikten öleceğim"
+      ]
+    },
+    {
+      "id": "task021-266",
+      "input": "Tamam içimi döktüm mission complate ✔️",
+      "output": [
+        "Tamam içimi döktüm mission complate ✔️"
+      ]
+    },
+    {
+      "id": "task021-267",
+      "input": "Ben Migrosun , poşetlerini 1 tl'ye satmamasına şaşırıyorum .",
+      "output": [
+        "Ben Migros'un , poşetlerini 1 TL'ye satmamasına şaşırıyorum ."
+      ]
+    },
+    {
+      "id": "task021-268",
+      "input": "@hakanbayburt @aslandergi Salih uçanı onlar yeyiştirmedi yanlız",
+      "output": [
+        "@hakanbayburt @aslandergi Salih Uçan'ı onlar yetiştirmedi yalnız"
+      ]
+    },
+    {
+      "id": "task021-269",
+      "input": "Aranizda bankacı olan ya da bipgi sahibi olan varmiiii 😊",
+      "output": [
+        "Aranızda bankacı olan ya da bilgi sahibi olan var mı 😊"
+      ]
+    },
+    {
+      "id": "task021-270",
+      "input": "Tanismaya baslamadan siktiri bastiran soru , kaç tane oldu ? Ya sana ne sa na ne amk ya",
+      "output": [
+        "Tanışmaya başlamadan siktiri bastıran soru , kaç tane oldu ? Ya sana ne sana  ne amına koyayım ya"
+      ]
+    },
+    {
+      "id": "task021-271",
+      "input": "Lisede bi hocam vardi senden bi bok olmaz demişti bi çağırır mısınız onu biseyler anlatmam gerekiyo",
+      "output": [
+        "Lisede bir hocam vardı senden bir bok olmaz demişti bir çağırır mısınız onu bir şeyler anlatmam gerekiyor"
+      ]
+    },
+    {
+      "id": "task021-272",
+      "input": "@yusakaymakci @sonbirdalsigara jus drein jus daun bence o dizide ki en akılda kalıcı söz",
+      "output": [
+        "@yusakaymakci @sonbirdalsigara Jus drein jus daun bence o dizide ki en akılda kalıcı söz"
+      ]
+    },
+    {
+      "id": "task021-273",
+      "input": "kang daesung ve dong youngbae yumuş mu yumuş birer patates değilse ne",
+      "output": [
+        "Kang Daesung ve Dong Youngbae yumuş mu yumuş birer patates değilse ne"
+      ]
+    },
+    {
+      "id": "task021-274",
+      "input": "@prettyelmayra Valla ben denedim :)) artık umrumda değil vazgeçtim hahha",
+      "output": [
+        "@prettyelmayra Vallahi ben denedim :)) Artık umurumda değil vazgeçtim hahha"
+      ]
+    },
+    {
+      "id": "task021-275",
+      "input": "Çok iyi değil . Şunu tekrar edebilir misiniz ? Ne kadar ? : 5 dc695a7 - fc46 - 4034 - a6f1 - 0 ee787c7a05e",
+      "output": [
+        "Çok iyi değil . Şunu tekrar edebilir misiniz ? Ne kadar ? : 5 dc695a7 - fc46 - 4034 - a6f1 - 0 ee787c7a05e"
+      ]
+    },
+    {
+      "id": "task021-276",
+      "input": "SAMSUNG NOTE 5 32 GB HAFIZA 3 GB RAM TEMİZ ÇİZİKSİZ TEL : 05427416677",
+      "output": [
+        "Samsung Note 5 32 GB hafıza 3 GB RAM temiz çiziksiz telefon : 05427416677"
+      ]
+    },
+    {
+      "id": "task021-277",
+      "input": "hahah demek ilişki skandalı hahahahhaha",
+      "output": [
+        "hahah demek ilişki skandalı hahahahhaha"
+      ]
+    },
+    {
+      "id": "task021-278",
+      "input": "Selim hocam havaalani ihalesinde Cin ve Tr'ye getirilen kisitlama uzerinde birseyler yazmayi dusunuyordum ama siz erken davranmissiniz 👏👏👏 Elinize saglik ...",
+      "output": [
+        "Selim hocam havaalanı ihalesinde Çin ve Türkiye'ye getirilen kısıtlama üzerinde bir şeyler yazmayı düşünüyordum ama siz erken davranmışsınız 👏👏👏 Elinize sağlık ..."
+      ]
+    },
+    {
+      "id": "task021-279",
+      "input": "@notthejamiryo Normalde evet , sex oncesi hayir :(",
+      "output": [
+        "@notthejamiryo Normalde evet , seks öncesi hayır :("
+      ]
+    },
+    {
+      "id": "task021-280",
+      "input": "@GunelAdil @VodafoneDestek @GunelAdil hocam ttnet problemli Vodafone sıkıntılı bi @SuperonlineNet kaldı denemediğimiz !",
+      "output": [
+        "@GunelAdil @VodafoneDestek @GunelAdil Hocam TTNet problemli Vodafone sıkıntılı bir @SuperonlineNet kaldı denemediğimiz !"
+      ]
+    },
+    {
+      "id": "task021-281",
+      "input": "Kastamonu’ya geldiğim belli olsunn şarttosun donuyoz",
+      "output": [
+        "Kastamonu'ya geldiğim belli olsun şarttosun donuyoruz"
+      ]
+    },
+    {
+      "id": "task021-282",
+      "input": "Biz akademisyenlerin egitim borcunun sirketlerin borcu kadar kiymeti yok mu ? #1416ylsy #1416ylsytazminat #MEB #FAIZAFFI #faizaffı #CozumIstiyoruz #BeyinGocu",
+      "output": [
+        "Biz akademisyenlerin eğitim borcunun şirketlerin borcu kadar kıymeti yok mu ? #1416ylsy #1416ylsytazminat #MEB #FAIZAFFI #faizaffı #CozumIstiyoruz #BeyinGocu"
+      ]
+    },
+    {
+      "id": "task021-283",
+      "input": "@D_Demet__Sfrnbl Hayatimda bu kadar masum , samimi gulush gormedim",
+      "output": [
+        "@D_Demet__Sfrnbl Hayatımda bu kadar masum , samimi gülüş görmedim"
+      ]
+    },
+    {
+      "id": "task021-284",
+      "input": "@HAZALZDA mutlu aksamlarr cannn 🤗 o zaman içelim 😊",
+      "output": [
+        "@HAZALZDA Mutlu akşamlar can 🤗 o zaman içelim 😊"
+      ]
+    },
+    {
+      "id": "task021-285",
+      "input": "@KurtulusAykal @mrtkrhn_ 185 mi allam siz erkekler 🤦🏼‍♀️ bizim osmanda okkali bi ceza yesede bende rahatlasam 😂😂",
+      "output": [
+        "@KurtulusAykal @mrtkrhn_ 185 mi Allah'ım siz erkekler 🤦🏼‍♀️ bizim Osman da okkalı bir ceza yese de ben de rahatlasam 😂😂"
+      ]
+    },
+    {
+      "id": "task021-286",
+      "input": "çok izlerdim ornitorenk perry ’i",
+      "output": [
+        "Çok izlerdim ornitorenk Perry ’i"
+      ]
+    },
+    {
+      "id": "task021-287",
+      "input": "@evaork_ @emreust8 @kolbozukcanim Biz o gunu tanimiyoruz . Emre usta 14 Subat dedi oyle olacak .",
+      "output": [
+        "@evaork_ @emreust8 @kolbozukcanim Biz o günü tanımıyoruz . Emre Usta 14 Şubat dedi öyle olacak ."
+      ]
+    },
+    {
+      "id": "task021-288",
+      "input": "tekirdag cok soguksun .. ama sadece havan degil ..",
+      "output": [
+        "Tekirdağ çok soğuksun .. Ama sadece havan değil .."
+      ]
+    },
+    {
+      "id": "task021-289",
+      "input": "YA NE DEMEK SHOWCASE TOUR ??? NAPIYONUZ SİZ OMG",
+      "output": [
+        "Ya ne demek showcase tour ??? Ne yapıyorsunuz siz omg"
+      ]
+    },
+    {
+      "id": "task021-290",
+      "input": "@alperenaspirin Dehhh dıgıdıkk dıgıdık diyen kaç kişi çıkar ?",
+      "output": [
+        "@alperenaspirin Deh dıgıdık dıgıdık diyen kaç kişi çıkar ?"
+      ]
+    },
+    {
+      "id": "task021-291",
+      "input": "@kepo907 Bende intihar etmeyi planliyorum osman maca gitmesin artik diye 😂😂😂😂",
+      "output": [
+        "@kepo907 Ben de intihar etmeyi planlıyorum Osman maça gitmesin artık diye 😂😂😂😂"
+      ]
+    },
+    {
+      "id": "task021-292",
+      "input": "allahim sen asktan gozu kor olmus arkadaslarima akil mantik ver",
+      "output": [
+        "Allah'ım sen aşktan gözü kör olmuş arkadaşlarıma akıl mantık ver"
+      ]
+    },
+    {
+      "id": "task021-293",
+      "input": "Ister asker kokenli ister imam kokenli ... yontemler ve sonuclar ayni ... phasism",
+      "output": [
+        "İster asker kökenli ister imam kökenli ... Yöntemler ve sonuçlar aynı ... Faşizm"
+      ]
+    },
+    {
+      "id": "task021-294",
+      "input": "@Nakitbahis1 Youtebe vidoesunun altına yazdık umarım doğrudur .",
+      "output": [
+        "@Nakitbahis1 YouTube videosunun altına yazdık umarım doğrudur ."
+      ]
+    },
+    {
+      "id": "task021-295",
+      "input": "@sakizcigneyerek ohhh yine ohh yas ohhh yine ohhh",
+      "output": [
+        "@sakizcigneyerek Oh yine ohh yas ohhh yine ohhh"
+      ]
+    },
+    {
+      "id": "task021-296",
+      "input": "@vkookchrist Bizim edebiyatcida böyle osgsozjzoajz",
+      "output": [
+        "@vkookchrist Bizim edebiyatçı da böyle osgsozjzoajz"
+      ]
+    },
+    {
+      "id": "task021-297",
+      "input": "@YesilcamDunyasi Cenapcım bizim sefil bilo da böyleydi @CenapKocaturk",
+      "output": [
+        "@YesilcamDunyasi Cenap'çığım bizim sefil Bilo da böyleydi @CenapKocaturk"
+      ]
+    },
+    {
+      "id": "task021-298",
+      "input": "Ferhat göçer de bizim bi nurettin abi vardı bakırköy ikinci borgırın sahibi ona benzio sççpal lılar bilir",
+      "output": [
+        "Ferhat göçer de bizim bir Nurettin Abi vardı Bakırköy ikinci borgırın sahibi ona benziyor SÇÇPAL'lılar  bilir"
+      ]
+    },
+    {
+      "id": "task021-299",
+      "input": "@Azuth @sevil_yavuz @serakadigil Yildiz sarayin da havuz basin da ciplak dans ettirdikleri kadinlari mi konusurmus ?",
+      "output": [
+        "@Azuth @sevil_yavuz @serakadigil Yıldız Sarayı'nda  havuz başında  çıplak dans ettirdikleri kadınları mı konuşurmuş ?"
+      ]
+    },
+    {
+      "id": "task021-300",
+      "input": "Arkim sevgilisiyle partiye geldi ... aglamakli ... yiyisemiyecekler",
+      "output": [
+        "Arkım sevgilisiyle partiye geldi ... ağlamaklı ... yiyişemeyecekler"
+      ]
+    },
+    {
+      "id": "task021-301",
+      "input": "@ssirikitt metin oktay ali sami yen ruhu olmemis .... bu nasil bir gslilik ...",
+      "output": [
+        "@ssirikitt Metin Oktay Ali Sami Yen ruhu ölmemiş .... Bu nasıl bir GS'lilik ..."
+      ]
+    },
+    {
+      "id": "task021-302",
+      "input": "Egitim borcuna faiz olmamali . Egitim bir ticaret araci degildir . Insana ve daha aydin gelecege yatirimdir . #1416ylsy #1416ylsytazminat @Sherydgn #FaizsizBurs #yuksekfaiz #faizaffı #Tazminat #YLSY",
+      "output": [
+        "Eğitim borcuna faiz olmamalı . Eğitim bir ticaret aracı değildir . İnsana ve daha aydın geleceğe yatırımdır . #1416ylsy #1416ylsytazminat @Sherydgn #FaizsizBurs #yuksekfaiz #faizaffı #Tazminat #YLSY"
+      ]
+    },
+    {
+      "id": "task021-303",
+      "input": "4 yildan fazla bize odenirken paranin tamaminin 4 yilda geri odenmesini yapmak biraz zor kolaylastirilsin lutfen . #1416ylsy #1416ylsytazminat @BeratAlbayrak #MEB #GurbetKusu #FAIZAFFI #BeyinGocu",
+      "output": [
+        "4 yıldan fazla bize ödenirken paranın tamamının 4 yılda geri ödemesini yapmak biraz zor kolaylaştırılsın lütfen . #1416ylsy #1416ylsytazminat @BeratAlbayrak #MEB #GurbetKusu #FAIZAFFI #BeyinGocu"
+      ]
+    },
+    {
+      "id": "task021-304",
+      "input": "@KEC_06 @yilanserdars Bak valla senden iyi army olur",
+      "output": [
+        "@KEC_06 @yilanserdars Bak vallahi senden iyi army olur"
+      ]
+    },
+    {
+      "id": "task021-305",
+      "input": "evet ozgur isimli esmer bi oglandan bahsediyoz kim oldugunu bilmiyom ama ozgur iste",
+      "output": [
+        "Evet Özgür isimli esmer bir oğlandan bahsediyoruz kim olduğunu bilmiyorum ama Özgür işte"
+      ]
+    },
+    {
+      "id": "task021-306",
+      "input": "@Pinkypunky10 Zulmaz görmk istiyor artik bu gözlerrrr 😑",
+      "output": [
+        "@Pinkypunky10 Zulmaz görmek istiyor artık bu gözler 😑"
+      ]
+    },
+    {
+      "id": "task021-307",
+      "input": "@hayro_s @aripinar_ilayda @deniz22094 sana cok yuz verdik galiba",
+      "output": [
+        "@hayro_s @aripinar_ilayda @deniz22094 Sana çok yüz verdik galiba"
+      ]
+    },
+    {
+      "id": "task021-308",
+      "input": "@seksipezesehun tut elimi kurtarayim seni gardasim",
+      "output": [
+        "@seksipezesehun Tut elimi kurtarayım seni kardeşim"
+      ]
+    },
+    {
+      "id": "task021-309",
+      "input": "olamazzz aksam oluyor duygusallık bünyeye loading ..",
+      "output": [
+        "Olamaz akşam oluyor duygusallık bünyeye loading .."
+      ]
+    },
+    {
+      "id": "task021-310",
+      "input": "@Umudolski kanka dilara var mı",
+      "output": [
+        "@Umudolski Kanka Dilara var mı"
+      ]
+    },
+    {
+      "id": "task021-311",
+      "input": "Akademisyen olarak ve bu akademisyenlerin bakmak zorunda oldugu aileleri oldugunu da dusunerek lutfen ODEMELERE kolaylik saglansin #1416ylsy #1416ylsytazminat #Mebbursu #devletbursu #yuksekkurlar",
+      "output": [
+        "Akademisyen olarak ve bu akademisyenlerin bakmak zorunda olduğu aileleri olduğunu da düşünerek lutfen ödemelere kolaylık sağlansın #1416ylsy #1416ylsytazminat #Mebbursu #devletbursu #yuksekkurlar"
+      ]
+    },
+    {
+      "id": "task021-312",
+      "input": "@Galip_Ozturk simdi guzel bir cuma mesaji bekliyoruz ... :) #mepet #metro #mtryo #avgyo #avtur #atlas #ALBRK :)",
+      "output": [
+        "@Galip_Ozturk Şimdi güzel bir Cuma mesajı bekliyoruz ... :) #mepet #metro #mtryo #avgyo #avtur #atlas #ALBRK :)"
+      ]
+    },
+    {
+      "id": "task021-313",
+      "input": "ADAM ANKARAYA DENİZ GETİRMİS , HELAL OLSUN",
+      "output": [
+        "Adam Ankara'ya deniz getirmiş , helal olsun"
+      ]
+    },
+    {
+      "id": "task021-314",
+      "input": "Sanki kız s****kti aq kızı jeongyeon gajdkdksjaj",
+      "output": [
+        "Sanki kız s****kti amına koyayım kızı Jeongyeon gajdkdksjaj"
+      ]
+    },
+    {
+      "id": "task021-315",
+      "input": "#SözümSözOYumCezaIndirimine BENIM MILLETIM CAHILDIR 10 SENEDE 1 AF VERIN GAZI M . K . ATATURK .. SECIMDEN ÖNCE AF SONRA OY",
+      "output": [
+        "#SözümSözOYumCezaIndirimine Benim milletim cahildir 10 senede 1 af verin Gazi M . K . Atatürk .. Seçimden önce af sonra oy"
+      ]
+    },
+    {
+      "id": "task021-316",
+      "input": "Vala ceren senin bu son dakika gollerini naapacaz hic bilmiyorum #avludarövanş",
+      "output": [
+        "Vallahi Ceren senin bu son dakika gollerini ne yapacağız hiç bilmiyorum #avludarövanş"
+      ]
+    },
+    {
+      "id": "task021-317",
+      "input": "@iKONTurkey gorunce gulmekten oldum cidden cok komikti",
+      "output": [
+        "@iKONTurkey Görünce gülmekten öldüm cidden çok komikti"
+      ]
+    },
+    {
+      "id": "task021-318",
+      "input": "@kasaptarkovz listede yakisikli hoca olmamasi disinda sorun yok",
+      "output": [
+        "@kasaptarkovz Listede yakışıklı hoca olmaması dışında sorun yok"
+      ]
+    },
+    {
+      "id": "task021-319",
+      "input": "Ctesi maç için bilet lazim ..",
+      "output": [
+        "Cumartesi maç için bilet lazım .."
+      ]
+    },
+    {
+      "id": "task021-320",
+      "input": "İçinden küsmeki canın yanmasıınn",
+      "output": [
+        "İçinden küsme ki canın yanmasın"
+      ]
+    },
+    {
+      "id": "task021-321",
+      "input": "Golden rose bana 27 numara olan rujunu gönderir misin lüfffen happy valentine hatırına be @GoldenRoseTr 🌸",
+      "output": [
+        "Golden Rose bana 27 numara olan rujunu gönderir misin lütfen happy valentine hatırına be @GoldenRoseTr 🌸"
+      ]
+    },
+    {
+      "id": "task021-322",
+      "input": "@srknhrta hahahah valla yazıklar olsun bu kadar net bi cevap beklemiyodum 😂😂",
+      "output": [
+        "@srknhrta hahahah vallahi yazıklar olsun bu kadar net bir cevap beklemiyordum 😂😂"
+      ]
+    },
+    {
+      "id": "task021-323",
+      "input": "Aa resmen kimse nasılım diye merak etmiyo çıldırcam KNNDNDKDKKDDLDLD",
+      "output": [
+        "Aa resmen kimse nasılım diye merak etmiyor çıldıracağım KNNDNDKDKKDDLDLD"
+      ]
+    },
+    {
+      "id": "task021-324",
+      "input": "Seni gıdıltana kadar bayıklarım",
+      "output": [
+        "Seni gıdıltana kadar bayıklarım"
+      ]
+    },
+    {
+      "id": "task021-325",
+      "input": "@ibnehaechan ben velet degilim sen yaslisin",
+      "output": [
+        "@ibnehaechan Ben velet değilim sen yaşlısın"
+      ]
+    },
+    {
+      "id": "task021-326",
+      "input": "Aklinca kendini kotuleyip iltifat bekliyor . Cok beklersin nenem",
+      "output": [
+        "Aklınca kendini kötüleyip iltifat bekliyor . Çok beklersin nenem"
+      ]
+    },
+    {
+      "id": "task021-327",
+      "input": "Uni1 de haftanin sadece 2 gunu dersimiz vardi dedim . Dedem iste bu yuzden atanamiyosun , okula hic gitmemişsin ki dedi . asfgasfg 😀😂",
+      "output": [
+        "Uni1 de haftanın sadece 2 günü dersimiz vardı dedim . Dedem işte bu yüzden atanamıyorsun , okula hiç gitmemişsin ki dedim . asfgasfg 😀😂"
+      ]
+    },
+    {
+      "id": "task021-328",
+      "input": "@kemalayca chp donemini gormus mu acaba hey allahim susayim diyorum duramiyorum",
+      "output": [
+        "@kemalayca CHP dönemini görmüş mü acaba hey Allah'ım susayım diyorum duramıyorum"
+      ]
+    },
+    {
+      "id": "task021-329",
+      "input": "Dolar düşüyeaggg salatalık yükseliyagg",
+      "output": [
+        "Dolar düşüyor salatalık yükseliyor"
+      ]
+    },
+    {
+      "id": "task021-330",
+      "input": "@burakucuksubasi @yorgunculuk @CimbomluBob Ölüm kekosu . Biz ne uğraşcaz sizinle :) naşşş",
+      "output": [
+        "@burakucuksubasi @yorgunculuk @CimbomluBob Ölüm kekosu . Biz ne uğraşacağız sizinle :) naş"
+      ]
+    },
+    {
+      "id": "task021-331",
+      "input": "@emirbereket @fatihportakal Sakala bak ,, ayni benim y*raktaki gibi kivircik kivircik ..",
+      "output": [
+        "@emirbereket @fatihportakal Sakala bak ,, aynı benim y*raktaki gibi kıvırcık kıvırcık .."
+      ]
+    },
+    {
+      "id": "task021-332",
+      "input": "Marcao ve Luyindama'yı isterler .. Defansları patates",
+      "output": [
+        "Marcao ve Luyindama'yı isterler .. Defansları patates"
+      ]
+    },
+    {
+      "id": "task021-333",
+      "input": "Kanka görüşemeyiz bugün sevgili sanarlarr",
+      "output": [
+        "Kanka görüşemeyiz bugün sevgili sanarlar"
+      ]
+    },
+    {
+      "id": "task021-334",
+      "input": "#SözümSözOYumCezaİndirimine 📢Aylardir sucsuz arkadaslarimiz kotu kosullu cezaevlerinde . Dava dosyasi bow , yargi sureci cok yavas #FenerbahçeAğlıyor #AliKocAğlıyor #14şubatsevgililergünü",
+      "output": [
+        "#SözümSözOYumCezaİndirimine Aylardır suçsuz arkadaşlarımız kötü koşullu cezaevlerinde . Dava dosyası boş , yargı süreci çok yavaş #FenerbahçeAğlıyor #AliKocAğlıyor #14şubatsevgililergünü"
+      ]
+    },
+    {
+      "id": "task021-335",
+      "input": "Magdur #1416ylsy liler icin : 4 yıl olan #tazminat ana para ödeme süresinin uzatılmasıni TALEP EDIYORUZ . #1416ylsytazminat",
+      "output": [
+        "Mağdur #1416ylsy liler için : 4 yıl olan #tazminat anapara  ödeme süresinin uzatılmasını talep ediyoruz . #1416ylsytazminat"
+      ]
+    },
+    {
+      "id": "task021-336",
+      "input": "@ReissBaskan Ahahaaa yok heç bırakmam her daim REİS'ime destek Aminnn Teşekkür ederimm 🤗",
+      "output": [
+        "@ReissBaskan Ahahaaa yok hiç bırakmam her daim Reis'ime destek amin teşekkür ederim 🤗"
+      ]
+    },
+    {
+      "id": "task021-337",
+      "input": "İnstagram storylerine bakarken gözlerim kanıyor 😒",
+      "output": [
+        "Instagram storylerine bakarken gözlerim kanıyor 😒"
+      ]
+    },
+    {
+      "id": "task021-338",
+      "input": "@KirmiziBeyaz212 Bu adamdan da kurtarsin insallah 😉",
+      "output": [
+        "@KirmiziBeyaz212 Bu adamdan da kurtarsın inşallah 😉"
+      ]
+    },
+    {
+      "id": "task021-339",
+      "input": "@gumusvari H a f t a y a h a f t a s o n u i ne şe",
+      "output": [
+        "@gumusvari Haftaya       hafta     sonu    inşallah  "
+      ]
+    },
+    {
+      "id": "task021-340",
+      "input": "ölelim mi bekir abi napalım şimdi ?",
+      "output": [
+        "Ölelim mi Bekir Abi ne yapalım şimdi ?"
+      ]
+    },
+    {
+      "id": "task021-341",
+      "input": "Zuhahaha dansöze bak kolpaçino",
+      "output": [
+        "Zuhaha dansöze bak Kolpaçino"
+      ]
+    },
+    {
+      "id": "task021-342",
+      "input": "bunlar avmde sevisior güvenlikçi hanım",
+      "output": [
+        "Bunlar AVM'de sevişiyor güvenlikçi hanım"
+      ]
+    },
+    {
+      "id": "task021-343",
+      "input": "@dearbluue Bana da 3 - 1 çıktı aq kesin buglı",
+      "output": [
+        "@dearbluue Bana da 3 - 1 çıktı amına koyayım kesin buglı"
+      ]
+    },
+    {
+      "id": "task021-344",
+      "input": "@sporonlinecom Izleme o zmn yarrraam . Zorla mi izletiyorlar sana bunakk 💩",
+      "output": [
+        "@sporonlinecom İzleme o zaman yarağım . Zorla mı izletiyorlar sana bunak 💩"
+      ]
+    },
+    {
+      "id": "task021-345",
+      "input": "@DoraBaysefer Gülmek istiyosan ağzını aç oç",
+      "output": [
+        "@DoraBaysefer Gülmek istiyorsan ağzını aç orospu çocuğu"
+      ]
+    },
+    {
+      "id": "task021-346",
+      "input": "@FUATUGUR Mexico City de kac kisinin icme suyuna ve kanalizasyona erisimi olmadigini bir arastir ondan sonra baska seylerden bahset",
+      "output": [
+        "@FUATUGUR Mexico City'de  kaç kişinin içme suyuna ve kanalizasyona erişimi olmadığını bir araştır ondan sonra başka şeylerden bahset"
+      ]
+    },
+    {
+      "id": "task021-347",
+      "input": "#AliKoçAğlıyor yoksa o zorlu fiksturle baska nasil basa cikabilir",
+      "output": [
+        "#AliKoçAğlıyor Yoksa o zorlu fikstürle başka nasıl başa çıkabilir"
+      ]
+    },
+    {
+      "id": "task021-348",
+      "input": "Tff ni tum kurumları iflas etmistir .. allah hepinizin belasini versin . Aldığınız paralar ilac parasi olsun .",
+      "output": [
+        "TFF'nin  tüm kurumları iflas etmiştir .. Allah hepinizin belasını versin . Aldığınız paralar ilaç parası olsun ."
+      ]
+    },
+    {
+      "id": "task021-349",
+      "input": "@duracihan Dort yanimiz verimli tarim arazisi ile cevriliyken .",
+      "output": [
+        "@duracihan Dört yanımız verimli tarım arazisi ile çevriliyken ."
+      ]
+    },
+    {
+      "id": "task021-350",
+      "input": "Fener aglamaz aglatir . O . C İmPARAtorunuz burda seyyar satıcılık yapip bagirmiyor herhalde . Agliyor amk",
+      "output": [
+        "Fener ağlamaz ağlatır . O . C imparatorunuz burada seyyar satıcılık yapıp bağırmıyor herhalde . Ağlıyor amına koyayım"
+      ]
+    },
+    {
+      "id": "task021-351",
+      "input": "@feritkw Bizene amk bizene sanki biz dan bilzerian gibi geçiriyoruz piçe bak ..",
+      "output": [
+        "@feritkw Bize ne amına koyayım bize ne sanki biz Dan Bilzerian gibi geçiriyoruz piçe bak .."
+      ]
+    },
+    {
+      "id": "task021-352",
+      "input": "yav yeenim hep gabitalizmin oyunları bunlar yaav",
+      "output": [
+        "Ya yeğenim hep kapitalizmin oyunları bunlar ya"
+      ]
+    },
+    {
+      "id": "task021-353",
+      "input": "@cydclsknn @sinirlipikachu Ohhh aşkımsu geldi beyz aldın mı cevabını git burdan beyz",
+      "output": [
+        "@cydclsknn @sinirlipikachu Oh aşkımsı geldi beyz aldın mı cevabını git buradan beyz"
+      ]
+    },
+    {
+      "id": "task021-354",
+      "input": "kronik tayfa basmış yine 30 k favı",
+      "output": [
+        "Kronik tayfa basmış yine 30 k favı"
+      ]
+    },
+    {
+      "id": "task021-355",
+      "input": "@HaknZeynep Nefertiti gibi hatunsun züpperr 😍😍😍😘😘",
+      "output": [
+        "@HaknZeynep Nefertiti gibi hatunsun süper 😍😍😍😘😘"
+      ]
+    },
+    {
+      "id": "task021-356",
+      "input": "@topunuz__gelin Aglamasin , sakin olsun ; sfgdjjk :)))",
+      "output": [
+        "@topunuz__gelin Ağlamasın , sakin olsun ; sfgdjjk :)))"
+      ]
+    },
+    {
+      "id": "task021-357",
+      "input": "Yuksek borclarin odenmesi icin odeme planinin biraz daha makul olmasini rica ediyoruz . #1416ylsy #1416ylsytazminat #HANICOZUM #yuksekfaiz #tazminat #faizaffı #BeyinGocu #Tazminat #yuksekkurlar #YLSY",
+      "output": [
+        "Yüksek borçların ödenmesi için ödeme planının biraz daha makul olmasını rica ediyoruz . #1416ylsy #1416ylsytazminat #HANICOZUM #yuksekfaiz #tazminat #faizaffı #BeyinGocu #Tazminat #yuksekkurlar #YLSY"
+      ]
+    },
+    {
+      "id": "task021-358",
+      "input": "90's editi yapmayın artık allah aşkına her gördüğümde elim ayağım titriyor cokgüzel",
+      "output": [
+        "90's editi yapmayın artık Allah aşkına her gördüğümde elim ayağım titriyor çok güzel"
+      ]
+    },
+    {
+      "id": "task021-359",
+      "input": "@GuzelSerisi2019 Offff harika öyle sikerimki onu",
+      "output": [
+        "@GuzelSerisi2019 Of harika öyle sikerim ki onu"
+      ]
+    },
+    {
+      "id": "task021-360",
+      "input": "Maci izleme imkani olmayanlar icin ..",
+      "output": [
+        "Maçı izleme imkanı olmayanlar için .."
+      ]
+    },
+    {
+      "id": "task021-361",
+      "input": "T İ K S İ N İ Y O R U M .",
+      "output": [
+        "Tiksiniyorum            ."
+      ]
+    },
+    {
+      "id": "task021-362",
+      "input": "@suretidegilasl @OSehirdeki @ZuriOfMasai @Seraptgt @Masal64996832 sence hande ve demet arasinda alp ve canin yarisi gibi bi yaris olsaydi suan demoya oy atmazlarmiydi insanlar ?!",
+      "output": [
+        "@suretidegilasl @OSehirdeki @ZuriOfMasai @Seraptgt @Masal64996832 Sence Hande ve Demet arasında Alp ve Can'ın yarısı gibi bir yarış olsaydı şu an demoya oy atmazlar mıydı insanlar ?!"
+      ]
+    },
+    {
+      "id": "task021-363",
+      "input": "@Superbetin_TR Gs 2 - 0 benfica #SuperbetindeKazandım Kullanıcı adım esma8485 @muco423 @commandos09 @79Berkan @missademekki @sentrozom",
+      "output": [
+        "@Superbetin_TR GS 2 - 0 Benfica #SuperbetindeKazandım Kullanıcı adım esma8485 @muco423 @commandos09 @79Berkan @missademekki @sentrozom"
+      ]
+    },
+    {
+      "id": "task021-364",
+      "input": "@BeratAlbayrak MaliyeAtama SırasıTarımda MaliyeAtama SırasıTarımda Diğer bakanlıklarda farkımız ne bizim ? Ne diye taştan ses cıkıyorda sizden ses cıkmıyor Sn bakan ? 23",
+      "output": [
+        "@BeratAlbayrak Maliye atama sırası tarımda Maliye atama sırası tarımda Diğer bakanlıklardan farkımız ne bizim ? Ne diye taştan ses çıkıyor da sizden ses çıkmıyor sayın bakan ? 23"
+      ]
+    },
+    {
+      "id": "task021-365",
+      "input": "@Fener10line Ayni bugun koc baskaninizin ekranlar karsisinda agladigi gibimi 😂😂",
+      "output": [
+        "@Fener10line Aynı bugün koç başkanınızın ekranlar karşısında ağladığı gibi mi 😂😂"
+      ]
+    },
+    {
+      "id": "task021-366",
+      "input": "Romantizminiz bittiyse gire bilirmiyim bu tayma ?",
+      "output": [
+        "Romantizminiz bittiyse girebilir miyim  bu tayma ?"
+      ]
+    },
+    {
+      "id": "task021-367",
+      "input": "#SözümSözOYumCezaİndirimine cezaevlerin de umutlu bekleyis suruyor hem ceza hem aci cekiyorlar o kadar guveniyorlar size biz buradan cikacagiz diyorlar @RT_Erdogan @dbdevletbahceli",
+      "output": [
+        "#SözümSözOYumCezaİndirimine Cezaevlerinde  umutlu bekleyiş sürüyor hem ceza hem acı çekiyorlar o kadar güveniyorlar size biz buradan çıkacağız diyorlar @RT_Erdogan @dbdevletbahceli"
+      ]
+    },
+    {
+      "id": "task021-368",
+      "input": "seviliyorsunuz sevgili itt adminleri 💛",
+      "output": [
+        "Seviliyorsunuz sevgili iTT adminleri 💛"
+      ]
+    },
+    {
+      "id": "task021-369",
+      "input": "@SalihCan_S7 @realEmirGurbuz yooo benim basimin ustunde kimsenin yeri yok ya o nereden cikti",
+      "output": [
+        "@SalihCan_S7 @realEmirGurbuz Yo benim başımın üstünde kimsenin yeri yok ya o nereden çıktı"
+      ]
+    },
+    {
+      "id": "task021-370",
+      "input": "@eyupdurmus54 @ukarakullukcu Dogru , yanlis yazmisim . Hergun TV ye ciksaydim , inan ki dersini de alirdim .",
+      "output": [
+        "@eyupdurmus54 @ukarakullukcu Doğru , yanlış yazmışım . Her gün TV'ye  çıksaydım , inan ki dersini de alırdım ."
+      ]
+    },
+    {
+      "id": "task021-371",
+      "input": "@ceydafalan_ @zhrsynmz @nediyinlan Benimde var noluyooo altaaan",
+      "output": [
+        "@ceydafalan_ @zhrsynmz @nediyinlan Benim de var ne oluyor Altan"
+      ]
+    },
+    {
+      "id": "task021-372",
+      "input": "@MuzminBekar_ @safiyeduyguceli @CimbomluBob o yuzden mi gecen sene 2. bitiren takim suan kume dusmemeye oynuyor , sacma sapan adamlara para yagdiriyorsunuz , anladim",
+      "output": [
+        "@MuzminBekar_ @safiyeduyguceli @CimbomluBob O yüzden mi geçen sene 2. bitiren takım şu an küme düşmemeye oynuyor , saçma sapan adamlara para yağdırıyorsunuz , anladım"
+      ]
+    },
+    {
+      "id": "task021-373",
+      "input": "@raheyvavin Sylvia ve Ted'in Frieda'ya baktıkları fotoğraf hangi kitaptan alıntı ?",
+      "output": [
+        "@raheyvavin Sylvia ve Ted'in Frieda'ya baktıkları fotoğraf hangi kitaptan alıntı ?"
+      ]
+    },
+    {
+      "id": "task021-374",
+      "input": "O zaman merve lerden dönüş saati 😂",
+      "output": [
+        "O zaman Merve'lerden  dönüş saati 😂"
+      ]
+    },
+    {
+      "id": "task021-375",
+      "input": "arkadaşlar hep beraber bu chp iktidarını indiricez allahın izniyle .",
+      "output": [
+        "Arkadaşlar hep beraber bu CHP iktidarını indireceğiz Allah'ın izniyle ."
+      ]
+    },
+    {
+      "id": "task021-376",
+      "input": "“ Kul yüce Allah’ı nefsanî isteklerine tercih etmedikçe kemale eremez .” Fudayl b . İyâz ( k . s )",
+      "output": [
+        "“ Kul yüce Allah'ı nefsani isteklerine tercih etmedikçe kemale eremez .” Fudayl b . İyaz ( K . S )"
+      ]
+    },
+    {
+      "id": "task021-377",
+      "input": "@songlgn Geçti borun pazari sür eşşeği nigdeye #EmeklilikteYaşaTakılanlar",
+      "output": [
+        "@songlgn Geçti Bor'un pazarı sür eşeği Niğde'ye #EmeklilikteYaşaTakılanlar"
+      ]
+    },
+    {
+      "id": "task021-378",
+      "input": "cover atıcam bok gibi oldu ama napim yine de atıcam",
+      "output": [
+        "Cover atacağım bok gibi oldu ama ne yapayım yine de atacağım"
+      ]
+    },
+    {
+      "id": "task021-379",
+      "input": "Slm turgutlu olgun aktifim uyarmi araç var",
+      "output": [
+        "Selam Turgutlu olgun aktifim uyar mı araç var"
+      ]
+    },
+    {
+      "id": "task021-380",
+      "input": "@Ersagbkr Ari sutu , turunç kusburnu c vitaminim favorim ayrilmaz ikilim bu kiş rahat ettim ...",
+      "output": [
+        "@Ersagbkr Arı sütü , turunç kuşburnu C vitaminim favorim ayrılmaz ikilim bu kış rahat ettim ..."
+      ]
+    },
+    {
+      "id": "task021-381",
+      "input": "Sago konserine 18 yaş altı alınmıyormuş . Ben bu dünyanın amina koyim",
+      "output": [
+        "Sago konserine 18 yaş altı alınmıyormuş . Ben bu dünyanın amına koyayım"
+      ]
+    },
+    {
+      "id": "task021-382",
+      "input": "@demarkesports @DeporFinanzas Beşiktaşın tüm izlenmesi Babel sayesinde galiba :d",
+      "output": [
+        "@demarkesports @DeporFinanzas Beşiktaş'ın tüm izlenmesi Babel sayesinde galiba :d"
+      ]
+    },
+    {
+      "id": "task021-383",
+      "input": "@OrijinalArmy @kaepsongie @KingExo_ot9 NSKDŞSŞDŞŞD fatruya yansır falan",
+      "output": [
+        "@OrijinalArmy @kaepsongie @KingExo_ot9 NSKDŞSŞDŞŞD Faturaya yansır falan"
+      ]
+    },
+    {
+      "id": "task021-384",
+      "input": "@1905GSFANS Admin ne olur boyle turgayin yorumuymus gibi seyleri paylasmayin Tesekkurler",
+      "output": [
+        "@1905GSFANS Admin ne olur böyle Turgay'ın yorumuymuş gibi şeyleri paylaşmayın teşekkürler"
+      ]
+    },
+    {
+      "id": "task021-385",
+      "input": "@Hadis_Hayat Ebu davut ahkam ile meşurdur neden ahkam hafislerini paylasmiyorsun",
+      "output": [
+        "@Hadis_Hayat Ebu Davut ahkam ile meşhurdur neden ahkam hadislerini paylaşmıyorsun"
+      ]
+    },
+    {
+      "id": "task021-386",
+      "input": "Aboooo İP'in fetöcü olduğunu söylüyor",
+      "output": [
+        "Abo İP'in FETÖ'cü olduğunu söylüyor"
+      ]
+    },
+    {
+      "id": "task021-387",
+      "input": "@DKurdeone Kdkfjfsk bot lan dinnnnn ... gel sana göstereyim nasil kurtaracagini",
+      "output": [
+        "@DKurdeone Kdkfjfsk botlandın   ... Gel sana göstereyim nasıl kurtaracağını"
+      ]
+    },
+    {
+      "id": "task021-388",
+      "input": "@ismail_akfc Birde yaptida ne oldu sonunda kocaman bir Nankörlük sonuc ortada cektikleri yanina kar kaldi birde hic yoktan antileri oldu .",
+      "output": [
+        "@ismail_akfc Bir de yaptı da ne oldu sonunda kocaman Bir de nankörlük sonuç ortada çektikleri yanına kar kaldı bir de hiç yoktan antileri oldu ."
+      ]
+    },
+    {
+      "id": "task021-389",
+      "input": "@mehmet1ali2z Zeki olmak herkezsin harci degil yasasin saplar",
+      "output": [
+        "@mehmet1ali2z Zeki olmak herkesin harcı değil yaşasın saplar"
+      ]
+    },
+    {
+      "id": "task021-390",
+      "input": "toprak bir gun yagmurun kıymetini anlayacak fakat o gun yagmur yagmayacak nicanor parra",
+      "output": [
+        "Toprak bir gün yağmurun kıymetini anlayacak fakat o gün yağmur yağmayacak Nicanor Parra"
+      ]
+    },
+    {
+      "id": "task021-391",
+      "input": "@AlaattinCAGIL @romantikesinti türkiye de olursa ; ankara istanbul arasi sinyalizasyon calismaz",
+      "output": [
+        "@AlaattinCAGIL @romantikesinti Türkiye'de  olursa ; Ankara İstanbul arası sinyalizasyon çalışmaz"
+      ]
+    },
+    {
+      "id": "task021-392",
+      "input": "@NtvSporBet724 11 - 20 dk arası Kullanıcı adı dianaboncis @pandabetting @CelticsBetting @mustafak @mehmet65sarii @ali76533678",
+      "output": [
+        "@NtvSporBet724 11 - 20 dakika arası kullanıcı adı dianaboncis @pandabetting @CelticsBetting @mustafak @mehmet65sarii @ali76533678"
+      ]
+    },
+    {
+      "id": "task021-393",
+      "input": "@MilanRapaiic Ben mi sen mi kanka bence bi daha düşünn 😄😄😄",
+      "output": [
+        "@MilanRapaiic Ben mi sen mi kanka bence bir daha düşün 😄😄😄"
+      ]
+    },
+    {
+      "id": "task021-394",
+      "input": "CANİMİN İCİSİN CANİMİN İCİ",
+      "output": [
+        "Canımın içisin canımın içi"
+      ]
+    },
+    {
+      "id": "task021-395",
+      "input": "@merveysann Gülme Eyşan çok sinirliyimm . 😡😡😡",
+      "output": [
+        "@merveysann Gülme Eyşan çok sinirliyim . 😡😡😡"
+      ]
+    },
+    {
+      "id": "task021-396",
+      "input": "@ladyfirstt23 Bn uzulmezdm canmmm para burda harcanirrrr",
+      "output": [
+        "@ladyfirstt23 Ben üzülmezdim canım para burada harcanır"
+      ]
+    },
+    {
+      "id": "task021-397",
+      "input": "altına istoç bauhaus falan yazan olmuş . olm siz küvezde mi yaşadınız bunca yıl aq",
+      "output": [
+        "Altına İstoç Bauhaus falan yazan olmuş . Oğlum siz küvezde mi yaşadınız bunca yıl amına koyayım"
+      ]
+    },
+    {
+      "id": "task021-398",
+      "input": "#sevgigünü sevgililer gununden daha anlamli gibi",
+      "output": [
+        "#sevgigünü Sevgililer gününden daha anlamlı gibi"
+      ]
+    },
+    {
+      "id": "task021-399",
+      "input": "Annecim bugun goruntulu aramanin gecerli bi sebebi var mi acaba ? 🙄",
+      "output": [
+        "Anneciğim bugün görüntülü aramanın geçerli bir sebebi var mı acaba ? 🙄"
+      ]
+    },
+    {
+      "id": "task021-400",
+      "input": "@Hulyacngzl Show yapılır detaylar icin mesaj atabilirsiniz ♥♥♥",
+      "output": [
+        "@Hulyacngzl Şov yapılır detaylar için mesaj atabilirsiniz ♥♥♥"
+      ]
+    },
+    {
+      "id": "task021-401",
+      "input": "#AşktaNasılsın hande ünsal seni sever miydim mavsvsvsggs 😂",
+      "output": [
+        "#AşktaNasılsın Hande Ünsal seni sever miydim mavsvsvsggs 😂"
+      ]
+    },
+    {
+      "id": "task021-402",
+      "input": "Neyse ben hazirlaniyom simdi . Gidem de biraz minciram bebeğimi ya ^.^ 💓",
+      "output": [
+        "Neyse ben hazırlanıyorum şimdi . Gideyim de biraz mıncırayım bebeğimi ya ^.^ 💓"
+      ]
+    },
+    {
+      "id": "task021-403",
+      "input": "@simgehanc3 Kar yagsa bile sana islemez ates parcasi",
+      "output": [
+        "@simgehanc3 Kar yağsa bile sana işlemez ateş parçası"
+      ]
+    },
+    {
+      "id": "task021-404",
+      "input": "@jeoncey Oooo yeni mi farkettin bea",
+      "output": [
+        "@jeoncey Oo yeni mi fark ettin be"
+      ]
+    },
+    {
+      "id": "task021-405",
+      "input": "@ifsaenm Kasa guzelde o kasaya daha güzel bir tanga olmaliydi",
+      "output": [
+        "@ifsaenm Kasa güzel de o kasaya daha güzel bir tanga olmalıydı"
+      ]
+    },
+    {
+      "id": "task021-406",
+      "input": "#AşklaYolaDevam akp'ye oy vermiyeceğim .",
+      "output": [
+        "#AşklaYolaDevam AKP'ye oy vermeyeceğim ."
+      ]
+    },
+    {
+      "id": "task021-407",
+      "input": "@aybukepusat Çok tatlılar sizde oylesınızdır umarım Aybuke'cım her zamn mutlu ol lütfen seninde canım 😉😘",
+      "output": [
+        "@aybukepusat Çok tatlılar siz de öylesinizdir umarım Aybüke'ciğim her zaman mutlu ol lütfen senin de canım 😉😘"
+      ]
+    },
+    {
+      "id": "task021-408",
+      "input": "@BushraLusty iconumdaki demi lovato ama",
+      "output": [
+        "@BushraLusty İkonumdaki değil mi Lovato ama"
+      ]
+    },
+    {
+      "id": "task021-409",
+      "input": "Acile gidiyoruz didemle gerçi daha cıkamadık didemin makyaj yapması gerekiyormuş",
+      "output": [
+        "Acile gidiyoruz Didem'le gerçi daha çıkamadık Didem'in makyaj yapması gerekiyormuş"
+      ]
+    },
+    {
+      "id": "task021-410",
+      "input": "@TinerliTweetler Ingilizceyi ogrenmeye calisirken hevesle yazan ben ahahsgsgsg 😂",
+      "output": [
+        "@TinerliTweetler İngilizce'yi öğrenmeye çalışırken hevesle yazan ben ahahsgsgsg 😂"
+      ]
+    },
+    {
+      "id": "task021-411",
+      "input": "Bir story daha açamıycam",
+      "output": [
+        "Bir story daha açamayacağım"
+      ]
+    },
+    {
+      "id": "task021-412",
+      "input": "ne kader bir güzel bolüm ben bayıldim .. herşey harika sağol @baris_arduc @burcu_biricik @tvdizikuzgun @ayyapim #BarışArduç #BurcuBiricik #kuzgun",
+      "output": [
+        "Ne kadar bir güzel bölüm ben bayıldım .. Her şey harika sağ ol @baris_arduc @burcu_biricik @tvdizikuzgun @ayyapim #BarışArduç #BurcuBiricik #kuzgun"
+      ]
+    },
+    {
+      "id": "task021-413",
+      "input": "@parlanzi Sana etno-cografya bilmiyor diyenlere girsin",
+      "output": [
+        "@parlanzi Sana etno-coğrafya bilmiyor diyenlere girsin"
+      ]
+    },
+    {
+      "id": "task021-414",
+      "input": "Aynaya baktım bi sigara yaktim",
+      "output": [
+        "Aynaya baktım bir sigara yaktım"
+      ]
+    },
+    {
+      "id": "task021-415",
+      "input": "@singlehira20 Salatalıgın kabugunu soymak , onun hıyar oldugu gercegini degistirmez",
+      "output": [
+        "@singlehira20 Salatalığın kabuğunu soymak , onun hıyar olduğu gerçeğini değiştirmez"
+      ]
+    },
+    {
+      "id": "task021-416",
+      "input": "@Berkelendiniz Sevgililer gunun mubarek olsun",
+      "output": [
+        "@Berkelendiniz Sevgililer günün mübarek olsun"
+      ]
+    },
+    {
+      "id": "task021-417",
+      "input": "@Podolski10 @GalatasaraySK @ultrAslan @ultrAslanUNI @Galatasaray Sen nassı bi kralsın be poldi 🖒",
+      "output": [
+        "@Podolski10 @GalatasaraySK @ultrAslan @ultrAslanUNI @Galatasaray Sen nasıl bir kralsın be Poldi 🖒"
+      ]
+    },
+    {
+      "id": "task021-418",
+      "input": "yaptığını komik sanarak spoiler veren herkesin anasınısikeyim deliricem şimdi",
+      "output": [
+        "Yaptığını komik sanarak spoiler veren herkesin anasını sikeyim delireceğim şimdi"
+      ]
+    },
+    {
+      "id": "task021-419",
+      "input": "Biz otmuyuzya bazen kendimi öyle hissedıyorum 🥺",
+      "output": [
+        "Biz ot muyuz ya bazen kendimi öyle hissediyorum 🥺"
+      ]
+    },
+    {
+      "id": "task021-420",
+      "input": "@nordsept kdkdkdkdkd yok böyle bişey",
+      "output": [
+        "@nordsept kdkdkdkdkd yok böyle bir şey"
+      ]
+    },
+    {
+      "id": "task021-421",
+      "input": "Gün gectikce sana fazlasiyla hak vermeye basladım Erbakan hocam ..",
+      "output": [
+        "Gün geçtikçe sana fazlasıyla hak vermeye başladım Erbakan hocam .."
+      ]
+    },
+    {
+      "id": "task021-422",
+      "input": "#FenerbahçeAğlıyor Ünlü düşünür Wesley Benjamin Sneijder'in de dediği gibi ; FENER AAAAĞLAAMAAA 😁",
+      "output": [
+        "#FenerbahçeAğlıyor Ünlü düşünür Wesley Benjamin Sneijder'in de dediği gibi ; Fener ağlama 😁"
+      ]
+    },
+    {
+      "id": "task021-423",
+      "input": "@neseligot arya genel olarak boyle ndjsjk",
+      "output": [
+        "@neseligot Arya genel olarak böyle ndjsjk"
+      ]
+    },
+    {
+      "id": "task021-424",
+      "input": "14 ŞUBAT OLMASA MAĞAZALAR SÍNEK AVLAYACAK . SEVGÍLÍYÍ ÖPMEK YETMEZ MÍ ???!!!!!!!",
+      "output": [
+        "14 Şubat olmasa mağazalar sinek avlayacak . Sevgiliyi öpmek yetmez mi ???!!!!!!!"
+      ]
+    },
+    {
+      "id": "task021-425",
+      "input": "Şurup gibiyimm şurupp turp gibiyim turppp sen ateş ben de barut öptüm seni şap şuppp şaaap şuuuppp",
+      "output": [
+        "Şurup gibiyim şurup turp gibiyim turp sen ateş ben de barut öptüm seni şap şup şap şup"
+      ]
+    },
+    {
+      "id": "task021-426",
+      "input": "@shiplerimiptal Sevipte kavuşamayan günü lütfen zmzmsnnsnsn",
+      "output": [
+        "@shiplerimiptal Sevip de kavuşamayan günü lütfen zmzmsnnsnsn"
+      ]
+    },
+    {
+      "id": "task021-427",
+      "input": "@firatgunayer Bir silopili olarak nezamandir beklediğim . birşeydi",
+      "output": [
+        "@firatgunayer Bir Silopili olarak ne zamandır beklediğim . bir şeydi"
+      ]
+    },
+    {
+      "id": "task021-428",
+      "input": "@BurhanKuzu Mazot 8 tl raki 300 lira bira 10 tl sigara 15 tl bunlara da bi el atsan hocam",
+      "output": [
+        "@BurhanKuzu Mazot 8 TL rakı 300 lira bira 10 TL sigara 15 TL bunlara da bir el atsan hocam"
+      ]
+    },
+    {
+      "id": "task021-429",
+      "input": "@sikintiyoksavar Çiçek bahane bet .. Ş A H A N E",
+      "output": [
+        "@sikintiyoksavar Çiçek bahane bet .. Şahane     "
+      ]
+    },
+    {
+      "id": "task021-430",
+      "input": "@yemekteyiztv yemek programi degil , mahalle tiyatrosu . kumda oynayin aq . reziller",
+      "output": [
+        "@yemekteyiztv Yemek programı değil , mahalle tiyatrosu . Kumda oynayın amına koyayım . Reziller"
+      ]
+    },
+    {
+      "id": "task021-431",
+      "input": "@yosungozludev Adam ölü yaşamiyor eve tikildi kaldi kafayi siyirmasa iyi ... 😂😂",
+      "output": [
+        "@yosungozludev Adam ölü yaşamıyor eve tıkıldı kaldı kafayı sıyırmasa iyi ... 😂😂"
+      ]
+    },
+    {
+      "id": "task021-432",
+      "input": "22 AYDIR TARIM PRMAN BAKANLIĞI ATAMA BEKLİYOR .. MaliyeAtama SırasıTarımda",
+      "output": [
+        "22 aydır Tarım Orman Bakanlığı atama bekliyor .. Maliye atama sırası tarımda"
+      ]
+    },
+    {
+      "id": "task021-433",
+      "input": "Elbet bir gün diye diye diyer bütün günleri piçç amq : 🤨🤨",
+      "output": [
+        "Elbet bir gün diye diye diye bütün günleri piç amına koyayım : 🤨🤨"
+      ]
+    },
+    {
+      "id": "task021-434",
+      "input": "zuhauahauah bu arabayla bi de trafiğe çıkmışlar gerizekalı aptal oçlar",
+      "output": [
+        "zuhauahauah bu arabayla bir de trafiğe çıkmışlar gerizekalı aptal orospu çocukları"
+      ]
+    },
+    {
+      "id": "task021-435",
+      "input": "yuna biaslıyım çok özür dilerim ryujin",
+      "output": [
+        "Yuna biaslıyım çok özür dilerim Ryujin"
+      ]
+    },
+    {
+      "id": "task021-436",
+      "input": "arkadasimin eski sevgilisi olmasa rt lerim dogru bi tweet",
+      "output": [
+        "Arkadaşımın eski sevgilisi olmasa RT'lerim  doğru bir tweet"
+      ]
+    },
+    {
+      "id": "task021-437",
+      "input": "birbirinize aldiginiz sikimsonik hediyeleri gercekten merak etmiyoruz",
+      "output": [
+        "Birbirinize aldığınız sikimsonik hediyeleri gerçekten merak etmiyoruz"
+      ]
+    },
+    {
+      "id": "task021-438",
+      "input": "#SevgililerGününde su böregi eşliğinde çayımı yudumluyorum miss 😍",
+      "output": [
+        "#SevgililerGününde Su böreği eşliğinde çayımı yudumluyorum mis 😍"
+      ]
+    },
+    {
+      "id": "task021-439",
+      "input": "@serkan_cosan77 @time4bets_ofc @78sanmarino @adem98577755 @poorkank @Serkan03054069 @murat69185290 @lmaz_umt @weco91 @sercanerylmz16 @Sukru42250439 @bonus_son @SpeedChiko @canzal02 @jonesvinnie_ @Kosanay1903 @fbcocuk11 @trmntrx1 @tickboy07 @K384838 ne yaparsalar kendılerıne yaparlar arkadas sahtekarlıkta bı yere kadar",
+      "output": [
+        "@serkan_cosan77 @time4bets_ofc @78sanmarino @adem98577755 @poorkank @Serkan03054069 @murat69185290 @lmaz_umt @weco91 @sercanerylmz16 @Sukru42250439 @bonus_son @SpeedChiko @canzal02 @jonesvinnie_ @Kosanay1903 @fbcocuk11 @trmntrx1 @tickboy07 @K384838 Ne yaparsalar kendilerine yaparlar arkadaş sahtekarlık da bir yere kadar"
+      ]
+    },
+    {
+      "id": "task021-440",
+      "input": "Ben okudum tarifi zor ufak bi sinir krizi yasadim , sizlerle paylastim cunku sinirin verdigi tarifsiz zevki yasamanizi istedim",
+      "output": [
+        "Ben okudum tarifi zor ufak bir sinir krizi yaşadım , sizlerle paylaştım çünkü sinirin verdiği tarifsiz zevki yaşamanızı istedim"
+      ]
+    },
+    {
+      "id": "task021-441",
+      "input": "@AlkannYunus hadi inş ... gelcek misin",
+      "output": [
+        "@AlkannYunus Haydi inşallah ... Gelecek misin"
+      ]
+    },
+    {
+      "id": "task021-442",
+      "input": "@AhmetGs92 Demiroren bjksinen ilk senelrine donduk",
+      "output": [
+        "@AhmetGs92 Demirören BJK'sinin ilk senelerine döndük"
+      ]
+    },
+    {
+      "id": "task021-443",
+      "input": "Dolar #yuksekkurlar ile #1416ylsy Yurtdisi akademisyenler magdur durumda . #1416ylsytazminat @tcbestepe @mehmetucum #dövizborcu",
+      "output": [
+        "Dolar #yuksekkurlar ile #1416ylsy Yurtdışı akademisyenler mağdur durumda . #1416ylsytazminat @tcbestepe @mehmetucum #dövizborcu"
+      ]
+    },
+    {
+      "id": "task021-444",
+      "input": "Favori yabancı oyuncularım 1 Emma Watson 2 Pedro ❤❤❤",
+      "output": [
+        "Favori yabancı oyuncularım 1 Emma Watson 2 Pedro ❤❤❤"
+      ]
+    },
+    {
+      "id": "task021-445",
+      "input": "selamunaleykum ben Derkavi , bu portfolyonun sahibiyim .",
+      "output": [
+        "Selamünaleyküm ben Derkavi , bu portfolyonun sahibiyim ."
+      ]
+    },
+    {
+      "id": "task021-446",
+      "input": "@postmelik @fuzzydusunce Hocam yunan sahasina girin de oyle kullanin",
+      "output": [
+        "@postmelik @fuzzydusunce Hocam Yunan sahasına girin de öyle kulanın"
+      ]
+    },
+    {
+      "id": "task021-447",
+      "input": "Ne bakıyosun len hoşuna mı gitti",
+      "output": [
+        "Ne bakıyorsun lan hoşuna mı gitti"
+      ]
+    },
+    {
+      "id": "task021-448",
+      "input": "50 tamamlamak icin 15 kisi ihtiyacim var beni 50 ye ulaştirirmisiniz rica edyorum kuzular",
+      "output": [
+        "50 tamamlamak için 15 kişi ihtiyacım var beni 50'ye  ulaştırır mısınız rica ediyorum kuzular"
+      ]
+    },
+    {
+      "id": "task021-449",
+      "input": "@beypluss @NAGiHANKARADERE Khdkshskshskshsksnsjjsjsjsjsj beyplus hanim nikotin mi aldın kafan fazla işliyorda",
+      "output": [
+        "@beypluss @NAGiHANKARADERE Khdkshskshskshsksnsjjsjsjsjsj beyplus hanım nikotin mi aldın kafan fazla işliyor da"
+      ]
+    },
+    {
+      "id": "task021-450",
+      "input": "Sevler günün kutlu olsun bro 💜 @ardagazell",
+      "output": [
+        "Sevler günün kutlu olsun bro 💜 @ardagazell"
+      ]
+    },
+    {
+      "id": "task021-451",
+      "input": "Beni bi ' sevmeyin ulan , bi'şey deneyeceğim !",
+      "output": [
+        "Beni bir ' sevmeyin ulan , bir şey deneyeceğim !"
+      ]
+    },
+    {
+      "id": "task021-452",
+      "input": "@PltSelma GALATASARAY maçı varken kim s .. yalova ...",
+      "output": [
+        "@PltSelma Galatasaray maçı varken kim s .. Yalova ..."
+      ]
+    },
+    {
+      "id": "task021-453",
+      "input": "Sansli nesiliz . Canli canli izledik .",
+      "output": [
+        "Şanslı nesiliz . Canlı canlı izledik ."
+      ]
+    },
+    {
+      "id": "task021-454",
+      "input": "bi gün dünya diceksin adaletin batsın",
+      "output": [
+        "Bir gün dünya diyeceksin adaletin batsın"
+      ]
+    },
+    {
+      "id": "task021-455",
+      "input": "#1416ylsy ile Yurtdisinda egitim goren Akademisyenlere Yardim ! #1416ylsytazminat #Afeder_misiniz #kursabitleme #YLSY #dövizborcu #HANICOZUM #DerdimizeDerman #Mebbursu #Tazminat #GurbetKusu #MEB",
+      "output": [
+        "#1416ylsy ile yurtdışında eğitim gören akademisyenlere yardım ! #1416ylsytazminat #Afeder_misiniz #kursabitleme #YLSY #dövizborcu #HANICOZUM #DerdimizeDerman #Mebbursu #Tazminat #GurbetKusu #MEB"
+      ]
+    },
+    {
+      "id": "task021-456",
+      "input": "@rosalinda11100 Hic prenses sikmedim ami nasil acaba 😄😄",
+      "output": [
+        "@rosalinda11100 Hiç prenses sikmedim amı nasıl acaba 😄😄"
+      ]
+    },
+    {
+      "id": "task021-457",
+      "input": "su isiltili piriltili 90s efektini hangi uygulamadan yapiyorsunuz ya",
+      "output": [
+        "Şu ışıltılı pırıltılı 90s efektini hangi uygulamadan yapıyorsunuz ya"
+      ]
+    },
+    {
+      "id": "task021-458",
+      "input": "En iyilere ishak adinda bir amca vardi bence o basariliydi ve bestof olmalı #yemekteyiz",
+      "output": [
+        "En iyilere İshak adında bir amca vardı bence o başarılıydı ve bestof olmalı #yemekteyiz"
+      ]
+    },
+    {
+      "id": "task021-459",
+      "input": "Insallah 8 Mart beklarim Allah dan umudumu kesmam Insallah Rabbim Allah bana 8 Marta eşimi bana bir muçize olsun 🙏🙏🤲🤲🤲🙏☝️",
+      "output": [
+        "İnşallah 8 Mart beklerim Allah'tan  umudumu kesmem inşallah rabbim Allah bana 8 Mart'a eşimi bana bir mucize olsun 🙏🙏🤲🤲🤲🙏☝️"
+      ]
+    },
+    {
+      "id": "task021-460",
+      "input": "TEK SEANS 150 SAATLIK 350 GECELIK 800 HERTÜRLÜ FANTEZİYE AÇIĞIM 05342721679 ARA GÖRÜNTÜLÜ YER ÇANKAYA KIRIKKONAKLAR 😙 #ankara #demetevler #batikent #sincan #eryaman #ostim #etimesgut #kecioren #macunkoy #umitkoy #sihiye #cayyollu #golbasi #polatlı #esaat #kolej #mamak #akdere",
+      "output": [
+        "Tek seans 150 saatlik 350 gecelik 800 her türlü fanteziye açığım 05342721679 ara görüntülü yer Çankaya Kırıkkonaklar 😙 #ankara #demetevler #batikent #sincan #eryaman #ostim #etimesgut #kecioren #macunkoy #umitkoy #sihiye #cayyollu #golbasi #polatlı #esaat #kolej #mamak #akdere"
+      ]
+    },
+    {
+      "id": "task021-461",
+      "input": "Sevgililer gunun amk daha yemege oturmadan 1.500 lira kacti",
+      "output": [
+        "Sevgililer gününün amına koyayım daha yemeğe oturmadan 1.500 lira kaçtı"
+      ]
+    },
+    {
+      "id": "task021-462",
+      "input": "ADMİNİN CEMKERİ ASLA SALMAMASI HDBXJSJHDJDJHDJDDJDKJ",
+      "output": [
+        "Adminin Cemker'i asla salmaması HDBXJSJHDJDJHDJDDJDKJ"
+      ]
+    },
+    {
+      "id": "task021-463",
+      "input": "@rdcetin @Recep2Cetin sormak ayıptır ama 2 bın tl teklıf etsem su formaya , omur boyu saklamama ızın verır mısınız ?",
+      "output": [
+        "@rdcetin @Recep2Cetin Sormak ayıptır ama 2 bin TL teklif etsem şu formaya , ömür boyu saklamama izin verir misiniz ?"
+      ]
+    },
+    {
+      "id": "task021-464",
+      "input": "Ben geldim soran yokmuş hadi iyi akşamlaar bb dkfkkdkdld",
+      "output": [
+        "Ben geldim soran yokmuş haydi iyi akşamlar bb dkfkkdkdld"
+      ]
+    },
+    {
+      "id": "task021-465",
+      "input": "EVT 13 / 02 / 2019 TARİHİNDE GROWTOPİANIN İCİNDEN GEÇTİLER WIJSIWJSIJW",
+      "output": [
+        "Evet 13 / 02 / 2019 tarihinde Growtopia'nın içinden geçtiler WIJSIWJSIJW"
+      ]
+    },
+    {
+      "id": "task021-466",
+      "input": "@kilicdarogluk Hımmm Döner'de güzelmiş yaaa , Sağolasın M . Özhaseki Başkanım . 👍",
+      "output": [
+        "@kilicdarogluk Hım döner de güzelmiş ya , sağ olasın M . Özhaseki başkanım . 👍"
+      ]
+    },
+    {
+      "id": "task021-467",
+      "input": "Kullanıcı Adım : Kolaco123 Score 1 - Benfica 3",
+      "output": [
+        "Kullanıcı adım : Kolaco123 Score 1 - Benfica 3"
+      ]
+    },
+    {
+      "id": "task021-468",
+      "input": "Londradaki boiler rooma bitmeden bilet aliyim mi ama daha kim çıkcak belli diil",
+      "output": [
+        "Londra'daki boiler rooma bitmeden bilet alayım mı ama daha kim çıkacak belli değil"
+      ]
+    },
+    {
+      "id": "task021-469",
+      "input": "imperyilizm mi kaldı yaaaawf !?",
+      "output": [
+        "Emperyalizm mi kaldı ya !?"
+      ]
+    },
+    {
+      "id": "task021-470",
+      "input": "@nerdeyuk birisi dg için galiba Tunanin maskelerini yapmiş 🙄",
+      "output": [
+        "@nerdeyuk Birisi dg için galiba Tuna'nın maskelerini yapmış 🙄"
+      ]
+    },
+    {
+      "id": "task021-471",
+      "input": "@kookistaesbaby @eupharro Türkiye'de bangtana erişim yasağı geririlebilirmiş",
+      "output": [
+        "@kookistaesbaby @eupharro Türkiye'de Bangtan'a erişim yasağı getirilebilirmiş"
+      ]
+    },
+    {
+      "id": "task021-472",
+      "input": "Kendimi nasıl klonlayabilirim enter .",
+      "output": [
+        "Kendimi nasıl klonlayabilirim enter ."
+      ]
+    },
+    {
+      "id": "task021-473",
+      "input": "tm anliyorumda herseyi neden kadinlar bu kadar maddiyati onemsiyor ask diye yola cikiyolar parayla evlilik sona eriyor ....",
+      "output": [
+        "Tamam anlıyorum da her şeyi neden kadınlar bu kadar maddiyatı önemsiyor aşk diye yola çıkıyorlar parayla evlilik sona eriyor ...."
+      ]
+    },
+    {
+      "id": "task021-474",
+      "input": "@fatmanur_ozata @Birlikovski Bunu nasil unuturum ... Ama cok sukur bu sabah yagdı az da olsa izledim",
+      "output": [
+        "@fatmanur_ozata @Birlikovski Bunu nasıl unuturum ... Ama çok şükür bu sabah yağdı az da olsa izledim"
+      ]
+    },
+    {
+      "id": "task021-475",
+      "input": "@ulasamiyor Dost üzülüüür düşman güüleeer böyle derde gülünür müüü ??",
+      "output": [
+        "@ulasamiyor Dost üzülür düşman güler böyle derde gülünür mü ??"
+      ]
+    },
+    {
+      "id": "task021-476",
+      "input": "@kevok21_ Gūle gūle gittiğin yerdekilere selam söyle",
+      "output": [
+        "@kevok21_ Güle güle gittiğin yerdekilere selam söyle"
+      ]
+    },
+    {
+      "id": "task021-477",
+      "input": "@s2mdedegillll ben çok normal değilim ztn delimanyak tab2 enteresan olcax",
+      "output": [
+        "@s2mdedegillll Ben çok normal değilim zaten deli manyak tabii ki enteresan olacak"
+      ]
+    },
+    {
+      "id": "task021-478",
+      "input": "Adana’dan tanışacak cıftler varsa tnsbıkırız",
+      "output": [
+        "Adana'dan tanışacak çiftler varsa tanışabiliriz"
+      ]
+    },
+    {
+      "id": "task021-479",
+      "input": "@unexpected_t @mookemmelim Ulan ayip , sen Huawei p20 kullanan sahis degil misin ?",
+      "output": [
+        "@unexpected_t @mookemmelim Ulan ayıp , sen Huawei p20 kullanan şahıs değil misin ?"
+      ]
+    },
+    {
+      "id": "task021-480",
+      "input": "Vıcık vıcık story izlemekten kusacam . #14ŞubartSevgililerGünü #Valentines",
+      "output": [
+        "Vıcık vıcık story izlemekten kusacağım . #14ŞubartSevgililerGünü #Valentines"
+      ]
+    },
+    {
+      "id": "task021-481",
+      "input": "@houtningtsui90 İnsan , evrende govdesi kadar degil , yuregi kadar yer kaplar",
+      "output": [
+        "@houtningtsui90 İnsan , evrende gövdesi kadar değil , yüreği kadar yer kaplar"
+      ]
+    },
+    {
+      "id": "task021-482",
+      "input": "Ben cidden kafayi siyircam cocuklarimin yaptiginin onda birini yapsalardı daha verimli olurdu",
+      "output": [
+        "Ben cidden kafayı sıyıracağım çocuklarımın yaptığının onda birini yapsalardı daha verimli olurdu"
+      ]
+    },
+    {
+      "id": "task021-483",
+      "input": "#14ŞubartSevgililerGünü değil #14ŞubatDünyaÖyküGünü nüz kutlu olsun 😉 s*keyim sevgililer gününü",
+      "output": [
+        "#14ŞubartSevgililerGünü değil #14ŞubatDünyaÖyküGünü nüz kutlu olsun 😉 s*keyim Sevgililer Günü'nü"
+      ]
+    },
+    {
+      "id": "task021-484",
+      "input": "Benedic Cumberbatch’ın en iyi olduğu film , The Imitation Game‘dır . Aksini söyleyen ile tartışmaya varım .",
+      "output": [
+        "Benedic Cumberbatch'ın en iyi olduğu film , The Imitation Game'dir . Aksini söyleyen ile tartışmaya varım ."
+      ]
+    },
+    {
+      "id": "task021-485",
+      "input": "3 2 1 B İ T İ R İ Ş İ",
+      "output": [
+        "3 2 1 bitirişi       "
+      ]
+    },
+    {
+      "id": "task021-486",
+      "input": "@genelokuyucu1 Ay napiyorsan yap elestir bir sey mi dedik acigiz biz elestirilere",
+      "output": [
+        "@genelokuyucu1 Ay ne yapıyorsan yap eleştir bir şey mi dedik açığız biz eleştirilere"
+      ]
+    },
+    {
+      "id": "task021-487",
+      "input": "#emrahbayraktar yıne cok guzel yazmıs sonuna kadar okumanızı tavsıye ederım ...",
+      "output": [
+        "#emrahbayraktar Yine çok güzel yazmış sonuna kadar okumanızı tavsiye ederim ..."
+      ]
+    },
+    {
+      "id": "task021-488",
+      "input": "Sevgililer gününe maçmı konur a . Q",
+      "output": [
+        "Sevgililer gününe maç mı konur A . Q"
+      ]
+    },
+    {
+      "id": "task021-489",
+      "input": "#SGKÖNCESİDOĞUMBORÇLANMASI #pesdiyorum biz 600 annede size pes diyoruz yasimiz dolmus anneyiz herseyden once Kadiniz sesimiz olun yaziyoruz ilgisizsiniz pesdiyorum ,",
+      "output": [
+        "#SGKÖNCESİDOĞUMBORÇLANMASI #pesdiyorum Biz 600 anne de size pes diyoruz yaşımız dolmuş anneyiz her şeyden önce kadınız sesimiz olun yazıyoruz ilgisizsiniz pes diyorum ,"
+      ]
+    },
+    {
+      "id": "task021-490",
+      "input": "@nuri699 @Basgan @CornettoTR Kaç para ulen bir tvit ?",
+      "output": [
+        "@nuri699 @Basgan @CornettoTR Kaç para ulan bir tweet ?"
+      ]
+    },
+    {
+      "id": "task021-491",
+      "input": "#pesdiyorum IIBF MEZUNLARI MULAKAT SONUCLARINI VE YENI ILANLAR BEKLIYOR HERKES ATAMA SEVINCINI YASARKEN BIZ DE YASAMAK ISTIYORUZ SESIMIZI DUYUN",
+      "output": [
+        "#pesdiyorum İİBF mezunları mülakat sonuçlarını ve yeni ilanlar bekliyor herkes atama sevincini yaşarken biz de yaşamak istiyoruz sesimizi duyun"
+      ]
+    },
+    {
+      "id": "task021-492",
+      "input": "@DTahaBekarr @EuropaLeague @GalatasaraySK Ben ananin uzerinde denedim senin gibi biri nasil oldu hala aklim almiyor",
+      "output": [
+        "@DTahaBekarr @EuropaLeague @GalatasaraySK Ben ananın üzerinde denedim senin gibi biri nasıl oldu hala aklım almıyor"
+      ]
+    },
+    {
+      "id": "task021-493",
+      "input": "Biz #1416ylsy liler Doviz cinsinden borclarimiza SABIT DOVIZ KURU ISTIYORUZ . #1416ylsytazminat #Tazminat #yuksekkurmagdurlari",
+      "output": [
+        "Biz #1416ylsy liler döviz cinsinden borçlarımıza sabit döviz kuru istiyoruz . #1416ylsytazminat #Tazminat #yuksekkurmagdurlari"
+      ]
+    },
+    {
+      "id": "task021-494",
+      "input": "Ögrendiginde disa ? Diye tepkisini gisteemisti geri dondugumde bulmam cok zor oluyor oysa kolay bir yol vardi ff listesini aldigimda",
+      "output": [
+        "Öğrendiğinde disa ? diye tepkisini göstermişti geri döndüğümde bulmam çok zor oluyor oysa kolay bir yol vardı FF listesini aldığımda"
+      ]
+    },
+    {
+      "id": "task021-495",
+      "input": "@onediocom @ErenVurdem #ErenVurdemeSorum YavBah mı yavder mi ? Abi seni çoookk seviyorum",
+      "output": [
+        "@onediocom @ErenVurdem #ErenVurdemeSorum YavBah mı Yavder mi ? Abi seni çok seviyorum"
+      ]
+    },
+    {
+      "id": "task021-496",
+      "input": "@beyaz_gelincikk @YigitlerEgilmez @alamanyaefesi @DELILRTBRU_FNL @osimsek_herkul @umit_var19 @HUhuvvet @Brs_sukha @ahmettiris @acizbirkul34 @zlbcdyn @CraigCons @Berkbekir_ Lutfen ismimi boyle tweetlere etiketlemeyin ... saygilar ...",
+      "output": [
+        "@beyaz_gelincikk @YigitlerEgilmez @alamanyaefesi @DELILRTBRU_FNL @osimsek_herkul @umit_var19 @HUhuvvet @Brs_sukha @ahmettiris @acizbirkul34 @zlbcdyn @CraigCons @Berkbekir_ Lütfen ismimi böyle tweetlere etiketlemeyin ... Saygılar ..."
+      ]
+    },
+    {
+      "id": "task021-497",
+      "input": "Önemli olan cok takipci degil . Adam gibi muhabbet edebilecegin Insanlar .",
+      "output": [
+        "Önemli olan çok takipçi değil . Adam gibi muhabbet edebileceğin insanlar ."
+      ]
+    },
+    {
+      "id": "task021-498",
+      "input": "@Podolski10 @GalatasaraySK @ultrAslan @ultrAslanUNI @Galatasaray İstiklal marşını okuyamıyosun ama okuyanlardan çok daha Türksün Aslan parçası ı love you poldiii",
+      "output": [
+        "@Podolski10 @GalatasaraySK @ultrAslan @ultrAslanUNI @Galatasaray İstiklal Marşı'nı okuyamıyorsun ama okuyanlardan çok daha Türk'sün aslan parçası I love you Poldi"
+      ]
+    },
+    {
+      "id": "task021-499",
+      "input": "Rt leyelim taksimdeyiz biramizin pesindeyiz",
+      "output": [
+        "RT'leyelim  Taksim'deyiz biramızın peşindeyiz"
+      ]
+    },
+    {
+      "id": "task021-500",
+      "input": "Vay be 2'ci a haber vakası Kanal d bi merherciniz eksik ..",
+      "output": [
+        "Vay be 2'nci A Haber vakası Kanal D bir merherciniz eksik .."
+      ]
+    },
+    {
+      "id": "task021-501",
+      "input": "KHK ILE ATILAN BURSLULARIN BORCLARINI SILINDI ! #1416ylsy #1416ylsytazminat @TC_Basbakan @tcbestepe @yilmaz_ismet58 @varank #ogrencifaiz #faizaffı #MEB #GurbetKusu #dövizborcu #HANICOZUM #yuksekfaiz",
+      "output": [
+        "KHK ile atılan bursluların borçlarını silindi ! #1416ylsy #1416ylsytazminat @TC_Basbakan @tcbestepe @yilmaz_ismet58 @varank #ogrencifaiz #faizaffı #MEB #GurbetKusu #dövizborcu #HANICOZUM #yuksekfaiz"
+      ]
+    },
+    {
+      "id": "task021-502",
+      "input": "14 subattan sonra bi zahmet sevgilim olmasin 🤪🤪🤪",
+      "output": [
+        "14 Şubat'tan sonra bir zahmet sevgilim olmasın 🤪🤪🤪"
+      ]
+    },
+    {
+      "id": "task021-503",
+      "input": "@ezgiii_nurrrr Ne yiyip iciyosa baya kafa yapiyo",
+      "output": [
+        "@ezgiii_nurrrr Ne yiyip içiyorsa bayağı kafa yapıyor"
+      ]
+    },
+    {
+      "id": "task021-504",
+      "input": "@seymhill sanmıyorum ama sağol aşkım dkfşdmfs",
+      "output": [
+        "@seymhill Sanmıyorum ama sağ ol aşkım dkfşdmfs"
+      ]
+    },
+    {
+      "id": "task021-505",
+      "input": "@vekilince Mutlulugunuz daim olsun , insallahhhh",
+      "output": [
+        "@vekilince Mutluluğunuz daim olsun , inşallah"
+      ]
+    },
+    {
+      "id": "task021-506",
+      "input": "14 subatta manitası olan grup tarafindan linc edilmeye çalisiliyorum naptik mk sanki tanzim sirasinda onunuze mi gectik jsjdjfjj",
+      "output": [
+        "14 Şubat'ta manitası olan grup tarafından linç edilmeye çalışılıyorum ne yaptık amına koyayım sanki tanzim sırasında önünüze mi geçtik jsjdjfjj"
+      ]
+    },
+    {
+      "id": "task021-507",
+      "input": "@FYavuzovic Dikkate alip cvp verdiginiz için de tsk ederim",
+      "output": [
+        "@FYavuzovic Dikkate alıp cevap verdiğiniz için de teşekkür ederim"
+      ]
+    },
+    {
+      "id": "task021-508",
+      "input": "@dipaei43 Herkese ederi kadar deger vereceksem , simdiden soyleyeyim bazıları bedavaya gider !",
+      "output": [
+        "@dipaei43 Herkese ederi kadar değer vereceksem , şimdiden söyleyeyim bazıları bedavaya gider !"
+      ]
+    },
+    {
+      "id": "task021-509",
+      "input": "@drtennantwho @LoLespor Abi editlediler ? Wtf ? Twitter'da böyle bir şey mi vardı ?",
+      "output": [
+        "@drtennantwho @LoLespor Abi editlediler ? WTF ? Twitter'da böyle bir şey mi vardı ?"
+      ]
+    },
+    {
+      "id": "task021-510",
+      "input": "Ne kadar acimasiz bu asklar",
+      "output": [
+        "Ne kadar acımasız bu aşklar"
+      ]
+    },
+    {
+      "id": "task021-511",
+      "input": "@burcumeric ah ah yanlis devirde dogmusum beni 1950 lerin sonuna isinlayin 😢😢😢",
+      "output": [
+        "@burcumeric ah ah yanlış devirde doğmuşum beni 1950'lerin  sonuna ışınlayın 😢😢😢"
+      ]
+    },
+    {
+      "id": "task021-512",
+      "input": "@HakanSencan55 Yok kesinlikle meral . aksener acikladi",
+      "output": [
+        "@HakanSencan56 Yok kesinlikle Meral . Akşener açıkladı"
+      ]
+    },
+    {
+      "id": "task021-513",
+      "input": "@Fenerbahce Eminim gitmiyodur çünkü ali koç",
+      "output": [
+        "@Fenerbahce Eminim gitmiyordur çünkü Ali Koç"
+      ]
+    },
+    {
+      "id": "task021-514",
+      "input": "#SözümSözOYumCezaİndirimine 2013 te bana bu para cezasıni veren hakim fetoscu reisssss . fetos kurbanlarına affffffffffff reisssss . adli para cezasına affffffffffff reisssss @RT_Erdogan @abdulhamitgul @Akparti @MHP_Bilgi",
+      "output": [
+        "#SözümSözOYumCezaİndirimine 2013'te  bana bu para cezasını veren hakim Fetoş'çu reis . Fetoş kurbanlarına af reis . Adli para cezasına af reis @RT_Erdogan @abdulhamitgul @Akparti @MHP_Bilgi"
+      ]
+    },
+    {
+      "id": "task021-515",
+      "input": "@burcusaan @OnurSogukHoca Ahahah seni seviyorum siriim 😂♥️",
+      "output": [
+        "@burcusaan @OnurSogukHoca Ahahah seni seviyorum şirinim 😂♥️"
+      ]
+    },
+    {
+      "id": "task021-516",
+      "input": "csgo aticam simdi asiri sevdim bu oyunu",
+      "output": [
+        "CSGO atacağım şimdi aşırı sevdim bu oyunu"
+      ]
+    },
+    {
+      "id": "task021-517",
+      "input": "Yuksek borclarin odenmesi icin odeme planinin biraz daha makul olmasini rica ediyoruz . #1416ylsy #1416ylsytazminat #yuksekfaiz #DoktoraliFotokopici #DerdimizeDerman #devletbursu #dövizborcu",
+      "output": [
+        "Yüksek borçların ödenmesi için ödeme planının biraz daha makul olmasını rica ediyoruz . #1416ylsy #1416ylsytazminat #yuksekfaiz #DoktoraliFotokopici #DerdimizeDerman #devletbursu #dövizborcu"
+      ]
+    },
+    {
+      "id": "task021-518",
+      "input": "@E1903U Vay arkadas ne hafiza .. 😳",
+      "output": [
+        "@E1903U Vay arkadaş ne hafıza .. 😳"
+      ]
+    },
+    {
+      "id": "task021-519",
+      "input": "bayaadır izlemiyordum , #azcen e nolmuş öyle 😱😱",
+      "output": [
+        "Bayağıdır izlemiyordum , #azcen e ne olmuş öyle 😱😱"
+      ]
+    },
+    {
+      "id": "task021-520",
+      "input": "Havada ne çoookkk yalan uçuyoorr , pes",
+      "output": [
+        "Havada ne çok yalan uçuyor , pes"
+      ]
+    },
+    {
+      "id": "task021-521",
+      "input": "@zedinprofili @deefnecik @lalfizu burdada mı viral olmaya geldiiin",
+      "output": [
+        "@zedinprofili @deefnecik @lalfizu Burada da mı viral olmaya geldin"
+      ]
+    },
+    {
+      "id": "task021-522",
+      "input": "ne bekliyon annam siktirip gitsinler artik şu piçler",
+      "output": [
+        "Ne bekliyorsun anam siktirip gitsinler artık şu piçler"
+      ]
+    },
+    {
+      "id": "task021-523",
+      "input": "Hapise mi giriyormuşuz kpop'mu yasaklanıyormuş nolmuş sjsjshksjskdhdkjdkkd",
+      "output": [
+        "Hapse mi giriyormuşuz kpop mu yasaklanıyormuş ne olmuş sjsjshksjskdhdkjdkkd"
+      ]
+    },
+    {
+      "id": "task021-524",
+      "input": "@lostcIub @rabestark @reacthor isicem kuzi ne diyon amk",
+      "output": [
+        "@lostcIub @rabestark @reacthor İşeyeceğim kuzi ne diyorsun amına koyayım"
+      ]
+    },
+    {
+      "id": "task021-525",
+      "input": "Wta maçları netflixte yayınlanmalı amk . Her türlü olay var .",
+      "output": [
+        "WTA maçları Netflix'te yayınlanmalı amına koyayım . Her türlü olay var ."
+      ]
+    },
+    {
+      "id": "task021-526",
+      "input": "Pimimi cekmeseniz iyi olcak 😡",
+      "output": [
+        "Pimimi çekmeseniz iyi olacak 😡"
+      ]
+    },
+    {
+      "id": "task021-527",
+      "input": "@1907nokta 23 senedir calıyo siz yeni yetistiniz ..",
+      "output": [
+        "@1907nokta 23 senedir çalıyor siz yeni yetiştiniz .."
+      ]
+    },
+    {
+      "id": "task021-528",
+      "input": "@EmreUslu g...unde yer mi aciyon hain",
+      "output": [
+        "@EmreUslu g...unde yer mi açıyorsun hain"
+      ]
+    },
+    {
+      "id": "task021-529",
+      "input": "@CZ_Signalium @EnaYatirim Borsa reçetesiyse sayesinde millet gercekten kazaniyor",
+      "output": [
+        "@CZ_Signalium @EnaYatirim Borsa reçetesiyse sayesinde millet gerçekten kazanıyor"
+      ]
+    },
+    {
+      "id": "task021-530",
+      "input": "@starktomade @puppycalmikey ilk defa gordum kendisini ben sahsen",
+      "output": [
+        "@starktomade @puppycalmikey İlk defa gördüm kendisini ben şahsen"
+      ]
+    },
+    {
+      "id": "task021-531",
+      "input": "Black friday gibisin hep ucuzsun",
+      "output": [
+        "Black Friday gibisin hep ucuzsun"
+      ]
+    },
+    {
+      "id": "task021-532",
+      "input": "@cestomina instagram dm'den kari kiza yavsiyo garibim bir kiz dusureyim umuduyla yavsakligini bir tik daha on plana cikarmis oluyor .",
+      "output": [
+        "@cestomina Instagram DM'den karı kıza yavşıyor garibim bir kız düşüreyim umuduyla yavşaklığını bir tık daha ön plana çıkarmış oluyor ."
+      ]
+    },
+    {
+      "id": "task021-533",
+      "input": "Depresyondayim diye her yeri soluk goruyorum saniyodum meger gozlerim gormuyomus gozluk takinca farkettim vay be",
+      "output": [
+        "Depresyondayım diye her yeri soluk görüyorum sanıyordum meğer gözlerim görmüyormuş gözlük takınca fark ettim vay be"
+      ]
+    },
+    {
+      "id": "task021-534",
+      "input": "@refik_ozen16 21 gunu kaldir ne yaparsan yap",
+      "output": [
+        "@refik_ozen16 21 günü kaldır ne yaparsan yap"
+      ]
+    },
+    {
+      "id": "task021-535",
+      "input": "@5SOS Tamam bi albüm çıkardınız 3 sene sonrada 82727272 tane version a gerek yok isTE Mİ YOR U Z",
+      "output": [
+        "@5SOS Tamam bir albüm çıkardınız 3 sene sonra da 82727272 tane versiyona  gerek yok istemiyoruz    "
+      ]
+    },
+    {
+      "id": "task021-536",
+      "input": "omzuna dogru yikilayim diyorum",
+      "output": [
+        "Omzuna doğru yıkılayım diyorum"
+      ]
+    },
+    {
+      "id": "task021-537",
+      "input": "@siberzorbaby Ticaretle ugrasan adam boyle olamaz",
+      "output": [
+        "@siberzorbaby Ticaretle uğraşan adam böyle olamaz"
+      ]
+    },
+    {
+      "id": "task021-538",
+      "input": "Mutluluktan uçucam ama kilom izin vermiyo",
+      "output": [
+        "Mutluluktan uçacağım ama kilom izin vermiyor"
+      ]
+    },
+    {
+      "id": "task021-539",
+      "input": "#pesdiyorum sucsuz Yere insanlar eleniyor kalkmali artik mulakat",
+      "output": [
+        "#pesdiyorum Suçsuz yere insanlar eleniyor kalkmalı artık mülakat"
+      ]
+    },
+    {
+      "id": "task021-540",
+      "input": "Yuksek borclarin odenmesi icin odeme planinin biraz daha makul olmasini rica ediyoruz . #1416ylsy #1416ylsytazminat #FaizsizBurs #yuksekkurlar #Afeder_misiniz #ogrencifaiz #CozumIstiyoruz #yuksekfaiz",
+      "output": [
+        "Yüksek borçların ödenmesi için ödeme planının biraz daha makul olmasını rica ediyoruz . #1416ylsy #1416ylsytazminat #FaizsizBurs #yuksekkurlar #Afeder_misiniz #ogrencifaiz #CozumIstiyoruz #yuksekfaiz"
+      ]
+    },
+    {
+      "id": "task021-541",
+      "input": "Yiaa Murat Özari mcwfcnin babasi olarak orada 😻😙 . Biri beni Murat Özari'nin Murat Ceylan'i sevdigi kadar sevebilir mi ?",
+      "output": [
+        "Ya Murat Özarı MCWFC'nin babası olarak orada 😻😙 . Biri beni Murat Özarı'nın Murat Ceylan'ı sevdiği kadar sevebilir mi ?"
+      ]
+    },
+    {
+      "id": "task021-542",
+      "input": "@yilmazaydin4949 ne olucak chp hdp ı . partı saadet hepsınde var mıllet goruyor",
+      "output": [
+        "@yilmazaydin4949 Ne olacak CHP HDP İ . Parti Saadet hepsinde var millet görüyor"
+      ]
+    },
+    {
+      "id": "task021-543",
+      "input": "@Superbetin_TR Gs 2 - 1 benfica #SuperbetindeKazandım Kullanıcı adı wolf010203 @cnplt05 @einanc007 @1702ozan @MeteBendeniz @Bahisbey2",
+      "output": [
+        "@Superbetin_TR GS 2 - 1 Benfica #SuperbetindeKazandım Kullanıcı adı wolf010203 @cnplt05 @einanc007 @1702ozan @MeteBendeniz @Bahisbey2"
+      ]
+    },
+    {
+      "id": "task021-544",
+      "input": "@erkan_tiryaki Keşke aykut ve alex elele trübünlere tezahuratı olsa",
+      "output": [
+        "@erkan_tiryaki Keşke Aykut ve Alex el ele tribünlere tezahüratı olsa"
+      ]
+    },
+    {
+      "id": "task021-545",
+      "input": "@ohameth alma amınakoyim fkfkfoofldodlrodrl beni ciddiye alırsanıznçok kötü şeyler olurdkdoflrxpdlv",
+      "output": [
+        "@ohameth Alma amına koyayım fkfkfoofldodlrodrl beni ciddiye alırsanız çok kötü şeyler olur dkdoflrxpdlv"
+      ]
+    },
+    {
+      "id": "task021-546",
+      "input": "Ne guzel Avrupaya gideceklerine inanmis olan suriyelileri arabaya bindirip suriyeye biraksaydiniz keske .. Avrupa ya degil ulkenize gidin",
+      "output": [
+        "Ne güzel Avrupa'ya gideceklerine inanmış olan Suriyelileri arabaya bindirip Suriye'ye bıraksaydınız keşke .. Avrupa'ya  değil ülkenize gidin"
+      ]
+    },
+    {
+      "id": "task021-547",
+      "input": "@06melihgokcek Bizler bu kardesimizin vekil yapilmayisini icimize sindiremedik . Gelecek secimde mutlaka aday yapilmali",
+      "output": [
+        "@06melihgokcek Bizler bu kardeşimizin vekil yapılmayışını içimize sindiremedik . Gelecek seçimde mutlaka aday yapılmalı"
+      ]
+    },
+    {
+      "id": "task021-548",
+      "input": "Slm ıyı akşamlar tanışalım göruşelım özele alın bı",
+      "output": [
+        "Selam iyi akşamlar tanışalım görüşelim özele alın bir"
+      ]
+    },
+    {
+      "id": "task021-549",
+      "input": "MESAFELER COK DA TIRT BİR ŞEYLERDİR",
+      "output": [
+        "Mesafeler çok da tırt bir şeylerdir"
+      ]
+    },
+    {
+      "id": "task021-550",
+      "input": "@goalmarhaka22 Kotuluk yaptın mı kork ! cunku o bir tohumdur Allah yesertir , karsına cıkarır",
+      "output": [
+        "@goalmarhaka22 Kötülük yaptın mı kork ! Çünkü o bir tohumdur Allah yeşertir , karşına çıkarır"
+      ]
+    },
+    {
+      "id": "task021-551",
+      "input": "@NoTiktok video baslarken hic boyle bir sey beklemiyodum 10 / 10",
+      "output": [
+        "@NoTiktok Video başlarken hiç böyle bir şey beklemiyordum 10 / 10"
+      ]
+    },
+    {
+      "id": "task021-552",
+      "input": "@Matematikci_Bob Ağlıyorum zaten cicek alanim yok favlayinca da yok öf #ValentinesDay bit artik",
+      "output": [
+        "@Matematikci_Bob Ağlıyorum zaten çiçek alanım yok favlayınca da yok öf #ValentinesDay bit artık"
+      ]
+    },
+    {
+      "id": "task021-553",
+      "input": "@nuryarenyldrm Sana gelmedi sanirim ? Ondandir bu sitemin 😔",
+      "output": [
+        "@nuryarenyldrm Sana gelmedi sanırım ? Ondandır bu sitemin 😔"
+      ]
+    },
+    {
+      "id": "task021-554",
+      "input": "sigarasını yakıyo sahnede wiz ama bize gelınce amınakodum hapis aah",
+      "output": [
+        "Sigarasını yakıyor sahnede wiz ama bize gelince amına koyduğum hapis aah"
+      ]
+    },
+    {
+      "id": "task021-555",
+      "input": "Mutluluk hakkın değiiiil sevilip gülemezsin pişman olsan boşuna geriye dönemezsiiiiiiiiiiiiiiiiin Bergeeeeeeeeeeeeeeeeeeeeeeeeeen babaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaallaaaaaaaaaaaaaaaaaaaaaaaaaaahhhhhhhh",
+      "output": [
+        "Mutluluk hakkın değil sevilip gülemezsin pişman olsan boşuna geriye dönemezsin Bergen baba Allah"
+      ]
+    },
+    {
+      "id": "task021-556",
+      "input": "Bu mubarek cumaaksaminiz hayırlara vesile olsun . Serlerden belalardan uzak hayırli ömurler nasip etsin Rabbimiz .",
+      "output": [
+        "Bu mübarek Cuma akşamınız hayırlara vesile olsun . Şerlerden belalardan uzak hayırlı ömürler nasip etsin rabbimiz ."
+      ]
+    },
+    {
+      "id": "task021-557",
+      "input": "Stadta mevlüt mü okutsak napsak 😂",
+      "output": [
+        "Statta mevlüt mü okutsak ne yapsak 😂"
+      ]
+    },
+    {
+      "id": "task021-558",
+      "input": "Sevgilimden alabilecegim en guzel sevgililer gunu hediyesi",
+      "output": [
+        "Sevgilimden alabileceğim en güzel Sevgililer Günü hediyesi"
+      ]
+    },
+    {
+      "id": "task021-559",
+      "input": "@turk_videolar Kaç yildir ordayim böyle eser görmedim . Saatlerdir tek elle bakiyorum",
+      "output": [
+        "@turk_videolar Kaç yıldır oradayım böyle eser görmedim . Saatlerdir tek elle bakıyorum"
+      ]
+    },
+    {
+      "id": "task021-560",
+      "input": "Aq bide bizim tr dizilerine bak",
+      "output": [
+        "Amına koyayım bir de bizim Türk dizilerine bak"
+      ]
+    },
+    {
+      "id": "task021-561",
+      "input": "@euronews_tr @serakadigil Trans bireyleri mi düşüncez simdide topluma versikleri zarar yetmezmiş gibi",
+      "output": [
+        "@euronews_tr @serakadigil Trans bireyleri mi düşüneceğiz şimdi de topluma verdikleri zarar yetmezmiş gibi"
+      ]
+    },
+    {
+      "id": "task021-562",
+      "input": "@BeratAlbayrak MaliyeAtama SırasıTarımda Sayın Bakanm onay sırası 21 aydr bekleyn Tarm ve Orman Bakanlğna gelmdi mi ? 10551 kişilik alımı onylamanzı beklyorz . #TarımBakanlığı10binAtama #EnAz1000SuÜrünleriMühendisi #suürünlerimühendisleriatamabekliyor #TarımveOrmanBakanlığıAtamaBekliyor . 67",
+      "output": [
+        "@BeratAlbayrak Maliye atama sırası tarımda sayın bakanım onay sırası 21 aydır bekleyen Tarım ve Orman Bakanlğı'na gelmedi mi ? 10551 kişilik alımı onaylamanızı bekliyoruz . #TarımBakanlığı10binAtama #EnAz1000SuÜrünleriMühendisi #suürünlerimühendisleriatamabekliyor #TarımveOrmanBakanlığıAtamaBekliyor . 67"
+      ]
+    },
+    {
+      "id": "task021-563",
+      "input": "@hogwartsswizard @jeanobrienus Kanka şişmenij bi ucundan oturuyorsun diğer ucundan birisi bi atlio kos a kadar gidersin",
+      "output": [
+        "@hogwartsswizard @jeanobrienus Kanka şişmenin bir ucundan oturuyorsun diğer ucundan birisi bir atlıyor Kos'a  kadar gidersin"
+      ]
+    },
+    {
+      "id": "task021-564",
+      "input": "@gukslip HAFTALARDIR HER GUN BEYNIMDE CIKMIYO",
+      "output": [
+        "@gukslip Haftalardır her gün beynimde çıkmıyor"
+      ]
+    },
+    {
+      "id": "task021-565",
+      "input": "@simgeesiiz merhaba simgesevgililr gunun kutlu olsun",
+      "output": [
+        "@simgeesiiz Merhaba Simge Sevgililer Günü'n kutlu olsun"
+      ]
+    },
+    {
+      "id": "task021-566",
+      "input": "Kendine guveni olmayani ezerler lan dik durun biraz ezilip buzulmeyin",
+      "output": [
+        "Kendine güveni olmayanı ezerler lan dik durun biraz ezilip büzülmeyin"
+      ]
+    },
+    {
+      "id": "task021-567",
+      "input": "bakiyorum buralarda cok #ensest #pasif #cuckold var ama bizimle konusmak isteyen yok dm atin arkadaslar konusalim",
+      "output": [
+        "Bakıyorum buralarda çok #ensest #pasif #cuckold var ama bizimle konuşmak isteyen yok DM atın arkadaşlar konuşalım"
+      ]
+    },
+    {
+      "id": "task021-568",
+      "input": "Yokmu şöyle evli bülentler falan takılsak ?",
+      "output": [
+        "Yok mu şöyle evli Bülentler falan takılsak ?"
+      ]
+    },
+    {
+      "id": "task021-569",
+      "input": "@bokvarafedersin ben olayim diyorum , olur mu benden ? Cok heteroyum ama bu is icin",
+      "output": [
+        "@bokvarafedersin Ben olayım diyorum , olur mu benden ? Çok heteroyum ama bu iş için"
+      ]
+    }
+  ],
+  "Instance License": [
+    "Unknown"
+  ]
+}

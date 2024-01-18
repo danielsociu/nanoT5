@@ -1,0 +1,4137 @@
+{
+  "Contributors": [
+    "Swaroop Mishra",
+    "Daniel Khashabi"
+  ],
+  "Source": [
+    "MultiLexNorm: Multilingual Lexical Normalization"
+  ],
+  "URL": [
+    "https://noisy-text.github.io/2021/multi-lexnorm.html"
+  ],
+  "Categories": [
+    "Lexical Normalization"
+  ],
+  "Reasoning": [
+    "Temporal Reasoning",
+    "Commonsense Reasoning"
+  ],
+  "Definition": [
+    "Lexical norm"
+  ],
+  "Input_language": [
+    "Multilanguage"
+  ],
+  "Output_language": [
+    "Multilanguage"
+  ],
+  "Instruction_language": [
+    "Multilanguage"
+  ],
+  "Domains": [
+    "Twitter",
+    "Arto",
+    "sms",
+    "forum"
+  ],
+  "Positive Examples": [
+    {
+      "input": "3 muss auch ma sein , wo ich sonst nur nörgel %PosSmiley",
+      "output": "3 muss auch mal sein , wo ich sonst nur nörgele %PosSmiley",
+      "explanation": "The text is now lexically normalized and correct."
+    }
+  ],
+  "Negative Examples": [
+    {
+      "input": "Ich finde Dich wunderschön !!",
+      "output": "Ich finde Diche wuasdnderschön !!",
+      "explanation": "The text is not lexically normalized and it is incorrect."
+    }
+  ],
+  "Instances": [
+    {
+      "id": "task004-0",
+      "input": "Juhuuuuu ...",
+      "output": [
+        "Juhu ..."
+      ]
+    },
+    {
+      "id": "task004-1",
+      "input": "Sooo langsam aber sicher nimmt das neue Set Gestaltung an ...",
+      "output": [
+        "So langsam aber sicher nimmt das neue Set Gestaltung an ..."
+      ]
+    },
+    {
+      "id": "task004-2",
+      "input": "endlich ... %PosSmiley",
+      "output": [
+        "Endlich ... %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-3",
+      "input": "weil ich es grad selber ausprobiere - Chili mit extra Jalapeno .",
+      "output": [
+        "Weil ich es gerade selber ausprobiere - Chili mit extra Jalapeño ."
+      ]
+    },
+    {
+      "id": "task004-4",
+      "input": "Das ist dann doch eine sehr angenehm schärfliche Variante ...",
+      "output": [
+        "Das ist dann doch eine sehr angenehm schärfliche Variante ..."
+      ]
+    },
+    {
+      "id": "task004-5",
+      "input": "bpt112 vor allem für die Presse wärs gut wenn die Antragstexte auf der Leinwand stünden , denk ich .",
+      "output": [
+        "bpt112 vor allem für die Presse wäre es gut wenn die Antragstexte auf der Leinwand stünden , denke ich ."
+      ]
+    },
+    {
+      "id": "task004-6",
+      "input": "Geht das ?",
+      "output": [
+        "Geht das ?"
+      ]
+    },
+    {
+      "id": "task004-7",
+      "input": "%PosSmiley",
+      "output": [
+        "%PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-8",
+      "input": "Dich find ich einfach nur süss ~",
+      "output": [
+        "Dich finde ich einfach nur süss ~"
+      ]
+    },
+    {
+      "id": "task004-9",
+      "input": "Ich weiss , du willst als Asbel nicht süss genannt werden , aber ... du bist süss q//q \"",
+      "output": [
+        "Ich weiss , du willst als Asbel nicht süss genannt werden , aber ... du bist süss q//q \""
+      ]
+    },
+    {
+      "id": "task004-10",
+      "input": "Bin bissl. erkältet aber sonst gut !!!",
+      "output": [
+        "Bin bisschen erkältet aber sonst gut !!!"
+      ]
+    },
+    {
+      "id": "task004-11",
+      "input": "Ich bin sooo fro das du doch da bist ! %PosSmiley",
+      "output": [
+        "Ich bin so froh dass du doch da bist ! %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-12",
+      "input": "Keine Ahnung , aber ich freu mich darauf , die Kollegen im Büro zu sehen , wenn sie alle auf ihren Bildschirmen rumwurschteln",
+      "output": [
+        "Keine Ahnung , aber ich freue mich darauf , die Kollegen im Büro zu sehen , wenn sie alle auf ihren Bildschirmen herumwursteln"
+      ]
+    },
+    {
+      "id": "task004-13",
+      "input": "Windows",
+      "output": [
+        "Windows"
+      ]
+    },
+    {
+      "id": "task004-14",
+      "input": "Das Wesen der Fotografie : Ein Elementarbuch",
+      "output": [
+        "Das Wesen der Fotografie : Ein Elementarbuch"
+      ]
+    },
+    {
+      "id": "task004-15",
+      "input": "- Das Wesen der Fotografie : Ein Elementarbuch Listen",
+      "output": [
+        "- Das Wesen der Fotografie : Ein Elementarbuch Listen"
+      ]
+    },
+    {
+      "id": "task004-16",
+      "input": "Preis : EUR 39,95 Pr ...",
+      "output": [
+        "Preis : EUR 39,95 Preis ..."
+      ]
+    },
+    {
+      "id": "task004-17",
+      "input": "Jaa die andere was bouke xd",
+      "output": [
+        "Ja die andere was bouke xd"
+      ]
+    },
+    {
+      "id": "task004-18",
+      "input": "oh mein Gott irgendein Typ wollte uns grad entführen , ich bin NOCH NIE so schnell gerannt %PosSmiley",
+      "output": [
+        "Oh mein Gott irgendein Typ wollte uns gerade entführen , ich bin noch nie so schnell gerannt %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-19",
+      "input": "Original Stokke Tripp Trapp Stuhl !!!!",
+      "output": [
+        "Original Stokke Tripp Trapp Stuhl !!!!"
+      ]
+    },
+    {
+      "id": "task004-20",
+      "input": ":",
+      "output": [
+        ":"
+      ]
+    },
+    {
+      "id": "task004-21",
+      "input": "Neumünster , Holstein | Verkaufe hier ein Original Stokke Kinderstuh ...",
+      "output": [
+        "Neumünster , Holstein | Verkaufe hier einen Original Stokke Kinderstuhl ..."
+      ]
+    },
+    {
+      "id": "task004-22",
+      "input": "achso .",
+      "output": [
+        "Ach so ."
+      ]
+    },
+    {
+      "id": "task004-23",
+      "input": "dann weiss ich jetzt mehr ^^",
+      "output": [
+        "Dann weiss ich jetzt mehr ^^"
+      ]
+    },
+    {
+      "id": "task004-24",
+      "input": "ach scheiss auf das losglück !",
+      "output": [
+        "Ach scheisse auf das Losglück !"
+      ]
+    },
+    {
+      "id": "task004-25",
+      "input": "her mit der todesgruppe , dann können wir schon von anfang an eier zeigen ! em2012",
+      "output": [
+        "Her mit der Todesgruppe , dann können wir schon von Anfang an Eier zeigen ! em2012"
+      ]
+    },
+    {
+      "id": "task004-26",
+      "input": "Hm , soll ich wirklich zu twannheim gehen .",
+      "output": [
+        "Hm , soll ich wirklich zu Twannheim gehen ."
+      ]
+    },
+    {
+      "id": "task004-27",
+      "input": "Ich kenn da niemanden ausser Jannis .",
+      "output": [
+        "Ich kenne da niemanden ausser Jannis ."
+      ]
+    },
+    {
+      "id": "task004-28",
+      "input": "Nicht mal über Twitter .",
+      "output": [
+        "Nicht einmal über Twitter ."
+      ]
+    },
+    {
+      "id": "task004-29",
+      "input": "guter Tipp , werd' ich ausprobieren .",
+      "output": [
+        "Guter Tipp , werde ich ausprobieren ."
+      ]
+    },
+    {
+      "id": "task004-30",
+      "input": "Danke !",
+      "output": [
+        "Danke !"
+      ]
+    },
+    {
+      "id": "task004-31",
+      "input": "\" Du twitterst erst zuviel , wenn Du reden , Essen und Kopfschütteln durch Tastentöne ersetzt . \"",
+      "output": [
+        "\" Du twitterst erst zu viel , wenn Du reden , Essen und Kopfschütteln durch Tastentöne ersetzt . \""
+      ]
+    },
+    {
+      "id": "task004-32",
+      "input": "nun in school chillin hbu",
+      "output": [
+        "Nun in School chilling hbu"
+      ]
+    },
+    {
+      "id": "task004-33",
+      "input": "fuck , wann kommen die vids ?",
+      "output": [
+        "Fuck , wann kommen die videos ?"
+      ]
+    },
+    {
+      "id": "task004-34",
+      "input": "Bin so neugierig .. %PosSmiley",
+      "output": [
+        "Bin so neugierig .. %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-35",
+      "input": "wir haben neuen Autor ^^",
+      "output": [
+        "Wir haben neuen Autor ^^"
+      ]
+    },
+    {
+      "id": "task004-36",
+      "input": "awww nicht mehr lange dann sehen wir sie auch wieder",
+      "output": [
+        "Awww nicht mehr lange dann sehen wir sie auch wieder"
+      ]
+    },
+    {
+      "id": "task004-37",
+      "input": "ahh ich freu mich schon richtig",
+      "output": [
+        "ahh ich freue mich schon richtig"
+      ]
+    },
+    {
+      "id": "task004-38",
+      "input": "ich meine hey , ich biete mich als begleitung , essen umsonst und nochmehr alkohol umsonst ...",
+      "output": [
+        "Ich meine hey , ich biete mich als Begleitung , Essen umsonst und noch mehr Alkohol umsonst ..."
+      ]
+    },
+    {
+      "id": "task004-39",
+      "input": "sollte nich so schwer sein wen zu finden",
+      "output": [
+        "Sollte nicht so schwer sein jemanden zu finden"
+      ]
+    },
+    {
+      "id": "task004-40",
+      "input": "MAH ...",
+      "output": [
+        "MAH ..."
+      ]
+    },
+    {
+      "id": "task004-41",
+      "input": "wie bin ich noch mal auf die bekloppte Idee gekommen Pagereviews anzubieten ?",
+      "output": [
+        "Wie bin ich noch mal auf die bekloppte Idee gekommen Pagereviews anzubieten ?"
+      ]
+    },
+    {
+      "id": "task004-42",
+      "input": "ich kann die teile nich schreiben ..",
+      "output": [
+        "Ich kann die Teile nicht schreiben .."
+      ]
+    },
+    {
+      "id": "task004-43",
+      "input": "* tief einatmet *",
+      "output": [
+        "* tief einatmet *"
+      ]
+    },
+    {
+      "id": "task004-44",
+      "input": "Auf @username getroffen .",
+      "output": [
+        "Auf @username getroffen ."
+      ]
+    },
+    {
+      "id": "task004-45",
+      "input": "Leichte Profilneurose aber sonst nicht übermässig dusselig .",
+      "output": [
+        "Leichte Profilneurose aber sonst nicht übermässig duselig ."
+      ]
+    },
+    {
+      "id": "task004-46",
+      "input": "Ist der auf dem Weg zur Leuterung ?",
+      "output": [
+        "Ist der auf dem Weg zur Läuterung ?"
+      ]
+    },
+    {
+      "id": "task004-47",
+      "input": "Weiss es nicht . %PosSmiley",
+      "output": [
+        "Weiss es nicht . %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-48",
+      "input": "Günther Jauch bezeichnet Gottschalk als sein Vorbild : Thomas Gottschalk moderiert heute nach 23 Jahren zum letzt ...",
+      "output": [
+        "Günther Jauch bezeichnet Gottschalk als sein Vorbild : Thomas Gottschalk moderiert heute nach 23 Jahren zum letzten ..."
+      ]
+    },
+    {
+      "id": "task004-49",
+      "input": "@username macht doch auch mal ne Casting Show für Hip Hopper %PosSmiley",
+      "output": [
+        "@username macht doch auch mal eine Casting Show für Hip Hopper %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-50",
+      "input": "Ey , ich hab auch noch nen Videorekorder und nen Röhren TV !!! %PosSmiley wettendass",
+      "output": [
+        "Ey , ich habe auch noch einen Videorekorder und einen Röhren TV !!! %PosSmiley Wetten, dass"
+      ]
+    },
+    {
+      "id": "task004-51",
+      "input": "Coole X-Mas-Promo als Engel in Aachen %Link promojob",
+      "output": [
+        "Coole Christmas-Promotion als Engel in Aachen %Link promojob"
+      ]
+    },
+    {
+      "id": "task004-52",
+      "input": "guten morgen :) 28 grad , wenig gelsen heute nacht ; den kolibris im garten gehts gut ; wassermelone zum frühstück .",
+      "output": [
+        "Guten Morgen :) 28 Grad , wenig gelesen heute Nacht ; den Kolibris im Garten geht es gut ; Wassermelone zum Frühstück ."
+      ]
+    },
+    {
+      "id": "task004-53",
+      "input": "und in wien so ?",
+      "output": [
+        "Und in Wien so ?"
+      ]
+    },
+    {
+      "id": "task004-54",
+      "input": "urlaub",
+      "output": [
+        "Urlaub"
+      ]
+    },
+    {
+      "id": "task004-55",
+      "input": "HANSGROHE Axor Starck Elektronik-Waschtischmischer , mit Netzansc - HANSGROHE Axor ...",
+      "output": [
+        "HANSGROHE Axor Starck Elektronik-Waschtischmischer , mit Netzanschluss - HANSGROHE Axor ..."
+      ]
+    },
+    {
+      "id": "task004-56",
+      "input": "finden Sie unter ...",
+      "output": [
+        "finden Sie unter ..."
+      ]
+    },
+    {
+      "id": "task004-57",
+      "input": "Überragende Wild Boys stürzen den Tabellenführer : Am Freitagabend fegten die Wild Boys Chemnitz den Tabellenführ ...",
+      "output": [
+        "Überragende Wild Boys stürzen den Tabellenführer : Am Freitagabend fegten die Wild Boys Chemnitz den Tabellenführer ..."
+      ]
+    },
+    {
+      "id": "task004-58",
+      "input": "ey pls suck ma dick man !!",
+      "output": [
+        "ey please suck my dick man !!"
+      ]
+    },
+    {
+      "id": "task004-59",
+      "input": "Wir gehen dass Pokal erober ...",
+      "output": [
+        "Wir gehen dass Pokal erobern ..."
+      ]
+    },
+    {
+      "id": "task004-60",
+      "input": "Hat sich das @username mal die Twitterkommentare über die Hunziker durchgelesen ?!",
+      "output": [
+        "Hat sich das @username mal die Twitterkommentare über die Hunziker durchgelesen ?!"
+      ]
+    },
+    {
+      "id": "task004-61",
+      "input": "9 von 10 sind nicht gerade positiv .",
+      "output": [
+        "9 von 10 sind nicht gerade positiv ."
+      ]
+    },
+    {
+      "id": "task004-62",
+      "input": "soll heissen ?...",
+      "output": [
+        "Soll heissen ?..."
+      ]
+    },
+    {
+      "id": "task004-63",
+      "input": "naaa ?",
+      "output": [
+        "Naaa ?"
+      ]
+    },
+    {
+      "id": "task004-64",
+      "input": "wie rechts muss man für son satz sein ?",
+      "output": [
+        "Wie rechts muss man für so einen Satz sein ?"
+      ]
+    },
+    {
+      "id": "task004-65",
+      "input": "Ok , Linkspartei ist links überholt . bpt112",
+      "output": [
+        "Ok , Linkspartei ist links überholt . bpt112"
+      ]
+    },
+    {
+      "id": "task004-66",
+      "input": "Hey Bro , du und ich fahren morgen in den Zeller und kaufen die Teller . %PosSmiley",
+      "output": [
+        "Hey Brother , du und ich fahren morgen in den Zeller und kaufen die Teller . %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-67",
+      "input": "Also komm net so spät heim morgen , okay ? %PosSmiley3",
+      "output": [
+        "Also komm nicht so spät heim morgen , okay ? %PosSmiley3"
+      ]
+    },
+    {
+      "id": "task004-68",
+      "input": "sehr sehr sehenswert !",
+      "output": [
+        "Sehr sehr sehenswert !"
+      ]
+    },
+    {
+      "id": "task004-69",
+      "input": "habs aufgenommen wenns wär ... wdr fcb",
+      "output": [
+        "Habe es aufgenommen wenn es wäre ... wdr fcb"
+      ]
+    },
+    {
+      "id": "task004-70",
+      "input": "siehste , ich hätt jetzt gedacht , das wär ' Art Springmaus .",
+      "output": [
+        "Siehst du , ich hätte jetzt gedacht , das wäre eine Art Springmaus ."
+      ]
+    },
+    {
+      "id": "task004-71",
+      "input": "Fail",
+      "output": [
+        "Fail"
+      ]
+    },
+    {
+      "id": "task004-72",
+      "input": "Aber : Legitimation der \" Herrschaft \" durch Beteiligung der \" Wähler \" und Zustimmung einer \" Mehrheit \" .",
+      "output": [
+        "Aber : Legitimation der \" Herrschaft \" durch Beteiligung der \" Wähler \" und Zustimmung einer \" Mehrheit \" ."
+      ]
+    },
+    {
+      "id": "task004-73",
+      "input": "Aber Austritt , weils nicht nach",
+      "output": [
+        "Aber Austritt , weil es nicht nach"
+      ]
+    },
+    {
+      "id": "task004-74",
+      "input": "ic bin sehr gut und du ?",
+      "output": [
+        "Ich bin sehr gut und du ?"
+      ]
+    },
+    {
+      "id": "task004-75",
+      "input": "wie geht es dir ?",
+      "output": [
+        "Wie geht es dir ?"
+      ]
+    },
+    {
+      "id": "task004-76",
+      "input": "was reservieren ?",
+      "output": [
+        "Was reservieren ?"
+      ]
+    },
+    {
+      "id": "task004-77",
+      "input": "Kannse mir nen zwanny mitbringen .",
+      "output": [
+        "Kannst du mir einen Zwanziger mitbringen ."
+      ]
+    },
+    {
+      "id": "task004-78",
+      "input": "Taschengeld ist noch nicht auf mein konto .",
+      "output": [
+        "Taschengeld ist noch nicht auf meinen Konto ."
+      ]
+    },
+    {
+      "id": "task004-79",
+      "input": "Kriegsse dann morgen oder monday baik",
+      "output": [
+        "Kriegst du dann morgen oder Monday back"
+      ]
+    },
+    {
+      "id": "task004-80",
+      "input": "Bei @username gibts zu silvester traditionell Berliner , Abgefüllt mit Mariacron .",
+      "output": [
+        "Bei @username gibt es zu Silvester traditionell Berliner , Abgefüllt mit Mariacron ."
+      ]
+    },
+    {
+      "id": "task004-81",
+      "input": "jetz häuft sich dat aber mit diesen leuten die dummfaseln sie wären ohne ideologie",
+      "output": [
+        "Jetzt häuft sich das aber mit diesen Leuten die dummfaseln sie wären ohne Ideologie"
+      ]
+    },
+    {
+      "id": "task004-82",
+      "input": "HANSGROHE Axor Starck Thermostat Unterputz mit Ab- / Umstellventi - HANSGROHE Axo ... finden Sie unter ...",
+      "output": [
+        "HANSGROHE Axor Starck Thermostat Unterputz mit Ab- / Umstellventil - HANSGROHE ach so ... finden Sie unter ..."
+      ]
+    },
+    {
+      "id": "task004-83",
+      "input": "Habe mich mal Regestriert und gucke mal was es hier so schönes gibt .",
+      "output": [
+        "Habe mich mal registriert und gucke mal was es hier so Schönes gibt ."
+      ]
+    },
+    {
+      "id": "task004-84",
+      "input": "Hoffe das ich mal Gross rauskommen werde .",
+      "output": [
+        "Hoffe dass ich mal Gross herauskommen werde ."
+      ]
+    },
+    {
+      "id": "task004-85",
+      "input": "Unterstützung gibt es ja hier .",
+      "output": [
+        "Unterstützung gibt es ja hier ."
+      ]
+    },
+    {
+      "id": "task004-86",
+      "input": "wurden denn die Pakete im Wert von 50Euro von der New York Verlosung schon verschickt ? %PosSmiley",
+      "output": [
+        "Wurden denn die Pakete im Wert von 50 Euro von der New York Verlosung schon verschickt ? %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-87",
+      "input": "Ich kanns kaum erwarten *-*",
+      "output": [
+        "Ich kann es kaum erwarten *-*"
+      ]
+    },
+    {
+      "id": "task004-88",
+      "input": "HEUTE - Panasonic Trocken- / Nassrasierer ES-RF31",
+      "output": [
+        "HEUTE - Panasonic Trocken- / Nassrasierer ES-RF31"
+      ]
+    },
+    {
+      "id": "task004-89",
+      "input": "Erleben Sie eine neue Art der Rasur - statt 99,99 Euro nur 57 Euro",
+      "output": [
+        "Erleben Sie eine neue Art der Rasur - statt 99,99 Euro nur 57 Euro"
+      ]
+    },
+    {
+      "id": "task004-90",
+      "input": "Ja ..",
+      "output": [
+        "Ja .."
+      ]
+    },
+    {
+      "id": "task004-91",
+      "input": "sind diese abgekürzten Links , sry %PosSmiley",
+      "output": [
+        "sind diese abgekürzten Links , sorry %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-92",
+      "input": "So , hab mir grad noch was zum essen gekauft .",
+      "output": [
+        "So , habe mir gerade noch etwas zum Essen gekauft ."
+      ]
+    },
+    {
+      "id": "task004-93",
+      "input": "Weil das einzige das ich heut noch kriegen werde , ist kürbissuppe und die macht nicht satt",
+      "output": [
+        "Weil das Einzige das ich heute noch kriegen werde , ist Kürbissuppe und die macht nicht satt"
+      ]
+    },
+    {
+      "id": "task004-94",
+      "input": "Der Countdown läuft mit dem Online Shop .",
+      "output": [
+        "Der Countdown läuft mit dem Online Shop ."
+      ]
+    },
+    {
+      "id": "task004-95",
+      "input": "Leutle Leutle , s'isch älles net so oifach wie mer sichs manchmol ...",
+      "output": [
+        "Leute Leute , es ist alles nicht so einfach wie mir sich es manchmal ..."
+      ]
+    },
+    {
+      "id": "task004-96",
+      "input": "Bewertung zu Regenschirmmann und Regenschirmfrau ( Mitte , Hannover , von Kikiwau ) : 5 von 5 Punkten",
+      "output": [
+        "Bewertung zu Regenschirmmann und Regenschirmfrau ( Mitte , Hannover , von Kikiwau ) : 5 von 5 Punkten"
+      ]
+    },
+    {
+      "id": "task004-97",
+      "input": "Ich finde die ...",
+      "output": [
+        "Ich finde die ..."
+      ]
+    },
+    {
+      "id": "task004-98",
+      "input": "BETTELCAT %PosSmiley %PosSmiley",
+      "output": [
+        "BETTELCAT %PosSmiley %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-99",
+      "input": "aba was das fürn schönes biiiild ?",
+      "output": [
+        "Aber was das für ein schönes Bild ?"
+      ]
+    },
+    {
+      "id": "task004-100",
+      "input": "nich unendl geschichte oder ?",
+      "output": [
+        "Nicht unendliche Geschichte oder ?"
+      ]
+    },
+    {
+      "id": "task004-101",
+      "input": "Halt mich mal auf dem Laufenden , ich sitz gerade im Zug und kann nicht gucken . *g*",
+      "output": [
+        "Halt mich mal auf dem Laufenden , ich sitze gerade im Zug und kann nicht gucken . *g*"
+      ]
+    },
+    {
+      "id": "task004-102",
+      "input": "Mein Neffe ist soooo süüüüüüss **",
+      "output": [
+        "Mein Neffe ist so süss **"
+      ]
+    },
+    {
+      "id": "task004-103",
+      "input": "Morgen kommt mein Modern Warfare 3 schon .",
+      "output": [
+        "Morgen kommt mein Modern Warfare 3 schon ."
+      ]
+    },
+    {
+      "id": "task004-104",
+      "input": "Irgendwie freu ich mich aber gar nicht mehr so krass .",
+      "output": [
+        "Irgendwie freue ich mich aber gar nicht mehr so krass ."
+      ]
+    },
+    {
+      "id": "task004-105",
+      "input": "Ich brauch sie",
+      "output": [
+        "Ich brauche sie"
+      ]
+    },
+    {
+      "id": "task004-106",
+      "input": "%Link vllt. da ?",
+      "output": [
+        "%Link vielleicht da ?"
+      ]
+    },
+    {
+      "id": "task004-107",
+      "input": "aber die quali suckt %PosSmiley",
+      "output": [
+        "Aber die Qualifikation suckt %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-108",
+      "input": "Rewe verschenkt grad so Starkarten pro 5 Euro Einkaufswert und in jeder Packung ist ein Downloadgutschein %PosSmiley",
+      "output": [
+        "Rewe verschenkt gerade so Starkarten pro 5 Euro Einkaufswert und in jeder Packung ist ein Downloadgutschein %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-109",
+      "input": "Sie hätt früher was machen sollen .",
+      "output": [
+        "Sie hätte früher was machen sollen ."
+      ]
+    },
+    {
+      "id": "task004-110",
+      "input": "So dehydriert und abgemagert die Katze war .",
+      "output": [
+        "So dehydriert und abgemagert die Katze war ."
+      ]
+    },
+    {
+      "id": "task004-111",
+      "input": "Dazu Zahnstein und vereitertes Gebiss .",
+      "output": [
+        "Dazu Zahnstein und vereitertes Gebiss ."
+      ]
+    },
+    {
+      "id": "task004-112",
+      "input": "*wütend*",
+      "output": [
+        "*wütend*"
+      ]
+    },
+    {
+      "id": "task004-113",
+      "input": "MIST !!!!",
+      "output": [
+        "MIST !!!!"
+      ]
+    },
+    {
+      "id": "task004-114",
+      "input": "War grad bei Maxi bvb gucken %PosSmiley",
+      "output": [
+        "War gerade bei Maxi BVB gucken %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-115",
+      "input": "Schade 1:1 %NegSmiley",
+      "output": [
+        "Schade 1:1 %NegSmiley"
+      ]
+    },
+    {
+      "id": "task004-116",
+      "input": "Aber für 1vs2 Wars ganz gut",
+      "output": [
+        "Aber für 1vs2 War es ganz gut"
+      ]
+    },
+    {
+      "id": "task004-117",
+      "input": "danke , du bist das beste für mich auch .",
+      "output": [
+        "Danke , du bist das Beste für mich auch ."
+      ]
+    },
+    {
+      "id": "task004-118",
+      "input": "ckakakaka .",
+      "output": [
+        "ckakakaka ."
+      ]
+    },
+    {
+      "id": "task004-119",
+      "input": "Du bist das beste fur mich ...",
+      "output": [
+        "Du bist das Beste für mich ..."
+      ]
+    },
+    {
+      "id": "task004-120",
+      "input": "Es gibt leute , die kapieren echt nich wann mit spass schluss is und der pure ernst beginnt !!!",
+      "output": [
+        "Es gibt Leute , die kapieren echt nicht wann mit Spass schluss ist und der pure Ernst beginnt !!!"
+      ]
+    },
+    {
+      "id": "task004-121",
+      "input": "Ihr vollpfosten !!!!",
+      "output": [
+        "Ihr Vollpfosten !!!!"
+      ]
+    },
+    {
+      "id": "task004-122",
+      "input": "Corey Taylor hat mich mit seiner Stimme gerade in Slipknot-Trance versetzt .",
+      "output": [
+        "Corey Taylor hat mich mit seiner Stimme gerade in Slipknot-Trance versetzt ."
+      ]
+    },
+    {
+      "id": "task004-123",
+      "input": "Man sieht sich morgen .",
+      "output": [
+        "Man sieht sich morgen ."
+      ]
+    },
+    {
+      "id": "task004-124",
+      "input": "Sersn .",
+      "output": [
+        "Sersn ."
+      ]
+    },
+    {
+      "id": "task004-125",
+      "input": "Ich fahre in ca. 30 min zurück .",
+      "output": [
+        "Ich fahre in ca. 30 min zurück ."
+      ]
+    },
+    {
+      "id": "task004-126",
+      "input": "Vorraussichtliche Fahrzeit 1:45 Stunden Bonn -&gt; Neuss",
+      "output": [
+        "Voraussichtliche Fahrzeit 1:45 Stunden Bonn -&gt; Neuss"
+      ]
+    },
+    {
+      "id": "task004-127",
+      "input": "Sie : Ich liebe dich .",
+      "output": [
+        "Sie : Ich liebe dich ."
+      ]
+    },
+    {
+      "id": "task004-128",
+      "input": "Er : Ichdichauch .",
+      "output": [
+        "Er : Ich dich auch ."
+      ]
+    },
+    {
+      "id": "task004-129",
+      "input": "Sie : Ist deine Leertaste kaputt ?",
+      "output": [
+        "Sie : Ist deine Leertaste kaputt ?"
+      ]
+    },
+    {
+      "id": "task004-130",
+      "input": "Er : Neinaberesgibtnichtsdaszwischenunsstehenso ...",
+      "output": [
+        "Er : Nein aber es gibt nichts , das zwischen uns stehen soll ..."
+      ]
+    },
+    {
+      "id": "task004-131",
+      "input": "kann ich mich mir vorstellen !",
+      "output": [
+        "Kann ich mich mir vorstellen !"
+      ]
+    },
+    {
+      "id": "task004-132",
+      "input": "leider dauert es bei mir noch lange bis ich wieder bday hab",
+      "output": [
+        "Leider dauert es bei mir noch lange bis ich wieder Birthday habe"
+      ]
+    },
+    {
+      "id": "task004-133",
+      "input": "Machen wir uns nix vor , am heutige Tach können wir alle live dabei zuguckn wie unser aller Kindheit endgültig zu End ...",
+      "output": [
+        "Machen wir uns nichts vor , am heutigen Tag können wir alle live dabei zugucken wie unser aller Kindheit endgültig zu Ende ..."
+      ]
+    },
+    {
+      "id": "task004-134",
+      "input": "klaro , ich scheiss auf die Alte %PosSmiley",
+      "output": [
+        "Klar , ich scheisse auf die Alte %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-135",
+      "input": "ich mach sonst immer ganz brav meine HAs , die soll sich net so anstellen &lt;.&lt;",
+      "output": [
+        "Ich mache sonst immer ganz brav meine HAs , die soll sich nicht so anstellen &lt;.&lt;"
+      ]
+    },
+    {
+      "id": "task004-136",
+      "input": "Ich finde Dich wunderschön !!",
+      "output": [
+        "Ich finde Dich wunderschön !!"
+      ]
+    },
+    {
+      "id": "task004-137",
+      "input": "Demnach hätte ich schon mit 10 schwanger sein müssen !! %PosSmiley Sehe ic ...",
+      "output": [
+        "Demnach hätte ich schon mit 10 schwanger sein müssen !! %PosSmiley Sehe ich ..."
+      ]
+    },
+    {
+      "id": "task004-138",
+      "input": "Wenn dir das leben zitronen schenkt , mach Zitronenbomben draus",
+      "output": [
+        "Wenn dir das leben zitronen schenkt , mach Zitronenbomben daraus"
+      ]
+    },
+    {
+      "id": "task004-139",
+      "input": "alsooo ...",
+      "output": [
+        "Also ..."
+      ]
+    },
+    {
+      "id": "task004-140",
+      "input": "duh bist 15 und hast wegn hannah montana geheult ?",
+      "output": [
+        "Du bist 15 und hast wegen Hannah Montana geheult ?"
+      ]
+    },
+    {
+      "id": "task004-141",
+      "input": "%PosSmiley",
+      "output": [
+        "%PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-142",
+      "input": "süüss",
+      "output": [
+        "süss"
+      ]
+    },
+    {
+      "id": "task004-143",
+      "input": "%PosSmiley",
+      "output": [
+        "%PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-144",
+      "input": "♥",
+      "output": [
+        "♥"
+      ]
+    },
+    {
+      "id": "task004-145",
+      "input": "Den Schwachen zu tadeln heisst , seine Schwäche zu stärken .",
+      "output": [
+        "Den Schwachen zu tadeln heisst , seine Schwäche zu stärken ."
+      ]
+    },
+    {
+      "id": "task004-146",
+      "input": "Deutsch Nietzche Quotes Danisch Zitate Deutschland",
+      "output": [
+        "Deutsch Nietzche Quotes Dänisch Zitate Deutschland"
+      ]
+    },
+    {
+      "id": "task004-147",
+      "input": "Nu ist GUT .",
+      "output": [
+        "Nun ist gut ."
+      ]
+    },
+    {
+      "id": "task004-148",
+      "input": "Ich trainiere meinen verdammten Hamster , dass er die Buchstaben trifft , dann habt ihr auch Boris Becker Tweets !",
+      "output": [
+        "Ich trainiere meinen verdammten Hamster , dass er die Buchstaben trifft , dann habt ihr auch Boris Becker Tweets !"
+      ]
+    },
+    {
+      "id": "task004-149",
+      "input": "Unser Stand ist ausverkauft !",
+      "output": [
+        "Unser Stand ist ausverkauft !"
+      ]
+    },
+    {
+      "id": "task004-150",
+      "input": "* freu *",
+      "output": [
+        "* Freude *"
+      ]
+    },
+    {
+      "id": "task004-151",
+      "input": "Wintermarkt",
+      "output": [
+        "Wintermarkt"
+      ]
+    },
+    {
+      "id": "task004-152",
+      "input": "Ich fühl mich immer so hilflos , wenn meine Mutter noch kurz etwas holen will und ich dann alleine an der Kasse stehe - ...",
+      "output": [
+        "Ich fühle mich immer so hilflos , wenn meine Mutter noch kurz etwas holen will und ich dann alleine an der Kasse stehe - ..."
+      ]
+    },
+    {
+      "id": "task004-153",
+      "input": "es ist maanchmal schon besser wenn keiner deiner Freunde von den eigenen Twitteraktivitäten bescheidwissen",
+      "output": [
+        "Es ist manchmal schon besser wenn keiner deiner Freunde von den eigenen Twitteraktivitäten Bescheid weiss"
+      ]
+    },
+    {
+      "id": "task004-154",
+      "input": "%NegSmiley fangirlen / boyen",
+      "output": [
+        "%NegSmiley Fangirls / Boys"
+      ]
+    },
+    {
+      "id": "task004-155",
+      "input": "so - das wars für mich hier heute",
+      "output": [
+        "So - Das war es für mich hier heute"
+      ]
+    },
+    {
+      "id": "task004-156",
+      "input": "- jetzt im Bett das Akt. Sportstudio geniesst mit dem gladbachspiel , biathlon und sieg von viletta %PosSmiley gN",
+      "output": [
+        "- Jetzt im Bett das Aktuelle Sportstudio geniessen mit dem Gladbachspiel , Biathlon und Sieg von Viletta %PosSmiley Gute Nacht"
+      ]
+    },
+    {
+      "id": "task004-157",
+      "input": "Erschreckende Erkenntnis : Schmeckt nicht , gibts doch !!",
+      "output": [
+        "Erschreckende Erkenntnis : Schmeckt nicht , gibt es doch !!"
+      ]
+    },
+    {
+      "id": "task004-158",
+      "input": "Juhuuu !",
+      "output": [
+        "Juhu !"
+      ]
+    },
+    {
+      "id": "task004-159",
+      "input": "Endlich !",
+      "output": [
+        "Endlich !"
+      ]
+    },
+    {
+      "id": "task004-160",
+      "input": "%PosSmiley",
+      "output": [
+        "%PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-161",
+      "input": "Viel Spass mit iOutBank Version 2.9.4 - inkl. PayPal-Konten und %Link Kreditkarte !",
+      "output": [
+        "Viel Spass mit iOutBank Version 2.9.4 - inklusive PayPal-Konten und %Link Kreditkarte !"
+      ]
+    },
+    {
+      "id": "task004-162",
+      "input": "%PosSmiley",
+      "output": [
+        "%PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-163",
+      "input": "ich dachte auch ich sterbe ..",
+      "output": [
+        "Ich dachte auch ich sterbe .."
+      ]
+    },
+    {
+      "id": "task004-164",
+      "input": "vorallem ich hatte nie so krass ..",
+      "output": [
+        "Vor allem ich hatte nie so krass .."
+      ]
+    },
+    {
+      "id": "task004-165",
+      "input": "der arzt sagte das kann passieren wenn man schupfen hat",
+      "output": [
+        "Der Arzt sagte das kann passieren wenn man Schnupfen hat"
+      ]
+    },
+    {
+      "id": "task004-166",
+      "input": "die bekommen dann nen halben Herzinfarkt wenn ich nicht dran geh %PosSmiley",
+      "output": [
+        "Die bekommen dann einen halben Herzinfarkt wenn ich nicht daran gehe %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-167",
+      "input": "deshalb hab ich nur 4 stunden %PosSmiley",
+      "output": [
+        "Deshalb habe ich nur 4 Stunden %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-168",
+      "input": "und freu mich auf die Prüfung !",
+      "output": [
+        "Und freue mich auf die Prüfung !"
+      ]
+    },
+    {
+      "id": "task004-169",
+      "input": "\" Verarschen kann ich mich auch selbst .",
+      "output": [
+        "\" Verarschen kann ich mich auch selbst ."
+      ]
+    },
+    {
+      "id": "task004-170",
+      "input": "\" Mein Experiment zeigt bisher : Nunja teilweise , es ist leider etwas vorhersehbar .",
+      "output": [
+        "\" Mein Experiment zeigt bisher : Nun ja teilweise , es ist leider etwas vorhersehbar ."
+      ]
+    },
+    {
+      "id": "task004-171",
+      "input": "Ich hass das , wie soll ich heute abend feiern ohne muede zu werden",
+      "output": [
+        "Ich hasse das , wie soll ich heute Abend feiern ohne müde zu werden"
+      ]
+    },
+    {
+      "id": "task004-172",
+      "input": "ich will net tausende red bull trinkn ...",
+      "output": [
+        "Ich will nicht Tausende Red Bull trinken ..."
+      ]
+    },
+    {
+      "id": "task004-173",
+      "input": "aber mirco non ..",
+      "output": [
+        "Aber Mirco non .."
+      ]
+    },
+    {
+      "id": "task004-174",
+      "input": "xyz find ich doof !",
+      "output": [
+        "xyz finde ich doof !"
+      ]
+    },
+    {
+      "id": "task004-175",
+      "input": "hättest Du wohl gern , Du und böse * gnihihihi *",
+      "output": [
+        "Hättest Du wohl gern , Du und böse * ghihihi *"
+      ]
+    },
+    {
+      "id": "task004-176",
+      "input": "endlich funktionierts wieder ..",
+      "output": [
+        "endlich funktioniert es wieder .."
+      ]
+    },
+    {
+      "id": "task004-177",
+      "input": "Doch wir teln heut sicher noch ",
+      "output": [
+        "Doch wir telefonieren heute sicher noch "
+      ]
+    },
+    {
+      "id": "task004-178",
+      "input": "und tabletten gegen meine magenschmerzen bekommen",
+      "output": [
+        "Und Tabletten gegen meine Magenschmerzen bekommen"
+      ]
+    },
+    {
+      "id": "task004-179",
+      "input": "- mir gehts heute auch tatsächlich viel besser .",
+      "output": [
+        "- mir geht es heute auch tatsächlich viel besser ."
+      ]
+    },
+    {
+      "id": "task004-180",
+      "input": "Törtchen 3 geht auf und was seh ich da ?",
+      "output": [
+        "Törtchen 3 geht auf und was sehe ich da ?"
+      ]
+    },
+    {
+      "id": "task004-181",
+      "input": "Ihr könnt etwas gewinnen und zwar ein \" König Pilsener 6er Träger \" !!",
+      "output": [
+        "Ihr könnt etwas gewinnen und zwar ein \" König Pilsener 6er Träger \" !!"
+      ]
+    },
+    {
+      "id": "task004-182",
+      "input": "Wie ...",
+      "output": [
+        "Wie ..."
+      ]
+    },
+    {
+      "id": "task004-183",
+      "input": "APS electronic AG : Hersteller von Bordnetzumrichtern fur Schienenfahrzeuge und Trolleybusse CH 4626 Niederbuchsiten",
+      "output": [
+        "APS electronic AG : Hersteller von Bordnetzumrichtern für Schienenfahrzeuge und Trolleybusse CH 4626 Niederbuchsiten"
+      ]
+    },
+    {
+      "id": "task004-184",
+      "input": "Also meine liebe Franzi , Du hast eine sehr schöne Figur und ich beneide Dich , dass Du soo viel abgenommen hast !",
+      "output": [
+        "Also meine liebe Franzi , Du hast eine sehr schöne Figur und ich beneide Dich , dass Du so viel abgenommen hast !"
+      ]
+    },
+    {
+      "id": "task004-185",
+      "input": "Ah !",
+      "output": [
+        "Ah !"
+      ]
+    },
+    {
+      "id": "task004-186",
+      "input": "Der Stream ist dah !",
+      "output": [
+        "Der Stream ist da !"
+      ]
+    },
+    {
+      "id": "task004-187",
+      "input": "bpt112",
+      "output": [
+        "bpt112"
+      ]
+    },
+    {
+      "id": "task004-188",
+      "input": "offenbings",
+      "output": [
+        "offenbings"
+      ]
+    },
+    {
+      "id": "task004-189",
+      "input": "... ich geb heut einen aus ... %Link",
+      "output": [
+        "... ich gebe heute einen aus ... %Link"
+      ]
+    },
+    {
+      "id": "task004-190",
+      "input": "Deutscheweltweit de : Informationen fur Deutsche Osterreicher und Schweizer im Ausland Auswanderer und ihre Nac ...",
+      "output": [
+        "Deutscheweltweit de : Informationen für Deutsche Österreicher und Schweizer im Ausland Auswanderer und ihre Nachkommen ..."
+      ]
+    },
+    {
+      "id": "task004-191",
+      "input": "Günther Jauch wahrscheinlich .",
+      "output": [
+        "Günther Jauch wahrscheinlich ."
+      ]
+    },
+    {
+      "id": "task004-192",
+      "input": "Werd' erstmal wieder nüchtern glaube ich %PosSmiley",
+      "output": [
+        "Werde erstmal wieder nüchtern glaube ich %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-193",
+      "input": "einfach dran gezogen %NegSmiley",
+      "output": [
+        "Einfach daran gezogen %NegSmiley"
+      ]
+    },
+    {
+      "id": "task004-194",
+      "input": "mach ich mit ner freundin wenn keiner da ist %PosSmiley",
+      "output": [
+        "Mache ich mit einer Freundin wenn keiner da ist %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-195",
+      "input": "ich weiss ich bin böse %PosSmiley",
+      "output": [
+        "Ich weiss ich bin böse %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-196",
+      "input": "So , ne Stunde später bin ich glücklich und vollgefressen %PosSmiley",
+      "output": [
+        "So , eine Stunde später bin ich glücklich und vollgefressen %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-197",
+      "input": "wird schon werden .",
+      "output": [
+        "Wird schon werden ."
+      ]
+    },
+    {
+      "id": "task004-198",
+      "input": "vorallem , wah .",
+      "output": [
+        "Vor allem , wah ."
+      ]
+    },
+    {
+      "id": "task004-199",
+      "input": "wie viele follower einfach jetzt schon %PosSmiley",
+      "output": [
+        "Wie viele Follower einfach jetzt schon %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-200",
+      "input": "%PosSmiley",
+      "output": [
+        "%PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-201",
+      "input": "ey da war eben son cooler mann im aldi %PosSmiley",
+      "output": [
+        "Ey da war eben so ein cooler Mann im Aldi %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-202",
+      "input": "der hat son langen mantel und dann son coolen hut an %PosSmiley",
+      "output": [
+        "Der hat so einen langen Mantel und dann so einen coolen Hut an %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-203",
+      "input": "ich will auch son hut aber der",
+      "output": [
+        "Ich will auch so einen Hut aber der"
+      ]
+    },
+    {
+      "id": "task004-204",
+      "input": "Wenn Tweet per @username beginnt , wird er nicht allen Followern angezeigt .",
+      "output": [
+        "Wenn Tweet per @username beginnt , wird er nicht allen Followern angezeigt ."
+      ]
+    },
+    {
+      "id": "task004-205",
+      "input": "Besser mit .@username",
+      "output": [
+        "Besser mit .@username"
+      ]
+    },
+    {
+      "id": "task004-206",
+      "input": "( weiss nicht , ob das grade flüchtigkeit war )",
+      "output": [
+        "( weiss nicht , ob das gerade Flüchtigkeit war )"
+      ]
+    },
+    {
+      "id": "task004-207",
+      "input": "Was ist so besonders daran ?",
+      "output": [
+        "Was ist so besonders daran ?"
+      ]
+    },
+    {
+      "id": "task004-208",
+      "input": "Wenn es dir so viel bedeutet , nehm ich dich in den Spezial Silvester FF Mrat ...",
+      "output": [
+        "Wenn es dir so viel bedeutet , nehme ich dich in den Spezial Silvester FF Mrat ..."
+      ]
+    },
+    {
+      "id": "task004-209",
+      "input": "ja schaun wir mal .",
+      "output": [
+        "Ja schauen wir mal ."
+      ]
+    },
+    {
+      "id": "task004-210",
+      "input": "Aber er war ja in letzter zeit oft mit @username online",
+      "output": [
+        "Aber er war ja in letzter Zeit oft mit @username online"
+      ]
+    },
+    {
+      "id": "task004-211",
+      "input": "Teufel Kombo 20 : Mini-Stereoanlage für CDs und USB-Sticks : Die Teufel Kombo 20 soll sich ideal dafür eignen , etw ...",
+      "output": [
+        "Teufel Kombo 20 : Mini-Stereoanlage für CDs und USB-Sticks : Die Teufel Kombo 20 soll sich ideal dafür eignen , etwas ..."
+      ]
+    },
+    {
+      "id": "task004-212",
+      "input": "Gestern und heute waren soooo unglaublich schön . %PosSmiley",
+      "output": [
+        "Gestern und heute waren so unglaublich schön . %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-213",
+      "input": "na wenns so wäre , hättest mich sicher schon angefordert ...",
+      "output": [
+        "Na wenn es so wäre , hättest mich sicher schon angefordert ..."
+      ]
+    },
+    {
+      "id": "task004-214",
+      "input": "@username bast = basti ne ? %PosSmiley",
+      "output": [
+        "@username bast = basti nein ? %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-215",
+      "input": "der der mit basstard zeug macht",
+      "output": [
+        "Der der mit Basstard Zeug macht"
+      ]
+    },
+    {
+      "id": "task004-216",
+      "input": "dachte @username sorgt heut für die bespassung .",
+      "output": [
+        "Dachte @username sorgt heute für die Bespassung ."
+      ]
+    },
+    {
+      "id": "task004-217",
+      "input": "was .",
+      "output": [
+        "Was ."
+      ]
+    },
+    {
+      "id": "task004-218",
+      "input": "machen wir überhaupt ?",
+      "output": [
+        "Machen wir überhaupt ?"
+      ]
+    },
+    {
+      "id": "task004-219",
+      "input": "bin ca. halb 5 bei mirko , danach einsatzbereit !",
+      "output": [
+        "bin ca. halb 5 bei mirko , danach Einsatzbereit !"
+      ]
+    },
+    {
+      "id": "task004-220",
+      "input": "Jauch als Nachfolger ?",
+      "output": [
+        "Jauch als Nachfolger ?"
+      ]
+    },
+    {
+      "id": "task004-221",
+      "input": "Fände ich garnicht mal so schlecht , wobei ich eher glaube , dass Jauch nur die Quoten heben will .",
+      "output": [
+        "Fände ich gar nicht mal so schlecht , wobei ich eher glaube , dass Jauch nur die Quoten heben will ."
+      ]
+    },
+    {
+      "id": "task004-222",
+      "input": "WettenDass",
+      "output": [
+        "Wetten, Dass"
+      ]
+    },
+    {
+      "id": "task004-223",
+      "input": "OMG !",
+      "output": [
+        "OMG !"
+      ]
+    },
+    {
+      "id": "task004-224",
+      "input": "dein Haus brennt !",
+      "output": [
+        "Dein Haus brennt !"
+      ]
+    },
+    {
+      "id": "task004-225",
+      "input": "schnell haun wir ab !",
+      "output": [
+        "Schnell hauen wir ab !"
+      ]
+    },
+    {
+      "id": "task004-226",
+      "input": "- warte , ich muss das schnell twittern !",
+      "output": [
+        "- Warte , ich muss das schnell twittern !"
+      ]
+    },
+    {
+      "id": "task004-227",
+      "input": "dieser Reiseverzögerungsservice des @username lässt an Aktualität schwer zu wünschen übrig .",
+      "output": [
+        "Dieser Reiseverzögerungsservice des @username lässt an Aktualität schwer zu wünschen übrig ."
+      ]
+    },
+    {
+      "id": "task004-228",
+      "input": "Könnt dem mal jmd so ne Social Media Schulung ...",
+      "output": [
+        "Könnte dem mal jemand so eine Social Media Schulung ..."
+      ]
+    },
+    {
+      "id": "task004-229",
+      "input": "Alles wird uns heimgezahlt , wenn auch nicht von denen , welchen wir geborgt haben .",
+      "output": [
+        "Alles wird uns heimgezahlt , wenn auch nicht von denen , welchen wir geborgt haben ."
+      ]
+    },
+    {
+      "id": "task004-230",
+      "input": "Deutsch Freifrau Danisch Zitate Deutschland",
+      "output": [
+        "Deutsch Freifrau Dänisch Zitate Deutschland"
+      ]
+    },
+    {
+      "id": "task004-231",
+      "input": "es war sooo ein schöner tag %PosSmiley",
+      "output": [
+        "Es war so ein schöner Tag %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-232",
+      "input": "Hab bock auf ne Runde Skat .",
+      "output": [
+        "Habe Bock auf eine Runde Skat ."
+      ]
+    },
+    {
+      "id": "task004-233",
+      "input": "Wieso können das leider nur so wenige spielen ?",
+      "output": [
+        "Wieso können das leider nur so wenige spielen ?"
+      ]
+    },
+    {
+      "id": "task004-234",
+      "input": "Genau .",
+      "output": [
+        "Genau ."
+      ]
+    },
+    {
+      "id": "task004-235",
+      "input": "Wisst ihr was ?",
+      "output": [
+        "Wisst ihr was ?"
+      ]
+    },
+    {
+      "id": "task004-236",
+      "input": "Ich komm vorne und hinten nicht nach mit allen Tasks .",
+      "output": [
+        "Ich komme vorne und hinten nicht nach mit allen Tasks ."
+      ]
+    },
+    {
+      "id": "task004-237",
+      "input": "Aber wisst ihr was ?",
+      "output": [
+        "Aber wisst ihr was ?"
+      ]
+    },
+    {
+      "id": "task004-238",
+      "input": "Eisnachemangere .",
+      "output": [
+        "Eins nach dem anderen ."
+      ]
+    },
+    {
+      "id": "task004-239",
+      "input": "Kampf um Mittelerde - eins der aeltesten und bekanntesten Browserspiele in Deutschland",
+      "output": [
+        "Kampf um Mittelerde - eines der ältesten und bekanntesten Browserspiele in Deutschland"
+      ]
+    },
+    {
+      "id": "task004-240",
+      "input": "so schnell geht der deutschlandrat zu ende !",
+      "output": [
+        "So schnell geht der Deutschlandrat zu Ende !"
+      ]
+    },
+    {
+      "id": "task004-241",
+      "input": "Schade !",
+      "output": [
+        "Schade !"
+      ]
+    },
+    {
+      "id": "task004-242",
+      "input": "Schön wars !",
+      "output": [
+        "Schön war es !"
+      ]
+    },
+    {
+      "id": "task004-243",
+      "input": "Jetzt im ICE unterwegs in den schönen Westerwald !",
+      "output": [
+        "Jetzt im ICE unterwegs in den schönen Westerwald !"
+      ]
+    },
+    {
+      "id": "task004-244",
+      "input": "weil ich nen zertifikat als makeupartist habe %PosSmiley",
+      "output": [
+        "Weil ich ein Zertifikat als Make-up Artist habe %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-245",
+      "input": "irrt irgendwo bei Frankfurt ( Oder ) rum und sucht den Weg nach Huette .",
+      "output": [
+        "Irrt irgendwo bei Frankfurt ( Oder ) herum und sucht den Weg nach Hütte ."
+      ]
+    },
+    {
+      "id": "task004-246",
+      "input": "Navi-App ist geladen und sollte Weg zur ldkBB11 in Guben erleichtern",
+      "output": [
+        "Navi-App ist geladen und sollte Weg zur ldkBB11 in Guben erleichtern"
+      ]
+    },
+    {
+      "id": "task004-247",
+      "input": "Kinder von homosexuellen Paaren erleben ihre familiäre Situation als völlig normal .",
+      "output": [
+        "Kinder von homosexuellen Paaren erleben ihre familiäre Situation als völlig normal ."
+      ]
+    },
+    {
+      "id": "task004-248",
+      "input": "Nur die Hetero-Umwelt hat Proble ...",
+      "output": [
+        "Nur die Hetero-Umwelt hat Probleme ..."
+      ]
+    },
+    {
+      "id": "task004-249",
+      "input": "Was soll dieses Gehetze an der Aldikasse eigentlich jedesmal !! o.Ô",
+      "output": [
+        "Was soll dieses Gehetze an der Aldikasse eigentlich jedes Mal !! o.Ô"
+      ]
+    },
+    {
+      "id": "task004-250",
+      "input": "Zefix !",
+      "output": [
+        "Zefix !"
+      ]
+    },
+    {
+      "id": "task004-251",
+      "input": "Ich bin vielleicht müde ??!",
+      "output": [
+        "Ich bin vielleicht müde ??!"
+      ]
+    },
+    {
+      "id": "task004-252",
+      "input": "Männerherzen VERFÜHRUNGS-Set ( mit Massagekerze ) : Zum Hauptartikel dieses Bundles wollen wir gar nicht viel erzäh ...",
+      "output": [
+        "Männerherzen Verführungs-Set ( mit Massagekerze ) : Zum Hauptartikel dieses Bundles wollen wir gar nicht viel erzählen ..."
+      ]
+    },
+    {
+      "id": "task004-253",
+      "input": "Fahr heute zum Flughafen , mit ner roten Rose und hol meine Freundin vom Flughafen ab .",
+      "output": [
+        "Fahre heute zum Flughafen , mit einer roten Rose und hole meine Freundin vom Flughafen ab ."
+      ]
+    },
+    {
+      "id": "task004-254",
+      "input": "War schon um halb 6 wach .",
+      "output": [
+        "War schon um halb 6 wach ."
+      ]
+    },
+    {
+      "id": "task004-255",
+      "input": "Hab nen dähmlichen Schlafrythmus .. %NegSmiley %PosSmiley",
+      "output": [
+        "Habe einen dämlichen Schlafrhythmus .. %NegSmiley %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-256",
+      "input": "karohemd und samenstau , ich studier maschinenbau",
+      "output": [
+        "Karohemd und Samenstau , ich studiere Maschinenbau"
+      ]
+    },
+    {
+      "id": "task004-257",
+      "input": "Und Eure scheiss Nettigkeiten könnt Ihr Euch ruhig in Eure fetten Ärsche drücken !",
+      "output": [
+        "Und Eure Scheisse Nettigkeiten könnt Ihr Euch ruhig in Eure fetten Ärsche drücken !"
+      ]
+    },
+    {
+      "id": "task004-258",
+      "input": "Geburtstagsgruss : Schäuble wünscht Guttenberg Klugheit : So gratuliert man vergiftet zum Geburtstag : Finanzministe ...",
+      "output": [
+        "Geburtstagsgruss : Schäuble wünscht Guttenberg Klugheit : So gratuliert man vergiftet zum Geburtstag : Finanzminister ..."
+      ]
+    },
+    {
+      "id": "task004-259",
+      "input": "Nimm dir mal ne EPlus-Karte , die fühlt sich dann wie eine Buschtrommel an %PosSmiley",
+      "output": [
+        "Nimm dir mal eine EPlus-Karte , die fühlt sich dann wie eine Buschtrommel an %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-260",
+      "input": "Sorry wegen meiner drastischen Wortwahl , aber die beiläufige und lachende Rohheit dieser Typen war grad eins zuviel .",
+      "output": [
+        "Sorry wegen meiner drastischen Wortwahl , aber die beiläufige und lachende Rohheit dieser Typen war gerade eins zu viel ."
+      ]
+    },
+    {
+      "id": "task004-261",
+      "input": "Ich beobachte alle neuen Geschäftsmodelle und Ideen , die rund um das Internet entstehen .",
+      "output": [
+        "Ich beobachte alle neuen Geschäftsmodelle und Ideen , die rund um das Internet entstehen ."
+      ]
+    },
+    {
+      "id": "task004-262",
+      "input": "Es gäbe noch viele Id ...",
+      "output": [
+        "Es gäbe noch viele Ideen ..."
+      ]
+    },
+    {
+      "id": "task004-263",
+      "input": "RB21380 über Hamburg Hbf nach Bargteheide : ca. 15 Min. später",
+      "output": [
+        "RB21380 über Hamburg Hbf nach Bargteheide : ca. 15 Min. später"
+      ]
+    },
+    {
+      "id": "task004-264",
+      "input": "- Verspätung aus vorheriger Fahrt",
+      "output": [
+        "- Verspätung aus vorheriger Fahrt"
+      ]
+    },
+    {
+      "id": "task004-265",
+      "input": "spaeter",
+      "output": [
+        "später"
+      ]
+    },
+    {
+      "id": "task004-266",
+      "input": "Bewertung zu Harry Klein ( Ludwigsvorstadt-Isarvorstadt , München , von munixx ) : 4 von 5 Punkten",
+      "output": [
+        "Bewertung zu Harry Klein ( Ludwigsvorstadt-Isarvorstadt , München , von munixx ) : 4 von 5 Punkten"
+      ]
+    },
+    {
+      "id": "task004-267",
+      "input": "Es ist ... %Link münchen",
+      "output": [
+        "Es ist ... %Link München"
+      ]
+    },
+    {
+      "id": "task004-268",
+      "input": "Axo .",
+      "output": [
+        "Ach so ."
+      ]
+    },
+    {
+      "id": "task004-269",
+      "input": "Dann habe ich das missverstanden .",
+      "output": [
+        "Dann habe ich das missverstanden ."
+      ]
+    },
+    {
+      "id": "task004-270",
+      "input": "Ich wünscht es wär ein Märchen ..",
+      "output": [
+        "Ich wünsche es wäre ein Märchen .."
+      ]
+    },
+    {
+      "id": "task004-271",
+      "input": "weil Fabio grad über bettwäsche und morgenlatte redete ...",
+      "output": [
+        "Weil Fabio gerade über Bettwäsche und Morgenlatte redete ..."
+      ]
+    },
+    {
+      "id": "task004-272",
+      "input": "mein ex hatte pinochio bettwäsche ...",
+      "output": [
+        "Mein Ex hatte Pinocchio Bettwäsche ..."
+      ]
+    },
+    {
+      "id": "task004-273",
+      "input": "sah genial aus %PosSmiley",
+      "output": [
+        "Sah genial aus %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-274",
+      "input": "ich würde ja gerne , aber aus Entfernungsgründen und weil ich Donnerstag eine Arbeit schreibe , gehts es leider nicht",
+      "output": [
+        "Ich würde ja gerne , aber aus Entfernungsgründen und weil ich Donnerstag eine Arbeit schreibe , geht es leider nicht"
+      ]
+    },
+    {
+      "id": "task004-275",
+      "input": "Re : Umbau Kupplung der R1100 auf hydraulische Betätigung : Hallo Andreas , Falls er kein Vermögen kostet , nehm ich a ...",
+      "output": [
+        "Re : Umbau Kupplung der R1100 auf hydraulische Betätigung : Hallo Andreas , Falls er kein Vermögen kostet , nehme ich a ..."
+      ]
+    },
+    {
+      "id": "task004-276",
+      "input": "Das Animexx Treffen war diesmal sogar ganz nett %PosSmiley",
+      "output": [
+        "Das Animexx Treffen war diesmal sogar ganz nett %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-277",
+      "input": "jetzt ne Stunde in der Stadt rumgammeln und dann Weihnachtsfeier von der Arbeit %PosSmiley",
+      "output": [
+        "Jetzt eine Stunde in der Stadt herumgammeln und dann Weihnachtsfeier von der Arbeit %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-278",
+      "input": "jaa die is soo depri drauf und zieht voll runter aber egal scheiss drauf %PosSmiley",
+      "output": [
+        "Ja die ist so deprimiert derauf und zieht voll herunter aber egal scheisse drauf %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-279",
+      "input": "Na kannsch scho was geiles auf gitarre %PosSmiley",
+      "output": [
+        "Na kannst du schon was Geiles auf Gitarre %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-280",
+      "input": "okai .",
+      "output": [
+        "Okay ."
+      ]
+    },
+    {
+      "id": "task004-281",
+      "input": "Dan spreche ich du nog ! %PosSmiley",
+      "output": [
+        "Dann spreche ich du noch ! %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-282",
+      "input": "neeeeeeeee das neue design vom kanal find ich von youtube kacka , die watchpage + startseite cooler",
+      "output": [
+        "Ne das neue Design vom Kanal finde ich von Youtube Kacke , die Watchpage + Startseite cooler"
+      ]
+    },
+    {
+      "id": "task004-283",
+      "input": "GR : CHUR Rita ..",
+      "output": [
+        "GR : CHUR Rita .."
+      ]
+    },
+    {
+      "id": "task004-284",
+      "input": "Edelmodel nur bis 04.12 da",
+      "output": [
+        "Edelmodel nur bis 04.12 da"
+      ]
+    },
+    {
+      "id": "task004-285",
+      "input": "Escort : 30 min Massagen Kuessen Franzoesisch 69 mehrmals SEX 15 ...",
+      "output": [
+        "Escort : 30 min Massagen Küssen Französisch 69 mehrmals SEX 15 ..."
+      ]
+    },
+    {
+      "id": "task004-286",
+      "input": "Sorry , dass ich nich mehr so ganz nüchtern bin %PosSmiley",
+      "output": [
+        "Sorry , dass ich nicht mehr so ganz nüchtern bin %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-287",
+      "input": "Hab ich heut auch scho öfters gehört ! %PosSmiley",
+      "output": [
+        "Habe ich heute auch schon öfters gehört ! %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-288",
+      "input": "Ein Prosit !",
+      "output": [
+        "Ein Prosit !"
+      ]
+    },
+    {
+      "id": "task004-289",
+      "input": "Lebenslang grün-weiss !",
+      "output": [
+        "Lebenslang grün-weiss !"
+      ]
+    },
+    {
+      "id": "task004-290",
+      "input": "Ohh ja das tut es %PosSmiley",
+      "output": [
+        "Ohh ja das tut es %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-291",
+      "input": "Ich glaub ich zieh das morgen an .. auf nem 60. Geburtstag %PosSmiley %PosSmiley",
+      "output": [
+        "Ich glaube ich ziehe das morgen an .. auf einem 60. Geburtstag %PosSmiley %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-292",
+      "input": "r0fl , du hast %PosSmiley gesagt %NegSmiley",
+      "output": [
+        "rofl , du hast %PosSmiley gesagt %NegSmiley"
+      ]
+    },
+    {
+      "id": "task004-293",
+      "input": "Naja , ich drück nochmal ein Auge zu !",
+      "output": [
+        "Na ja , ich drücke nochmal ein Auge zu !"
+      ]
+    },
+    {
+      "id": "task004-294",
+      "input": "neeein %PosSmiley",
+      "output": [
+        "Nein %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-295",
+      "input": "ich wohn in bremen %PosSmiley",
+      "output": [
+        "Ich wohne in Bremen %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-296",
+      "input": "Was für ne PES12 Abend .",
+      "output": [
+        "Was für ein PES12 Abend ."
+      ]
+    },
+    {
+      "id": "task004-297",
+      "input": "Seid ihr schon wach oder träumt ihr noch von meinen Toren ? %PosSmiley",
+      "output": [
+        "Seid ihr schon wach oder träumt ihr noch von meinen Toren ? %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-298",
+      "input": "hallo leute , jetzt schon an weihnachtsgeschenke denken , dann gibts keine böse überraschung .",
+      "output": [
+        "Hallo Leute , jetzt schon an Weihnachtsgeschenke denken , dann gibt es keine böse Überraschung ."
+      ]
+    },
+    {
+      "id": "task004-299",
+      "input": "klicken sie einfach auf \" geschenke \"",
+      "output": [
+        "Klicken sie einfach auf \" Geschenke \""
+      ]
+    },
+    {
+      "id": "task004-300",
+      "input": "10 Zahlen zum Heimspiel gegen Dortmund : 193 : Der BVB schoss in dieser Saison bereits 193-mal au ... %Link",
+      "output": [
+        "10 Zahlen zum Heimspiel gegen Dortmund : 193 : Der BVB schoss in dieser Saison bereits 193-mal au ... %Link"
+      ]
+    },
+    {
+      "id": "task004-301",
+      "input": "moenchengladbach",
+      "output": [
+        "Mönchengladbach"
+      ]
+    },
+    {
+      "id": "task004-302",
+      "input": "Trennungsschmerz : Ich komme einfach nicht von Ihr los und bin verzweifelt ! :",
+      "output": [
+        "Trennungsschmerz : Ich komme einfach nicht von Ihr los und bin verzweifelt ! :"
+      ]
+    },
+    {
+      "id": "task004-303",
+      "input": "Hoffnungslos , das liegt an jedem se ...",
+      "output": [
+        "Hoffnungslos , das liegt an jedem se ..."
+      ]
+    },
+    {
+      "id": "task004-304",
+      "input": "iwie ignoriert mich der @username mich heute %NegSmiley",
+      "output": [
+        "Irgendwie ignoriert mich der @username mich heute %NegSmiley"
+      ]
+    },
+    {
+      "id": "task004-305",
+      "input": "Kerstin Tschech : Bild ' Schwarzer Hengst ' , Bild : Der Traum von Freiheit und Kraft : Bei ihren Gemälden geht es Ker ...",
+      "output": [
+        "Kerstin Tschech : Bild ' Schwarzer Hengst ' , Bild : Der Traum von Freiheit und Kraft : Bei ihren Gemälden geht es Kerstin ..."
+      ]
+    },
+    {
+      "id": "task004-306",
+      "input": "wie ?",
+      "output": [
+        "Wie ?"
+      ]
+    },
+    {
+      "id": "task004-307",
+      "input": "Da hat Frau ihre Tage und darf nix essen ?",
+      "output": [
+        "Da hat Frau ihre Tage und darf nichts essen ?"
+      ]
+    },
+    {
+      "id": "task004-308",
+      "input": "( hab nach Seite 1 aufgegeben )",
+      "output": [
+        "( habe nach Seite 1 aufgegeben )"
+      ]
+    },
+    {
+      "id": "task004-309",
+      "input": "Waaah , welches Path-Cover nehm ich denn jetzt ?",
+      "output": [
+        "Wah , welches Path-Cover nehme ich denn jetzt ?"
+      ]
+    },
+    {
+      "id": "task004-310",
+      "input": "Waaaaah .",
+      "output": [
+        "Wah ."
+      ]
+    },
+    {
+      "id": "task004-311",
+      "input": "Ne , ich esse keine kranken %User'en.",
+      "output": [
+        "Nein , ich esse keine Kranken %User'en."
+      ]
+    },
+    {
+      "id": "task004-312",
+      "input": "\" Mach ... NUDELN ! \"",
+      "output": [
+        "\" Mach ... NUDELN ! \""
+      ]
+    },
+    {
+      "id": "task004-313",
+      "input": "Die Alte : Die beiden Männer haben diese feurige Amazo ...",
+      "output": [
+        "Die Alte : Die beiden Männer haben diese feurige Amazone ..."
+      ]
+    },
+    {
+      "id": "task004-314",
+      "input": "ne ist aber immer der heisse Höhepunkt .",
+      "output": [
+        "Eine ist aber immer der heisse Höhepunkt ."
+      ]
+    },
+    {
+      "id": "task004-315",
+      "input": "Oldies begieriger ...",
+      "output": [
+        "Oldies begieriger ..."
+      ]
+    },
+    {
+      "id": "task004-316",
+      "input": "ich bin immer noch scheiseee %PosSmiley : X",
+      "output": [
+        "Ich bin immer noch Scheisse %PosSmiley : X"
+      ]
+    },
+    {
+      "id": "task004-317",
+      "input": "ich hab schonmal ein bisschen mit ner freundin geplant .. %PosSmiley",
+      "output": [
+        "Ich habe schon mal ein bisschen mit einer Freundin geplant .. %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-318",
+      "input": "Hab immernoch nichts vernümftiges gegessen !!",
+      "output": [
+        "Habe immer noch nichts Vernünftiges gegessen !!"
+      ]
+    },
+    {
+      "id": "task004-319",
+      "input": "habe usw , man regt sich manchmal auf , vorallem wenn ich am morgn mit sowas konfrontiert werde und nicht gut geschlafen hab %PosSmiley",
+      "output": [
+        "Habe usw , man regt sich manchmal auf , vor allem wenn ich am Morgen mit so etwas konfrontiert werde und nicht gut geschlafen habe %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-320",
+      "input": "Frauenpower , Hoppelpenisse - jaja , die @username ist schon ne Tolle %PosSmiley %PosSmiley ff",
+      "output": [
+        "Frauenpower , Hoppelpenisse - ja ja , die @username ist schon eine Tolle %PosSmiley %PosSmiley ff"
+      ]
+    },
+    {
+      "id": "task004-321",
+      "input": "ahahaha ich hab grad akinator gespielt und der hats net rausgefunden dann kam \" jemand der so unbekannt ist dass ich ihn nicht",
+      "output": [
+        "ahahaha ich hab gerade Akinator gespielt und der hat es nicht herausgefunden dann kam \" jemand der so unbekannt ist dass ich ihn nicht"
+      ]
+    },
+    {
+      "id": "task004-322",
+      "input": "L-L-L-Langweilig , um ganz erlich zu sein .",
+      "output": [
+        "Langweilig , um ganz ehrlich zu sein ."
+      ]
+    },
+    {
+      "id": "task004-323",
+      "input": "Freitagabend wird am Moment alleine verbracht . %PosSmiley",
+      "output": [
+        "Freitagabend wird im Moment allein verbracht . %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-324",
+      "input": "Wir sehn uns dann in 20 Jahren , wenn du meine Villa putzt . OMGermanTeen",
+      "output": [
+        "Wir sehen uns dann in 20 Jahren , wenn du meine Villa putzt . OMG German Teen"
+      ]
+    },
+    {
+      "id": "task004-325",
+      "input": "Der Draisinenfahrt-Ideen-Geber steht heut wohl im Regen .",
+      "output": [
+        "Der Draisinenfahrt-Ideen-Geber steht heute wohl im Regen ."
+      ]
+    },
+    {
+      "id": "task004-326",
+      "input": "Dass ' Cappucino ' falsch ist , habe ich meinen Schülern schon in der 6. Jahrgangsstufe beigebracht .",
+      "output": [
+        "Dass ' Cappuccino ' falsch ist , habe ich meinen Schülern schon in der 6. Jahrgangsstufe beigebracht ."
+      ]
+    },
+    {
+      "id": "task004-327",
+      "input": "Richtig ist ' Cappuccino ' .",
+      "output": [
+        "Richtig ist ' Cappuccino ' ."
+      ]
+    },
+    {
+      "id": "task004-328",
+      "input": "ich bin wieder da und , es war so sau geil ?!",
+      "output": [
+        "Ich bin wieder da und , es war so saugeil  ?!"
+      ]
+    },
+    {
+      "id": "task004-329",
+      "input": "und wie wars bei dir ??",
+      "output": [
+        "Und wie war es bei dir ??"
+      ]
+    },
+    {
+      "id": "task004-330",
+      "input": "und ja ich hab vall a bissl abgenohmen !!",
+      "output": [
+        "Und ja ich habe vor allem ein bisschen abgenommen !!"
+      ]
+    },
+    {
+      "id": "task004-331",
+      "input": "muahahahaha",
+      "output": [
+        "muahahahaha"
+      ]
+    },
+    {
+      "id": "task004-332",
+      "input": "Kinder brauchen Liebe ; besonders dann , wenn sie sie nicht verdienen .",
+      "output": [
+        "Kinder brauchen Liebe ; besonders dann , wenn sie sie nicht verdienen ."
+      ]
+    },
+    {
+      "id": "task004-333",
+      "input": "Deutsch German Danisch Zitate Quotes",
+      "output": [
+        "Deutsch German Dänisch Zitate Quotes"
+      ]
+    },
+    {
+      "id": "task004-334",
+      "input": "Welt der Technik BenQ GH700 Digitalkamera - mit schnellem Full-HD Videomodus : Aus dem Hause BenQ präsentieren wi ...",
+      "output": [
+        "Welt der Technik BenQ GH700 Digitalkamera - mit schnellem Full-HD Videomodus : Aus dem Hause BenQ präsentieren wir ..."
+      ]
+    },
+    {
+      "id": "task004-335",
+      "input": "Ist es nicht Ironie , wenn ein Sterbehospiz wegen ner Bombenentschärfung evakuiert wird ?!?!",
+      "output": [
+        "Ist es nicht Ironie , wenn ein Sterbehospiz wegen einer Bombenentschärfung evakuiert wird ?!?!"
+      ]
+    },
+    {
+      "id": "task004-336",
+      "input": "%NegSmiley",
+      "output": [
+        "%NegSmiley"
+      ]
+    },
+    {
+      "id": "task004-337",
+      "input": "morgen ist ne hochzeit das kleid war dafür gedacht",
+      "output": [
+        "Morgen ist eine Hochzeit das Kleid war dafür gedacht"
+      ]
+    },
+    {
+      "id": "task004-338",
+      "input": "boah bin ich dumm echt",
+      "output": [
+        "Boah bin ich dumm echt"
+      ]
+    },
+    {
+      "id": "task004-339",
+      "input": "da macht einsteins satz plötzlich doppelt sinn",
+      "output": [
+        "Da macht Einsteins Satz plötzlich doppelt Sinn"
+      ]
+    },
+    {
+      "id": "task004-340",
+      "input": "Der ist soooo süss .",
+      "output": [
+        "Der ist so süss ."
+      ]
+    },
+    {
+      "id": "task004-341",
+      "input": "Und .",
+      "output": [
+        "Und ."
+      ]
+    },
+    {
+      "id": "task004-342",
+      "input": "Äh .",
+      "output": [
+        "Äh ."
+      ]
+    },
+    {
+      "id": "task004-343",
+      "input": "Schwaaaaaaarz !",
+      "output": [
+        "Schwarz !"
+      ]
+    },
+    {
+      "id": "task004-344",
+      "input": "%PosSmiley",
+      "output": [
+        "%PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-345",
+      "input": "Hahah ich weiss nich , aber das sind mir zuviel farben : L",
+      "output": [
+        "Hahah ich weiss nicht , aber das sind mir zu viel Farben : L"
+      ]
+    },
+    {
+      "id": "task004-346",
+      "input": "\" warum läufst du daheim bitte nackt rum ? \"",
+      "output": [
+        "\" Warum läufst du daheim bitte nackt herum ? \""
+      ]
+    },
+    {
+      "id": "task004-347",
+      "input": "weil ich es kann ?",
+      "output": [
+        "Weil ich es kann ?"
+      ]
+    },
+    {
+      "id": "task004-348",
+      "input": "Um erlich zu sein , keine Lust auf den Tag heute .",
+      "output": [
+        "Um ehrlich zu sein , keine Lust auf den Tag heute ."
+      ]
+    },
+    {
+      "id": "task004-349",
+      "input": "Freu mich nur auf die Christina und den Abend %PosSmiley",
+      "output": [
+        "Freue mich nur auf die Christina und den Abend %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-350",
+      "input": "Musste halt Schmerzmittel nehmen .. und dazu frühere Busse .",
+      "output": [
+        "Musste halt Schmerzmittel nehmen .. und dazu frühere Busse ."
+      ]
+    },
+    {
+      "id": "task004-351",
+      "input": "Ansonsten biste fürs Berufsleben untauglich ...",
+      "output": [
+        "Ansonsten bist du fürs Berufsleben untauglich ..."
+      ]
+    },
+    {
+      "id": "task004-352",
+      "input": "Ja , weisste der Klickt da drauf , und BAM -",
+      "output": [
+        "Ja , weisst du der klickt da drauf , und BAM -"
+      ]
+    },
+    {
+      "id": "task004-353",
+      "input": "Von der Germanness total überrollt und legt sich aufs Maul %PosSmiley",
+      "output": [
+        "Von der Germanness total überrollt und legt sich aufs Maul %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-354",
+      "input": "Woa ..",
+      "output": [
+        "Woa .."
+      ]
+    },
+    {
+      "id": "task004-355",
+      "input": "Dramas sind nichts für mich xx ..",
+      "output": [
+        "Dramas sind nichts für mich xx .."
+      ]
+    },
+    {
+      "id": "task004-356",
+      "input": "ich kann nichtmehr aufhören zu weinen QQ",
+      "output": [
+        "Ich kann nicht mehr aufhören zu weinen QQ"
+      ]
+    },
+    {
+      "id": "task004-357",
+      "input": "Es waere schoen , wenn du mir ein Bild von dir schicken koenntest .",
+      "output": [
+        "Es wäre schön , wenn du mir ein Bild von dir schicken könntest ."
+      ]
+    },
+    {
+      "id": "task004-358",
+      "input": "Haha , achso %PosSmiley",
+      "output": [
+        "Haha , ach so %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-359",
+      "input": "Naja , ich hab mit Tatti geskypt und wollte dann raus finden , welche Grösse Sie hat .",
+      "output": [
+        "Na ja , ich habe mit Tatti geskypt und wollte dann heraus finden , welche Grösse sie hat ."
+      ]
+    },
+    {
+      "id": "task004-360",
+      "input": "Und ich wusste ja deine Grösse ,",
+      "output": [
+        "Und ich wusste ja deine Grösse ,"
+      ]
+    },
+    {
+      "id": "task004-361",
+      "input": "awwww isch will das ni ...",
+      "output": [
+        "awwww ich will das nicht ..."
+      ]
+    },
+    {
+      "id": "task004-362",
+      "input": "SCHNURRrrRRrrRrRRREOW MOEW %PosSmiley 3",
+      "output": [
+        "SCHNURREOW MOEW %PosSmiley 3"
+      ]
+    },
+    {
+      "id": "task004-363",
+      "input": "Bin jetzt TV schauen und schau nur zwischendurch mal via Handy rein",
+      "output": [
+        "Bin jetzt TV schauen und schaue nur zwischendurch mal via Handy herein"
+      ]
+    },
+    {
+      "id": "task004-364",
+      "input": "Wer was will kann mir ne DM oder ne SMS hinterlassen %PosSmiley",
+      "output": [
+        "Wer was will kann mir eine DM oder eine SMS hinterlassen %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-365",
+      "input": "canon , kommt aber auch noch drauf an welche kamer",
+      "output": [
+        "Canon , kommt aber auch noch darauf an welche Kammer"
+      ]
+    },
+    {
+      "id": "task004-366",
+      "input": "will da nicht jede %PosSmiley",
+      "output": [
+        "Will da nicht jede %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-367",
+      "input": "Doku über ein Erlebnisbad für Kinder unter 4 Jahren gesehen .",
+      "output": [
+        "Doku über ein Erlebnisbad für Kinder unter 4 Jahren gesehen ."
+      ]
+    },
+    {
+      "id": "task004-368",
+      "input": "Alle nackt und die meisten %NegSmiley die ganze Zeit rum .",
+      "output": [
+        "Alle nackt und die meisten %NegSmiley die ganze Zeit herum ."
+      ]
+    },
+    {
+      "id": "task004-369",
+      "input": "Ir ...",
+      "output": [
+        "Irgendwie ..."
+      ]
+    },
+    {
+      "id": "task004-370",
+      "input": "Welche ist die schönste Stadt der Welt ?",
+      "output": [
+        "Welche ist die schönste Stadt der Welt ?"
+      ]
+    },
+    {
+      "id": "task004-371",
+      "input": "- Haamburg *-*",
+      "output": [
+        "- Hamburg *-*"
+      ]
+    },
+    {
+      "id": "task004-372",
+      "input": "danke , sonst wär ich verdurstet %PosSmiley",
+      "output": [
+        "Danke , sonst wäre ich verdurstet %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-373",
+      "input": "hät ich auch draufkommen können ,",
+      "output": [
+        "Hätte ich auch draufkommen können ,"
+      ]
+    },
+    {
+      "id": "task004-374",
+      "input": "( @YouTube",
+      "output": [
+        "( @YouTube"
+      ]
+    },
+    {
+      "id": "task004-375",
+      "input": "ich will , das 2011 SCHNELL vorbeigeht .",
+      "output": [
+        "ich will , dass 2011 SCHNELL vorbeigeht ."
+      ]
+    },
+    {
+      "id": "task004-376",
+      "input": "im grossen und ganzen wars ein einfach beschissenes jahr .",
+      "output": [
+        "Im Grossen und Ganzen war es ein einfach beschissenes Jahr ."
+      ]
+    },
+    {
+      "id": "task004-377",
+      "input": "sowas brauch ich nicht nochmal .",
+      "output": [
+        "Sowas brauche ich nicht nochmal ."
+      ]
+    },
+    {
+      "id": "task004-378",
+      "input": "Gönnen Sie sich eine Pause - Lautsprecher an - zurücklehen - entspannen",
+      "output": [
+        "Gönnen Sie sich eine Pause - Lautsprecher an - zurücklehnen - entspannen"
+      ]
+    },
+    {
+      "id": "task004-379",
+      "input": "weils sich lohnt %PosSmiley",
+      "output": [
+        "Weil es sich lohnt %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-380",
+      "input": "die twittern auch immer den raab des tages frau fuchs %PosSmiley",
+      "output": [
+        "Die twittern auch immer den Raab des Tages Frau Fuchs %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-381",
+      "input": "Nur damit ihrs wisst , ich war früher das Teletubbie-Sonnen-Baby .",
+      "output": [
+        "Nur damit ihr es wisst , ich war früher das Teletubbie-Sonnen-Baby ."
+      ]
+    },
+    {
+      "id": "task004-382",
+      "input": "Wollte das nur mal loswerden .",
+      "output": [
+        "Wollte das nur mal loswerden ."
+      ]
+    },
+    {
+      "id": "task004-383",
+      "input": "biste morgen auch offenbings ???",
+      "output": [
+        "Bist du morgen auch Offenbings ???"
+      ]
+    },
+    {
+      "id": "task004-384",
+      "input": "keinen Cosmo %PosSmiley",
+      "output": [
+        "Keinen Cosmo %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-385",
+      "input": "oder ich wünsch mich und ihn aufn Mars und dich und Ruki auf die Erde %PosSmiley",
+      "output": [
+        "Oder ich wünsche mich und ihn auf den Mars und dich und Ruki auf die Erde %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-386",
+      "input": "so sind wir beide glücklich ♥",
+      "output": [
+        "so sind wir beide glücklich ♥"
+      ]
+    },
+    {
+      "id": "task004-387",
+      "input": "23. Denkt mal drüber nach .",
+      "output": [
+        "23. Denkt mal darüber nach ."
+      ]
+    },
+    {
+      "id": "task004-388",
+      "input": "wettendass",
+      "output": [
+        "Wetten, dass"
+      ]
+    },
+    {
+      "id": "task004-389",
+      "input": "Hallo schön das wir befreuntet sind ich möchte euch was schenkenhttp http://t.co/KsvTRbhL",
+      "output": [
+        "Hallo schön das wir befreundet sind ich möchte euch was schenken http://t.co/KsvTRbhL"
+      ]
+    },
+    {
+      "id": "task004-390",
+      "input": "Davis-Cup-Finale : Nadal bringt Spanien mit Galaleistung in Front : Auftakt nach Mass : Spanien ist im Davis-Cup-Fin ...",
+      "output": [
+        "Davis-Cup-Finale : Nadal bringt Spanien mit Galaleistung in Front : Auftakt nach Mass : Spanien ist im Davis-Cup-Finale ..."
+      ]
+    },
+    {
+      "id": "task004-391",
+      "input": "Na dann kann ja nix schief gehen ... %PosSmiley",
+      "output": [
+        "Na dann kann ja nichts schief gehen ... %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-392",
+      "input": "Nopp %PosSmiley",
+      "output": [
+        "Nope %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-393",
+      "input": "heut nicht und ich kenn das ja leider von Haselnüssen und Nugat",
+      "output": [
+        "heute Nicht und ich kenne das ja leider von Haselnüssen und Nugat"
+      ]
+    },
+    {
+      "id": "task004-394",
+      "input": "zwei sehr schöne gemälde . : Neunkirchen/Saar | Auf leine gemalt zwei Elefanten Gemälde .",
+      "output": [
+        "Zwei sehr schöne gemälde . : Neunkirchen/Saar | Auf Leine gemalt zwei Elefanten Gemälde ."
+      ]
+    },
+    {
+      "id": "task004-395",
+      "input": "Jahrgang 1977 bei intres ...",
+      "output": [
+        "Jahrgang 1977 bei Interesse ..."
+      ]
+    },
+    {
+      "id": "task004-396",
+      "input": "Wir haben auf dem D-Dorfer Weihnachtsmarkt einen Maronen-Stand gesehen ! %PosSmiley",
+      "output": [
+        "Wir haben auf dem Düsseldorfer Weihnachtsmarkt einen Maronen-Stand gesehen ! %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-397",
+      "input": "Und ich rief aus : Maronen !",
+      "output": [
+        "Und ich rief aus : Maronen !"
+      ]
+    },
+    {
+      "id": "task004-398",
+      "input": "Hast ne Nachricht !",
+      "output": [
+        "Hast eine Nachricht !"
+      ]
+    },
+    {
+      "id": "task004-399",
+      "input": "Sie sucht Ihn Boarische Sie , mitte 50 , schlank , sportlich , in München : aus münchen hat das singl ...",
+      "output": [
+        "Sie sucht Ihn Bayrische Sie , mitte 50 , schlank , sportlich , in München : aus München hat das Singleleben ..."
+      ]
+    },
+    {
+      "id": "task004-400",
+      "input": "%Link",
+      "output": [
+        "%Link"
+      ]
+    },
+    {
+      "id": "task004-401",
+      "input": "Kontaktanzeigen",
+      "output": [
+        "Kontaktanzeigen"
+      ]
+    },
+    {
+      "id": "task004-402",
+      "input": "Herzlichen Glückwunsch Hondo ! : Hallo Chef Ich wünsch Dir einen ganz tollen Geburtstag",
+      "output": [
+        "Herzlichen Glückwunsch Hondo ! : Hallo Chef Ich wünsche Dir einen ganz tollen Geburtstag"
+      ]
+    },
+    {
+      "id": "task004-403",
+      "input": "Viel Glück und vor allem ...",
+      "output": [
+        "Viel Glück und vor allem ..."
+      ]
+    },
+    {
+      "id": "task004-404",
+      "input": "Die EM-Auslosung war Dänemurks , aber das ist mir portuegal .",
+      "output": [
+        "Die EM-Auslosung war Dänemurks , aber das ist mir portuegal ."
+      ]
+    },
+    {
+      "id": "task004-405",
+      "input": "em2012",
+      "output": [
+        "em2012"
+      ]
+    },
+    {
+      "id": "task004-406",
+      "input": "In Offenbings angekommen hotel ist ne absolute Bruchbude , gleich aufm weg FFM gothic-disse bpt112",
+      "output": [
+        "In Offenbings angekommen Hotel ist eine absolute Bruchbude , gleich auf dem Weg FFM Gothic-Disse bpt112"
+      ]
+    },
+    {
+      "id": "task004-407",
+      "input": "Wo sind eigentlich die Titten von der Hunziker hin ?",
+      "output": [
+        "Wo sind eigentlich die Titten von der Hunziker hin ?"
+      ]
+    },
+    {
+      "id": "task004-408",
+      "input": "Die hab ich heute noch gar nicht gesehn ... wettendass",
+      "output": [
+        "Die habe ich heute noch gar nicht gesehen ... Wetten, dass"
+      ]
+    },
+    {
+      "id": "task004-409",
+      "input": "+1 kann man wahrscheinlich erst beurteilen , wenn sie nicht mehr unverschluesselt senden .",
+      "output": [
+        "+1 kann man wahrscheinlich erst beurteilen , wenn sie nicht mehr unverschlüsselt senden ."
+      ]
+    },
+    {
+      "id": "task004-410",
+      "input": "nix ka , ist so .",
+      "output": [
+        "Nichts ka , ist so ."
+      ]
+    },
+    {
+      "id": "task004-411",
+      "input": "Aber ist deine sache , ich will mich da nicht einmischen",
+      "output": [
+        "Aber ist deine Sache , ich will mich da nicht einmischen"
+      ]
+    },
+    {
+      "id": "task004-412",
+      "input": "Dieses Video musst du dir ansehen !",
+      "output": [
+        "Dieses Video musst du dir ansehen !"
+      ]
+    },
+    {
+      "id": "task004-413",
+      "input": "-- ey ..",
+      "output": [
+        "-- ey .."
+      ]
+    },
+    {
+      "id": "task004-414",
+      "input": "gehts noch ??",
+      "output": [
+        "Geht es noch ??"
+      ]
+    },
+    {
+      "id": "task004-415",
+      "input": "%Link via @username",
+      "output": [
+        "%Link via @username"
+      ]
+    },
+    {
+      "id": "task004-416",
+      "input": "jaa hatte die letztens übrigens an .",
+      "output": [
+        "Ja hatte die letztens übrigens an ."
+      ]
+    },
+    {
+      "id": "task004-417",
+      "input": "Was ruft man mir hinterher ? ' guck mal , sie kommt von der arbeit . ' %PosSmiley",
+      "output": [
+        "Was ruft man mir hinterher ? ' Guck mal , sie kommt von der arbeit . ' %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-418",
+      "input": "Ich versuchs auf Hochdeutsch damit sich die",
+      "output": [
+        "Ich versuche es auf Hochdeutsch damit sich die"
+      ]
+    },
+    {
+      "id": "task004-419",
+      "input": "jaaaaa man so ist das ;))",
+      "output": [
+        "Ja Mann so ist das ;))"
+      ]
+    },
+    {
+      "id": "task004-420",
+      "input": "Jaa da war er dann wahrscheinlich erkältet oder so %NegSmiley",
+      "output": [
+        "Ja da war er dann wahrscheinlich erkältet oder so %NegSmiley"
+      ]
+    },
+    {
+      "id": "task004-421",
+      "input": "ihr glaubt ja garnicht wie unbeschreiblich ich mich auf mittwoch freue !!! ¡¡¡ !!! ¡¡¡",
+      "output": [
+        "Ihr glaubt ja gar nicht wie unbeschreiblich ich mich auf Mittwoch freue !!! ¡¡¡ !!! ¡¡¡"
+      ]
+    },
+    {
+      "id": "task004-422",
+      "input": "Lutschen klingt auch nicht besser",
+      "output": [
+        "Lutschen klingt auch nicht besser"
+      ]
+    },
+    {
+      "id": "task004-423",
+      "input": "Warum sagt man eigentlich blasen ?",
+      "output": [
+        "Warum sagt man eigentlich blasen ?"
+      ]
+    },
+    {
+      "id": "task004-424",
+      "input": "Kein Schwein bläst .",
+      "output": [
+        "Kein Schwein bläst ."
+      ]
+    },
+    {
+      "id": "task004-425",
+      "input": "Kann echt nur ner Frau eingefallen sein ( .. %PosSmiley",
+      "output": [
+        "Kann echt nur einer Frau eingefallen sein ( .. %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-426",
+      "input": "ahh %PosSmiley",
+      "output": [
+        "ahh %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-427",
+      "input": "ich mit'm handy über wlan %PosSmiley",
+      "output": [
+        "Ich mit dem Handy über Wlan %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-428",
+      "input": "ich habe keine lust den pc jtz anzumachen %PosSmiley",
+      "output": [
+        "Ich habe keine Lust den PC jetzt anzumachen %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-429",
+      "input": "bin gerade viel zu faul dafür %PosSmiley",
+      "output": [
+        "Bin gerade viel zu faul dafür %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-430",
+      "input": "lern gerade für erdkunde referat",
+      "output": [
+        "Lerne gerade für Erdkunde Referat"
+      ]
+    },
+    {
+      "id": "task004-431",
+      "input": "man das stresst",
+      "output": [
+        "Mann das stresst"
+      ]
+    },
+    {
+      "id": "task004-432",
+      "input": "denn jedes mal wenn ich dich seh schlägt mein Herz schneller | Facebook",
+      "output": [
+        "Denn jedes mal wenn ich dich sehe schlägt mein Herz schneller | Facebook"
+      ]
+    },
+    {
+      "id": "task004-433",
+      "input": "\" Brauche neue Promo-Pics , haste ne Idee ? \"-\"",
+      "output": [
+        "\" Brauche neue Promo-Pics , hast du eine Idee ? \"-\""
+      ]
+    },
+    {
+      "id": "task004-434",
+      "input": "Du legst dich nackt auf meinen Studioboden u ich tacker Schläuche an deinen Rücken .",
+      "output": [
+        "Du legst dich nackt auf meinen Studioboden und ich tackere Schläuche an deinen Rücken ."
+      ]
+    },
+    {
+      "id": "task004-435",
+      "input": "Klar soweit ? \"",
+      "output": [
+        "Klar soweit ? \""
+      ]
+    },
+    {
+      "id": "task004-436",
+      "input": "Ich schreib ein Buch und nenn es \" Bestseller \" .",
+      "output": [
+        "Ich schreibe ein Buch und nenne es \" Bestseller \" ."
+      ]
+    },
+    {
+      "id": "task004-437",
+      "input": "Wenn mich dann jemand fragt , kann ich sagen , dass ich einen Bestseller geschri ...",
+      "output": [
+        "Wenn mich dann jemand fragt , kann ich sagen , dass ich einen Bestseller geschrieben ..."
+      ]
+    },
+    {
+      "id": "task004-438",
+      "input": "alter was das für ne frage warum bist du krank",
+      "output": [
+        "Alter was das für eine Frage warum bist du krank"
+      ]
+    },
+    {
+      "id": "task004-439",
+      "input": "ja sorry ich hab gesagt joa lass ma krank werden und so weisst du ...",
+      "output": [
+        "Ja sorry ich habe gesagt Joa lass mal krank werden und so weisst du ..."
+      ]
+    },
+    {
+      "id": "task004-440",
+      "input": "Bewertung zu Märchen-Weihnachtsmarkt ( Altstadt-Nord , Köln , von bulls305) : 5 von 5 Punkten Ich finds hier ... %Link köln",
+      "output": [
+        "Bewertung zu Märchen-Weihnachtsmarkt ( Altstadt-Nord , Köln , von bulls305) : 5 von 5 Punkten Ich finde es hier ... %Link Köln"
+      ]
+    },
+    {
+      "id": "task004-441",
+      "input": "Twitter nix vom mmt28 grad weil Kneipe ksc und so .",
+      "output": [
+        "Twitter nichts vom mmt28 gerade weil Kneipe ksc und so ."
+      ]
+    },
+    {
+      "id": "task004-442",
+      "input": "Warum auch immer .",
+      "output": [
+        "Warum auch immer ."
+      ]
+    },
+    {
+      "id": "task004-443",
+      "input": "ja ... hab noch nie nen lied von denen gehört und werde es auch nie machen xF",
+      "output": [
+        "Ja ... habe noch nie ein Lied von denen gehört und werde es auch nie machen xF"
+      ]
+    },
+    {
+      "id": "task004-444",
+      "input": "\" ich find' dich scheisse , wo ist mein finderlohn ? \"",
+      "output": [
+        "\" ich finde dich Scheisse , wo ist mein finderlohn ? \""
+      ]
+    },
+    {
+      "id": "task004-445",
+      "input": "omg so tolle korean hoodies bei ebay ..",
+      "output": [
+        "Omg so tolle Korean Hoodies bei ebay .."
+      ]
+    },
+    {
+      "id": "task004-446",
+      "input": "aber ich wollt nix mehr bestellen &gt;&gt;",
+      "output": [
+        "Aber ich wollte nichts mehr bestellen &gt;&gt;"
+      ]
+    },
+    {
+      "id": "task004-447",
+      "input": "Piraten-Parteitag : \" Werden wir nicht übermütig ! \": : Zuletzt war die Piratenpartei vor allem mit sich selbst beschä ... ...",
+      "output": [
+        "Piraten-Parteitag : \" Werden wir nicht übermütig ! \": : Zuletzt war die Piratenpartei vor allem mit sich selbst beschäftigt ... ..."
+      ]
+    },
+    {
+      "id": "task004-448",
+      "input": "ja , such mal nach ner spec , wenn du eine findest , sag bescheid %PosSmiley",
+      "output": [
+        "Ja , such mal nach einer Special , wenn du eine findest , sag Bescheid %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-449",
+      "input": "Patentstreit : Apple muss Schlappe gegen Samsung einstecken : Apple stemmt sich rund um den Globus - auch in Deuts ...",
+      "output": [
+        "Patentstreit : Apple muss Schlappe gegen Samsung einstecken : Apple stemmt sich rund um den Globus - auch in Deutschland ..."
+      ]
+    },
+    {
+      "id": "task004-450",
+      "input": "Danke euch %PosSmiley",
+      "output": [
+        "Danke euch %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-451",
+      "input": "ich werd mal schauen , ob ich überhaupt grauen Lidschatten besitze",
+      "output": [
+        "Ich werde mal schauen , ob ich überhaupt grauen Lidschatten besitze"
+      ]
+    },
+    {
+      "id": "task004-452",
+      "input": "Deine Videos sind einfach aller hammer !",
+      "output": [
+        "Deine Videos sind einfach aller Hammer !"
+      ]
+    },
+    {
+      "id": "task004-453",
+      "input": "und wo du über die Bravo geredet hast da konnte ich mich nich mehr halten ! %PosSmiley",
+      "output": [
+        "Und wo du über die Bravo geredet hast da konnte ich mich nicht mehr halten ! %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-454",
+      "input": "hdl %PosSmiley",
+      "output": [
+        "hdl %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-455",
+      "input": "ich lach grad sooo viel x,D",
+      "output": [
+        "Ich lache gerade so viel x,D"
+      ]
+    },
+    {
+      "id": "task004-456",
+      "input": "\" Why Germany says \" nein \" ... \"",
+      "output": [
+        "\" Why Germany says \" nein \" ... \""
+      ]
+    },
+    {
+      "id": "task004-457",
+      "input": "Würden die auch schreiben \" Why Hungary says \" nem \" ... \" , oder ist das nur eine Art Faschismus .",
+      "output": [
+        "Würden die auch schreiben \" Why Hungary says \" einem \" ... \" , oder ist das nur eine Art Faschismus ."
+      ]
+    },
+    {
+      "id": "task004-458",
+      "input": "globalpost",
+      "output": [
+        "Global Post"
+      ]
+    },
+    {
+      "id": "task004-459",
+      "input": "EC391 über Stuttgart Hbf nach Salzburg Hbf : ca. 30 Min. später",
+      "output": [
+        "EC391 über Stuttgart Hbf nach Salzburg Hbf : ca. 30 Min. später"
+      ]
+    },
+    {
+      "id": "task004-460",
+      "input": "- Technische Störung am Zug",
+      "output": [
+        "- Technische Störung am Zug"
+      ]
+    },
+    {
+      "id": "task004-461",
+      "input": "spaeter",
+      "output": [
+        "später"
+      ]
+    },
+    {
+      "id": "task004-462",
+      "input": "aww ...",
+      "output": [
+        "Aww ..."
+      ]
+    },
+    {
+      "id": "task004-463",
+      "input": "ich liebe dich %PosSmiley",
+      "output": [
+        "Ich liebe dich %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-464",
+      "input": "im fine n u queen ? %PosSmiley xx",
+      "output": [
+        "I amm fine and you Queen ? %PosSmiley xx"
+      ]
+    },
+    {
+      "id": "task004-465",
+      "input": "Meinung | Zwangsheirat : Wenn Forscher die fatale Rolle des Islam leugnen : Ungereimtheiten in einer Studie zum Th ...",
+      "output": [
+        "Meinung | Zwangsheirat : Wenn Forscher die fatale Rolle des Islam leugnen : Ungereimtheiten in einer Studie zum Thema ..."
+      ]
+    },
+    {
+      "id": "task004-466",
+      "input": "Ein Gastebuch kostenlos fur jeden : Gastebuch kostenlos in 2 Minuten startklar Gastebucher mit fertigen Designs ...",
+      "output": [
+        "Ein Gästebuch kostenlos für jeden : Gästebuch kostenlos in 2 Minuten startklar Gästebücher mit fertigen Designs ..."
+      ]
+    },
+    {
+      "id": "task004-467",
+      "input": "Hanf / Cannabis Re : CH Von der Polizei erwischt , was muss ich erwarten ? : Deine Handygespräche und Sms waren no ...",
+      "output": [
+        "Hanf / Cannabis Re : CH Von der Polizei erwischt , was muss ich erwarten ? : Deine Handygespräche und Sms waren noch ..."
+      ]
+    },
+    {
+      "id": "task004-468",
+      "input": "ich weiss es gibt zuviele .. Deine lieblingsapp ? %PosSmiley %PosSmiley %PosSmiley",
+      "output": [
+        "Ich weiss es gibt zu viele .. Deine Lieblingsapp ? %PosSmiley %PosSmiley %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-469",
+      "input": "das ist clever , ich glaub das mach ich auch %NegSmiley",
+      "output": [
+        "Das ist clever , ich glaube das mache ich auch %NegSmiley"
+      ]
+    },
+    {
+      "id": "task004-470",
+      "input": "aber im mom verlier ich auch total viele follower %PosSmiley",
+      "output": [
+        "Aber im Moment verliere ich auch total viele Follower %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-471",
+      "input": "Yaay , hab die bahn doch noch bekommenn %PosSmiley",
+      "output": [
+        "Yay , habe die Bahn doch noch bekommen %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-472",
+      "input": "youtube Design ist der letze Scheiss !!",
+      "output": [
+        "youtube Design ist der letzte Scheiss !!"
+      ]
+    },
+    {
+      "id": "task004-473",
+      "input": "Die Leute fragen : \" Läufst du immer so rum , den ganzen Leib voll Weissgold ? \"",
+      "output": [
+        "Die Leute fragen : \" Läufst du immer so herum , den ganzen Leib voll Weissgold ? \""
+      ]
+    },
+    {
+      "id": "task004-474",
+      "input": "\" Nein , manchmal auch Gelbgold , Gold gelb wie Maiskolben . \"",
+      "output": [
+        "\" Nein , manchmal auch Gelbgold , Gold gelb wie Maiskolben . \""
+      ]
+    },
+    {
+      "id": "task004-475",
+      "input": "Auf dem weg nach friedrichshafen fuer wetten dass .",
+      "output": [
+        "Auf dem weg nach Friedrichshafen für Wetten dass ."
+      ]
+    },
+    {
+      "id": "task004-476",
+      "input": "Es ist eine riesenehre bei tommys letzter sendung dabei sein zu duerfen .",
+      "output": [
+        "Es ist eine Riesenehre bei Tommys letzter Sendung dabei sein zu dürfen ."
+      ]
+    },
+    {
+      "id": "task004-477",
+      "input": "wir müssen zum glück nicht vorsingen ...",
+      "output": [
+        "Wir müssen zum glück nicht vorsingen ..."
+      ]
+    },
+    {
+      "id": "task004-478",
+      "input": "aber wenn hätte ichs auch nicht gemacht !!! %PosSmiley",
+      "output": [
+        "Aber wenn hätte ich es auch nicht gemacht !!! %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-479",
+      "input": "wir haben wenig tenor und bass aber die (c)",
+      "output": [
+        "Wir haben wenig Tenor und Bass aber die (c)"
+      ]
+    },
+    {
+      "id": "task004-480",
+      "input": "Unser erstes Mal vor der Kamera !",
+      "output": [
+        "Unser erstes Mal vor der Kamera !"
+      ]
+    },
+    {
+      "id": "task004-481",
+      "input": ":",
+      "output": [
+        ":"
+      ]
+    },
+    {
+      "id": "task004-482",
+      "input": "Wir wollten einfach mal ausprobieren , ob wir Spass daran haben , es vor der Kame ...",
+      "output": [
+        "Wir wollten einfach mal ausprobieren , ob wir Spass daran haben , es vor der Kamera ..."
+      ]
+    },
+    {
+      "id": "task004-483",
+      "input": "nächstes mal kommen wir alle mit so ' abgefahrenen Teil %PosSmiley",
+      "output": [
+        "Nächstes Mal kommen wir alle mit so einem abgefahrenen Teil %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-484",
+      "input": "also was da bei herr @username in der tl abgeht ...",
+      "output": [
+        "Also was da bei Herr @username in der Timeline abgeht ..."
+      ]
+    },
+    {
+      "id": "task004-485",
+      "input": "neee das will ich in meiner net haben ...",
+      "output": [
+        "Nee das will ich in meiner nicht haben ..."
+      ]
+    },
+    {
+      "id": "task004-486",
+      "input": "hach der arme echt %PosSmiley",
+      "output": [
+        "Hach der Arme echt %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-487",
+      "input": "nachdeinem 200. widmungstweet waren da boch 1-2 tweets danach",
+      "output": [
+        "Nach deinem 200. Widmungstweet waren da noch 1-2 Tweets danach"
+      ]
+    },
+    {
+      "id": "task004-488",
+      "input": "auf deinem profil steht aber du hast 307 tweets %PosSmiley",
+      "output": [
+        "Auf deinem Profil steht aber du hast 307 Tweets %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-489",
+      "input": "Ich habe 9 Fotos im Album \" From Hearbeat to Jakpot Tour \" auf Facebook gepostet",
+      "output": [
+        "Ich habe 9 Fotos im Album \" From Heartbeat to Jackpot Tour \" auf Facebook gepostet"
+      ]
+    },
+    {
+      "id": "task004-490",
+      "input": "Günther Jauch bezeichnet Gottschalk als sein Vorbild : Thomas Gottschalk moderiert heute nach 23 Jahren zum letzt ...",
+      "output": [
+        "Günther Jauch bezeichnet Gottschalk als sein Vorbild : Thomas Gottschalk moderiert heute nach 23 Jahren zum letzten ..."
+      ]
+    },
+    {
+      "id": "task004-491",
+      "input": "weis auch nicht %PosSmiley",
+      "output": [
+        "Weiss auch nicht %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-492",
+      "input": "' ich hab von denen gehört aber bei uns Gabs die nich %PosSmiley",
+      "output": [
+        "' Ich habe von denen gehört aber bei uns gab es die nicht %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-493",
+      "input": "Boahh ..",
+      "output": [
+        "Boah .."
+      ]
+    },
+    {
+      "id": "task004-494",
+      "input": "was ist auf WhatsUp los ???",
+      "output": [
+        "Was ist auf WhatsUp los ???"
+      ]
+    },
+    {
+      "id": "task004-495",
+      "input": "Ach Du Scheisse ..",
+      "output": [
+        "Ach Du Scheisse .."
+      ]
+    },
+    {
+      "id": "task004-496",
+      "input": "ich weiss gar nicht ...",
+      "output": [
+        "Ich weiss gar nicht ..."
+      ]
+    },
+    {
+      "id": "task004-497",
+      "input": "ich und @username waren aufm Pferd akrobatisch %PosSmiley",
+      "output": [
+        "Ich und @username waren auf dem Pferd akrobatisch %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-498",
+      "input": "Meinst du wirklich , das wäre schade drum ?",
+      "output": [
+        "Meinst du wirklich , das wäre schade darum ?"
+      ]
+    },
+    {
+      "id": "task004-499",
+      "input": "Ok , die Burg dort , die ist echt hübsch .",
+      "output": [
+        "Ok , die Burg dort , die ist echt hübsch ."
+      ]
+    },
+    {
+      "id": "task004-500",
+      "input": "Aber der Rest ? %PosSmiley",
+      "output": [
+        "Aber der Rest ? %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-501",
+      "input": "Im Winter , ja kenn' ich ...",
+      "output": [
+        "Im Winter , ja kenne ich ..."
+      ]
+    },
+    {
+      "id": "task004-502",
+      "input": "Ich war of in der N von Malaga und in Céuta ...",
+      "output": [
+        "Ich war off in der Nähe von Malaga und in Céuta ..."
+      ]
+    },
+    {
+      "id": "task004-503",
+      "input": "Im Moment ( Winter ) sind die Canaren besser",
+      "output": [
+        "Im Moment ( Winter ) sind die Kanaren besser"
+      ]
+    },
+    {
+      "id": "task004-504",
+      "input": "Werd ertsmal trainieren dann wieder verfügbar %PosSmiley",
+      "output": [
+        "Werde erstmal trainieren dann wieder verfügbar %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-505",
+      "input": "Mandy ich hab dich gerade auf The Dome gesehn %PosSmiley",
+      "output": [
+        "Mandy ich habe dich gerade auf The Dome gesehen %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-506",
+      "input": "ich hab nurn porblem wenn der drucker net bald geht",
+      "output": [
+        "Ich habe nur ein Problem wenn der Drucker nicht bald geht"
+      ]
+    },
+    {
+      "id": "task004-507",
+      "input": "Merke ich %PosSmiley",
+      "output": [
+        "Merke ich %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-508",
+      "input": "muss bald auch mal wieder nen neues machen",
+      "output": [
+        "Muss bald auch mal wieder ein Neues machen"
+      ]
+    },
+    {
+      "id": "task004-509",
+      "input": "Morgen um 12:00 startet das erste Weltcup Rennen der Maenner in Igls , Oesterreich !",
+      "output": [
+        "Morgen um 12:00 startet das erste Weltcup Rennen der Männer in Igls , Österreich !"
+      ]
+    },
+    {
+      "id": "task004-510",
+      "input": "Viel Glueck an alle Athleten",
+      "output": [
+        "Viel Glück an alle Athleten"
+      ]
+    },
+    {
+      "id": "task004-511",
+      "input": "der is volll klein und der sieht aus wie ne 40 jährige kampflesbe ...",
+      "output": [
+        "Der ist voll klein und der sieht aus wie eine 40 Jährige Kampflesbe ..."
+      ]
+    },
+    {
+      "id": "task004-512",
+      "input": "hab geard n artikel gelesen das voll viele promi weiber",
+      "output": [
+        "Habe gerade einen Artikel gelesen dass voll viele Promi Weiber"
+      ]
+    },
+    {
+      "id": "task004-513",
+      "input": "Muss für die letzten Klausuren lernen .",
+      "output": [
+        "Muss für die letzten Klausuren lernen ."
+      ]
+    },
+    {
+      "id": "task004-514",
+      "input": "Bin also ungefähr ' Woche weg , vielleicht auch n bisschen länger .",
+      "output": [
+        "Bin also ungefähr eine Woche weg , vielleicht auch ein bisschen länger ."
+      ]
+    },
+    {
+      "id": "task004-515",
+      "input": "AU REVOIR FROMAGE !",
+      "output": [
+        "Au revoir Fromage !"
+      ]
+    },
+    {
+      "id": "task004-516",
+      "input": "Also heud kann ich mich ja wieder überhaupt nich entscheiden welches Lied ich hören will %PosSmiley %PosSmiley",
+      "output": [
+        "Also heute kann ich mich ja wieder überhaupt nicht entscheiden welches Lied ich hören will %PosSmiley %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-517",
+      "input": "Trainingszeit im kleinen Fitnesscenter zuhause %Link",
+      "output": [
+        "Trainingszeit im kleinen Fitnesscenter zu Hause %Link"
+      ]
+    },
+    {
+      "id": "task004-518",
+      "input": "Sie sich gut fühlen \" danach \"",
+      "output": [
+        "Sie sich gut fühlen \" danach \""
+      ]
+    },
+    {
+      "id": "task004-519",
+      "input": "habe se gefunden ... und kein Kabel mehr %NegSmiley %PosSmiley",
+      "output": [
+        "habe sie gefunden ... und kein Kabel mehr %NegSmiley %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-520",
+      "input": "Ich glaub ich werd mich heut an die Bowle halten , für Glühwein ist es doch zu warm ! wartetweet",
+      "output": [
+        "Ich glaube ich werde mich heute an die Bowle halten , für Glühwein ist es doch zu warm ! warte Tweet"
+      ]
+    },
+    {
+      "id": "task004-521",
+      "input": "Metze , vermute ich auch .",
+      "output": [
+        "Metze , vermute ich auch ."
+      ]
+    },
+    {
+      "id": "task004-522",
+      "input": "6-er find ich schwierig .",
+      "output": [
+        "6-er finde ich schwierig ."
+      ]
+    },
+    {
+      "id": "task004-523",
+      "input": "Spannend .",
+      "output": [
+        "Spannend ."
+      ]
+    },
+    {
+      "id": "task004-524",
+      "input": "Eine Studie zur wissenschaftl. Twitternutzung",
+      "output": [
+        "Eine Studie zur wissenschaftlichen Twitternutzung"
+      ]
+    },
+    {
+      "id": "task004-525",
+      "input": "- kennt Ihr noch wissenschaftl. Twitterer ?",
+      "output": [
+        "- kennt Ihr noch wissenschaftliche Twitterer ?"
+      ]
+    },
+    {
+      "id": "task004-526",
+      "input": "Ohh die sind soo genial !",
+      "output": [
+        "Ohh die sind so genial !"
+      ]
+    },
+    {
+      "id": "task004-527",
+      "input": "Ich hab die Bücher innherhalb von 3 wochen gelesen !",
+      "output": [
+        "Ich habe die Bücher innerhalb von 3 Wochen gelesen !"
+      ]
+    },
+    {
+      "id": "task004-528",
+      "input": "Ich hatte den 1. noch nciht durch da hab ich",
+      "output": [
+        "Ich hatte den 1. noch nicht durch da habe ich"
+      ]
+    },
+    {
+      "id": "task004-529",
+      "input": "klar kannst du !",
+      "output": [
+        "Klar kannst du !"
+      ]
+    },
+    {
+      "id": "task004-530",
+      "input": "Je laenger du wartest , um so mehr aergerst du dich spaeter , so lange gewartet zu haben .. %PosSmiley",
+      "output": [
+        "Je länger du wartest , um so mehr ärgerst du dich später , so lange gewartet zu haben .. %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-531",
+      "input": "lohnt sich , trust me !",
+      "output": [
+        "Lohnt sich , trust me !"
+      ]
+    },
+    {
+      "id": "task004-532",
+      "input": "Abteilung Import bei Bloomways unter neuer Leitung : Seit dem 15. November 2011 leitet Pim Biewenga die Einkaufsa ...",
+      "output": [
+        "Abteilung Import bei Bloomways unter neuer Leitung : Seit dem 15. November 2011 leitet Pim Biewenga die Einkaufsabteilung ..."
+      ]
+    },
+    {
+      "id": "task004-533",
+      "input": "Heiii .",
+      "output": [
+        "Hei ."
+      ]
+    },
+    {
+      "id": "task004-534",
+      "input": "Mach einmal ein Video wo Sandra in der schule ist %PosSmiley",
+      "output": [
+        "Mach einmal ein Video wo Sandra in der Schule ist %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-535",
+      "input": "waere voll CooL .",
+      "output": [
+        "Wäre voll cool ."
+      ]
+    },
+    {
+      "id": "task004-536",
+      "input": "%PosSmiley LG",
+      "output": [
+        "%PosSmiley LG"
+      ]
+    },
+    {
+      "id": "task004-537",
+      "input": "Es ist 13 Uhr und ich bin immernoch müde wie Hund .",
+      "output": [
+        "Es ist 13 Uhr und ich bin immer noch müde wie Hund ."
+      ]
+    },
+    {
+      "id": "task004-538",
+      "input": "wettendass und da sage noch einer die schweizer seien langweilichrrrrrrrrr ...",
+      "output": [
+        "Wetten, dass und da sage noch einer die Schweizer seien langweilig ..."
+      ]
+    },
+    {
+      "id": "task004-539",
+      "input": "Nen doppelten Whisky ?",
+      "output": [
+        "Einen doppelten Whisky ?"
+      ]
+    },
+    {
+      "id": "task004-540",
+      "input": "Auf Arbeit gönne ich mir erst mal was gegen die Kopfschmerzen .",
+      "output": [
+        "Auf Arbeit gönne ich mir erst mal etwas gegen die Kopfschmerzen ."
+      ]
+    },
+    {
+      "id": "task004-541",
+      "input": "Bernisches Mausoleum : Oder Vorderst Gott Zur Ehr / Lob / Und Danck , Volume 2 :",
+      "output": [
+        "Bernisches Mausoleum : Oder Vorderst Gott Zur Ehre / Lob / Und Dank , Volume 2 :"
+      ]
+    },
+    {
+      "id": "task004-542",
+      "input": "star wars ohne mich ? %Smiley",
+      "output": [
+        "Star Wars ohne mich ? %Smiley"
+      ]
+    },
+    {
+      "id": "task004-543",
+      "input": "nöö %PosSmiley",
+      "output": [
+        "Nein %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-544",
+      "input": "aber du heisst nico büchele und hast am 4. juli bday und wohnst in ludwigsburg oder so inner art %PosSmiley",
+      "output": [
+        "Aber du heisst Nico Büchele und hast am 4. Juli Birthday und wohnst in Ludwigsburg oder so innere Art %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-545",
+      "input": "Infinity Blade 2 : Action-Hit für Fingerfechter auf iOS : Grösser , schöner , besser ?",
+      "output": [
+        "Infinity Blade 2 : Action-Hit für Fingerfechter auf iOS : Grösser , schöner , besser ?"
+      ]
+    },
+    {
+      "id": "task004-546",
+      "input": "Das verspricht so ziemlich jed ...",
+      "output": [
+        "Das verspricht so ziemlich jedem ..."
+      ]
+    },
+    {
+      "id": "task004-547",
+      "input": "htt ...",
+      "output": [
+        "htt ..."
+      ]
+    },
+    {
+      "id": "task004-548",
+      "input": "dann änder ich meinen namen auch %PosSmiley",
+      "output": [
+        "Dann ändere ich meinen Namen auch %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-549",
+      "input": "Hier das auto von meinem Vater ( @DuDoooo5 was meinste ? )",
+      "output": [
+        "Hier das Auto von meinem Vater ( @DuDoooo5 was meinst du ? )"
+      ]
+    },
+    {
+      "id": "task004-550",
+      "input": "TV an - \" Isch bün der Bürgermeister ! \" - zap - \" Icke bin der Favorit ! \" - TV aus ... äh jaaa ...",
+      "output": [
+        "TV an - \" Ich bin der Bürgermeister ! \" - zap - \" Ich bin der Favorit ! \" - TV aus ... äh ja ..."
+      ]
+    },
+    {
+      "id": "task004-551",
+      "input": "Unsere Epidemien : Was wurde aus Ehec und Co ?",
+      "output": [
+        "Unsere Epidemien : Was wurde aus Ehec und Co ?"
+      ]
+    },
+    {
+      "id": "task004-552",
+      "input": "sind sie aktueller denn je ? : UFrom feed by freiemedien %Link freiemedien",
+      "output": [
+        "Sind sie aktueller denn je ? : UFrom feed by Freiemedien %Link Freiemedien"
+      ]
+    },
+    {
+      "id": "task004-553",
+      "input": "Meine 13803 Tweets gehen an",
+      "output": [
+        "Meine 13803 Tweets gehen an"
+      ]
+    },
+    {
+      "id": "task004-554",
+      "input": "liebe euch so sehr %PosSmiley",
+      "output": [
+        "Liebe euch so sehr %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-555",
+      "input": "kisss",
+      "output": [
+        "Kiss"
+      ]
+    },
+    {
+      "id": "task004-556",
+      "input": "ich begebe mich jetzt in die kuschelhöhle vomFreund .",
+      "output": [
+        "Ich begebe mich jetzt in die Kuschelhöhle vom Freund ."
+      ]
+    },
+    {
+      "id": "task004-557",
+      "input": "Gute nacht %PosSmiley",
+      "output": [
+        "Gute Nacht %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-558",
+      "input": "Ich habe koftschmersen , verdammen",
+      "output": [
+        "Ich habe Kopfschmerzen , verdammen"
+      ]
+    },
+    {
+      "id": "task004-559",
+      "input": "Ich wusste ja garnicht , dass ich so geniale Lieder auf meinem PC habe . %PosSmiley",
+      "output": [
+        "Ich wusste ja gar nicht , dass ich so geniale Lieder auf meinem PC habe . %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-560",
+      "input": "Kennt ihr diese Situationen , in denen ihr denkt , es könnte nicht schlimmer kommen und dann wirds doch noch tausend mal schlimmer ?",
+      "output": [
+        "Kennt ihr diese Situationen , in denen ihr denkt , es könnte nicht schlimmer kommen und dann wird es doch noch tausend mal schlimmer ?"
+      ]
+    },
+    {
+      "id": "task004-561",
+      "input": "Du hast Jorge gesagt .",
+      "output": [
+        "Du hast Jorge gesagt ."
+      ]
+    },
+    {
+      "id": "task004-562",
+      "input": "Jorge hat aber keine Arme !",
+      "output": [
+        "Jorge hat aber keine Arme !"
+      ]
+    },
+    {
+      "id": "task004-563",
+      "input": "auf geht es ...",
+      "output": [
+        "Auf geht es ..."
+      ]
+    },
+    {
+      "id": "task004-564",
+      "input": "Jorge die neuzugezogenen kommen auch noch rum ...",
+      "output": [
+        "Jorge die Neuzugezogenen kommen auch noch herum ..."
+      ]
+    },
+    {
+      "id": "task004-565",
+      "input": "Zo lang ich nog in laeve bèn , bin ich eine Fortuna fan !",
+      "output": [
+        "So lang ich noch in Laeve bin , bin ich eine Fortuna Fan !"
+      ]
+    },
+    {
+      "id": "task004-566",
+      "input": "Okay .",
+      "output": [
+        "Okay ."
+      ]
+    },
+    {
+      "id": "task004-567",
+      "input": "Dann freu ich mich auf Montag . %PosSmiley",
+      "output": [
+        "Dann freue ich mich auf Montag . %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-568",
+      "input": "af welchen channel isch danza kuduro ?",
+      "output": [
+        "Auf welchem Channel ist Danza Kuduro ?"
+      ]
+    },
+    {
+      "id": "task004-569",
+      "input": "Einigen von euch würde ich gern mal zeigen , was ich auf Arbeit mache & würde dannach fragen , ob ihr Schule immernoch so doof findet .",
+      "output": [
+        "Einigen von euch würde ich gern mal zeigen , was ich auf Arbeit mache & würde danach fragen , ob ihr Schule immer noch so doof findet ."
+      ]
+    },
+    {
+      "id": "task004-570",
+      "input": "ich kann net öffnen %Smiley",
+      "output": [
+        "Ich kann nicht öffnen %Smiley"
+      ]
+    },
+    {
+      "id": "task004-571",
+      "input": ":",
+      "output": [
+        ":"
+      ]
+    },
+    {
+      "id": "task004-572",
+      "input": "3 muss auch ma sein , wo ich sonst nur nörgel %PosSmiley",
+      "output": [
+        "3 muss auch mal sein , wo ich sonst nur nörgele %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-573",
+      "input": "super arbeit , gerne wieder , top piratebayäääähm , wait",
+      "output": [
+        "Super Arbeit , gerne wieder , Top Piratebay Ähm , wait"
+      ]
+    },
+    {
+      "id": "task004-574",
+      "input": "Straks draussen cillun ' mit meine guten freund Yiri : S",
+      "output": [
+        "Stracks draussen chillen ' mit meinem guten Freund Yiri : S"
+      ]
+    },
+    {
+      "id": "task004-575",
+      "input": "eia !!",
+      "output": [
+        "Eia !!"
+      ]
+    },
+    {
+      "id": "task004-576",
+      "input": "musst du auf jeden fall machen ^^",
+      "output": [
+        "Musst du auf jeden fall machen ^^"
+      ]
+    },
+    {
+      "id": "task004-577",
+      "input": "ich nehm keine mit , will net zu viel gepäck haben .",
+      "output": [
+        "Ich nehme keine mit , will nicht zu viel Gepäck haben ."
+      ]
+    },
+    {
+      "id": "task004-578",
+      "input": "obwohl es eine echt gute idee is ... %PosSmiley",
+      "output": [
+        "Obwohl es eine echt gute idee ist ... %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-579",
+      "input": "ik auch ...",
+      "output": [
+        "Ich auch ..."
+      ]
+    },
+    {
+      "id": "task004-580",
+      "input": "kann ich heut doch net %PosSmiley",
+      "output": [
+        "Kann ich heute doch nicht %PosSmiley"
+      ]
+    },
+    {
+      "id": "task004-581",
+      "input": "Kurze Witze : Lustige Spr und Witze finden sich hier auf unserer Seite uuml in mehrere Ka ...",
+      "output": [
+        "Kurze Witze : Lustige Sprüche und Witze finden sich hier auf unserer Seite übersichtlich in mehreren Kategorien ..."
+      ]
+    },
+    {
+      "id": "task004-582",
+      "input": "Anspruchvolle geschenke : Luxuriöse Pflege für ein sichtbar strahlendes , frisches Aussehen , spürbar weiches Hautgefühl ....",
+      "output": [
+        "Anspruchsvolle geschenke : Luxuriöse Pflege für ein sichtbar strahlendes , frisches Aussehen , spürbar weiches Hautgefühl ...."
+      ]
+    }
+  ],
+  "Instance License": [
+    "Unknown"
+  ]
+}

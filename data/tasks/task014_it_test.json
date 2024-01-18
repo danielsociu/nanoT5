@@ -1,0 +1,756 @@
+{
+  "Contributors": [
+    "Swaroop Mishra",
+    "Daniel Khashabi"
+  ],
+  "Source": [
+    "MultiLexNorm: Multilingual Lexical Normalization"
+  ],
+  "URL": [
+    "https://noisy-text.github.io/2021/multi-lexnorm.html"
+  ],
+  "Categories": [
+    "Lexical Normalization"
+  ],
+  "Reasoning": [
+    "Temporal Reasoning",
+    "Commonsense Reasoning"
+  ],
+  "Definition": [
+    "Lexical norm"
+  ],
+  "Input_language": [
+    "Multilanguage"
+  ],
+  "Output_language": [
+    "Multilanguage"
+  ],
+  "Instruction_language": [
+    "Multilanguage"
+  ],
+  "Domains": [
+    "Twitter",
+    "Arto",
+    "sms",
+    "forum"
+  ],
+  "Positive Examples": [
+    {
+      "input": "Sono a cell da 3 ore nonostante ripetuti tentativi di chiudere la telefonata , come fanno le persone a non rendersi conto che ... “ Basta ! “ ?",
+      "output": "Sono al cellulare da 3 ore nonostante ripetuti tentativi di chiudere la telefonata , come fanno le persone a non render si conto che ... “ Basta ! “ ?",
+      "explanation": "The text is now lexically normalized and correct."
+    }
+  ],
+  "Negative Examples": [
+    {
+      "input": "#Roma , presidenti delle province chiedono a #Napolitano modifica del decreto Salva Italia del governo #Monti http://t.co/jqa9qDrN",
+      "output": "#Romana , presidenti delle province chiedono a #Napolitno modifica del decreto Sala Ialia del governo Tifa #Monti http://t.co/jqa9qDrN",
+      "explanation": "The text is not lexically normalized and it is incorrect."
+    }
+  ],
+  "Instances": [
+    {
+      "id": "task014-0",
+      "input": "Federauto al Governo Monti : Fate presto : il 30 % dei 3.600 dealer italiani , ha chiuso il 2011 in rosso http://t.co/fgkRCNHo #auto #mercato",
+      "output": [
+        "Federauto al Governo Monti : Fate presto : il 30 % dei 3.600 dealer italiani , ha chiuso il 2011 in rosso http://t.co/fgkRCNHo #auto #mercato"
+      ]
+    },
+    {
+      "id": "task014-1",
+      "input": "@PaolaCorb @alessandropaul7 @lucianaco7 no Paolè ! mo chiudemo bottega pure noi ! ;)) dolce notte Paolè ! :)) ***",
+      "output": [
+        "@PaolaCorb @alessandropaul7 @lucianaco7 no Paolè ! mo chiudemo bottega pure noi ! ;)) dolce notte Paolè ! :)) ***"
+      ]
+    },
+    {
+      "id": "task014-2",
+      "input": "@Loveisfragil non avevo fatto caso al tuo nuovo nome akldl inutile dire che mi piace da morire",
+      "output": [
+        "@Loveisfragil non avevo fatto caso al tuo nuovo nome akldl inutile dire che mi piace da morire"
+      ]
+    },
+    {
+      "id": "task014-3",
+      "input": "Voglio essere ottimista : Mario Monti mi ha spiegato l' economia 20 anni fa , speriamo riesca ad insegnarla al paese #fullmonti #rialzatiitalia",
+      "output": [
+        "Voglio essere ottimista : Mario Monti mi ha spiegato l' economia 20 anni fa , speriamo riesca ad insegnarla al paese #fullmonti #rialzatiitalia"
+      ]
+    },
+    {
+      "id": "task014-4",
+      "input": "Perchè rovinare un decente #governo #Monti ( almeno nei nomi ) con Corrado #Passera ? ( e parlo del personaggio ) Speriamo bene ...",
+      "output": [
+        "Perché rovinare un decente #governo #Monti ( almeno nei nomi ) con Corrado #Passera ? ( e parlo del personaggio ) Speriamo bene ..."
+      ]
+    },
+    {
+      "id": "task014-5",
+      "input": "NO AL GOVERNO MONTI , ELEZIONI SUBITO . PER LA SOVRANITA' POPOLARE E IL PRIMATO DELLA POLITICA , CONTRO LE INGERENZE ... http://t.co/A24NUliu",
+      "output": [
+        "No al governo Monti , elezioni subito . Per la sovranità popolare E il primato della politica , contro le ingerenze ... http://t.co/A24NUliu"
+      ]
+    },
+    {
+      "id": "task014-6",
+      "input": "fine dell' erezione mattutina . posso alzarmi e lamentarmi perché nessuno mi ha ancora portato il caffè a letto .",
+      "output": [
+        "fine dell' erezione mattutina . posso alzarmi e lamentarmi perché nessuno mi ha ancora portato il caffè a letto ."
+      ]
+    },
+    {
+      "id": "task014-7",
+      "input": "Mario Monti regalaci un sogno un Italia normale cornetto e caffè al Bar Dello Sport Grazie ... http://t.co/JHwZ11QJ",
+      "output": [
+        "Mario Monti regalaci un sogno una Italia normale cornetto e caffè al Bar dello Sport grazie ... http://t.co/JHwZ11QJ"
+      ]
+    },
+    {
+      "id": "task014-8",
+      "input": "La #corruzione costa 60 mld l' anno ! Noi da un pezzo siamo pronti a combatterla . Il Governo #Monti cosa vuole fare ? http://t.co/kSX8q3x0",
+      "output": [
+        "La #corruzione costa 60 miliardi l' anno ! Noi da un pezzo siamo pronti a combatterla . Il Governo #Monti cosa vuole fare ? http://t.co/kSX8q3x0"
+      ]
+    },
+    {
+      "id": "task014-9",
+      "input": "Il governo Monti alle prime prove oggi il premier in Senato per la fiducia NightChannel.it",
+      "output": [
+        "Il governo Monti alle prime prove oggi il premier in Senato per la fiducia NightChannel.it"
+      ]
+    },
+    {
+      "id": "task014-10",
+      "input": "Governo : Fini , Monti personalita' piu' adeguata a affrontare crisi : Roma , 10 nov . ( Adnkronos ) ? Mario Monti e' l... http://t.co/pqImjVew",
+      "output": [
+        "Governo : Fini , Monti personalità più adeguata a affrontare crisi : Roma , 10 novembre . ( Adnkronos ) ? Mario Monti è l... http://t.co/pqImjVew"
+      ]
+    },
+    {
+      "id": "task014-11",
+      "input": "Il Jailbreak untethered di iOS 5.1 è più vicino : La notizia è di questa mattina : probabilmente si è fatto un pas... http://t.co/byGnBBTi",
+      "output": [
+        "Il Jailbreak untethered di iOS 5.1 è più vicino : La notizia è di questa mattina : probabilmente si è fatto un pas... http://t.co/byGnBBTi"
+      ]
+    },
+    {
+      "id": "task014-12",
+      "input": "Lo so , è cattivo e ininfluente , ma il governo Monti é composto da brutta gente , brutti più della malattia . Saranno bravi eh , ma brutti",
+      "output": [
+        "Lo so , è cattivo e ininfluente , ma il governo Monti è composto da brutta gente , brutti più della malattia . Saranno bravi eh , ma brutti"
+      ]
+    },
+    {
+      "id": "task014-13",
+      "input": "“ dovrei ringraziare scooby doo , perchè è grazie a lui se ho imparato che i veri mostri sono le persone . ”",
+      "output": [
+        "“ dovrei ringraziare scooby doo , perché è grazie a lui se ho imparato che i veri mostri sono le persone . ”"
+      ]
+    },
+    {
+      "id": "task014-14",
+      "input": "RT @OhSehunTea : comunichiamo ! se non comunichi non si può fare pace ! quante volte ho mandato a fanculo Luhan e quante gliene ho dette nessu…",
+      "output": [
+        "RT @OhSehunTea : comunichiamo ! se non comunichi non si può fare pace ! quante volte ho mandato a fanculo Luhan e quante glie ne ho dette nessu…"
+      ]
+    },
+    {
+      "id": "task014-15",
+      "input": "@unicornfuckery per forza v.v il problema è il fuso orario ahah",
+      "output": [
+        "@unicornfuckery per forza v.v il problema è il fuso orario ahah"
+      ]
+    },
+    {
+      "id": "task014-16",
+      "input": "RT @mvguasticchi : @pellegiornale grazie ai cittadini , alle istituzioni e loro dipendenti che ogni giorno lavorano per migliorare i servizi .…",
+      "output": [
+        "RT @mvguasticchi : @pellegiornale grazie ai cittadini , alle istituzioni e loro dipendenti che ogni giorno lavorano per migliorare i servizi .…"
+      ]
+    },
+    {
+      "id": "task014-17",
+      "input": "#piazzapulita Formigli : \" Mi levate l' audio di #Grillo che mi dà fastidio \" . È comunicazione di servizio , ma anche la frase clou della serata !",
+      "output": [
+        "#piazzapulita Formigli : \" Mi levate l' audio di #Grillo che mi dà fastidio \" . È comunicazione di servizio , ma anche la frase clou della serata !"
+      ]
+    },
+    {
+      "id": "task014-18",
+      "input": "Governo , Monti vede Van Rompuy L' Italia va nella giusta direzione http://t.co/CU7N3yeH",
+      "output": [
+        "Governo , Monti vede Van Rompuy L' Italia va nella giusta direzione http://t.co/CU7N3yeH"
+      ]
+    },
+    {
+      "id": "task014-19",
+      "input": "Mi piace l' atteggiamento di #Grillo nel suo blog . Pubblica tutti gli attacchi che gli fanno , li mette alla luce ... http://t.co/GaqriKJv",
+      "output": [
+        "Mi piace l' atteggiamento di #Grillo nel suo blog . Pubblica tutti gli attacchi che gli fanno , li mette alla luce ... http://t.co/GaqriKJv"
+      ]
+    },
+    {
+      "id": "task014-20",
+      "input": "sosteniamo il governo Monti che affronta l' emergenza , perche' sappiamo che e' l' unica possibile alternativa al fallimento dell' Italia",
+      "output": [
+        "sosteniamo il governo Monti che affronta l' emergenza , perché sappiamo che è l' unica possibile alternativa al fallimento dell' Italia"
+      ]
+    },
+    {
+      "id": "task014-21",
+      "input": "Tobin tax : Jerusalmi , è dannosa va tolta http://t.co/7klJ49BVBj",
+      "output": [
+        "Tobin tax : Jerusalmi , è dannosa va tolta http://t.co/7klJ49BVBj"
+      ]
+    },
+    {
+      "id": "task014-22",
+      "input": "RT @PAO_lost : Comunque ricordo ai più giovani che si può amare da morire ma morire d' amore no . Certe antiche perle di saggezza vanno traman…",
+      "output": [
+        "RT @PAO_lost : Comunque ricordo ai più giovani che si può amare da morire ma morire d' amore no . Certe antiche perle di saggezza vanno traman…"
+      ]
+    },
+    {
+      "id": "task014-23",
+      "input": "Il decreto sulle carceri del governo Monti | Il Post http://t.co/o0mzQqzk via @ilpost",
+      "output": [
+        "Il decreto sulle carceri del governo Monti | Il Post http://t.co/o0mzQqzk via @ilpost"
+      ]
+    },
+    {
+      "id": "task014-24",
+      "input": "Professor Monti , che fine hanno fatto quei 98 Miliardi di euro evasi dai Concessionari dei Monopoli di Stato ? Dove stanno ? Chi li Presi ?",
+      "output": [
+        "Professor Monti , che fine hanno fatto quei 98 miliardi di euro evasi dai concessionari dei monopoli di stato ? Dove stanno ? Chi li presi ?"
+      ]
+    },
+    {
+      "id": "task014-25",
+      "input": "la politica domina , ora TT : #piazzapulita #serviziopubblico #Grillo Belsito M5S Partito della Nazione",
+      "output": [
+        "la politica domina , ora TT : #piazzapulita #serviziopubblico #Grillo Belsito M5S Partito della Nazione"
+      ]
+    },
+    {
+      "id": "task014-26",
+      "input": "che simpatica la Gelmini ! Il governo #Monti prosegue quello che aveva iniziato il governo Berlusconi nei 3 anni precedenti ! Ma infatti !",
+      "output": [
+        "che simpatica la Gelmini ! Il governo #Monti prosegue quello che aveva iniziato il governo Berlusconi nei 3 anni precedenti ! Ma infatti !"
+      ]
+    },
+    {
+      "id": "task014-27",
+      "input": "Giovanni Favia ( M5S ) ospite ad Agorà ( Rai3 ) su Finaziamento ai partiti e Governo Monti http://t.co/AAW8NMgi",
+      "output": [
+        "Giovanni Favia ( M5S ) ospite ad Agorà ( Rai3 ) su Finaziamento ai partiti e Governo Monti http://t.co/AAW8NMgi"
+      ]
+    },
+    {
+      "id": "task014-28",
+      "input": "Fai un ordine il negoziante firma conferma Il pagament 60 / 90 / 120 / 150 / 180 / 210 giorni alla prima scadenza tel x chiedere Di spostare il 60 / 90",
+      "output": [
+        "Fai un ordine il negoziante firma conferma Il pagament 60 / 90 / 120 / 150 / 180 / 210 giorni alla prima scadenza tel x chiedere Di spostare il 60 / 90"
+      ]
+    },
+    {
+      "id": "task014-29",
+      "input": "Nella lista del #sacrificio il governo Monti ha ( casualmente ) lasciato fuori anche la Chiesa oltre gli Onorevoli , @MaxNapolitano eh ?",
+      "output": [
+        "Nella lista del #sacrificio il governo Monti ha ( casualmente ) lasciato fuori anche la Chiesa oltre gli Onorevoli , @MaxNapolitano eh ?"
+      ]
+    },
+    {
+      "id": "task014-30",
+      "input": "Parere favorevole del governo #Monti all' asta per le frequenze televisive ... #opencamera #manovra",
+      "output": [
+        "Parere favorevole del governo #Monti all' asta per le frequenze televisive ... #opencamera #manovra"
+      ]
+    },
+    {
+      "id": "task014-31",
+      "input": "Povero Giarda ... è l' unico del #Governo #Monti che lavora davvero ... ma gli altri che fanno ? #opencamera",
+      "output": [
+        "Povero Giarda ... è l' unico del #Governo #Monti che lavora davvero ... ma gli altri che fanno ? #opencamera"
+      ]
+    },
+    {
+      "id": "task014-32",
+      "input": "#Grillo attacca #Vendola : \" Supercazzola che fa affari con la Marcegaglia \" - Video http://t.co/SnfiF4gt",
+      "output": [
+        "#Grillo attacca #Vendola : \" Supercazzola che fa affari con la Marcegaglia \" - Video http://t.co/SnfiF4gt"
+      ]
+    },
+    {
+      "id": "task014-33",
+      "input": "La Repubblica : Mario Monti senatore a vita Sì del le nel giorno più duro http://t.co/GBFY4r30",
+      "output": [
+        "La Repubblica : Mario Monti senatore a vita Sì del le nel giorno più duro http://t.co/GBFY4r30"
+      ]
+    },
+    {
+      "id": "task014-34",
+      "input": "#Grillo non è #antipolitica . È #politica di chi non vuole più parassiti , ladri , puttane e leccaculo alla testa del Paese . È troppo ? Si può ?",
+      "output": [
+        "#Grillo non è #antipolitica . È #politica di chi non vuole più parassiti , ladri , puttane e leccaculo alla testa del Paese . È troppo ? Si può ?"
+      ]
+    },
+    {
+      "id": "task014-35",
+      "input": "Monito di Fassina al governo . #Monti , preoccupato , risponde : Oddio , e mo' questo chi è ? http://t.co/4nTehDux via @notapolitica",
+      "output": [
+        "Monito di Fassina al governo . #Monti , preoccupato , risponde : Oddio , e mo' questo chi è ? http://t.co/4nTehDux via @notapolitica"
+      ]
+    },
+    {
+      "id": "task014-36",
+      "input": "Alcuni mettono mani nelle tasche degli italiani : sono evasori rispetto a contribuenti . Mario #Monti Vero , ma troppe tasse = troppa evasione",
+      "output": [
+        "Alcuni mettono mani nelle tasche degli italiani : sono evasori rispetto a contribuenti . Mario #Monti Vero , ma troppe tasse = troppa evasione"
+      ]
+    },
+    {
+      "id": "task014-37",
+      "input": "Io del governo Monti sono convinto . Ma per uscire dalla crisi , raddrizzare il Paese e preparare la strada ad un bipolarismo civile ...",
+      "output": [
+        "Io del governo Monti sono convinto . Ma per uscire dalla crisi , raddrizzare il Paese e preparare la strada ad un bipolarismo civile ..."
+      ]
+    },
+    {
+      "id": "task014-38",
+      "input": "#Roma , presidenti delle province chiedono a #Napolitano modifica del decreto Salva Italia del governo #Monti http://t.co/jqa9qDrN",
+      "output": [
+        "#Roma , presidenti delle province chiedono a #Napolitano modifica del decreto Salva Italia del governo #Monti http://t.co/jqa9qDrN"
+      ]
+    },
+    {
+      "id": "task014-39",
+      "input": "CGIL , CISL , UIL ed UGL incontrano la stampa al termine del vertice del Governo Monti con le Parti Sociali http://t.co/piXzj85f",
+      "output": [
+        "CGIL , CISL , UIL ed UGL incontrano la stampa al termine del vertice del Governo Monti con le Parti Sociali http://t.co/piXzj85f"
+      ]
+    },
+    {
+      "id": "task014-40",
+      "input": "Si all' Europa no all' EuroBANCA ! No a Mario Monti #nomonti @angealfa @AzioneUni @alepontecorvo @cinelliandreany @ChiaraColosimo",
+      "output": [
+        "Si all' Europa no all' EuroBANCA ! No a Mario Monti #nomonti @angealfa @AzioneUni @alepontecorvo @cinelliandreany @ChiaraColosimo"
+      ]
+    },
+    {
+      "id": "task014-41",
+      "input": "@silviapasquero #Grillo non vuole il bene dell' #Italia , vuole entrare nella #Casta perchè gli fanno comodo 12000 euro al mese di più ...",
+      "output": [
+        "@silviapasquero #Grillo non vuole il bene dell' #Italia , vuole entrare nella #Casta perché gli fanno comodo 12000 euro al mese di più ..."
+      ]
+    },
+    {
+      "id": "task014-42",
+      "input": "DI RUSCIO : ritengo ingiusto il decreto varato dal Governo Monti",
+      "output": [
+        "Di Ruscio : ritengo ingiusto il decreto varato dal Governo Monti"
+      ]
+    },
+    {
+      "id": "task014-43",
+      "input": "Il governo Monti richiede ai cittadini comuni grandi sacrifici ma ha avuto uno scarso coraggio nell' aggredire i privilegi consolidati . \"",
+      "output": [
+        "Il governo Monti richiede ai cittadini comuni grandi sacrifici ma ha avuto uno scarso coraggio nell' aggredire i privilegi consolidati . \""
+      ]
+    },
+    {
+      "id": "task014-44",
+      "input": "Credo che Mario Monti abbia dei seri problemi con l' italiano ... secondo me si é confuso con la parola utopico piuttosto che monotono !",
+      "output": [
+        "Credo che Mario Monti abbia dei seri problemi con l' italiano ... secondo me si è confuso con la parola utopico piuttosto che monotono !"
+      ]
+    },
+    {
+      "id": "task014-45",
+      "input": "quelli che fanno i leccaculo con i following per paura di essere unfollowati mi fanno ridere",
+      "output": [
+        "quelli che fanno i leccaculo con i following per paura di essere unfollowati mi fanno ridere"
+      ]
+    },
+    {
+      "id": "task014-46",
+      "input": "fattoquotidiano : #Grillo e il teatrino della politica . Quanto ci piace - Dal blog di Fabrizio Tonello ... http://t.co/C3hVIP1a",
+      "output": [
+        "fattoquotidiano : #Grillo e il teatrino della politica . Quanto ci piace - Dal blog di Fabrizio Tonello ... http://t.co/C3hVIP1a"
+      ]
+    },
+    {
+      "id": "task014-47",
+      "input": "C' è la netta percezione che il governo Monti sia migliore del precedente e , purtroppo , per quasi tutti , anche del successivo !",
+      "output": [
+        "C' è la netta percezione che il governo Monti sia migliore del precedente e , purtroppo , per quasi tutti , anche del successivo !"
+      ]
+    },
+    {
+      "id": "task014-48",
+      "input": "La politica del governo Monti ammazza la crescita dell' Italia , riduce in miseria il popolo italiano e non salva l' Europa dal fallimento .",
+      "output": [
+        "La politica del governo Monti ammazza la crescita dell' Italia , riduce in miseria il popolo italiano e non salva l' Europa dal fallimento ."
+      ]
+    },
+    {
+      "id": "task014-49",
+      "input": "Happy 11/11/11 , speriamo ci sia una svolta sul Governo Monti ..",
+      "output": [
+        "Happy 11/11/11 , speriamo ci sia una svolta sul Governo Monti .."
+      ]
+    },
+    {
+      "id": "task014-50",
+      "input": "IPR Marketing : la fiducia nel #Governo #Monti torna a salire e si attesta al 57 % , + 4 % dal 7 gennaio . http://t.co/pAGT5GPj",
+      "output": [
+        "IPR Marketing : la fiducia nel #Governo #Monti torna a salire e si attesta al 57 % , + 4 % dal 7 gennaio . http://t.co/pAGT5GPj"
+      ]
+    },
+    {
+      "id": "task014-51",
+      "input": "#Grillo di non critichi #Napolitano : la critica al Presidente della Repubblica compete solo ai partiti in cui milita #Bersani",
+      "output": [
+        "#Grillo di non critichi #Napolitano : la critica al Presidente della Repubblica compete solo ai partiti in cui milita #Bersani"
+      ]
+    },
+    {
+      "id": "task014-52",
+      "input": "Crisi di governo . Più vicina l' ipotesi Mario Monti . E intanto il maxiemendamento arriva al Senato : Il maxiemenda... http://t.co/PMbWO7bB",
+      "output": [
+        "Crisi di governo . Più vicina l' ipotesi Mario Monti . E intanto il maxiemendamento arriva al Senato : Il maxiemenda... http://t.co/PMbWO7bB"
+      ]
+    },
+    {
+      "id": "task014-53",
+      "input": "Il governo #Monti aumenta le tasse sulle sigarette .. aver smesso di fumare fa di me un evasore ? O.o",
+      "output": [
+        "Il governo #Monti aumenta le tasse sulle sigarette .. avere smesso di fumare fa di me un evasore ? O.o"
+      ]
+    },
+    {
+      "id": "task014-54",
+      "input": "@jacko83 #Grillo non ha bisogno della tv ne dei \" giornalisti \" , se vuoi fare le domande vai in piazza come tutti ;)",
+      "output": [
+        "@jacko83 #Grillo non ha bisogno della tv né dei \" giornalisti \" , se vuoi fare le domande vai in piazza come tutti ;)"
+      ]
+    },
+    {
+      "id": "task014-55",
+      "input": "@SerenellaM : Giarda è il Wolf del governo #Monti : corregge gli erroriil ministro orecchione e occhialone",
+      "output": [
+        "@SerenellaM : Giarda è il Wolf del governo #Monti : corregge gli errori il ministro orecchione e occhialone"
+      ]
+    },
+    {
+      "id": "task014-56",
+      "input": "Buonasera . Hahaha l' ultima della mia città ! son stati dati i nomi ai botti : Bomba Mario Monti e Bomba Finanziaria . Unici !",
+      "output": [
+        "Buonasera . Hahaha l' ultima della mia città ! sono stati dati i nomi ai botti : Bomba Mario Monti e bomba finanziaria . Unici !"
+      ]
+    },
+    {
+      "id": "task014-57",
+      "input": "C' è una grande verità che i partiti con i loro attacchi contro #Grillo non possono cancellare , quello che hanno fatto negli ultimi 20anni !",
+      "output": [
+        "C' è una grande verità che i partiti con i loro attacchi contro #Grillo non possono cancellare , quello che hanno fatto negli ultimi 20 anni !"
+      ]
+    },
+    {
+      "id": "task014-58",
+      "input": "#delusionemonti a malincuore accantono speranze sul #governo #monti imbrigliato dagli #interessi di #partiti e #casta",
+      "output": [
+        "#delusionemonti a malincuore accantono speranze sul #governo #monti imbrigliato dagli #interessi di #partiti e #casta"
+      ]
+    },
+    {
+      "id": "task014-59",
+      "input": "RT @javiobs : mi hanno unfollowato in massa , mortacci vostra",
+      "output": [
+        "RT @javiobs : mi hanno unfollowato in massa , mortacci vostra"
+      ]
+    },
+    {
+      "id": "task014-60",
+      "input": "@barbaranargdr hahahahha ma tu si scem uu * ride *",
+      "output": [
+        "@barbaranargdr hahahahha ma tu si scem uu * ride *"
+      ]
+    },
+    {
+      "id": "task014-61",
+      "input": "e i bocconiani dove sono finiti nel governo Monti ?",
+      "output": [
+        "e i bocconiani dove sono finiti nel governo Monti ?"
+      ]
+    },
+    {
+      "id": "task014-62",
+      "input": "Staderini : prime valutazioni sui provvedimenti del Governo Monti http://t.co/jVNwjexf",
+      "output": [
+        "Staderini : prime valutazioni sui provvedimenti del Governo Monti http://t.co/jVNwjexf"
+      ]
+    },
+    {
+      "id": "task014-63",
+      "input": "E #Grillo si traveste da politico d' antan http://t.co/dpagjPS8 … Come commentare che anche Santoro non condivide certi atteggiamenti ?",
+      "output": [
+        "E #Grillo si traveste da politico d' antan http://t.co/dpagjPS8 … Come commentare che anche Santoro non condivide certi atteggiamenti ?"
+      ]
+    },
+    {
+      "id": "task014-64",
+      "input": "Mario Monti o come mi ha fatto notare Odifreddi Mari o Monti . Di sicuro i suoi genitori avevano il senso dell' umorismo",
+      "output": [
+        "Mario Monti o come mi ha fatto notare Odifreddi Mari o Monti . Di sicuro i suoi genitori avevano il senso dell' umorismo"
+      ]
+    },
+    {
+      "id": "task014-65",
+      "input": "Al momento sentire parlare Mario Monti al posto di mi emoziona . A prescindere .",
+      "output": [
+        "Al momento sentire parlare Mario Monti al posto di mi emoziona . A prescindere ."
+      ]
+    },
+    {
+      "id": "task014-66",
+      "input": "@Mari_nna_ amore mio to saindo , preciso urgentemente comer kkkk bjss te amo *-*",
+      "output": [
+        "@Mari_nna_ amore mio to saindo , preciso urgentemente comer kkkk bjss te amo *-*"
+      ]
+    },
+    {
+      "id": "task014-67",
+      "input": "RT @thismakeme : 2 ) a primo impatto ci stavamo tremendente sul cazzo #50cosesullamiamiglioreamica",
+      "output": [
+        "RT @thismakeme : 2 ) a primo impatto ci stavamo tremendente sul cazzo #50cosesullamiamiglioreamica"
+      ]
+    },
+    {
+      "id": "task014-68",
+      "input": "ONORE A MAURIZIO BERARDINUCCI .... ONORE AL CORPO NAZIONALE DEI VIGILI DEL FUOCO http://t.co/SBaJIiW6Bn",
+      "output": [
+        "Onore a Maurizio Berardinucci .... Onore al Corpo Nazionale dei Vigili del Fuoco http://t.co/SBaJIiW6Bn"
+      ]
+    },
+    {
+      "id": "task014-69",
+      "input": "@SpiderTruman : Il governo Monti delega Camera e Senato a decidere sul taglio degli stipendi parlamentari : l' ennesima presa . z",
+      "output": [
+        "@SpiderTruman : Il governo Monti delega Camera e Senato a decidere sul taglio degli stipendi parlamentari : l' ennesima presa . z"
+      ]
+    },
+    {
+      "id": "task014-70",
+      "input": "Perche' invece di parlare di #twitterblackout non parliamo dell' introduzione del governo #Monti dei servizi ai cittadini via web ? #riforma",
+      "output": [
+        "Perché invece di parlare di #twitterblackout non parliamo dell' introduzione del governo #Monti dei servizi ai cittadini via web ? #riforma"
+      ]
+    },
+    {
+      "id": "task014-71",
+      "input": "Scilipoti stanco del governo Monti se ne va in Brasile http://t.co/FReqHAhm",
+      "output": [
+        "Scilipoti stanco del governo Monti se ne va in Brasile http://t.co/FReqHAhm"
+      ]
+    },
+    {
+      "id": "task014-72",
+      "input": "http://t.co/oHfi7NND tuffo alla styles .",
+      "output": [
+        "http://t.co/oHfi7NND tuffo alla styles ."
+      ]
+    },
+    {
+      "id": "task014-73",
+      "input": "Che la Cgil abbia un atteggiamento critico nei confronti del governo Monti mi sembra scontato ma che ora anche la ... http://t.co/ykOyL5oW",
+      "output": [
+        "Che la CGIL abbia un atteggiamento critico nei confronti del governo Monti mi sembra scontato ma che ora anche la ... http://t.co/ykOyL5oW"
+      ]
+    },
+    {
+      "id": "task014-74",
+      "input": "Betty la fea mi ha traumatizzata ahahaha o.o",
+      "output": [
+        "Betty la fea mi ha traumatizzata ahahaha o.o"
+      ]
+    },
+    {
+      "id": "task014-75",
+      "input": "#siamonoi che andremo a vivere sotto i ponti e inaugureremo una generazione dedita alla vita da clochard .",
+      "output": [
+        "#siamonoi che andremo a vivere sotto i ponti e inaugureremo una generazione dedita alla vita da clochard ."
+      ]
+    },
+    {
+      "id": "task014-76",
+      "input": "@Pierferdinando ricorda alla Tua internazionale le #vittime della scellerata politica del Governo #Monti ! Che voi sostenete !",
+      "output": [
+        "@Pierferdinando ricorda alla tua internazionale le #vittime della scellerata politica del governo #Monti ! Che voi sostenete !"
+      ]
+    },
+    {
+      "id": "task014-77",
+      "input": "Governo Monti : nominati Viceministro e Sottosegretario al Lavoro e Politiche Sociali : Michel Martone e Cecilia G... http://t.co/ZMnIVajZ",
+      "output": [
+        "Governo Monti : nominati viceministro e sottosegretario al lavoro e politiche sociali : Michel Martone e Cecilia G... http://t.co/ZMnIVajZ"
+      ]
+    },
+    {
+      "id": "task014-78",
+      "input": "Riforma delle #pensioni , è già polemica sul programma del governo Monti http://t.co/KQ7WcZFk",
+      "output": [
+        "Riforma delle #pensioni , è già polemica sul programma del governo Monti http://t.co/KQ7WcZFk"
+      ]
+    },
+    {
+      "id": "task014-79",
+      "input": "Bossi ribadisce : « Aut-aut a Silvio o Formigoni o il governo Monti » : « Nessun gioco delle parti : ... http://t.co/5UjqBvdS",
+      "output": [
+        "Bossi ribadisce : « Aut aut a Silvio o Formigoni o il governo Monti » : « Nessun gioco delle parti : ... http://t.co/5UjqBvdS"
+      ]
+    },
+    {
+      "id": "task014-80",
+      "input": "Mi è piaciuto un video di @YouTube http://t.co/Y2bZVtgt Paolo Meneguzzi - Ho Bisogno D' amore ( Videoclip ©NiHi",
+      "output": [
+        "Mi è piaciuto un video di @YouTube http://t.co/Y2bZVtgt Paolo Meneguzzi - Ho bisogno d' amore ( videoclip ©NiHi"
+      ]
+    },
+    {
+      "id": "task014-81",
+      "input": "Se , come sembra scontato , c' è il Governo Monti , dobbiamo chiedere e poi fare subito un coordinamento Fds , Idv , Sel e sinistra sociale .",
+      "output": [
+        "Se , come sembra scontato , c' è il Governo Monti , dobbiamo chiedere e poi fare subito un coordinamento Fds , Idv , Sel e sinistra sociale ."
+      ]
+    },
+    {
+      "id": "task014-82",
+      "input": "Il governo Monti ci ha rotto il c........... solo per chi sta bene ..... vaff",
+      "output": [
+        "Il governo Monti ci ha rotto il cazzo solo per chi sta bene ..... vaffanculo"
+      ]
+    },
+    {
+      "id": "task014-83",
+      "input": "Guardiola alla guida dell' huffington post italiano ! Le altre candidature e i desiderata vanno stroncati subito !",
+      "output": [
+        "Guardiola alla guida dell' huffington post italiano ! Le altre candidature e i desiderata vanno stroncati subito !"
+      ]
+    },
+    {
+      "id": "task014-84",
+      "input": "FERMA MARIO MONTi ELEZIONI SUBITO CHRISTIAN MARTYR MASSACRE http://t.co/XnffsuhG",
+      "output": [
+        "Ferma Mario Monti elezioni subito Christian Martyr Massacre http://t.co/XnffsuhG"
+      ]
+    },
+    {
+      "id": "task014-85",
+      "input": "Governo Monti ? Per forza ? O elezioni subito ? Vieni a dire la tua live a piazza Grazioli 18 . Seconda puntata alle 15 di #citofonareadinolfi",
+      "output": [
+        "Governo Monti ? Per forza ? O elezioni subito ? Vieni a dire la tua live a piazza Grazioli 18 . Seconda puntata alle 15 di #citofonareadinolfi"
+      ]
+    },
+    {
+      "id": "task014-86",
+      "input": "CICCHITTO : Fiducia al governo Monti ma no a slogan su Ici e patrimoniale http://t.co/cOoTRS1k",
+      "output": [
+        "CICCHITTO : Fiducia al governo Monti ma no a slogan su Ici e patrimoniale http://t.co/cOoTRS1k"
+      ]
+    },
+    {
+      "id": "task014-87",
+      "input": "Speriamo nelle capacità di Mario Monti , affinchè traghetti l' Italia fuori dalla crisi .",
+      "output": [
+        "Speriamo nelle capacità di Mario Monti , affinché traghetti l' Italia fuori dalla crisi ."
+      ]
+    },
+    {
+      "id": "task014-88",
+      "input": "Il governo #Monti non ci piace affatto , ma è giusto festeggiare le #dimissioni del peggior #presidente dal 1943 . Ora , avanti , siamo il #99% !",
+      "output": [
+        "Il governo #Monti non ci piace affatto , ma è giusto festeggiare le #dimissioni del peggior #presidente dal 1943 . Ora , avanti , siamo il #99% !"
+      ]
+    },
+    {
+      "id": "task014-89",
+      "input": "Se il Movimento5stelle fosse davvero forte e davvero \" della rete \" , si libererebbe da #Grillo e farebbe politica come Movimento . Invece no .",
+      "output": [
+        "Se il Movimento 5 Stelle fosse davvero forte e davvero \" della rete \" , si libererebbe da #Grillo e farebbe politica come movimento . Invece no ."
+      ]
+    },
+    {
+      "id": "task014-90",
+      "input": "Caro Di Pietro , non è l' ora della demagogia bensì quellp di appoggiare il Governo Monti . PER UNA VOLTA , NON ROMPETE LI COJONI ! #fatepresto",
+      "output": [
+        "Caro Di Pietro , non è l' ora della demagogia bensì quella di appoggiare il Governo Monti . Per una volta , non rompete li cojoni ! #fatepresto"
+      ]
+    },
+    {
+      "id": "task014-91",
+      "input": "Bhè l' altro giorno devo dire che quando ha fatto la puntata in cui homer ha detto questa frase , mi sono sorpreso .... http://t.co/yEkRxqZu",
+      "output": [
+        "Bhè l' altro giorno devo dire che quando ha fatto la puntata in cui Homer ha detto questa frase , mi sono sorpreso .... http://t.co/yEkRxqZu"
+      ]
+    },
+    {
+      "id": "task014-92",
+      "input": "A chi non piace #Grillo ed è schifato dalla politica attuale consiglio di votare @MoVimento5Stelle . Grillo non è candidato INFORMATEVI BENE !",
+      "output": [
+        "A chi non piace #Grillo ed è schifato dalla politica attuale consiglio di votare @MoVimento5Stelle . Grillo non è candidato informatevi bene !"
+      ]
+    },
+    {
+      "id": "task014-93",
+      "input": "#Grillo deve far davvero paura . Oggi Sartori sul \" partito liquido \" e Napolitano sul \" demagogo \" . Effetto vittima , che pagherà ancora di più .",
+      "output": [
+        "#Grillo deve fare davvero paura . Oggi Sartori sul \" partito liquido \" e Napolitano sul \" demagogo \" . Effetto vittima , che pagherà ancora di più ."
+      ]
+    },
+    {
+      "id": "task014-94",
+      "input": "Controlla questo video Ecco chi davvero è Mario Monti , servo fedele di Mr. Rockefeller . Fuori d... http://t.co/iegtDz5e via @youtube",
+      "output": [
+        "Controlla questo video Ecco chi davvero è Mario Monti , servo fedele di Mr. Rockefeller . Fuori d... http://t.co/iegtDz5e via @youtube"
+      ]
+    },
+    {
+      "id": "task014-95",
+      "input": "Sono a cell da 3 ore nonostante ripetuti tentativi di chiudere la telefonata , come fanno le persone a non rendersi conto che ... “ Basta ! “ ?",
+      "output": [
+        "Sono al cellulare da 3 ore nonostante ripetuti tentativi di chiudere la telefonata , come fanno le persone a non render si conto che ... “ Basta ! “ ?"
+      ]
+    },
+    {
+      "id": "task014-96",
+      "input": "In questo momento alle commissioni Bilancio riunite di Camera e Senato per illustrare le politiche di coesione del Governo #monti",
+      "output": [
+        "In questo momento alle commissioni Bilancio riunite di Camera e Senato per illustrare le politiche di coesione del Governo #monti"
+      ]
+    },
+    {
+      "id": "task014-97",
+      "input": "Economia , Chiodi : via libera alla legge sull' industria http://t.co/cfldIXgi ilcapoluogo.it",
+      "output": [
+        "Economia , Chiodi : via libera alla legge sull' industria http://t.co/cfldIXgi ilcapoluogo.it"
+      ]
+    },
+    {
+      "id": "task014-98",
+      "input": "#schema : C' è un evento alla ribalta sui media dove si forma un' opinione pubblica ? E #Grillo lancia un comunicato sostenendo l' idea opposta !",
+      "output": [
+        "#schema : C' è un evento alla ribalta sui media dove si forma un' opinione pubblica ? E #Grillo lancia un comunicato sostenendo l' idea opposta !"
+      ]
+    },
+    {
+      "id": "task014-99",
+      "input": "@_sonnenlicht ahahah noo ! Dove ? Linkamelo che guardo a casa ahahaha",
+      "output": [
+        "@_sonnenlicht ahahah no ! Dove ? Linkamelo che guardo a casa ahahaha"
+      ]
+    }
+  ],
+  "Instance License": [
+    "Unknown"
+  ]
+}

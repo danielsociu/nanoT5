@@ -1,0 +1,1659 @@
+{
+  "Contributors": [
+    "Swaroop Mishra",
+    "Daniel Khashabi"
+  ],
+  "Source": [
+    "MultiLexNorm: Multilingual Lexical Normalization"
+  ],
+  "URL": [
+    "https://noisy-text.github.io/2021/multi-lexnorm.html"
+  ],
+  "Categories": [
+    "Lexical Normalization"
+  ],
+  "Reasoning": [
+    "Temporal Reasoning",
+    "Commonsense Reasoning"
+  ],
+  "Definition": [
+    "Lexical norm"
+  ],
+  "Input_language": [
+    "Multilanguage"
+  ],
+  "Output_language": [
+    "Multilanguage"
+  ],
+  "Instruction_language": [
+    "Multilanguage"
+  ],
+  "Domains": [
+    "Twitter",
+    "Arto",
+    "sms",
+    "forum"
+  ],
+  "Positive Examples": [
+    {
+      "input": "@username he iyi bari ahahah . Viel spass caniiim benim yerimede eglen ve bolca fotoooo :))",
+      "output": "@username he iyi bari ahahah . Viel Spaß canım benim yerime de eğlen ve bolca foto :))",
+      "explanation": "The text is now lexically normalized and correct."
+    }
+  ],
+  "Negative Examples": [
+    {
+      "input": "Huzunlu tweetler atip Bahnhof Straße'den Maximilian Straße'ye aglaya aglaya yurumek istiyorum .",
+      "output": "Huzunlu tweetler atıp Bahnhfgdofstraße'den  Maximilianstraße'ye  ağlaya ağlaya yürümek istiyorudfgdm .",
+      "explanation": "The text is not lexically normalized and it is incorrect."
+    }
+  ],
+  "Instances": [
+    {
+      "id": "task024-0",
+      "input": "@username Haha ja das hat vorteile , z.b. Wenn sie morgens fruher zur schule geht als ich :D :D haha dolabi bana kaliyorr ehehe :D",
+      "output": [
+        "@username Haha ja das hat Vorteile , z.B. wenn sie morgens früher zur Schule geht als ich :D :D haha dolabı bana kalıyor ehehe :D"
+      ]
+    },
+    {
+      "id": "task024-1",
+      "input": "@username Ahaha jaa du armee :D :D ben faydasini goruyorum arada , oda ama ;)",
+      "output": [
+        "@username Ahaha ja du Arme :D :D ben faydasını görüyorum arada , o da ama ;)"
+      ]
+    },
+    {
+      "id": "task024-2",
+      "input": "@username Ohoo gece , helede wochenendee hic sansin yok :D dedigim gibi , du musst morgens bestellen okula gitmeden fln , yeni seler koyuyalar hep",
+      "output": [
+        "@username Oho gece , hele de Wochenende hiç şansın yok :D dediğim gibi , du musst morgens bestellen okula gitmeden falan , yeni şeyler koyuyorlar hep"
+      ]
+    },
+    {
+      "id": "task024-3",
+      "input": "@username steht ganz oben auf der liste :)) cok sagol",
+      "output": [
+        "@username Steht ganz oben auf der Liste :)) çok sağ ol"
+      ]
+    },
+    {
+      "id": "task024-4",
+      "input": "@username Haha bise degil cnm ;) sabahlari bak hep aktualisieren ediyolar cunku :D oyy ich bin auch verruckt nach h&amp;m &lt;3&lt;3 haha :D",
+      "output": [
+        "@username Haha bir şey değil canım ;) sabahları bak hep aktualisieren ediyorlar çünkü :D oy ich bin auch verrückt nach H&amp;M &lt;3 &lt;3 haha :D"
+      ]
+    },
+    {
+      "id": "task024-5",
+      "input": "@username Ahaha aynen bende ablam sayesinde suchti oldum :D ama ben sadece sale ve tabiki param olursa bestellung yapabiliyorum ehehe :D",
+      "output": [
+        "@username Ahaha aynen ben de ablam sayesinde Suchti oldum :D ama ben sadece sale ve tabii ki param olursa Bestellung yapabiliyorum ehehe :D"
+      ]
+    },
+    {
+      "id": "task024-6",
+      "input": "@username Uff ehrlich ?:/ Ok cnm :)",
+      "output": [
+        "@username Uf ehrlich ?:/ Ok canım :)"
+      ]
+    },
+    {
+      "id": "task024-7",
+      "input": "@username sezer öztürkü nix kennen gut diese ??!? sen iste yeteriki parada bi türlü anlasiriz sen üzme tatli canini",
+      "output": [
+        "@username Sezer Öztürk'ü nichts kennen gut diese ??!? sen iste yeter ki parada bir türlü anlaşırız sen üzme tatlı canını"
+      ]
+    },
+    {
+      "id": "task024-8",
+      "input": "@username Ah ja frauentausch hab ich fruher immer gegeuckt :D rush hour bakiyodum grad ;D",
+      "output": [
+        "@username Ah ja Frauentausch habe ich früher immer geguckt :D Rush Hour bakıyordum gerade ;D"
+      ]
+    },
+    {
+      "id": "task024-9",
+      "input": "@username Ahaha o zmn normal :D :D ay bende yaa ich frier auch immeeerr :D",
+      "output": [
+        "@username Ahaha o zaman normal :D :D ay ben de ya ich friere auch immer :D"
+      ]
+    },
+    {
+      "id": "task024-10",
+      "input": "@username Iyi geceler hayatimm morgen gehts weiterr ;) :-**",
+      "output": [
+        "@username İyi geceler hayatım morgen geht es weiter ;) :-**"
+      ]
+    },
+    {
+      "id": "task024-11",
+      "input": "@username Haha noch besser :D jaja echt soylicekmisin ?;)",
+      "output": [
+        "@username Haha noch besser :D jaja echt söyleyecek misin ?;)"
+      ]
+    },
+    {
+      "id": "task024-12",
+      "input": "@username jaja , wusste ich gar nicht , dachte du bist 93er ;) cnm ben kacar , erken kalkmam lazim H&amp;M bestellung yapcam sabah :D iyi geceler cnm",
+      "output": [
+        "@username ja ja , wusste ich gar nicht , dachte du bist 93er ;) canım ben kaçar , erken kalkmam lazım H&amp;M Bestellung yapacağım sabah :D iyi geceler canım"
+      ]
+    },
+    {
+      "id": "task024-13",
+      "input": "@username Gülsah ... ama burda Gulshah weil man das ü nicht schreiben kann und das turkishe sh yani s kennen sie meisten nicht .. :(",
+      "output": [
+        "@username Gülşah ... ama burada Gulshah weil man das ü nicht schreiben kann und das türkische sh yani s kennen sie meistens nicht .. :("
+      ]
+    },
+    {
+      "id": "task024-14",
+      "input": "@username siz orda flemenkçe mi kullanıyosunuz cnm ? Gute Nacht bu arada .",
+      "output": [
+        "@username Siz orada Flemenkçe mi kullanıyorsunuz canım ? Gute Nacht bu arada ."
+      ]
+    },
+    {
+      "id": "task024-15",
+      "input": "@username tamam yinede gute Nacht .",
+      "output": [
+        "@username Tamam yine de gute Nacht ."
+      ]
+    },
+    {
+      "id": "task024-16",
+      "input": "@username uff bu ne böyle istanbulun çilesi hayatda bitmez isderseler 4. boğaz köprüsünü yapsınlar aynı tas aynı hamam !!! Viel spass :))",
+      "output": [
+        "@username Uf bu ne böyle İstanbul'un çilesi hayatta bitmez isterseler 4. Boğaz Köprüsü'nü yapsınlar aynı tas aynı hamam !!! Viel Spaß :))"
+      ]
+    },
+    {
+      "id": "task024-17",
+      "input": "@username Gunaydin :) uff ich bekomm die krise , bestellen yapiyodum grad einloggen etmiyor bi turlu . hab auch angerufen klappt nich :S :S",
+      "output": [
+        "@username Günaydın :) uf ich bekomme die Krise , bestellen yapıyordum gerade einloggen etmiyor bir türlü . Habe auch angerufen klappt nicht :S :S"
+      ]
+    },
+    {
+      "id": "task024-18",
+      "input": "@username insallah wird alles gut :)",
+      "output": [
+        "@username İnşallah wird alles gut :)"
+      ]
+    },
+    {
+      "id": "task024-19",
+      "input": "@username Danke cnm ! muss mein bruder rausbringen , cocuk evde daraldi , ich muss kindermädchen spielen :) vahittin cumaya gitti :) @username",
+      "output": [
+        "@username Danke canım ! Muss mein Bruder herausbringen , çocuk evde daraldı , ich muss Kindermädchen spielen :) Vahittin cumaya gitti :) @username"
+      ]
+    },
+    {
+      "id": "task024-20",
+      "input": "@username Danach anrufen ettim boyle boyle dedim die hat dann gemeint artikelnummerleri verin ben yapim bu seferde warenkorba girmiyor :S",
+      "output": [
+        "@username Danach anrufen ettim böyle böyle dedim die hat dann gemeint Artikelnummerleri verin ben yapayım bu sefer de Warenkorba girmiyor :S"
+      ]
+    },
+    {
+      "id": "task024-21",
+      "input": "@username Olamdi :S . eve geldim yine girdim allahtan verlauf leeren yapmamism hala duruyodu abet der rest war ausverkauft :/ olsun yaptim ya :D",
+      "output": [
+        "@username Olmadı :S . Eve geldim yine girdim Allah'tan Verlauf leeren yapmamışım hala duruyordu aber der Rest war ausverkauft :/ olsun yaptım ya :D"
+      ]
+    },
+    {
+      "id": "task024-22",
+      "input": "@username Ya ne fayda diger seler waren ausverkauft :/ o degilde bazi selerde herseyi ausverkauftdi her rengi großesi hala orda duruyo ama",
+      "output": [
+        "@username Ya ne fayda diğer şeyler waren ausverkauft :/ o değil de bazı şeylerde her şeyi ausverkaufttı her rengi Größesi hala orada duruyor ama"
+      ]
+    },
+    {
+      "id": "task024-23",
+      "input": "@username slm meine süsse ilallah dedim :-/",
+      "output": [
+        "@username Selam meine Süsse ilallah dedim :-/"
+      ]
+    },
+    {
+      "id": "task024-24",
+      "input": "@username FB TVde calisanlarin tatili yeni bitti herhalde el atmislar :D pek gostermediler ztn hep ayni goruntuydu , birqz aufnehmen ettim :D",
+      "output": [
+        "@username FB TV'de çalışanların tatili yeni bitti herhalde el atmışlar :D pek göstermediler zaten hep aynı görüntüydü , biraz aufnehmen ettim :D"
+      ]
+    },
+    {
+      "id": "task024-25",
+      "input": "@username Haha kp also du warst in england evinde bende seni ziyarete geliyomusum und so ehehe :D",
+      "output": [
+        "@username Haha kein Plan also du warst in England evinde ben de seni ziyarete geliyormuşum und so ehehe :D"
+      ]
+    },
+    {
+      "id": "task024-26",
+      "input": "@username glaub ich dir :( aman aman bizlerden uzak olsun :)",
+      "output": [
+        "@username Glaube ich dir :( aman aman bizlerden uzak olsun :)"
+      ]
+    },
+    {
+      "id": "task024-27",
+      "input": "@username sorma canım yaaaa Aglicam şimdi hadi kaçalım :( wo wohnst du hier ?",
+      "output": [
+        "@username sorma canım ya ağlayacağım şimdi hadi kaçalım :( wo wohnst du hier ?"
+      ]
+    },
+    {
+      "id": "task024-28",
+      "input": "@username echt jetzt ? hahahah egal girip bi bakim yinede :)",
+      "output": [
+        "@username Echt jetzt ? hahahah egal girip bir bakayım yine de :)"
+      ]
+    },
+    {
+      "id": "task024-29",
+      "input": "@username Hahaha ja ich warte noch auf die anderen bide ausschneiden fln etmem lazim ;D hochladen ederim später merak etme ;D",
+      "output": [
+        "@username Hahaha ja ich warte noch auf die Anderen bir de ausschneiden falan etmem lazım ;D hochladen ederim später merak etme ;D"
+      ]
+    },
+    {
+      "id": "task024-30",
+      "input": "bi sey buldum ama dogru film mi bilmiyorum . hadi bakalim sonundaki sahneden anlariz . öptüm sizi @username bis morgen .",
+      "output": [
+        "Bir şey buldum ama doğru film mi bilmiyorum . Hadi bakalım sonundaki sahneden anlarız . Öptüm sizi @username bis morgen ."
+      ]
+    },
+    {
+      "id": "task024-31",
+      "input": "@username Hahaha sowiesoo :D eben bi resmini buldum , bak : https://www.url.com/ sende vardir kesin ama yinede bozma simdi beni haha :D",
+      "output": [
+        "@username Hahaha sowieso :D eben bir resmini buldum , bak : https://www.url.com/ sende vardır kesin ama yine de bozma şimdi beni haha :D"
+      ]
+    },
+    {
+      "id": "task024-32",
+      "input": "@username Canim ben kaciyorum , hab voll die schmerzen am oberschenkel yuruyemiyorum sizliyor :S dinleniyim biraz :) iyi geceler cnm , optm :-*",
+      "output": [
+        "@username Canım ben kaçıyorum , habe voll die Schmerzen am Oberschenkel yürüyemiyorum sızlıyor :S dinleneyim biraz :) iyi geceler canım , öptüm :-*"
+      ]
+    },
+    {
+      "id": "task024-33",
+      "input": "@username Haha aynen :D cok gec yattigim icin acayip uykusuzum bu aralar ya ich kann 24 stunden lang schlafen :D",
+      "output": [
+        "@username Haha aynen :D çok geç yattığım için acayip uykusuzum bu aralar ya ich kann 24 Stunden lang schlafen :D"
+      ]
+    },
+    {
+      "id": "task024-34",
+      "input": "@username @username hmm anladim :/ benimde okulum yok ama gitmem lazim yinede zeugnisimde fehler buldum :S",
+      "output": [
+        "@username @username hmm anladım :/ benim de okulum yok ama gitmem lazım yinede Zeugnisimde Fehler buldum :S"
+      ]
+    },
+    {
+      "id": "task024-35",
+      "input": "@username Vatertag einzahl !! mehrzahl'la yazilmiyo !! *duygusal aninin icine ettim*",
+      "output": [
+        "@username Vatertag Einzahl !! Mehrzahl'la yazılmıyor !! * duygusal anının içine ettim *"
+      ]
+    },
+    {
+      "id": "task024-36",
+      "input": "@username Hadi yaa , toll -.- sorma ya bende okula ugricaktim fehler gordum zeugnisda once aradim ob er da ist meger hastaymis bosuna kaltim :S",
+      "output": [
+        "@username Hadi ya , toll -.- sorma ya ben de okula uğrayacaktım Fehler gördüm Zeugnisda önce aradım ob er da ist meğer hastaymış boşuna kalktım :S"
+      ]
+    },
+    {
+      "id": "task024-37",
+      "input": "@username Uf yaa sormaa basim agriyor ztn uykusuzluktan , umsonst aufgestanden :S",
+      "output": [
+        "@username Uf ya sorma başım ağrıyor zaten uykusuzluktan , umsonst aufgestanden :S"
+      ]
+    },
+    {
+      "id": "task024-38",
+      "input": "Frau geiger i gordum , cok mutlu oldum . Ozlemisim :) komsu sayilirmisiz zaten :)",
+      "output": [
+        "Frau Geiger'i  gördüm , çok mutlu oldum . Özlemişim :) komşu sayılırmışız zaten :)"
+      ]
+    },
+    {
+      "id": "task024-39",
+      "input": "@username olmaz askim ... 3doors down Paolo nutini den sonra ... Söhne Mannheims olsun-ich wollte nur deine stimme hören",
+      "output": [
+        "@username Olmaz aşkım ... 3 Doors Down Paolo Nutini'den  sonra ... Söhne Mannheims olsun - ich wollte nur deine Stimme hören"
+      ]
+    },
+    {
+      "id": "task024-40",
+      "input": "@username canim benim bin in gedanken bei dir :-*",
+      "output": [
+        "@username Canım benim bin in Gedanken bei dir :-*"
+      ]
+    },
+    {
+      "id": "task024-41",
+      "input": "Türkei'da Last . fm de verboten olmuş galiba . Hay plak kadar kaset kadar taş düşsün kafana Müyap",
+      "output": [
+        "Türkei'da Last.fm .  de verboten olmuş galiba . Hay plak kadar kaset kadar taş düşsün kafana Müyap"
+      ]
+    },
+    {
+      "id": "task024-42",
+      "input": "@username haha :D o zaman erst sehen dann denken",
+      "output": [
+        "@username haha :D o zaman erst sehen dann denken"
+      ]
+    },
+    {
+      "id": "task024-43",
+      "input": "@username Sorma schatzy , hab schon den ganzen tag lang kopfschmerzen yaa . kac saat uyudum gecer diye hala agriyor :S :S",
+      "output": [
+        "@username Sorma Schatzy , habe schon den ganzen Tag lang Kopfschmerzen ya . Kaç saat uyudum geçer diye hala ağrıyor :S :S"
+      ]
+    },
+    {
+      "id": "task024-44",
+      "input": "@username oo coktan posten ettim bileee görmedinmi :)",
+      "output": [
+        "@username O çoktan posten ettim bile görmedin mi :)"
+      ]
+    },
+    {
+      "id": "task024-45",
+      "input": "@username ebenfalls .. aynen . birsey yapmiyorum fazla . yani ders calismak gibi :) ama iste schlechtes gewissen oluyor :) güzel olmuyor",
+      "output": [
+        "@username Ebenfalls .. aynen . Bir şey yapmıyorum fazla . Yani ders çalışmak gibi :) ama işte schlechtes Gewissen oluyor :) güzel olmuyor"
+      ]
+    },
+    {
+      "id": "task024-46",
+      "input": "@username Ohhh tabii cnmm nöö ben bi ise gircen cocuklari senin basina birakcam hahaha ;P",
+      "output": [
+        "@username Oh tabii canım nein ben bir işe gireceğim çocukları senin başına bırakacağım hahaha ;P"
+      ]
+    },
+    {
+      "id": "task024-47",
+      "input": "@username eveeet geldik cok daha ic acici bi konuya :)) regelstudienzeit 10 semester bin jetzt im 6. bakalim nekadar uzicak :)",
+      "output": [
+        "@username evet geldik çok daha iç açıcı bir konuya :)) Regelstudienzeit 10 Semester bin jetzt im 6. bakalım ne kadar uzayacak :)"
+      ]
+    },
+    {
+      "id": "task024-48",
+      "input": "@username Ehehe ayy wie süüß yerim seni yaa ehehe ;-***",
+      "output": [
+        "@username Ehehe ay wie süß yerim seni ya ehehe ;-***"
+      ]
+    },
+    {
+      "id": "task024-49",
+      "input": "@username Aha bittin seen , ich mach mich jetzt auf den weg , geliyorum ! Utaan be bide kaynanamin yanindaa haa ? ;P",
+      "output": [
+        "@username Aha bittin sen , ich mache mich jetzt auf den Weg , geliyorum ! Utan be bir de kaynanamın yanında haa ? ;P"
+      ]
+    },
+    {
+      "id": "task024-50",
+      "input": "@username Haha bende kardesimi kindergartendan aldim yoruldu grlmiyo bi turlu onu bekliom grad :D",
+      "output": [
+        "@username Haha ben de kardeşimi Kindergartendan aldım yoruldu gelmiyor bir türlü onu bekliyorum gerade :D"
+      ]
+    },
+    {
+      "id": "task024-51",
+      "input": "@username Haha aynen oyle :) sukur gelebildik eve :D ehh sen napiyosun ? Bekommt ihr auch morgen zeugnisse ?",
+      "output": [
+        "@username Haha aynen öyle :) şükür gelebildik eve :D ehh sen ne yapıyorsun ? Bekommt ihr auch morgen Zeugnisse ?"
+      ]
+    },
+    {
+      "id": "task024-52",
+      "input": "@username Waas , ehrlich jetzt ?? Siz NW'desiniz dimi ? Niye o kadar fark varki ya , burda yarin basliyor tatil .",
+      "output": [
+        "@username Was , ehrlich jetzt ?? Siz NW'desiniz değil mi ? Niye o kadar fark var ki ya , burada yarın başlıyor tatil ."
+      ]
+    },
+    {
+      "id": "task024-53",
+      "input": "Hoca yine ' Bitte bitte kommen Sie pünktlich ' diyecek .",
+      "output": [
+        "Hoca yine ' Bitte bitte kommen Sie pünktlich ' diyecek ."
+      ]
+    },
+    {
+      "id": "task024-54",
+      "input": "@username Haha ja genau das ist ein vorteil , biz gidince hic bise olmuyodu , nicht ma training . kampda oluyolardi hep :/ du hast es gut ;)",
+      "output": [
+        "@username Haha ja genau das ist ein Vorteil , biz gidince hiçbir şey olmuyordu , nicht einmal Training . Kampta oluyorlardı hep :/ du hast es gut ;)"
+      ]
+    },
+    {
+      "id": "task024-55",
+      "input": "@username Hahaha git git can atiyodun ztn ! Vergiss deine Kassiererin nicht ;P",
+      "output": [
+        "@username Hahaha git git can atıyordun zaten ! Vergiss deine Kassiererin nicht ;P"
+      ]
+    },
+    {
+      "id": "task024-56",
+      "input": "Jörnle cok mutluyum ! Ich bin sehr glücklich mit Jörn !! Jeder der das Gegenteil schreibt lügt , es gibt kein ... https://www.url.com/",
+      "output": [
+        "Jörn'le çok mutluyum ! Ich bin sehr glücklich mit Jörn !! Jeder der das Gegenteil schreibt lügt , es gibt kein ... https://www.url.com/"
+      ]
+    },
+    {
+      "id": "task024-57",
+      "input": "@username Haha neiin , wenn dann sen bana alacaksin olmaz :D",
+      "output": [
+        "@username Haha nein , wenn dann sen bana alacaksın olmaz :D"
+      ]
+    },
+    {
+      "id": "task024-58",
+      "input": "bugün en uzun gün mü şimdi ?! neyime yaradı ya en uzun günde kütüphanede olup ders mi yapılır . ooh du verdammte scheiße diyorum o kadar .",
+      "output": [
+        "Bugün en uzun gün mü şimdi ?! Neyime yaradı ya en uzun günde kütüphanede olup ders mi yapılır . Oh du verdammte Scheiße diyorum o kadar ."
+      ]
+    },
+    {
+      "id": "task024-59",
+      "input": "Bence bu Alman'larin argo edebiyatı Türkçe'de oldugu kadar zengin degil .. çok pis küfür edesim oluyo , scheiße diyip konuyu kapatiyoruz ! :/",
+      "output": [
+        "Bence bu Almanların argo edebiyatı Türkçe'de olduğu kadar zengin değil .. çok pis küfür edesim oluyor , scheiße diyip konuyu kapatıyoruz ! :/"
+      ]
+    },
+    {
+      "id": "task024-60",
+      "input": "@username Haha :) und ich höre die ganze zeit Ozan - Arkadas , ayy ich kann weinen wenn ich das höre :'( haha :D",
+      "output": [
+        "@username Haha :) und ich höre die ganze Zeit Ozan - Arkadaş , ay ich kann weinen wenn ich das höre :'( haha :D"
+      ]
+    },
+    {
+      "id": "task024-61",
+      "input": "@username machst du abi ? istanbulda güzel olur tabi :)",
+      "output": [
+        "@username Machst du Abi ? İstanbul'da güzel olur tabii :)"
+      ]
+    },
+    {
+      "id": "task024-62",
+      "input": "@username ... Desaster mit den Griechen gelernt . Neyse , birak kendilerini yiksinlar . Biz disardan seyrediyoruz &gt; Türkiye .",
+      "output": [
+        "@username ... Desaster mit den Griechen gelernt . Neyse , bırak kendilerini yıksınlar . Biz dışarıdan seyrediyoruz &gt; Türkiye ."
+      ]
+    },
+    {
+      "id": "task024-63",
+      "input": "@username ow gecmis olsun :/ knieprobleme ist total madig ich kenn des",
+      "output": [
+        "@username ow geçmis olsun :/ Knieprobleme ist total madig ich kenne das"
+      ]
+    },
+    {
+      "id": "task024-64",
+      "input": "schönes wochenende ticket meger ne ucuz seymıs yahuu :( 3 saatlık yola 70 euro bayıldım ıcım yanıyorrr ...",
+      "output": [
+        "Schönes Wochenende Ticket meğer ne ucuz şeymiş yahu :( 3 saatlik yola 70 Euro bayıldım içim yanıyor ..."
+      ]
+    },
+    {
+      "id": "task024-65",
+      "input": "@username Haha sagolasin :) was ist das denn ? ;)",
+      "output": [
+        "@username Haha sağ olasın :) was ist das denn ? ;)"
+      ]
+    },
+    {
+      "id": "task024-66",
+      "input": "@username Hehe yaparim tabi :) ist das sowas wie msn ?",
+      "output": [
+        "@username Hehe yaparım tabii :) ist das so etwas wie MSN ?"
+      ]
+    },
+    {
+      "id": "task024-67",
+      "input": "@username karsimda oturan bayan melektas durmadan Misir tatilini anlatiyor ... her gün en az 2x ! Haftaya gene ucuyor , zum 3x diese Jahr !",
+      "output": [
+        "@username Karşımda oturan bayan meslektaş durmadan Mısır tatilini anlatıyor ... her gün en az 2x ! Haftaya yine uçuyor , zum 3x diese Jahr !"
+      ]
+    },
+    {
+      "id": "task024-68",
+      "input": "@username Sen Ausbildungmu yapiyosun cnm ?",
+      "output": [
+        "@username Sen Ausbildung mu yapıyorsun canım ?"
+      ]
+    },
+    {
+      "id": "task024-69",
+      "input": "@username Yani was fur ein abschluss ?",
+      "output": [
+        "@username Yani was für ein Abschluss ?"
+      ]
+    },
+    {
+      "id": "task024-70",
+      "input": "@username Anaa almancada biliyosun ;D es sind aber doch nicht die gurken sondern die sprossen :) gelebilirsin !",
+      "output": [
+        "@username Anaa Almanca da biliyorsun ;D es sind aber doch nicht die Gurken sondern die Sprossen :) gelebilirsin !"
+      ]
+    },
+    {
+      "id": "task024-71",
+      "input": "@username Hahaha aynen , sorun yok yani :) hahaha gel gel :) woher kannst du deutsch ? :)",
+      "output": [
+        "@username Hahaha aynen , sorun yok yani :) hahaha gel gel :) woher kannst du Deutsch ? :)"
+      ]
+    },
+    {
+      "id": "task024-72",
+      "input": "@username Ein bisschen ? Du sprichst super deutsch , helal olsun ;D ehehe . Herseyi anliyomusun peki ?:)",
+      "output": [
+        "@username Ein bisschen ? Du sprichst super Deutsch , helal olsun ;D ehehe . Her şeyi anlıyor musun peki ?:)"
+      ]
+    },
+    {
+      "id": "task024-73",
+      "input": "@username sieben çok güzel sayidir iki kere ardı ardına yazmak en güzeldir :)",
+      "output": [
+        "@username Sieben çok güzel sayıdır iki kere ardı ardına yazmak en güzeldir :)"
+      ]
+    },
+    {
+      "id": "task024-74",
+      "input": "@username @username Birileri allahtan korksun , simdi bi konuyu tekrar acicam o ausredelere baslicak bu seferde ;P",
+      "output": [
+        "@username @username Birileri Allah'tan korksun , şimdi bir konuyu tekrar açacağım o Ausredelere başlayacak bu sefer de ;P"
+      ]
+    },
+    {
+      "id": "task024-75",
+      "input": "@username hahah sagol mach das für deine Sona .. Viel spaaß dabei ...: D lol",
+      "output": [
+        "@username hahah sağ ol mache das für deine Sona .. Viel Spaß dabei ...: :D lol"
+      ]
+    },
+    {
+      "id": "task024-76",
+      "input": "@username gibt sehr viele die gut sind und hier nie rauskommen ..... haha tamam hadi viel glück !",
+      "output": [
+        "@username Gibt sehr viele die gut sind und hier nie rauskommen ..... haha tamam hadi viel Glück !"
+      ]
+    },
+    {
+      "id": "task024-77",
+      "input": "@username *TRAUM* haha , burasi yine iyi onceden oturdugumuz yer daha kucukdu :)",
+      "output": [
+        "@username * Traum * haha , burası yine iyi önceden oturduğumuz yer daha küçüktü :)"
+      ]
+    },
+    {
+      "id": "task024-78",
+      "input": "@username Hahaha vayyy ;D okii ben bi arkadasi arayim donucem geri kizi liebeskummerden kurtarmam lazimda :)",
+      "output": [
+        "@username Hahaha vay ;D okay ben bir arkadaşı arayayım döneceğim geri kızı Liebeskummerden kurtarmam lazım da :)"
+      ]
+    },
+    {
+      "id": "task024-79",
+      "input": "@username Ahh iyi hatirlattin gecen ben handymden silmistim sinirle , indiriyim ich komme !",
+      "output": [
+        "@username Ahh iyi hatırlattın geçen ben Handymden silmiştim sinirle , indireyim ich komme !"
+      ]
+    },
+    {
+      "id": "task024-80",
+      "input": "@username Hauhaha desene leen ;D kisaca lernen yazda anlayalim hatlar karisiyor :D",
+      "output": [
+        "@username Hauhaha desene len ;D kısaca lernen yaz da anlayalım hatlar karışıyor :D"
+      ]
+    },
+    {
+      "id": "task024-81",
+      "input": "@username Und jetzt komm keyfim komm ;D",
+      "output": [
+        "@username Und jetzt komm keyfim komm ;D"
+      ]
+    },
+    {
+      "id": "task024-82",
+      "input": "@username başarılar sınavında gute nacht hadi .",
+      "output": [
+        "@username Başarılar sınavında gute Nacht hadi ."
+      ]
+    },
+    {
+      "id": "task024-83",
+      "input": "@username pazartesi bende :(( ama pazartesiye daha iki gün var yani iki gün daha keyif :) was machst du eigentlich beruflich ?",
+      "output": [
+        "@username Pazartesi ben de :(( ama Pazartesi'ye daha iki gün var yani iki gün daha keyif :) was machst du eigentlich beruflich ?"
+      ]
+    },
+    {
+      "id": "task024-84",
+      "input": "@username bin Versicherungskauffrau , hab aber mit privatpersonen nichts zu tun , sondern mit firmwen . kapi kapi gezmiyorum yani :)",
+      "output": [
+        "@username Bin Versicherungskauffrau , habe aber mit Privatpersonen nichts zu tun , sondern mit Firmen . Kapı kapı gezmiyorum yani :)"
+      ]
+    },
+    {
+      "id": "task024-85",
+      "input": "he bi de üstüne bankamatik isteyince ne gerek var sen gel biz sana paranı verırız ne yaaa ... al işte öffnung zeitinizi ....",
+      "output": [
+        "he bir de üstüne bankamatik isteyince ne gerek var sen gel biz sana paranı veririz ne ya ... al işte Öffnungszeitınızı  ...."
+      ]
+    },
+    {
+      "id": "task024-86",
+      "input": "@username frühstück !! Maşallah yani ;) biz öğle yemeğine gectik , bin grad auf einer Seminar ...",
+      "output": [
+        "@username Frühstück !! Maşallah yani ;) biz öğle yemeğine geçtik , bin gerade auf einem Seminar ..."
+      ]
+    },
+    {
+      "id": "task024-87",
+      "input": "@username Uiii wie süüß yerim onuu :) wer ist das denn ?:)",
+      "output": [
+        "@username Uiii wie süß yerim onu :) wer ist das denn ?:)"
+      ]
+    },
+    {
+      "id": "task024-88",
+      "input": "@username sen varyaaa , pommes en sevdiklerimden yine biri , du erwicht mich immer kalt ;) bekle birazdan bende almammı ;)",
+      "output": [
+        "@username Sen var ya , Pommes en sevdiklerimden yine biri , du erwischst mich immer kalt ;) bekle birazdan ben de almam mı ;)"
+      ]
+    },
+    {
+      "id": "task024-89",
+      "input": "@username Haha echt , du armee ;) git biseler hazirla ac kalirsin sonra benim gibi ;D haha ja genau , neye bakacaksak artik :D :D",
+      "output": [
+        "@username Haha echt , du Arme ;) git bir şeyler hazırla aç kalırsın sonra benim gibi ;D haha ja genau , neye bakacaksak artık :D :D"
+      ]
+    },
+    {
+      "id": "task024-90",
+      "input": "@username Vallah o kadar cok sey vardi hepsi birden uctu :S tshirt , treggins fln :D bu gelsin yine yapicamm hauahauah :D :D",
+      "output": [
+        "@username Vallah o kadar çok şey vardı hepsi birden uçtu :S T-Shirt , Treggins falan :D bu gelsin yine yapacağım hauahauah :D :D"
+      ]
+    },
+    {
+      "id": "task024-91",
+      "input": "@username mit einem Wort : Katastrophe ! Kiz kendini rezil ediyor .",
+      "output": [
+        "@username Mit einem Wort : Katastrophe ! Kız kendini rezil ediyor ."
+      ]
+    },
+    {
+      "id": "task024-92",
+      "input": "@username @username ben ne dedim ... :D Aber auch nur , weil Sie die Anderen dementsprechend bewertet hat !",
+      "output": [
+        "@username @username Ben ne dedim ... :D Aber auch nur , weil sie die Anderen dementsprechend bewertet hat !"
+      ]
+    },
+    {
+      "id": "task024-93",
+      "input": "@username Napim cnm rumhocken langweilen :D haha , wie immer yani ;D sen napiyosuunn ;) ?",
+      "output": [
+        "@username Ne yapayım canım rumhocken langweilen :D haha , wie immer yani ;D sen ne yapıyorsun ;) ?"
+      ]
+    },
+    {
+      "id": "task024-94",
+      "input": "@username schade :(( bende canak anten var izleyebiliyorum .",
+      "output": [
+        "@username Schade :(( bende çanak anten var izleyebiliyorum ."
+      ]
+    },
+    {
+      "id": "task024-95",
+      "input": "@username Ahaha ehrlich jetztt ? Uiii dankeee mein schatzzz , bitanesin senn :-****",
+      "output": [
+        "@username Ahaha ehrlich jetzt ? Uiii Danke mein Schatz , bir tanesin sen :-****"
+      ]
+    },
+    {
+      "id": "task024-96",
+      "input": "ya bu gece neden 2ye kadar takildik , tramvayla mannheima gittik , hemen sbahnla hdye donduk , bahnhofta 1-2 saat takildik anlamiyorum",
+      "output": [
+        "Ya bu gece neden 2'ye kadar takıldık , tramvayla Mannheim'a gittik , hemen S-Bahnla HDye döndük , Bahnhofta 1-2 saat takıldık anlamıyorum"
+      ]
+    },
+    {
+      "id": "task024-97",
+      "input": "@username Glätteisenim icine ettim yaa :S",
+      "output": [
+        "@username Glätteisenim içine ettim ya :S"
+      ]
+    },
+    {
+      "id": "task024-98",
+      "input": "@username ja leider :S takmistim vorgestern sacimin yarisini yaptim danach patladimi ne bise oldu elektrik cikti . eben yine denedim olmuyo :S",
+      "output": [
+        "@username Ja leider :S takmıştım vorgestern saçımın yarısını yaptım danach patladı mı ne bir şey oldu elektrik çıktı . Eben yine denedim olmuyor :S"
+      ]
+    },
+    {
+      "id": "task024-99",
+      "input": "Mit eddo und jaqui auf kerwa und mein canim ist leider auf arbeit :(",
+      "output": [
+        "Mit Eddo und Jaqui auf Kerwa und mein canım ist leider auf Arbeit :("
+      ]
+    },
+    {
+      "id": "task024-100",
+      "input": "@username Leider nicht , ich hätte jetzt dort sein sollen ama degilim , sinirlerimi bozdular yaa :S",
+      "output": [
+        "@username Leider nicht , ich hätte jetzt dort sein sollen ama değilim , sinirlerimi bozdular ya :S"
+      ]
+    },
+    {
+      "id": "task024-101",
+      "input": "@username nein in der nähe ;) cnn sIkildi flughafena gitcektik bi yerlere ugricaktik , meine tante kommt heute Trden . hat aber nicht geklappt :/",
+      "output": [
+        "@username Nein in der Nähe ;) canım sıkıldı Flughafena gidecektik bir yerlere uğrayacaktık , meine Tante kommt heute Türkiye'den . Hat aber nicht geklappt :/"
+      ]
+    },
+    {
+      "id": "task024-102",
+      "input": "@username omg , kendim içinmi dedim sanki , hab ehe was vor schon .. Sizin için dedim war nur ein Tipp , nichts mehr ..",
+      "output": [
+        "@username Omg , kendim için mi dedim sanki , habe ehe was vor schon .. Sizin için dedim war nur ein Tipp , nichts mehr .."
+      ]
+    },
+    {
+      "id": "task024-103",
+      "input": "@username danke mein schatz gel beraber olsun :)",
+      "output": [
+        "@username Danke mein Schatz gel beraber olsun :)"
+      ]
+    },
+    {
+      "id": "task024-104",
+      "input": "@username Naber schatzy ? ;)",
+      "output": [
+        "@username Ne haber Schatzy ? ;)"
+      ]
+    },
+    {
+      "id": "task024-105",
+      "input": "@username Vallah bendende iyilik cnmm , daa canim sIkildi ehehe ;D was machst du soo ?;)",
+      "output": [
+        "@username Vallah benden de iyilik canım , da canım sıkıldı ehehe ;D was machst du so ?;)"
+      ]
+    },
+    {
+      "id": "task024-106",
+      "input": "@username Boaah ich guck das schon ewiig nicht mehr . Ja ey ben de , sonntags voll lw , heryer kapali oluyor :/",
+      "output": [
+        "@username Boaah ich guck das schon ewig nicht mehr . Ja ey ben de , sonntags voll langweilig , her yer kapalı oluyor :/"
+      ]
+    },
+    {
+      "id": "task024-107",
+      "input": "@username Ben her iki sene boyleyim :S bu sefer daha zor olacak , weil ich länger ferien hab :(",
+      "output": [
+        "@username Ben her iki sene böyleyim :S bu sefer daha zor olacak , weil ich länger Ferien habe :("
+      ]
+    },
+    {
+      "id": "task024-108",
+      "input": "@username Yazik sana :S abschlussprufung flnmi ?",
+      "output": [
+        "@username Yazık sana :S Abschlussprüfung falan mı ?"
+      ]
+    },
+    {
+      "id": "task024-109",
+      "input": "@username Offf yapma yaaa das ist richtig hart :S INSAALLLAAHH basarirsinnn hayatimmm :-***",
+      "output": [
+        "@username Of yapma ya das ist richtig hart :S İnşallah başarırsın hayatım :-***"
+      ]
+    },
+    {
+      "id": "task024-110",
+      "input": "@username insallah caniiim :) bewerben ettinmi ?",
+      "output": [
+        "@username İnşallah canım :) bewerben ettin mi ?"
+      ]
+    },
+    {
+      "id": "task024-111",
+      "input": "@username uh ! das sieht verdammt interessant aus ! preislich auch ok . :)) cok tsk !",
+      "output": [
+        "@username Uh ! das sieht verdammt interessant aus ! preislich auch ok . :)) çok teşekkür !"
+      ]
+    },
+    {
+      "id": "task024-112",
+      "input": "@username Haha ja ama ztn cok bise bestellen yapmamistim , actim ise yarar bise cikmadi haha olsun yine yaparim :P ;D",
+      "output": [
+        "@username Haha ja ama zaten çok bir şey bestellen yapmamıştım , açtım işe yarar bir şey çıkmadı haha olsun yine yaparım :P ;D"
+      ]
+    },
+    {
+      "id": "task024-113",
+      "input": "@username kolay gelsin cnm viell viellll Glück :)",
+      "output": [
+        "@username Kolay gelsin canım viel viel Glück :)"
+      ]
+    },
+    {
+      "id": "task024-114",
+      "input": "@username evet , heute mal die pos. Seiten dieses Jobs auskosten ;) // cok olmasada ...",
+      "output": [
+        "@username Evet , heute mal die positiven Seiten dieses Jobs auskosten ;) // çok olmasa da ..."
+      ]
+    },
+    {
+      "id": "task024-115",
+      "input": "insallah gebeurd niks",
+      "output": [
+        "İnşallah gebeurd niks"
+      ]
+    },
+    {
+      "id": "task024-116",
+      "input": "@username Hier ist es aber echt nicht normal , tum camlar acik , balkona kactim biraz once hala ayni saat olmus 11 hic serinlik yok boguldum :S",
+      "output": [
+        "@username Hier ist es aber echt nicht normal , tüm camlar açık , balkona kaçtım biraz önce hala aynı saat olmuş 11 hiç serinlik yok boğuldum :S"
+      ]
+    },
+    {
+      "id": "task024-117",
+      "input": "@username Normalerweise bizdede olur oyle , yuksekte oturuyoruz cunku ama inan balkondan bilde oturulmaz o kadar yanii , pfff :S",
+      "output": [
+        "@username Normalerweise bizde de olur öyle , yüksekte oturuyoruz çünkü ama inan balkonda bile oturulamaz o kadar yani , pff :S"
+      ]
+    },
+    {
+      "id": "task024-118",
+      "input": "@username klaroooo olur halb stund mehr schlafooo :)) greende bulusakk belki birimiz gecikiriz telde yok kalmayalim sap gibi :D",
+      "output": [
+        "@username Klaro olur halbe Stunde mehr Schlaf :)) Yine de buluşak belki birimiz gecikiriz Tel de yok kalmayalım sap gibi :D"
+      ]
+    },
+    {
+      "id": "task024-119",
+      "input": "@username dali bide war tipda ! Alternativ tip altinda , eskiyi arastirip hangi hastaliklara hangi bitkiler ve onlarin icindeki maddeler neler",
+      "output": [
+        "@username Dali bile var tıpta ! Alternativ tıp altında , eskiyi araştırıp hangi hastalıklara hangi bitkiler ve onların içindeki maddeler neler"
+      ]
+    },
+    {
+      "id": "task024-120",
+      "input": "@username Genau deshalb hab ich heute Bock auf gar nix :S Yagmur yagsa bari , voll das schlimme Wetter :/",
+      "output": [
+        "@username Genau deshalb habe ich heute Bock auf gar nix :S Yağmur yağsa bari , voll das schlimme Wetter :/"
+      ]
+    },
+    {
+      "id": "task024-121",
+      "input": "@username Ehehe :) also soweit ich weiß kommt er aus Darmstadt , tasinmista olabilir tabi :) Bad Schwalbach liegt in der Nähe von Wiesbaden",
+      "output": [
+        "@username Ehehe :) also soweit ich weiß kommt er aus Darmstadt , taşınmış da olabilir tabii :) Bad Schwalbach liegt in der Nähe von Wiesbaden"
+      ]
+    },
+    {
+      "id": "task024-122",
+      "input": "ahhh sagol grill hähnchen , soooo lecker !",
+      "output": [
+        "ahhh sağ ol Grillhähnchen  , so lecker !"
+      ]
+    },
+    {
+      "id": "task024-123",
+      "input": "@username Echtt , nereye ?",
+      "output": [
+        "@username Echt , nereye ?"
+      ]
+    },
+    {
+      "id": "task024-124",
+      "input": "@username hayırlı olsun =.] super erfreuliche Nachricht",
+      "output": [
+        "@username hayırlı olsun =.] super erfreuliche Nachricht"
+      ]
+    },
+    {
+      "id": "task024-125",
+      "input": "@username Haha mein Handy muss nicht vibrieren ich schaue zig mal drauf :D aliskanlik :D",
+      "output": [
+        "@username Haha mein Handy muss nicht vibrieren ich schaue zig mal darauf :D alışkanlık :D"
+      ]
+    },
+    {
+      "id": "task024-126",
+      "input": "@username Sorma ablacim , kartim olmuyor 2 saatdir msj yollamaya calisiyorum senden fehlgeschlagen diyor , kafayi yemek uzereyim :S",
+      "output": [
+        "@username Sorma ablacığım , kartım olmuyor 2 saattir mesaj yollamaya çalışıyorum senden fehlgeschlagen diyor , kafayı yemek üzereyim :S"
+      ]
+    },
+    {
+      "id": "task024-127",
+      "input": "@username Biraz once kapatmistim tlfu bekledim biraz yine ayni :S bide dedigin gibi yapayim , yine olmazsa rufr ich am besten mal an :/",
+      "output": [
+        "@username Biraz önce kapatmıştım telefonu bekledim biraz yine aynı :S bir de dediğin gibi yapayım , yine olmazsa rufe ich am besten einmal an :/"
+      ]
+    },
+    {
+      "id": "task024-128",
+      "input": "@username Yok schatz jetzt gehts zum gluck wieder !",
+      "output": [
+        "@username Yok Schatz jetzt geht es zum Glück wieder !"
+      ]
+    },
+    {
+      "id": "task024-129",
+      "input": "@username Jetzt gehts wieder , cok sukur !",
+      "output": [
+        "@username Jetzt geht es wieder , çok şükür !"
+      ]
+    },
+    {
+      "id": "task024-130",
+      "input": "@username Hehe also anrufen etmedim ama ugrastim birden oldu . arkadasimdada oyle olmus , arada geliyolar sanirim ;D",
+      "output": [
+        "@username Hehe also anrufen etmedim ama uğraştım birden oldu . Arkadaşımda da öyle olmuş , arada geliyorlar sanırım ;D"
+      ]
+    },
+    {
+      "id": "task024-131",
+      "input": "@username Hehe also anrufen etmedim ama ugrastim birden oldu . arkadasimdada oyle olmus , arada geliyolar sanirim ;D",
+      "output": [
+        "@username Hehe also anrufen etmedim ama uğraştım birden oldu . Arkadaşımda da öyle olmuş , arada geliyorlar sanırım ;D"
+      ]
+    },
+    {
+      "id": "task024-132",
+      "input": "@username @username Valla yapti kizlar , zum 4. Mal !! Hat bereits 2 Kinder und 4x weiße Hochzeit durch , sah toll aus ;-)",
+      "output": [
+        "@username @username Valla yaptı kızlar , zum 4. Mal !! Hat bereits 2 Kinder und 4x weiße Hochzeit durch , sah toll aus ;-)"
+      ]
+    },
+    {
+      "id": "task024-133",
+      "input": "@username Kaciyormusun ? Gute Nacht cnm benim , grsrz :-*",
+      "output": [
+        "@username Kaçıyor musun ? Gute Nacht canım benim , görüşürüz :-*"
+      ]
+    },
+    {
+      "id": "task024-134",
+      "input": "sbahn faciyasi gene basliyor tek basima binmekten korkuyorum off",
+      "output": [
+        "S-Bahn faciası yine başlıyor tek başıma binmekten korkuyorum of"
+      ]
+    },
+    {
+      "id": "task024-135",
+      "input": "@username haha ben sana bastan anlatiyim . FF bedeutet follo friday , das macht man immer freitags . istedigin kisinin onune ff ekliyosun ..",
+      "output": [
+        "@username haha ben sana baştan anlatayım . FF bedeutet Follow Friday , das macht man immer freitags . İstediğin kişinin önüne FF ekliyorsun .."
+      ]
+    },
+    {
+      "id": "task024-136",
+      "input": "@username yemin olsun zenciye gösterdim , &quot; mein ist größer als deins &quot; diye - du bist verrückt diyorrrr",
+      "output": [
+        "@username Yemin olsun zenciye gösterdim , &quot; meines ist größer als deines &quot; diye - du bist verrückt diyor"
+      ]
+    },
+    {
+      "id": "task024-137",
+      "input": "@username @username @username @username Tabiki iPad zaten kısıtlıyor fakat TABLET bence allgemein gesehen bir kere Klavyesi yok diye zor !",
+      "output": [
+        "@username @username @username @username Tabii ki iPad zaten kısıtlıyor fakat tablet bence allgemein gesehen bir kere klavyesi yok diye zor !"
+      ]
+    },
+    {
+      "id": "task024-138",
+      "input": "@username und dann hab ich gesagt ' Saka yaptim , onun kölnde ne isi olsun ' xD sry , mein plan hat nicht funktioniert :L",
+      "output": [
+        "@username Und dann habe ich gesagt ' Şaka yaptım , onun Köln'de ne işi olsun ' xD sorry , mein Plan hat nicht funktioniert :L"
+      ]
+    },
+    {
+      "id": "task024-139",
+      "input": "@username hemşo Doğum günün mutlu ve mutlu olsun , nice başarılı yıllara . Ich hoffe es kommt mehr mit Savaş abi . Peace reverze",
+      "output": [
+        "@username Hemşo doğum günün mutlu ve mutlu olsun , nice başarılı yıllara . Ich hoffe es kommt mehr mit Savaş abi . Peace reverze"
+      ]
+    },
+    {
+      "id": "task024-140",
+      "input": "@username thalia inglice de birsey yazdi ich möchte das in Deutsch umwandeln ama bende com taof anhören ediyor kannst du mir das überstzen ?",
+      "output": [
+        "@username Thalia İnglizce  bir şey yazdı ich möchte das in Deutsch umwandeln ama bende çok tuhaf anhören ediyor kannst du mir das übersetzen ?"
+      ]
+    },
+    {
+      "id": "task024-141",
+      "input": "@username gel beraber olsun liebes :)",
+      "output": [
+        "@username gel beraber olsun Liebes :)"
+      ]
+    },
+    {
+      "id": "task024-142",
+      "input": "@username ich weiß kanka , Çiğdemim o benim , mehr Fotos von uns nur bei Face :)) bald Hochzeit , insallahhhh https://www.url.com/",
+      "output": [
+        "@username Ich weiß kanka , Çiğdemim o benim , mehr Fotos von uns nur bei Face :)) bald Hochzeit , İnşallah https://www.url.com/"
+      ]
+    },
+    {
+      "id": "task024-143",
+      "input": "@username ben büyüene kadar oooo .. yani hic gecmicek ... sagol war keine große hilfe :DD dir auch ne gute nacht",
+      "output": [
+        "@username ben büyüyene kadar oooo .. yani hiç geçmeyecek ... sağ ol war keine große Hilfe :D dir auch eine gute Nacht"
+      ]
+    },
+    {
+      "id": "task024-144",
+      "input": "@username sagol ya . vallabilla bende burda dost/arkadas bilip icimi aciyorum :DD tamam mesaj alinmisdir :)) wann kommt der bus mesali oldu",
+      "output": [
+        "@username sağ ol ya . valla billa ben de burada dost / arkadaş bilip içimi açıyorum :D tamam mesaj alınmıştır :)) wann kommt der Bus misali oldu"
+      ]
+    },
+    {
+      "id": "task024-145",
+      "input": "birazdan vaihingendeki freibad a gideceğiz güneş noolur gitme iki çimip gelelim !!",
+      "output": [
+        "Birazdan Vaihingen'deki Freibada a gideceğiz güneş ne olur gitme iki çimip gelelim !!"
+      ]
+    },
+    {
+      "id": "task024-146",
+      "input": "@username sayili zaman cabuk gecer des macht ihr schon .. Bende bu aralar studienplatz aroyorum aber ich will hier bleiben :)",
+      "output": [
+        "@username Sayılı zaman çabuk geçer das macht ihr schon .. Ben de bu aralar Studienplatz arıyorum aber ich will hier bleiben :)"
+      ]
+    },
+    {
+      "id": "task024-147",
+      "input": "@username benim 1. Wahl tûrkiyede calismak ama alman firmasinda .. 2. . Wahl yani istedim is olmaza studieren olacak",
+      "output": [
+        "@username Benim 1. Wahl Türkiye'de çalışmak ama Alman firmasında .. 2. . Wahl yani istediğim iş olmazsa studieren olacak"
+      ]
+    },
+    {
+      "id": "task024-148",
+      "input": "@username orasi da öyle .. ama iste arka planda birseylerin olmazi herzaman iyidir bence ! erweitert dein entscheidungsradius :)",
+      "output": [
+        "@username Orası da öyle .. ama işte arka planda bir şeylerin olması her zaman iyidir bence ! Erweitert deinen Entscheidungsradius :)"
+      ]
+    },
+    {
+      "id": "task024-149",
+      "input": "@username ich komm aus düzce . das ist die nahcbarstadt .. yani düzce gibidir diye düsünüyorum orasinida .. düzce bayaaa sIkIci :/ iyi düsün",
+      "output": [
+        "@username Ich komme aus Düzce . Das ist die Nachbarstadt .. yani Düzce gibidir diye düşünüyorum orasını da .. Düzce bayağı sıkıcı :/ İyi düşün"
+      ]
+    },
+    {
+      "id": "task024-150",
+      "input": "@username onu birakta hannes nasil anlattiysa schnellperspek . tamamen yanlismis .. pff .. sabah internetseitedekileri ausdrucken edicm",
+      "output": [
+        "@username Onu bırak da Hannes nasıl anlattıysa Schnellperspektive . tamamen yanlışmış .. pff .. sabah Internetseitedekileri ausdrucken edeceğim"
+      ]
+    },
+    {
+      "id": "task024-151",
+      "input": "“@username : “ RT ADİL SPİELT SUPER !! Sensin doof ” RT ikinizde mogler siniz ya , koruyun siz birbirinizi ",
+      "output": [
+        "“ @username : “ RT Adil spielt super !! Sensin doof ” RT ikiniz de Moglersiniz  ya , koruyun siz birbirinizi "
+      ]
+    },
+    {
+      "id": "task024-152",
+      "input": "@username was isn dein schnitt ? alirlar ya merak etmee .. hangi bölümlere yazdin ?",
+      "output": [
+        "@username Was ist denn dein Schnitt ? alırlar ya merak etme .. hangi bölümlere yazdın ?"
+      ]
+    },
+    {
+      "id": "task024-153",
+      "input": "@username sana iyi yolculuklar , iyi tatiller canim :)) erhol dich gut ..",
+      "output": [
+        "@username Sana iyi yolculuklar , iyi tatiller canım :)) erhole dich gut .."
+      ]
+    },
+    {
+      "id": "task024-154",
+      "input": "@username allaha emanet olun !! Sağ sağlim dönersiniz inşallah !! Fui spaß baim offräumen !! :D",
+      "output": [
+        "@username Allah'a emanet olun !! Sağ salim dönersiniz İnşallah !! Viel Spaß beim Aufräumen !! :D"
+      ]
+    },
+    {
+      "id": "task024-155",
+      "input": "@username klar brauch ich lange ich muss alles nochmal machen . Size afiyet olsun",
+      "output": [
+        "@username Klar brauche ich lange ich muss alles nochmal machen . Size afiyet olsun"
+      ]
+    },
+    {
+      "id": "task024-156",
+      "input": "@username ne des dauert dann zu lang . Och will es fertig machen . Sagolunn sizee afiyet olsun :)",
+      "output": [
+        "@username Nein das dauert dann zu lange . Ich will es fertig machen . Sağ olun size afiyet olsun :)"
+      ]
+    },
+    {
+      "id": "task024-157",
+      "input": "24 Temmuz Pazar 18.30 Galatasaray – FC Inter ( Rewirpower Stadium , Bochum ) Ov süper . Maç ayağımıza gelmiş meğer salla Eintracht'ı:)",
+      "output": [
+        "24 Temmuz Pazar 18.30 Galatasaray – FC Inter ( Rewirpower Stadium , Bochum ) Ov süper . Maç ayağımıza gelmiş meğer salla Eintracht'ı :)"
+      ]
+    },
+    {
+      "id": "task024-158",
+      "input": "RT @username : En az bu U17 oyunculari kadar önemli olan Tolga Cigerci de Wolfsburg'dan ayrilmak üzere . Mönchengladbach'a gidecegi konusuluyor .",
+      "output": [
+        "RT @username : En az bu U17 oyuncuları kadar önemli olan Tolga Ciğerci de Wolfsburg'dan ayrılmak üzere . Mönchengladbach'a gideceği konuşuluyor ."
+      ]
+    },
+    {
+      "id": "task024-159",
+      "input": "Arkadaşlar , Cuma'nız mübarek olsun . / Ich wünsche allen Muslimen einen gesegneten Cuma . / I wish you a blessed Cuma .",
+      "output": [
+        "Arkadaşlar , Cuma'nız mübarek olsun . / Ich wünsche allen Muslimen einen gesegneten Cuma . / I wish you a blessed Cuma ."
+      ]
+    },
+    {
+      "id": "task024-160",
+      "input": "Huzunlu tweetler atip Bahnhof Straße'den Maximilian Straße'ye aglaya aglaya yurumek istiyorum .",
+      "output": [
+        "Hüzünlü tweetler atıp Bahnhofstraße'den  Maximilianstraße'ye  ağlaya ağlaya yürümek istiyorum ."
+      ]
+    },
+    {
+      "id": "task024-161",
+      "input": "@username bitmedim daha dusunmedimdebisey kwine ahnung sizde dusunun",
+      "output": [
+        "@username Bitmedim daha düşünmedim de bir şey keine Ahnung siz de düşünün"
+      ]
+    },
+    {
+      "id": "task024-162",
+      "input": "@username @username viel besser .. danke :) afiyet olsun",
+      "output": [
+        "@username @username Viel besser .. Danke :) afiyet olsun"
+      ]
+    },
+    {
+      "id": "task024-163",
+      "input": "@username hm .. yeaah mal sehen schatz . sünnet dügünü var galiba yarin gidermiyiz bilmiyorum . yarin yine konusalim olurmu ?",
+      "output": [
+        "@username hm .. yeah mal sehen Schatz . Sünnet düğünü var galiba yarın gider miyiz bilmiyorum . Yarın yine konuşalım olur mu ?"
+      ]
+    },
+    {
+      "id": "task024-164",
+      "input": "tok karınla ne diät ' ler planlanır .",
+      "output": [
+        "Tok karınla ne Diät'ler '  planlanır ."
+      ]
+    },
+    {
+      "id": "task024-165",
+      "input": "@username @username echt ? Bilseydim kolne gittigimde arardim orasini :/ netten sorun olmuyomus ama sanirim cullaniyorum :)",
+      "output": [
+        "@username @username Echt ? Bilseydim Köln'e gittiğimde arardım orasını :/ netten sorun olmuyormuş ama sanırım kullanıyorum :)"
+      ]
+    },
+    {
+      "id": "task024-166",
+      "input": "@username malesef echt !!",
+      "output": [
+        "@username Maalesef echt !!"
+      ]
+    },
+    {
+      "id": "task024-167",
+      "input": "@username @username sanki sizin oralarda perfekt almanca konusuyorlar weischt meischt diye diye bi hal olunuyor zaten :)",
+      "output": [
+        "@username @username Sanki sizin oralarda perfekt Almanca konuşuyorlar weiß  diye diye bir hal olunuyor zaten :)"
+      ]
+    },
+    {
+      "id": "task024-168",
+      "input": "@username @username nein französisch bam baska be abi sende yapdin ha :)) bayrisch güzeldir ya :) anlamasi zor ama güzel",
+      "output": [
+        "@username @username Nein Französisch bambaşka  be abi sen de yaptın ha :)) Bayrisch güzeldir ya :) Anlaması zor ama güzel"
+      ]
+    },
+    {
+      "id": "task024-169",
+      "input": "Sayin bakaniz Suat Kilic´a buradan cagri yapiyorum . Bizler Avrupadaki insanlar olarak daha objektiv bakiyoruz konuy . Bizlerden yararlanabilir .",
+      "output": [
+        "Sayın bakanımız Suat Kılıç'a buradan çağrı yapıyorum . Bizler Avrupa'daki insanlar olarak daha objektiv bakıyoruz konuya . Bizlerden yararlanabilir ."
+      ]
+    },
+    {
+      "id": "task024-170",
+      "input": "@username klar aber das wird bisschen spät ne yani weil ich muss noch putzen danach duschen fln fln danach gehen wir essen DANACH KOMM !",
+      "output": [
+        "@username Klar aber das wird bisschen spät ne yani weil ich muss noch putzen danach duschen falan falan danach gehen wir essen danach komm !"
+      ]
+    },
+    {
+      "id": "task024-171",
+      "input": "@username @username ach so anladiiim . ya ben cok s*k*ld*m :D napiyosunuz niye yakin oturmuyoruz ki -_-",
+      "output": [
+        "@username @username Achso  anladım . Ya ben çok sıkıldım :D ne yapıyorsunuz niye yakın oturmuyoruz ki -_-"
+      ]
+    },
+    {
+      "id": "task024-172",
+      "input": "@username sus diyorsun yani . Pardon geri aldım o zaman ich chill mein leben hejoo",
+      "output": [
+        "@username Sus diyorsun yani . Pardon geri aldım o zaman ich chill mein Leben hejo"
+      ]
+    },
+    {
+      "id": "task024-173",
+      "input": "@username @username @username schwein da zaten domuz demek , schweinsteiger domuz yetiştiricisi gibi bişe oluyo &quot; 31 domuzcu &quot; süper olur sda",
+      "output": [
+        "@username @username @username Schwein da zaten domuz demek , Schweinsteiger domuz yetiştiricisi gibi bir şey oluyor &quot; 31 domuzcu &quot; süper olur da"
+      ]
+    },
+    {
+      "id": "task024-174",
+      "input": "@username dh . bist auch die goldene Mitte :D jup arbeite als Kauffrau im groß-und Außenhandel Büro yani sen napiosun schule ??",
+      "output": [
+        "@username D.h. . bist auch die goldene Mitte :D jup arbeite als Kauffrau im Groß- und Außenhandel Büro yani sen ne yapıyorsun Schule ??"
+      ]
+    },
+    {
+      "id": "task024-175",
+      "input": "@username voll komisch ondan dedim :))",
+      "output": [
+        "@username Voll komisch ondan dedim :))"
+      ]
+    },
+    {
+      "id": "task024-176",
+      "input": "@username @username @username @username da packt mich eın turke von hinten eeeey eın Türk'e diye diye bi hal oldu salak",
+      "output": [
+        "@username @username @username @username Da packt mich ein Türke von hinten ey ein Türke diye diye bir hal oldu salak"
+      ]
+    },
+    {
+      "id": "task024-177",
+      "input": "@username ein türkischer Freund sagt : &quot; Tesekkürler krefeld de cok güzeldi &quot; die Akzent zeichen krieg ich nicht hin hoffe es hilft ?!",
+      "output": [
+        "@username Ein türkischer Freund sagt : &quot; Teşekkürler Krefeld de çok güzeldi &quot; die Akzentzeichen  krieg ich nicht hin hoffe es hilft ?!"
+      ]
+    },
+    {
+      "id": "task024-178",
+      "input": "@username deutschlandda yagmur var hocam :(",
+      "output": [
+        "@username Deutschland'da yağmur var hocam :("
+      ]
+    },
+    {
+      "id": "task024-179",
+      "input": "@username su an bauch voll ya . Millet yiyip , iciyo . Biz duruyoruz",
+      "output": [
+        "@username Şu an Bauch voll ya . Millet yiyip , içiyor . Biz duruyoruz"
+      ]
+    },
+    {
+      "id": "task024-180",
+      "input": "@username okayy , komm vor meine tür , ich hab angst rauszugehen , ohne scherz , cok korkunc xD",
+      "output": [
+        "@username Okay , komm vor meine Tür , ich habe Angst rauszugehen , ohne Scherz , çok korkunç xD"
+      ]
+    },
+    {
+      "id": "task024-181",
+      "input": "yarin yine is -_- keine lust auf die arbeittttttttttttttttt :((",
+      "output": [
+        "yarın yine iş -_- keine Lust auf die Arbeit :(("
+      ]
+    },
+    {
+      "id": "task024-182",
+      "input": "@username imza aldim canim ama resim cekdiremedim .. Aber egalll onlari görmek yetdi .. Bide alexin nesesini görmet . Fazla birsey lazim degil :)",
+      "output": [
+        "@username imza aldım canım ama resim çektiremedim .. Aber egal onları görmek yetti .. Bir de Alex'in neşesini görmek . Fazla bir şey lazım değil :)"
+      ]
+    },
+    {
+      "id": "task024-183",
+      "input": "@username hahahah kuzunun herzamanki güzel pozu :D heheh ben yatiyorum ya midem hala fena :/ bis morgen",
+      "output": [
+        "@username hahahah kuzunun her zamanki güzel pozu :D heheh ben yatıyorum ya miğdem hala fena :/ bis morgen"
+      ]
+    },
+    {
+      "id": "task024-184",
+      "input": "@username hadi bebis bizde yatalim bariii sabah gehts weiter mim scheisssssss offffffffff :/ bis morgaaa knutschi",
+      "output": [
+        "@username Hadi bebiş biz de yatalım bari sabah geht es weiter mit dem Scheiß of :/ bis morgen knutschi"
+      ]
+    },
+    {
+      "id": "task024-185",
+      "input": "@username nö gidemem heryer defekt :D",
+      "output": [
+        "@username Nein gidemem her yer defekt :D"
+      ]
+    },
+    {
+      "id": "task024-186",
+      "input": "@username supeeeer :) burasi soguk yagmurlu :/ mannooooo :( urlaub yok bana bu yaz :(( uhuu nezaman doncen ? Bu araa nete nerden giriyosun :D",
+      "output": [
+        "@username Super :) burası soğuk yağmurlu :/ manno :( Urlaub yok bana bu yaz :(( uhu ne zaman döneceksin ? Bu ara nete nereden giriyorsun :D"
+      ]
+    },
+    {
+      "id": "task024-187",
+      "input": "@username he iyi bari ahahah . Viel spass caniiim benim yerimede eglen ve bolca fotoooo :))",
+      "output": [
+        "@username he iyi bari ahahah . Viel Spaß canım benim yerime de eğlen ve bolca foto :))"
+      ]
+    },
+    {
+      "id": "task024-188",
+      "input": "yok arkadaş kimse objektiv değerlendiremiyor bu konuyu . biri küfür eder biri iftira atar biri kimseyi savunmuyorum der yine de taraf tutar !",
+      "output": [
+        "Yok arkadaş kimse objektiv değerlendiremiyor bu konuyu . Biri küfür eder biri iftira atar biri kimseyi savunmuyorum der yine de taraf tutar !"
+      ]
+    },
+    {
+      "id": "task024-189",
+      "input": "@username sordugunda bioquanttaydim supervisor um rehabilition a gitmisti firsattan istifade hemen twitter a girdimm :))",
+      "output": [
+        "@username Sorduğunda Bioquanttaydım Supervisorum  Rehabilitiona a gitmişti fırsattan istifade hemen Twittera a girdim :))"
+      ]
+    },
+    {
+      "id": "task024-190",
+      "input": "@username ohman Defne :( cok üzüldüm ya ... meiner ist auch so weggeflogen ..",
+      "output": [
+        "@username Oh man Defne :( çok üzüldüm ya ... meiner ist auch so weggeflogen .."
+      ]
+    },
+    {
+      "id": "task024-191",
+      "input": "@username liebste Cani , Biz alarm clock diye birseyi Son üc senede hic kullandimizi hatirlamiorum ?? ;PP",
+      "output": [
+        "@username Liebste Cani , biz alarm clock diye bir şeyi son üç senede hiç kullandığımızı hatırlamıyorum ?? ;P"
+      ]
+    },
+    {
+      "id": "task024-192",
+      "input": "@username ama yarin nasil olur bilmiyorum .. davulcular vardir orda onlara söyle die bringen es dann schon rein",
+      "output": [
+        "@username Ama yarın nasıl olur bilmiyorum .. davulcular vardır orada onlara söyle die bringen es dann schon rein"
+      ]
+    },
+    {
+      "id": "task024-193",
+      "input": "@username adam zor bir charakter mis , insallah yerine gelir , almanlar böyle futbolcularin isini bilirler :)",
+      "output": [
+        "@username Adam zor bir Charaktermış  , inşallah yerine gelir , Almanlar böyle futbolcuların işini bilirler :)"
+      ]
+    },
+    {
+      "id": "task024-194",
+      "input": "schützen fest de almanlar delirdi , sagnak yagmurda bando üstelik sabahın 12sinde :/",
+      "output": [
+        "Schützenfest'te   Almanlar delirdi , sağanak yağmurda bando üstelik sabahın 12'sinde :/"
+      ]
+    },
+    {
+      "id": "task024-195",
+      "input": "@username e derdin ne sabahliyorsunuz ? Abgabe için çalışıyorsunuz o halde ? Öğrendiğinde kendine göre zorlukları var",
+      "output": [
+        "@username e derdin ne sabahlıyorsunuz ? Abgabe için çalışıyorsunuz o halde ? Öğrendiğinde kendine göre zorlukları var"
+      ]
+    },
+    {
+      "id": "task024-196",
+      "input": "@username echt ? Hmm wie das denn :) eee konsere gidiyormusun ?",
+      "output": [
+        "@username Echt ? Hmm wie das denn :) eee konsere gidiyor musun ?"
+      ]
+    },
+    {
+      "id": "task024-197",
+      "input": "Essen war richtig &quot; cok güzel &quot; .",
+      "output": [
+        "Essen war richtig &quot; çok güzel &quot; ."
+      ]
+    },
+    {
+      "id": "task024-198",
+      "input": "@username ahhh schatz keskeee :D nezaman gidiyosun kiz sen türkiyeye bu arada ?",
+      "output": [
+        "@username ahhh Schatz keşke :D ne zaman gidiyorsun kız sen Türkiye'ye bu arada ?"
+      ]
+    },
+    {
+      "id": "task024-199",
+      "input": "@username sagol schatzzzz öperim seniiii .. gelisiniiii bekliyorum 4 gözleee :)))",
+      "output": [
+        "@username Sağ ol Schatz öperim seni .. gelişini bekliyorum 4 gözle :)))"
+      ]
+    },
+    {
+      "id": "task024-200",
+      "input": "@username sen nerde kaliyorsun ? :D bu ne güzel scheiße yazmak bakim hahaha sheizee hahahahah",
+      "output": [
+        "@username Sen nerede kalıyorsun ? :D bu ne güzel Scheiße yazmak bakayım hahaha Sheizee hahahahah"
+      ]
+    },
+    {
+      "id": "task024-201",
+      "input": "@username @username 19 gün sonra ben gidiyorum :)) werde an euch denken wenn ich am Strand liege ;)",
+      "output": [
+        "@username @username 19 gün sonra ben gidiyorum :)) werde an euch denken wenn ich am Strand liege ;)"
+      ]
+    },
+    {
+      "id": "task024-202",
+      "input": "@username Gidip usta be sizde ocak varmis su yemegi bi isitsak bruder ya diyeyim istiyorum .",
+      "output": [
+        "@username Gidip usta be sizde ocak varmış şu yemeği bir ısıtsak Bruder ya diyeyim istiyorum ."
+      ]
+    },
+    {
+      "id": "task024-203",
+      "input": "@username kein ding mois , donnerstag müsste eigentlich klappen , yine telefonlasiriz persembe günü",
+      "output": [
+        "@username Kein Ding Mois , Donnerstag müsste eigentlich klappen , yine telefonlaşırız Perşembe günü"
+      ]
+    },
+    {
+      "id": "task024-204",
+      "input": "@username heh gzl olur valla ya haber et schatzi wann du kannst ben uyarim her türlü :))",
+      "output": [
+        "@username heh güzel olur valla ya haber et Schatzi wann du kannst ben uyarım her türlü :))"
+      ]
+    },
+    {
+      "id": "task024-205",
+      "input": "@username @username es tut mir leid :( bugün öpmeden ciktimya nasil icime oturdu bilemezsiniz . su an bi bogayla yasiyorum",
+      "output": [
+        "@username @username Es tut mir leid :( bugün öpmeden çıktım ya nasıl içime oturdu bilemezsiniz . şu an bir boğayla yaşıyorum"
+      ]
+    },
+    {
+      "id": "task024-206",
+      "input": "@username merhaba sen ne anlarsin zaten müzikten . merhaba dogru ya yarin ygmurda grillen edicez . merahab dah ahediye almamiz lazim",
+      "output": [
+        "@username Merhaba sen ne anlarsın zaten müzikten . Merhaba doğru ya yarın yağmurda grillen edeceğiz . Merhaba daha hediye almamız lazım"
+      ]
+    },
+    {
+      "id": "task024-207",
+      "input": "@username schatz ben üyeyim bende vardir dur bakiyorum :)",
+      "output": [
+        "@username Schatz ben üyeyim bende vardır dur bakıyorum :)"
+      ]
+    },
+    {
+      "id": "task024-208",
+      "input": "@username nö nö daha yeni verdik bakalim note kommt erst später :) yok yaw hic gezmiyoruuum :p",
+      "output": [
+        "@username Nein nein daha yeni verdik bakalım Note kommt erst später :) yok yaw hiç gezmiyorum :p"
+      ]
+    },
+    {
+      "id": "task024-209",
+      "input": "@username Almanya ya küstüm ben babuş hem konjuktiv zwei çok zor hemde refleksive pronomenlarını akusatıv datıv ayırmak zor havası da kötü",
+      "output": [
+        "@username Almanya'ya  küstüm ben babuş hem Konjunktiv zwei çok zor hem de refleksive Pronomenlarını Akkusativ Dativ ayırmak zor havası da kötü"
+      ]
+    },
+    {
+      "id": "task024-210",
+      "input": "RT @username : @username insallah morgen » okee abla",
+      "output": [
+        "RT @username : @username inşallah morgen » okay abla"
+      ]
+    },
+    {
+      "id": "task024-211",
+      "input": "@username keine ahnung :) yeni yeni öğreniyorum :)",
+      "output": [
+        "@username Keine Ahnung :) yeni yeni öğreniyorum :)"
+      ]
+    },
+    {
+      "id": "task024-212",
+      "input": "@username sagol schatzim evet büyük gün müs meyer ich und twitt hadi hayirlisi :)",
+      "output": [
+        "@username Sağ ol Schatzim evet büyük günmüş  meğer ich und Twitt hadi hayırlısı :)"
+      ]
+    },
+    {
+      "id": "task024-213",
+      "input": "@username hahah keine sorge :D anca burayi kirip geciririm :p",
+      "output": [
+        "@username hahah keine Sorge :D anca burayı kırıp geçiririm :p"
+      ]
+    },
+    {
+      "id": "task024-214",
+      "input": "@username ne güzel kranki al pasalar gibi tatilini gecer yeni is ayarlamaya calis alles in ruhe oohh",
+      "output": [
+        "@username Ne güzel kanki al paşalar gibi tatilini geçir yeni iş ayarlamaya çalış alles in Ruhe oohh"
+      ]
+    },
+    {
+      "id": "task024-215",
+      "input": "@username niye schatzim yaw :/",
+      "output": [
+        "@username Niye Schatzim yaw :/"
+      ]
+    },
+    {
+      "id": "task024-216",
+      "input": "@username full demiyelim dee :D elimden geldigi kadar istehahah yani nicht viel :D",
+      "output": [
+        "@username Full demeyelim de :D elimden geldiği kadar işte hahah yani nicht viel :D"
+      ]
+    },
+    {
+      "id": "task024-217",
+      "input": "@username ahaha achso du bist im urlaub :) ordan mi esdi kündigen yapmak ? ben izinde bam baska seyler düsünürüm de :D haha",
+      "output": [
+        "@username ahaha achso du bist im Urlaub :) Oradan mı esti kündigen yapmak ? ben izinde bambaşka  şeyler düşünürüm de :D haha"
+      ]
+    },
+    {
+      "id": "task024-218",
+      "input": "@username Gecmis olsun :) Und nochmal die Frage soll ich in einen Hals .... damit es vergeht ? XD",
+      "output": [
+        "@username Geçmiş olsun :) Und nochmal die Frage soll ich in einen Hals .... damit es vergeht ? XD"
+      ]
+    },
+    {
+      "id": "task024-219",
+      "input": "@username @username chilln und du ? Gecmis olsun",
+      "output": [
+        "@username @username Chillen und du ? Geçmiş olsun"
+      ]
+    },
+    {
+      "id": "task024-220",
+      "input": "@username heheh knacken kirmak demek .. kanacken´ide burdaki rüklere derler :D",
+      "output": [
+        "@username heheh knacken kırmak demek .. Kanackenide buradaki rüklere derler :D"
+      ]
+    },
+    {
+      "id": "task024-221",
+      "input": "@username ja man voll geilo meryemdede var bende yeni alinca yaptircam oh yeaah . baris kime yaptirmis seninkinede yaptirsin",
+      "output": [
+        "@username Ja man voll geilo Meryem'de de var ben de yeni alınca yaptıracağım oh yeah . Barış kime yaptırmış seninkine de yaptırsın"
+      ]
+    },
+    {
+      "id": "task024-222",
+      "input": "@username cnm bist du sicher gelandet ? Wie war dein Flug ?",
+      "output": [
+        "@username Canım bist du sicher gelandet ? Wie war dein Flug ?"
+      ]
+    },
+    {
+      "id": "task024-223",
+      "input": "@username hmmm lecker , afiyet olsun tatlim :-)",
+      "output": [
+        "@username hmmm lecker , afiyet olsun tatlım :-)"
+      ]
+    },
+    {
+      "id": "task024-224",
+      "input": "anormal junge , anormal , deine mutter ist richtig :* cok güzel junge",
+      "output": [
+        "Anormal Junge , anormal , deine Mutter ist richtig :* çok güzel Junge"
+      ]
+    },
+    {
+      "id": "task024-225",
+      "input": "@username var .. cok var ama ich will was anderes erleben sehen etc .. ich hab 3 jahre gearbeitet des vergeht mir zu monoton .. gencken yasican",
+      "output": [
+        "@username var .. çok var ama ich will was anderes erleben sehen etc. .. ich habe 3 Jahre gearbeitet des vergeht mir zu monoton .. gençken yaşayacaksın"
+      ]
+    },
+    {
+      "id": "task024-226",
+      "input": "@username Hahaha scheiße :) öyle durumlarda haber ver ben bir telefonla kurtarırım seni :)))",
+      "output": [
+        "@username Hahaha Scheiße :) öyle durumlarda haber ver ben bir telefonla kurtarırım seni :)))"
+      ]
+    },
+    {
+      "id": "task024-227",
+      "input": "Sehr elegant ! :) hayirli olsunlar efendim .. :) re : https://www.url.com/",
+      "output": [
+        "Sehr elegant ! :) Hayırlı olsunlar efendim .. :) re : https://www.url.com/"
+      ]
+    },
+    {
+      "id": "task024-228",
+      "input": "@username ezel - ist toll - isimi cok sevdim - aber im deutschen ist das halt ein doofer Name =(",
+      "output": [
+        "@username Ezel - ist toll - ismi çok sevdim - aber im Deutschen ist das halt ein doofer Name =("
+      ]
+    }
+  ],
+  "Instance License": [
+    "Unknown"
+  ]
+}

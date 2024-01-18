@@ -1,0 +1,12 @@
+task002_da_test
+task004_de_test
+task006_en_test
+task008_es_test
+task010_hr_test
+task012_iden_test
+task014_it_test
+task016_nl_test
+task018_sl_test
+task020_sr_test
+task022_tr_test
+task024_trde_test

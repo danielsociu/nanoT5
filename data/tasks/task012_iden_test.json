@@ -1,0 +1,1211 @@
+{
+  "Contributors": [
+    "Swaroop Mishra",
+    "Daniel Khashabi"
+  ],
+  "Source": [
+    "MultiLexNorm: Multilingual Lexical Normalization"
+  ],
+  "URL": [
+    "https://noisy-text.github.io/2021/multi-lexnorm.html"
+  ],
+  "Categories": [
+    "Lexical Normalization"
+  ],
+  "Reasoning": [
+    "Temporal Reasoning",
+    "Commonsense Reasoning"
+  ],
+  "Definition": [
+    "Lexical norm"
+  ],
+  "Input_language": [
+    "Multilanguage"
+  ],
+  "Output_language": [
+    "Multilanguage"
+  ],
+  "Instruction_language": [
+    "Multilanguage"
+  ],
+  "Domains": [
+    "Twitter",
+    "Arto",
+    "sms",
+    "forum"
+  ],
+  "Positive Examples": [
+    {
+      "input": "@tubirfess some of us kali lebih tepatnya . soalnya temen2 gue baik2 aja sama gue tetep main ngajak makan bareng2",
+      "output": "@tubirfess some of us kali lebih tepatnya . soalnya teman-teman saya baik-baik saja sama saya tetap main ngajak makan bareng-bareng",
+      "explanation": "The text is now lexically normalized and correct."
+    }
+  ],
+  "Negative Examples": [
+    {
+      "input": "great . setelah cina , indonesia dan singapura semoga yg lain menyusul . @boeing you hv to take the 737 max matters seriously . we talkin bout lives here . https://t.co/xyrpqnc3bu",
+      "output": "great . setelah cina , indonesia dan singapura semga yang lain menusul . @boeing you have to take the 737 max matters eriously . we talkin about lives here . https://t.co/xyrpqnc3bu",
+      "explanation": "The text is not lexically normalized and it is incorrect."
+    }
+  ],
+  "Instances": [
+    {
+      "id": "task012-0",
+      "input": "@mrggretha cayang bangeeet , kamu kenapa . get well soon ya ! . kerja jangan capek capek harus inget kesehatan , love",
+      "output": [
+        "@mrggretha sayang sangat , kamu kenapa . get well soon ya ! . kerja jangan capai-capai  harus ingat kesehatan , love"
+      ]
+    },
+    {
+      "id": "task012-1",
+      "input": "sekelas kita cuma bisa bilang \" begitu doang ' . - . not elegance moment but we keep enjoy event ! because we are the host di jl gurame pasar minggu , jakarta selatan https://t.co/nosjtsz5ti",
+      "output": [
+        "sekelas kita cuma bisa bilang \" begitu doang ' . - . not elegance moment but we keep enjoy event ! because we are the host di jl gurame pasar minggu , jakarta selatan https://t.co/nosjtsz5ti"
+      ]
+    },
+    {
+      "id": "task012-2",
+      "input": "ngupdate \" masi aja nyindir orang di status \" . well , kadang memang otak , hati mulut , tangan ga sikron . ato memang ga ada otak ?",
+      "output": [
+        "ngupdate \" masih saja sindir orang di status \" . well , kadang memang otak , hati mulut , tangan tidak sinkron . atau memang tidak ada otak ?"
+      ]
+    },
+    {
+      "id": "task012-3",
+      "input": "minjemin duit ke orang yg punya rumah seharga 900jt , mobil ada 3 biji motor 2 biji , pas ditagih belom dpt uangnya ? well helloooo aset lo motor kasih gue aje mas broo . gimana ?",
+      "output": [
+        "minjemin duit ke orang yang punya rumah seharga 900jt , mobil ada 3 biji motor 2 biji , pas ditagih belum dapat uangnya ? well hello aset kamu motor kasih saya saja mas broo . gimana ?"
+      ]
+    },
+    {
+      "id": "task012-4",
+      "input": "@fanyaaghniya aaaaaaa oiyaa udh tahun terakhir yaaa . semangat yah fan i hope things are going well",
+      "output": [
+        "@fanyaaghniya aaaaaaa oiyaa sudah tahun terakhir ya . semangat yah fan i hope things are going well"
+      ]
+    },
+    {
+      "id": "task012-5",
+      "input": "well , gue belum tau mau milih capres 1 / 2 . tapi gue ngerasa kayaknya capres 2 bakal menang .",
+      "output": [
+        "well , saya belum tahu mau pilih capres 1 / 2 . tapi saya merasa sepertinya capres 2 bakal menang ."
+      ]
+    },
+    {
+      "id": "task012-6",
+      "input": "@devyamh ya tandanya dia bokek or something lah wkwk",
+      "output": [
+        "@devyamh ya tandanya dia bokek or something lah wkwk"
+      ]
+    },
+    {
+      "id": "task012-7",
+      "input": "@istrikusemok kapan bisa 3 some sama kalian hehe",
+      "output": [
+        "@istrikusemok kapan bisa 3 some sama kalian hehe"
+      ]
+    },
+    {
+      "id": "task012-8",
+      "input": "back in the days dimana hoax masih kenceng2nya di percaya segala kalangan . \" lagu pemanggil setan \" https://t.co/dnldzcpp6t",
+      "output": [
+        "back in the days di mana hoax masih kencang-kencangnya di percaya segala kalangan . \" lagu pemanggil setan \" https://t.co/dnldzcpp6t"
+      ]
+    },
+    {
+      "id": "task012-9",
+      "input": "@maksiyat kerjaan banget yaa tengah malem gitu . btw get well soon yaaaa",
+      "output": [
+        "@maksiyat kerjaan sangat ya tengah malam begitu . btw get well soon ya"
+      ]
+    },
+    {
+      "id": "task012-10",
+      "input": "klien super baik pingsan krn kelelahan akutu gabisa diginiin . get well soon mas",
+      "output": [
+        "klien super baik pingsan karena kelelahan akutu tidak bisa diginiin . get well soon mas"
+      ]
+    },
+    {
+      "id": "task012-11",
+      "input": "well , ketika semua org menyalahkan gue . ya gue gak bisa apa apa . padahal lo cuma liat luarnya aja . tapi langsung ngejudge . mending gue tarik napas yang panjang aja deh . huft",
+      "output": [
+        "well , ketika semua orang menyalahkan saya . ya saya tidak bisa apa-apa  . padahal kamu cuma lihat luarnya saja . tapi langsung ngejudge . mending saya tarik napas yang panjang saja deh . huft"
+      ]
+    },
+    {
+      "id": "task012-12",
+      "input": "@sandiuno @agusyudhoyono bang sandi saya hanya mau mengingatkan bahwa debat malam nanti , bang sandi menghadapi seorang politisi dan bukan ketua mui yang kiyai . do not make your supporters be dissapointed !",
+      "output": [
+        "@sandiuno @agusyudhoyono bang sandi saya hanya mau mengingatkan bahwa debat malam nanti , bang sandi menghadapi seorang politisi dan bukan ketua mui yang kiyai . do not make your supporters be dissapointed !"
+      ]
+    },
+    {
+      "id": "task012-13",
+      "input": "i've learned something . di balik ungkapan seseorang \" ah , udah biasa itu mah . \" tersimpan \" well , i'm done . \"",
+      "output": [
+        "i have learned something . di balik ungkapan seseorang \" ah , sudah biasa itu mah . \" tersimpan \" well , i am done . \""
+      ]
+    },
+    {
+      "id": "task012-14",
+      "input": "@pxchye entahlah , menurut gue setiap individu punya kemampuan intelektual yang berbeda-beda dan nggak bisa diukur dengan satu quantified standard yang sama . just because a person isn't good at math , does not mean they're stupid per se . tapi sistem pendidikan yang sekarang kayak gitu kan ?",
+      "output": [
+        "@pxchye entahlah , menurut saya setiap individu punya kemampuan intelektual yang berbeda-beda dan tidak bisa diukur dengan satu quantified standard yang sama . just because a person is not good at math , does not mean they are stupid per se . tapi sistem pendidikan yang sekarang seperti begitu kan ?"
+      ]
+    },
+    {
+      "id": "task012-15",
+      "input": "@amrazing well , just tryna be honest sih . hehe . drpd maksa bilang \" i knew it , amber dr dulu mencurigakan ! \" kayak yang lagi rame",
+      "output": [
+        "@amrazing well , just trying be honest sih . hehe . daripada maksa bilang \" i knew it , amber dari dulu mencurigakan ! \" seperti yang lagi ramai"
+      ]
+    },
+    {
+      "id": "task012-16",
+      "input": "well gapapa dah gagal jadi anak keamanan , yg penting skrg bisa ikut sekdan ~",
+      "output": [
+        "well tidak apa-apa dah gagal jadi anak keamanan , yang penting sekarang bisa ikut sekdan ~"
+      ]
+    },
+    {
+      "id": "task012-17",
+      "input": "@soniajkt48 mungkin badannya mmg lagi butuh istirahat . hope you are well . siap 2 hari berturutturut zumba lagii",
+      "output": [
+        "@soniajkt48 mungkin badannya memang lagi butuh istirahat . hope you are well . siap 2 hari berturut-turut zumba lagi"
+      ]
+    },
+    {
+      "id": "task012-18",
+      "input": "@erin_dr i noticed ! bagus suaranya . seru kok , akhirnya ( well sejak 2017 sih ) ngerekam podcast gak sulit-sulit amat hoho",
+      "output": [
+        "@erin_dr i noticed ! bagus suaranya . seru kok , akhirnya ( well sejak 2017 sih ) merekam podcast tidak sulit-sulit amat hoho"
+      ]
+    },
+    {
+      "id": "task012-19",
+      "input": "not good , not good . maag gue selalu kambuh sejak kerja di sini . setres",
+      "output": [
+        "not good , not good . maag saya selalu kambuh sejak kerja di sini . stres"
+      ]
+    },
+    {
+      "id": "task012-20",
+      "input": "dari semalem tau lagi emosi mau buka ig ga bisa , mau hapus something di fb doi ga bisa , ditambah whatsapp mau kirim gambar susah nemen . parah #instagramdown #facebookdown",
+      "output": [
+        "dari semalam tahu lagi emosi mau buka ig tidak bisa , mau hapus something di fb doi tidak bisa , ditambah whatsapp mau kirim gambar susah nemen . parah #instagramdown #facebookdown"
+      ]
+    },
+    {
+      "id": "task012-21",
+      "input": "baru sempet nerusin unpacking lg , a variety of tupiem related pouches lol https://t.co/nruul3smom",
+      "output": [
+        "baru sempat nerusin unpacking lagi , a variety of tupiem related pouches lol https://t.co/nruul3smom"
+      ]
+    },
+    {
+      "id": "task012-22",
+      "input": "lu bilang sayang sm gw . tapi lu milih pergi sama dia . so , which one should i believe ?",
+      "output": [
+        "kamu bilang sayang sama saya . tapi kamu memilih pergi sama dia . so , which one should i believe ?"
+      ]
+    },
+    {
+      "id": "task012-23",
+      "input": "i'm back . * sukalupapunyatweeter",
+      "output": [
+        "i am back . * sukalupapunyatweeter"
+      ]
+    },
+    {
+      "id": "task012-24",
+      "input": "@graharaya_ duh chelsea fav . tapi lagi down . anjiiir apalagi klo hazar out dari chelsea",
+      "output": [
+        "@graharaya_ duh chelsea favorite . tapi lagi down . anjir apalagi kalau hazar out dari chelsea"
+      ]
+    },
+    {
+      "id": "task012-25",
+      "input": "@asamglutamat ok salah . falling in love with people we can't have . ketinggalan t nya wkwkwk",
+      "output": [
+        "@asamglutamat oke salah . falling in love with people we cannot have . ketinggalan t nya wkwkwk"
+      ]
+    },
+    {
+      "id": "task012-26",
+      "input": "@sintakayaknya cara classic wkek",
+      "output": [
+        "@sintakayaknya cara classic wkek"
+      ]
+    },
+    {
+      "id": "task012-27",
+      "input": "kesimpulan hidup sampai hari ini : very unpredictable and unexpected . makanya jangan percaya sama fortune teller , no one knows whats gonna happen next",
+      "output": [
+        "kesimpulan hidup sampai hari ini : very unpredictable and unexpected . makanya jangan percaya sama fortune teller , no one knows what is going to happen next"
+      ]
+    },
+    {
+      "id": "task012-28",
+      "input": "@womanfeeds aamiin aamiin ya allah , allah suka bgt sama org yg berusaha dan berserah diri . you did well ! kamu pasti bisa nder , percaya sama diri kamu sendiri itu kuncinya . kalo seandainya belum rezeki kamu tenangggg msh banyak jalan yg bagus utk dilalui , semangattt",
+      "output": [
+        "@womanfeeds amin amin ya allah , allah suka sangat sama orang yang berusaha dan berserah diri . you did well ! kamu pasti bisa nder , percaya sama diri kamu sendiri itu kuncinya . kalau seandainya belum rezeki kamu tenang masih banyak jalan yang bagus untuk dilalui , semangat"
+      ]
+    },
+    {
+      "id": "task012-29",
+      "input": "@f_rifajkt48 well done dek ^^ naw mumpung ada waktu jalan2 dulu sabi si",
+      "output": [
+        "@f_rifajkt48 well done dek ^^ naw mumpung ada waktu jalan-jalan dulu bisa si"
+      ]
+    },
+    {
+      "id": "task012-30",
+      "input": "[ @cantitachril ] i also have a surprise for you tonight ! kira kira surprise nya apa hayooooooooooooooo ?",
+      "output": [
+        "[ @cantitachril ] i also have a surprise for you tonight ! kira-kira  surprise nya apa hayoo ?"
+      ]
+    },
+    {
+      "id": "task012-31",
+      "input": "@reshianecr well said . semua tau siapa yg salah kok tetaaap semangaaaat",
+      "output": [
+        "@reshianecr well said . semua tahu siapa yang salah kok tetap semangat"
+      ]
+    },
+    {
+      "id": "task012-32",
+      "input": "shout-out to all my juventini friend . well deserved . semoga tim kita bertemu lagi . #juveatleti #manutd #juventus",
+      "output": [
+        "shout-out to all my juventini friend . well deserved . semoga tim kita bertemu lagi . #juveatleti #manutd #juventus"
+      ]
+    },
+    {
+      "id": "task012-33",
+      "input": "tiba2 semester enam-ku dipenuhi dengan tawaran social project , . dan anehnya saya sangat bersemangat dengan adanya project ini padahal blm tentu kepilih . oh , i hope this ends well",
+      "output": [
+        "tiba-tiba semester enam-ku dipenuhi dengan tawaran social project , . dan anehnya saya sangat bersemangat dengan adanya project ini padahal belum tentu kepilih . oh , i hope this ends well"
+      ]
+    },
+    {
+      "id": "task012-34",
+      "input": "@rianernesto @sandiuno jauh sebelum itu , mnrt saya pencegahan jauuuh lbh penting . well , i dont know , tp hrsnya bpjs pnya dana utk peningkatan kualitas kesehatan masyarakat , tetang kesadaran utk beraktivitas sht , makan sht , krja sht n aman , dll . krn sbnrnya penyakit health insurance ya tingginya nilai .",
+      "output": [
+        "@rianernesto @sandiuno jauh sebelum itu , menurut saya pencegahan jauh lebih penting . well , i do not know , tapi harusnya bpjs punya dana untuk peningkatan kualitas kesehatan masyarakat , tentang kesadaran untuk beraktivitas sht , makan sht , kerja sht and aman , dll . karena sebenarnya penyakit health insurance ya tingginya nilai ."
+      ]
+    },
+    {
+      "id": "task012-35",
+      "input": "@tubirfess some of us kali lebih tepatnya . soalnya temen2 gue baik2 aja sama gue tetep main ngajak makan bareng2",
+      "output": [
+        "@tubirfess some of us kali lebih tepatnya . soalnya teman-teman saya baik-baik saja sama saya tetap main ngajak makan bareng-bareng"
+      ]
+    },
+    {
+      "id": "task012-36",
+      "input": "gitu dong . berani . gue sih berani2 aja jadi penanggung jawab , tapi gue mau sebar dulu ke anak cowonya , siapa yg berani . ketua angkatan no reponse dr awal ditanya . yang tertua jg nggak bisa ngasih jawaban . so , i was really glad when you gave \" yaudah \" answer .",
+      "output": [
+        "begitu dong . berani . saya sih berani-berani saja jadi penanggung jawab , tapi saya mau sebar dulu ke anak cowoknya , siapa yang berani . ketua angkatan no reponse dari awal ditanya . yang tertua juga tidak bisa kasih jawaban . so , i was really glad when you gave \" yaudah \" answer ."
+      ]
+    },
+    {
+      "id": "task012-37",
+      "input": "we're not that close untuk pergi bareng . baru kenal brapa lama aja udah ngajak2 pergi . gak suka banget woiii . udah gitu ngebet banget pula",
+      "output": [
+        "we are not that close untuk pergi bareng . baru kenal berapa lama saja sudah ajak-ajak pergi . tidak suka sangat woii . sudah begitu ngebet sangat pula"
+      ]
+    },
+    {
+      "id": "task012-38",
+      "input": "@ddaenggi00 eh bener dia tuh ada something sama aq",
+      "output": [
+        "@ddaenggi00 eh benar dia tuh ada something sama aku"
+      ]
+    },
+    {
+      "id": "task012-39",
+      "input": "dulu tuh ya galery ampe penuh sama foto foto hd dari twitter",
+      "output": [
+        "dulu tuh ya gallery sampai penuh sama foto-foto  hd dari twitter"
+      ]
+    },
+    {
+      "id": "task012-40",
+      "input": "thats why selalu males ke cs bank . maunya cuma ganti kartu / buka m-banking malah ditawarin unitlink ini itu https://t.co/4ad7pl2kqa",
+      "output": [
+        "that is why selalu malas ke cs bank . maunya cuma ganti kartu / buka m-banking malah ditawarin unitlink ini itu https://t.co/4ad7pl2kqa"
+      ]
+    },
+    {
+      "id": "task012-41",
+      "input": "@nctconfess stop panggil dia buluk ! pliss lahh . seganteng ini pada panggil dia buluk lah , malika lah , hellaw . where's your eyes ? his talented boy https://t.co/t3cjijn17a",
+      "output": [
+        "@nctconfess stop panggil dia buluk ! please lah . seganteng ini pada panggil dia buluk lah , malika lah , hello . where is your eyes ? his talented boy https://t.co/t3cjijn17a"
+      ]
+    },
+    {
+      "id": "task012-42",
+      "input": "sekarang baca konten tumblr kok can't relate yaaaaa",
+      "output": [
+        "sekarang baca konten tumblr kok cannot relate ya"
+      ]
+    },
+    {
+      "id": "task012-43",
+      "input": "guys please tell me skz beneran mau ke indo lagi ?",
+      "output": [
+        "guys please tell me skz benaran mau ke indo lagi ?"
+      ]
+    },
+    {
+      "id": "task012-44",
+      "input": "never ketawa using \" wkwkwkwk \" because ada mba mba which gak like quotes of the day by anak jaksel @descnisya",
+      "output": [
+        "never ketawa using \" wkwkwkwk \" because ada mbak-mbak  which tidak like quotes of the day by anak jaksel @descnisya"
+      ]
+    },
+    {
+      "id": "task012-45",
+      "input": "when hari ini kamis dan di kantor batik day . dan tak sengaja ada orang yg sama persis baju batiknya , fiks langsung pake jaket",
+      "output": [
+        "when hari ini kamis dan di kantor batik day . dan tak sengaja ada orang yang sama persis baju batiknya , fix langsung pakai jaket"
+      ]
+    },
+    {
+      "id": "task012-46",
+      "input": "doi representasi dari cinta , loyalitas dan kebodohan . too much pain . tapi tetep bertahan . well . im still love they way he act btw . https://t.co/scwbom1lbd",
+      "output": [
+        "doi representasi dari cinta , loyalitas dan kebodohan . too much pain . tapi tetap bertahan . well . i am still love they way he act btw . https://t.co/scwbom1lbd"
+      ]
+    },
+    {
+      "id": "task012-47",
+      "input": "curiga saya menuju kepada kepentingan yang coba dipetik oleh masyarakat well-educated pada kesempatan pesta yang budayanya gemar menghambur-hamburkan harta #prabowodansandiuntukrakyat #kompaksatujokowi #pedulipolitik",
+      "output": [
+        "curiga saya menuju kepada kepentingan yang coba dipetik oleh masyarakat well-educated pada kesempatan pesta yang budayanya gemar menghambur-hamburkan harta #prabowodansandiuntukrakyat #kompaksatujokowi #pedulipolitik"
+      ]
+    },
+    {
+      "id": "task012-48",
+      "input": "@endruu @dewikr btw saya naik tj pas makan hehe kalo di singapura namanya trans singapura apa gimana mas i know its wrong but urge to me . im not eating with mess and spreading smell things im just sharing my opinion and stories",
+      "output": [
+        "@endruu @dewikr btw saya naik tj pas makan hehe kalau di singapura namanya trans singapura apa gimana mas i know it is wrong but urge to me . i am not eating with mess and spreading smell things i am just sharing my opinion and stories"
+      ]
+    },
+    {
+      "id": "task012-49",
+      "input": "i'm just hoping that #article13 does nothing in indonesia . we have our own internet laws :) . but keep on fighting , because i don't want my audience from europe getting vetted by that pesky article . @oranduenijeh , apa opinimu mengenai #article13",
+      "output": [
+        "i am just hoping that #article13 does nothing in indonesia . we have our own internet laws :) . but keep on fighting , because i do not want my audience from europe getting vetted by that pesky article . @oranduenijeh , apa opinimu mengenai #article13"
+      ]
+    },
+    {
+      "id": "task012-50",
+      "input": "@permadisiwi ternyata ada disitu toh , selama ini gak pernah liatin itu . oh well yasudahlah tapi semoga yang kali ini ga kena pajak dulu , shock aja tiba kena pajak hhhh . tau ga kalo mau tulis notes gm dimana ? buat tulis npwp soalnya just in case",
+      "output": [
+        "@permadisiwi ternyata ada dis itu toh , selama ini tidak pernah lihat itu . oh well yasudahlah tapi semoga yang kali ini tidak kena pajak dulu , shock saja tiba kena pajak hhhh . tau tidak kalau mau tulis notes gm di mana ? buat tulis npwp soalnya just in case"
+      ]
+    },
+    {
+      "id": "task012-51",
+      "input": "@sinthaoneng not in good mood . sehat kan calon ponakanku ?",
+      "output": [
+        "@sinthaoneng not in good mood . sehat kan calon ponakanku ?"
+      ]
+    },
+    {
+      "id": "task012-52",
+      "input": "@onedernine @idolfess well noted . mau liat jisung , doyum , taewoo actually mau lihat ke 9 nya uwu .",
+      "output": [
+        "@onedernine @idolfess well noted . mau lihat jisung , doyum , taewoo actually mau lihat ke 9 nya uwu ."
+      ]
+    },
+    {
+      "id": "task012-53",
+      "input": "@askmenfess well , kalo ga mau ditembak , jangan pernah kasih kesempatan dong . cowok paham jika memang cewek itu ngga bisa untuk ditembak . dan kalo dia ganggu , diemin ajalah selesai urusan",
+      "output": [
+        "@askmenfess well , kalau tidak mau ditembak , jangan pernah kasih kesempatan dong . cowok paham jika memang cewek itu tidak bisa untuk ditembak . dan kalau dia ganggu , diemin ajalah selesai urusan"
+      ]
+    },
+    {
+      "id": "task012-54",
+      "input": "well , 1 kartu cuma pake ktp is a great idea . gw & temen2 pernah ngobrolin itu udh lama bgt",
+      "output": [
+        "well , 1 kartu cuma pakai ktp is a great idea . saya & teman-teman pernah ngobrolin itu sudah lama sangat"
+      ]
+    },
+    {
+      "id": "task012-55",
+      "input": "@beludrubiru [ line ] . + excuse me . + i should be the one who said that to you . + my dear lil brother . + eh by the way . + kemarin kan abang datang ke set syuting , terus iseng foto . + ganteng gak ? . + https://t.co/vuwdqmekmd",
+      "output": [
+        "@beludrubiru [ line ] . + excuse me . + i should be the one who said that to you . + my dear little brother . + eh by the way . + kemarin kan abang datang ke set syuting , terus iseng foto . + ganteng tidak ? . + https://t.co/vuwdqmekmd"
+      ]
+    },
+    {
+      "id": "task012-56",
+      "input": "see ? a crowd pleaser . mana itu semua yg komplain soal #dumbo . this is a family movie . what do you expect ? . this film serve the purpose to entertain young children https://t.co/kcjevygynl",
+      "output": [
+        "see ? a crowd pleaser . mana itu semua yang komplain soal #dumbo . this is a family movie . what do you expect ? . this film serve the purpose to entertain young children https://t.co/kcjevygynl"
+      ]
+    },
+    {
+      "id": "task012-57",
+      "input": "life is like a phone call with a loved one . when it is cut short , we realize how much of it we have wasted - klbseagul ( hidup itu ibarat telepon dari sang kekasih . ketika terputus tiba-tiba , kita sadar berapa banyak waktu yang telah disia-siakan )",
+      "output": [
+        "life is like a phone call with a loved one . when it is cut short , we realize how much of it we have waster - klbseagul ( hidup itu ibarat telepon dari sang kekasih . ketika terputus tiba-tiba , kita sadar berapa banyak waktu yang telah disia-siakan )"
+      ]
+    },
+    {
+      "id": "task012-58",
+      "input": "waalaikumsalam , . not really ~ https://t.co/hgdpjnhfzs",
+      "output": [
+        "waalaikumsalam , . not really ~ https://t.co/hgdpjnhfzs"
+      ]
+    },
+    {
+      "id": "task012-59",
+      "input": "@rapjuns mutualan hayuk kaa . btw , thanks for this giveawayy . pengen banget pc taehyung uwuuu",
+      "output": [
+        "@rapjuns mutualan ayo kak . btw , thanks for this giveaway . ingin sangat pc taehyung uwuu"
+      ]
+    },
+    {
+      "id": "task012-60",
+      "input": "oh iya lupa salam , assalamualaikum . briedging dikit . i'm back tweeps",
+      "output": [
+        "oh iya lupa salam , assalamualaikum . bridging dikit . i am back tweeps"
+      ]
+    },
+    {
+      "id": "task012-61",
+      "input": "iya gue terima gue di mute sama elu , gue di hidden sama elu . hmm why u liat2 insta storie w ? hmm kangen ye :)",
+      "output": [
+        "iya saya terima saya di mute sama kamu , saya di hidden sama kamu . hmm why you lihat-lihat insta storie saya ? hmm kangen ya :)"
+      ]
+    },
+    {
+      "id": "task012-62",
+      "input": "nflying rooftop ia playing in an indomaret near my place",
+      "output": [
+        "nflying rooftop is playing in an indomaret near my place"
+      ]
+    },
+    {
+      "id": "task012-63",
+      "input": "dia terlalu suka debat , gue orangnya selow . if i did something yang dia gasuka , dia bkln memulai perdebatan yang melelahkan dan gue akan lgsg ok , im busy , lets talk later udah gue diemin .",
+      "output": [
+        "dia terlalu suka debat , saya orangnya slow . if i did something yang dia tidak suka , dia bakalan memulai perdebatan yang melelahkan dan saya akan langsung ok , i am busy , let us talk later sudah saya diemin ."
+      ]
+    },
+    {
+      "id": "task012-64",
+      "input": "udah tenang gw bs liat yedam senyum , yg pnting dia gpp . his smile that enaough for me",
+      "output": [
+        "sudah tenang saya bisa lihat yedam senyum , yang penting dia tidak apa-apa . his smile that enough for me"
+      ]
+    },
+    {
+      "id": "task012-65",
+      "input": "| | haloo , @bluedjjang manis ! . follow back aku , yuk ? dijamin ngabakal nyesel , deh !",
+      "output": [
+        "| | halo , @bluedjjang manis ! . follow back aku , yuk ? dijamin tidak bakal nyesel , deh !"
+      ]
+    },
+    {
+      "id": "task012-66",
+      "input": "invest on culture : saat denger itu yg terlintas pasti free snack tiap lunch , fossball / sepak bola meja , ruang main game , bantal duduk , wallpaper kantor warna warni . itu perintilan , orang-orang ngeskip bagian terpenting , manusia itu sendiri . great insight from mr. gary vaynerchuk https://t.co/qkzquvkzcm",
+      "output": [
+        "invest on culture : saat dengar itu yang terlintas pasti free snack tiap lunch , fossball / sepak bola meja , ruang main game , bantal duduk , wallpaper kantor warna warni . itu perintilan , orang-orang skip bagian terpenting , manusia itu sendiri . great insight from mr. gary vaynerchuk https://t.co/qkzquvkzcm"
+      ]
+    },
+    {
+      "id": "task012-67",
+      "input": "when yu gaada kerjaan tapi sebelah lu persis bos lu persis mepet cui ngapain ya aku",
+      "output": [
+        "when you tidak ada kerjaan tapi sebelah kamu persis bos kamu persis mepet cui ngapain ya aku"
+      ]
+    },
+    {
+      "id": "task012-68",
+      "input": "lagu when the partys over dari billie ini bercerita tentang muaknya billie dengan kisah percintaan loh , blisteners ! dan ternyata cairan item yang jadi air mata di video klip ini masuk ke mata billie eilish ! #musicology",
+      "output": [
+        "lagu when the partys over dari billie ini bercerita tentang muaknya billie dengan kisah percintaan loh , blisteners ! dan ternyata cairan hitam yang jadi air mata di video klip ini masuk ke mata billie eilish ! #musicology"
+      ]
+    },
+    {
+      "id": "task012-69",
+      "input": "gue suka heran sm yg upload sg trs ada tulisan yg kecilnya kaya atom . gimana woy bacanya maksudnya apa ? ngeshare setengah2 mending gauaah apdet to yaa :)))",
+      "output": [
+        "saya suka heran sama yang upload sg terus ada tulisan yang kecilnya seperti atom . gimana woy bacanya maksudnya apa ? share setengah-setengah mending tidak usah update to ya :)))"
+      ]
+    },
+    {
+      "id": "task012-70",
+      "input": "ready in stock : ** brand new * * schecter japan bh1 std 24 trans red incld original hardcase . kabar gembira guys , sekarang schecter japan @schecter_osaka telah hadir di . https://t.co/j2jrjaqvtt",
+      "output": [
+        "ready in stock : ** brand new * * schecter japan bh1 std 24 trans red include original hardcase . kabar gembira guys , sekarang schecter japan @schecter_osaka telah hadir di . https://t.co/j2jrjaqvtt"
+      ]
+    },
+    {
+      "id": "task012-71",
+      "input": "mari bergabung bersama daarul qur'an . dibuka recruitment . 1 . chef kantin . 2 . staff marketing . 3 . staff daqu marta . 4 . driver . daqu bisnis nusantara ( dbn ) . persyaratan : . - muslim / . https://t.co/xr5l6mzjnn",
+      "output": [
+        "mari bergabung bersama daarul qur'an . dibuka recruitment . 1 . chef kantin . 2 . staff marketing . 3 . staff daqu marta . 4 . driver . daqu bisnis nusantara ( dbn ) . persyaratan : . - muslim / . https://t.co/xr5l6mzjnn"
+      ]
+    },
+    {
+      "id": "task012-72",
+      "input": "pakai heattech dan jaket wol di siang hari jakarta raya adalah cara paling mudah menarik perhatian . well , here i am . -_-",
+      "output": [
+        "pakai heattech dan jaket wol di siang hari jakarta raya adalah cara paling mudah menarik perhatian . well , here i am . -_-"
+      ]
+    },
+    {
+      "id": "task012-73",
+      "input": "@retnopinasih keep sabr sis . akun back up aku jg udh lama g bisa dibuka . klo mau masuk ig selalu minta password baru trs pdhl aku g prnh ganti2 password .",
+      "output": [
+        "@retnopinasih keep sabar sis . akun back up aku juga sudah lama tidak bisa dibuka . kalau mau masuk ig selalu minta password baru terus padahal aku tidak prnh ganti-ganti password ."
+      ]
+    },
+    {
+      "id": "task012-74",
+      "input": "@btstaehiung oh iya ! mari kita mulai dulu . let's get along well noah",
+      "output": [
+        "@btstaehiung oh iya ! mari kita mulai dulu . let us get along well noah"
+      ]
+    },
+    {
+      "id": "task012-75",
+      "input": "@askmenfess cwo positive thinking pasti bilang \" apa an sii , ga jelass \" . cwo negative thinking pasti bilang \" heh , kamu disuruh siapa ngirim2 kaya gini , pasti kamu salah kirim kan , ngaku aja udah , lg selingkuh kan lo anjiink \"",
+      "output": [
+        "@askmenfess cowok positive thinking pasti bilang \" apa an sii , tidak jelas \" . cowok negative thinking pasti bilang \" heh , kamu disuruh siapa kirim-kirim seperti begini , pasti kamu salah kirim kan , mengaku saja sudah , lagi selingkuh kan kamu anjing \""
+      ]
+    },
+    {
+      "id": "task012-76",
+      "input": "mending humoris apa romantis ( ? )",
+      "output": [
+        "mending humoris apa romantis ( ? )"
+      ]
+    },
+    {
+      "id": "task012-77",
+      "input": "during the opening of a seminar i attended yesterday : . * image of ken yeang , an architect , appeared * . my office mate : * whispers * \" kalo abis makan jadi apa ? ken yeang . \" . hehe . hehehe . heheheheheilovemyofficematestheyrethereasonistaysane",
+      "output": [
+        "during the opening of a seminar i attended yesterday : . * image of ken yeang , an architect , appeared * . my office mate : * whispers * \" kalau habis makan jadi apa ? ken yeang . \" . hehe . hehehe . heheheheheilovemyofficematestheyrethereasonistaysane"
+      ]
+    },
+    {
+      "id": "task012-78",
+      "input": "@rafialqowi and the fact is that this simple thing happened in my family , dan tetangga / masyrkt accepted ko . not pout . mungkin tetangga w lebih open-mind wkwkwk iyasih tiap isi kepala beda2 , pendapat berbeda , balik lg ke pribadi masing2 mau nyikapinnya gmna",
+      "output": [
+        "@rafialqowi and the fact is that this simple thing happened in my family , dan tetangga / masyarakat accepted ko . not pout . mungkin tetangga w lebih open-mind wkwkwk iyasih tiap isi kepala beda-beda , pendapat berbeda , balik lagi ke pribadi masing-masing mau nyikapinnya gimana"
+      ]
+    },
+    {
+      "id": "task012-79",
+      "input": "sopan gasih nyuruh customer gc kayak gini ? . i mean toh lu jg baru dtg semenit pak gua jg bls saat itu jg . trus disuruh ' gc ' ( gerak cepat ) ? train your driver well @grabid thank you , next https://t.co/ihrsfv1svg",
+      "output": [
+        "sopan gasih suruh customer gc seperti begini ? . i mean toh kamu juga baru datang semenit pak saya juga balas saat itu juga . terus disuruh ' gc ' ( gerak cepat ) ? train your driver well @grabid thank you , next https://t.co/ihrsfv1svg"
+      ]
+    },
+    {
+      "id": "task012-80",
+      "input": "@prabowo @bintangcomid @ciputraway ok , sekian untuk hari ini . i'll be back for vidio and metube . tapi belum tahu kapan . see ya .",
+      "output": [
+        "@prabowo @bintangcomid @ciputraway ok , sekian untuk hari ini . i will be back for video and metube . tapi belum tahu kapan . see ya ."
+      ]
+    },
+    {
+      "id": "task012-81",
+      "input": "iya nanggung resiko krn pernah temenan sama seorang jjy . they are just bet between friends not gambling . ga merugikan orang lain gitu . tp mereka masih punya rasa bersalah dan tanggung jawab . trs itu yg dibarak apa kabar oi ? masih nyangkal dn anteng aja gitu ? thats coward !",
+      "output": [
+        "iya nanggung resiko karena pernah temanan sama seorang jjy . they are just bet between friends not gambling . tidak merugikan orang lain begitu . tapi mereka masih punya rasa bersalah dan tanggung jawab . terus itu yang dibarak apa kabar oi ? masih nyangkal dan anteng saja begitu ? that is coward !"
+      ]
+    },
+    {
+      "id": "task012-82",
+      "input": "@anakcybh hai put , put apa nih ? put your hands up ?",
+      "output": [
+        "@anakcybh hai put , put apa nih ? put your hands up ?"
+      ]
+    },
+    {
+      "id": "task012-83",
+      "input": "@putris_np all is well baby jgn lupa banyak doa dan istighfar yaaa , peluk online dari jauhhh",
+      "output": [
+        "@putris_np all is well baby jangan lupa banyak doa dan istighfar ya , peluk online dari jauh"
+      ]
+    },
+    {
+      "id": "task012-84",
+      "input": "abis klaim bpjs ketengakerjaan via online , gampang & semudah itu . gak nunggu lama antri trus dilayani gak sampe 10 menit . semua mudah kalau kita well prepared dan mau cari tahu .",
+      "output": [
+        "habis klaim bpjs ketengakerjaan via online , gampang & semudah itu . tidak menunggu lama antri terus dilayani tidak sampai 10 menit . semua mudah kalau kita well prepared dan mau cari tahu ."
+      ]
+    },
+    {
+      "id": "task012-85",
+      "input": "from \" saya dukung pernyataan pak jkw \" to this whole debate . well , latihannya dan belajarnya berhasil sih pak",
+      "output": [
+        "from \" saya dukung pernyataan pak jkw \" to this whole debate . well , latihannya dan belajarnya berhasil sih pak"
+      ]
+    },
+    {
+      "id": "task012-86",
+      "input": "@marshawullur052 nah itu juga . pada suka asal komen . lanjut sist ! i got your back . keluarkan !",
+      "output": [
+        "@marshawullur052 nah itu juga . pada suka asal komen . lanjut sister ! i got your back . keluarkan !"
+      ]
+    },
+    {
+      "id": "task012-87",
+      "input": "oke ! karena kemarin banyak yg mau how to edit nya , dibikinin sekarang ya ! ! sorry klo telat . [ how to edit this photo with @vsco ] . a thread https://t.co/lenyjfmpvs",
+      "output": [
+        "oke ! karena kemarin banyak yang mau how to edit nya , dibikinin sekarang ya ! ! sorry kalau telat . [ how to edit this photo with @vsco ] . a thread https://t.co/lenyjfmpvs"
+      ]
+    },
+    {
+      "id": "task012-88",
+      "input": "when im at my lowest , i dont miss anyone but my grand father , cz back then , when im tired , he always said \" mandi pake air hangat biar badan kamu kaya dipijit karena kamu capek \" . i miss you",
+      "output": [
+        "when i am at my lowest , i do not miss anyone but my grand father , cause back then , when i am tired , he always said \" mandi pakai air hangat biar badan kamu kaya dipijit karena kamu capek \" . i miss you"
+      ]
+    },
+    {
+      "id": "task012-89",
+      "input": "lagi nahan buat nggak nyinyir . at least not in public",
+      "output": [
+        "lagi nahan buat tidak nyinyir . at least not in public"
+      ]
+    },
+    {
+      "id": "task012-90",
+      "input": "cumlaude s3 seni clickbait dan misleading caption https://t.co/kpucq92kwq",
+      "output": [
+        "cumlaude s3 seni clickbait dan misleading caption https://t.co/kpucq92kwq"
+      ]
+    },
+    {
+      "id": "task012-91",
+      "input": "@hd_hadirochman @thearieair jagan belebihan nanti akan berbalik menyerang oposisi",
+      "output": [
+        "@hd_hadirochman @thearieair jangan belebihan nanti akan berbalik menyerang oposisi"
+      ]
+    },
+    {
+      "id": "task012-92",
+      "input": "kek semalem w nntn run jam 1 , trs ada we all lie nya ehhh merinding . hahahay kocak dah ?",
+      "output": [
+        "seperti semalam saya nonton run jam 1 , terus ada we all lie nya ehhh merinding . hahahay kocak dah ?"
+      ]
+    },
+    {
+      "id": "task012-93",
+      "input": "@askmenfess guaa ilanggg pdhl uda back up huhuhuhu",
+      "output": [
+        "@askmenfess saya hilang padahal sudah back up huhuhuhu"
+      ]
+    },
+    {
+      "id": "task012-94",
+      "input": "nemu dia di gudaang huhu im keeping u bb . gonna wash u first before u join the gang ( o_o ) https://t.co/curn5zcny1",
+      "output": [
+        "nemu dia di gudang huhu im keeping you bb . going to wash you first before you join the gang ( o_o ) https://t.co/curn5zcny1"
+      ]
+    },
+    {
+      "id": "task012-95",
+      "input": "@_angelmaharani lagu yg menggambarkan perasaan gw sama lu . teza sumendra - i want u love",
+      "output": [
+        "@_angelmaharani lagu yang menggambarkan perasaan saya sama kamu . teza sumendra - i want you love"
+      ]
+    },
+    {
+      "id": "task012-96",
+      "input": "great . setelah cina , indonesia dan singapura semoga yg lain menyusul . @boeing you hv to take the 737 max matters seriously . we talkin bout lives here . https://t.co/xyrpqnc3bu",
+      "output": [
+        "great . setelah cina , indonesia dan singapura semoga yang lain menyusul . @boeing you have to take the 737 max matters seriously . we talking about lives here . https://t.co/xyrpqnc3bu"
+      ]
+    },
+    {
+      "id": "task012-97",
+      "input": "@di2k83 @indra_sjafri tapi agak riskan klo di tengah pertandingan ada yg cedera mas bro , jadi tdk ada back-upnya .",
+      "output": [
+        "@di2k83 @indra_sjafri tapi agak riskan kalau di tengah pertandingan ada yang cedera mas brother , jadi tidak ada back-upnya ."
+      ]
+    },
+    {
+      "id": "task012-98",
+      "input": "urus management agency sendiri aja ini om2 masih dianggap ga becus , which is true . ga ada fans artis2nya pledis yg ga pernah ngata2in om 1 ini . minimal gemes pengen takol hahahaha . sok kebanyakan gaya amat dia kalo lagaknya powerful nyogok sana sini . ada juga dia yg butuh duit",
+      "output": [
+        "urus management agency sendiri saja ini om-om masih dianggap tidak becus , which is true . tidak ada fans artis-artisnya pledis yang tidak pernah kata-katain om 1 ini . minimal gemes pingin takol hahahaha . sok kebanyakan gaya amat dia kalau lagaknya powerful nyogok sana sini . ada juga dia yang butuh duit"
+      ]
+    },
+    {
+      "id": "task012-99",
+      "input": "palm trees . ocean breeze . salty air . sunkissed hair . https://t.co/dts7uooxek",
+      "output": [
+        "palm trees . ocean breeze . salty air . sunkissed hair . https://t.co/dts7uooxek"
+      ]
+    },
+    {
+      "id": "task012-100",
+      "input": "@rlthingy ngana buka google lalu ketik pdf to word nah muncul web nya di klik lalu upload filenya klik convert tungguin dah jadi word trz di download . jadi dehhh",
+      "output": [
+        "@rlthingy ngana buka google lalu ketik pdf to word nah muncul web nya di klik lalu upload file klik convert tungguin dah jadi word terus di download . jadi dehh"
+      ]
+    },
+    {
+      "id": "task012-101",
+      "input": "@novaaparhusip gak mau coba2 , mau nya yg pasti2 aja",
+      "output": [
+        "@novaaparhusip tidak mau coba-coba , mau nya yang pasti-pasti saja"
+      ]
+    },
+    {
+      "id": "task012-102",
+      "input": "gais vote dong kalian gk gemes apa liat gapnya . i just voted for exo in the 14th annual #soompiawards the largest international awards honoring the best in korean television and music . join me : https://t.co/x7zfrlyzzv",
+      "output": [
+        "guys vote dong kalian tidak gemas apa lihat gap . i just voted for exo in the 14th annual #soompiawards the largest international awards honoring the best in korean television and music . join me : https://t.co/x7zfrlyzzv"
+      ]
+    },
+    {
+      "id": "task012-103",
+      "input": "hello again , jakarta , the grey and macet city ! always be back here , biarpun bigimana . haha . ( maaf bahasa jaksel gadungan . udah pas belum ? ) https://t.co/puwoqwqoxy",
+      "output": [
+        "hello again , jakarta , the grey and macet city ! always be back here , biarpun bagaimana . haha . ( maaf bahasa jaksel gadungan . sudah pas belum ? ) https://t.co/puwoqwqoxy"
+      ]
+    },
+    {
+      "id": "task012-104",
+      "input": "@isoxsuprin ( w / n ) get well soon untuk writernya !",
+      "output": [
+        "@isoxsuprin ( w / n ) get well soon untuk writer !"
+      ]
+    },
+    {
+      "id": "task012-105",
+      "input": "@amirulhakiim_ @syauqi_artstyle maybe you just dont understand with the definition of justifying ? caused your tweet at the beginning seemed like you need some ass answer . btw , your tweet is spreading hate , sampai ada yg report milo bagai suh cancel contract . apa ke sakit hati sgt dengan rezeki orang hmmm .",
+      "output": [
+        "@amirulhakiim_ @syauqi_artstyle maybe you just do not understand with the definition of justifying ? caused your tweet at the beginning seemed like you need some ass answer . btw , your tweet is spreading hate , sampai ada yang report milo bagai suh cancel contract . apa ke sakit hati sangat dengan rezeki orang hmmm ."
+      ]
+    },
+    {
+      "id": "task012-106",
+      "input": "ini lagu untukmu . living not dreaming oleh jai waetford https://t.co/jpb2fz45vm",
+      "output": [
+        "ini lagu untukmu . living not dreaming oleh jai waetford https://t.co/jpb2fz45vm"
+      ]
+    },
+    {
+      "id": "task012-107",
+      "input": "orang cerdas dapat dilihat dari kualitas buku yang mereka baca , dapat dilihat dari konten permbicaraan yang mereka kuasai . well , .",
+      "output": [
+        "orang cerdas dapat dilihat dari kualitas buku yang mereka baca , dapat dilihat dari konten permbicaraan yang mereka kuasai . well , ."
+      ]
+    },
+    {
+      "id": "task012-108",
+      "input": "@baksakembang not bad sih kayaknya hehe . teteh gimana harinya ?",
+      "output": [
+        "@baksakembang not bad sih sepertinya hehe . teteh gimana harinya ?"
+      ]
+    },
+    {
+      "id": "task012-109",
+      "input": "rasanya ingin segera fokus ke kesehatan ku dulu sebelum di gembleng habis2 an",
+      "output": [
+        "rasanya ingin segera fokus ke kesehatan ku dulu sebelum di gembleng habis-habis an"
+      ]
+    },
+    {
+      "id": "task012-110",
+      "input": "@1mxyzptlk jam 3 subuh bikin mikir but okay . kayaknya sihhh bisa , soalnya itu kayak mempengaruhi indera perasa kita tapi bukan alat gerak jadi kita bisa gerak bebas . well orang disantet masih bisa bangun ga sih ? idk man",
+      "output": [
+        "@1mxyzptlk jam 3 subuh buat mikir but okay . sepertinya sihh bisa , soalnya itu seperti memengaruhi indera perasa kita tapi bukan alat gerak jadi kita bisa gerak bebas . well orang disantet masih bisa bangun tidak sih ? idk man"
+      ]
+    },
+    {
+      "id": "task012-111",
+      "input": "@kafeerkuat that's it , semua orang itu punya sisi bejat sendiri . tapi beberapa emang sangat bajingan sih - well i'm not perfect so . yaudahlah gamau membenarkan juga karena mereka emang salah , semoga cepet sadar .",
+      "output": [
+        "@kafeerkuat that is it , semua orang itu punya sisi bejat sendiri . tapi beberapa memang sangat bajingan sih - well i am not perfect so . yaudahlah tidak mau membenarkan juga karena mereka memang salah , semoga cepat sadar ."
+      ]
+    },
+    {
+      "id": "task012-112",
+      "input": "lagi sakit ditinggal sakit juga , dan ketika gua butuh ngobrol orang2 ilang . well done me and march",
+      "output": [
+        "lagi sakit ditinggal sakit juga , dan ketika saya butuh mengobrol orang-orang hilang . well done me and march"
+      ]
+    },
+    {
+      "id": "task012-113",
+      "input": "mashaallah laki gw ganteng amat nangis gw woyyyy visualnya ga pernah bercanda . gans abieezzzz woyyy lee donghae sayangku , cintaku padamu love you to the moon and never back . #donghae #leedonghae #suju #superjunior @donghae861015 https://t.co/i0yrwmqnqd",
+      "output": [
+        "mashaallah laki saya ganteng amat nangis saya woyy visualnya tidak pernah bercanda . gans abis woyy lee donghae sayangku , cintaku padamu love you to the moon and never back . #donghae #leedonghae #suju #superjunior @donghae861015 https://t.co/i0yrwmqnqd"
+      ]
+    },
+    {
+      "id": "task012-114",
+      "input": "i thought i fell on somebody surround me , but in fact i fell on the seat . when you ran out of air , you know you cant hear anything . so , a girl gave me her seat . and i was seated by i didnt know who hehe",
+      "output": [
+        "i thought i fell on somebody surround me , but in fact i fell on the seat . when you ran out of air , you know you cannot hear anything . so , a girl gave me her seat . and i was seated by i did not know who hehe"
+      ]
+    },
+    {
+      "id": "task012-115",
+      "input": "without love intelligence is dangerous ; without intelligence love is not enough anonymous ( tanpa cinta , kecerdasan itu berbahaya ; dan tanpa kecerdasan , cinta itu tidak cukup )",
+      "output": [
+        "withou love intelligence is dangerous ; without intelligence love is not enough anonymous ( tanpa cinta , kecerdasan itu berbahaya ; dan tanpa kecerdasan , cinta itu tidak cukup )"
+      ]
+    },
+    {
+      "id": "task012-116",
+      "input": "as simple as sholat nomer satu presiden nomer .",
+      "output": [
+        "as simple as sholat nomor satu presiden nomor ."
+      ]
+    },
+    {
+      "id": "task012-117",
+      "input": "@catuaries sama kek orang yg ngefans iwan fals kasih nama anaknya bento . imagine him introduce himself in japanese .",
+      "output": [
+        "@catuaries sama seperti orang yang fans iwan fals kasih nama anaknya bento . imagine him introduce himself in japanese ."
+      ]
+    },
+    {
+      "id": "task012-118",
+      "input": "masih nunggu daily pass nya wtf , cuma karna mau nonton cigarett after sex doang hffft",
+      "output": [
+        "masih menunggu daily pass nya wtf , cuma karena mau tonton cigarette after sex saja hfft"
+      ]
+    },
+    {
+      "id": "task012-119",
+      "input": "lupita nyongo ngomong lets go to mexico tuh kaya dhuarr bgt sih",
+      "output": [
+        "lupita nyongo ngomong let us go to mexico tuh kaya dhuarr sangat sih"
+      ]
+    },
+    {
+      "id": "task012-120",
+      "input": "@paijoaryanto @siska_t4mbun4n @mayori_mayori @xa_chi04 sana jo , make up dlu . mlm ini lw jaga di lampu merah petamburan",
+      "output": [
+        "@paijoaryanto @siska_t4mbun4n @mayori_mayori @xa_chi04 sana jo , make up dulu . malam ini kamu jaga di lampu merah petamburan"
+      ]
+    },
+    {
+      "id": "task012-121",
+      "input": "@bucintango dom jakarta timur , nonton captain marvel , hari sabtu abis uambn selesai mau refresh otak hehehe . semoga ujian nya lancar ya kakk . wish me luckk",
+      "output": [
+        "@bucintango dom jakarta timur , tonton captain marvel , hari sabtu habis uambn selesai mau refresh otak hehehe . semoga ujian nya lancar ya kak . wish me luck"
+      ]
+    },
+    {
+      "id": "task012-122",
+      "input": "@ac360 donald j trump ia a god fearing pres whom god chose to carry out his missions not only for america but for israel & the world . the best in american history you guys are the evil ones",
+      "output": [
+        "@ac360 donald j trump ia a god fearing pres whom god chose to carry out his missions not only for america but for israel & the world . the best in american history you guys are the evil ones"
+      ]
+    },
+    {
+      "id": "task012-123",
+      "input": "the teachings of islam . tahun 1983 . 1028 halaman . hardcover . harga 200.000 . . minat ? . pemesanan ; . dm or klik wa https://t.co/vfaeypsxio https://t.co/5dqnuqdhbr",
+      "output": [
+        "the teachings of islam . tahun 1983 . 1028 halaman . hardcover . harga 200.000 . . minat ? . pemesanan ; . dm or klik wa https://t.co/vfaeypsxio https://t.co/5dqnuqdhbr"
+      ]
+    },
+    {
+      "id": "task012-124",
+      "input": "@rlthingy follow back lah minnnnnn",
+      "output": [
+        "@rlthingy follow back lah minn"
+      ]
+    },
+    {
+      "id": "task012-125",
+      "input": "wow , so sad to hear that . hopefully all parties can find the best solution . icelandic budget airline wow air collapses , leaving passengers stranded | huffpost https://t.co/ccolag0rds",
+      "output": [
+        "wow , so sad to hear that . hopefully all parties can find the best solution . icelandic budget airline wow air collapses , leaving passengers stranded | huffpost https://t.co/ccolag0rds"
+      ]
+    },
+    {
+      "id": "task012-126",
+      "input": "scandal-hit korean air chief forced off board by shareholders #jakpost https://t.co/ozal6lyoef",
+      "output": [
+        "scandal-hit korean air chief forced off board by shareholders #jakpost https://t.co/ozal6lyoef"
+      ]
+    },
+    {
+      "id": "task012-127",
+      "input": "@laeenrich @the__1993 ga ngerti gue . belum pernah praktek , baru ikut grup whatsapp doang hahaha",
+      "output": [
+        "@laeenrich @the__1993 tidak mengerti saya . belum pernah praktek , baru ikut grup whatsapp saja hahaha"
+      ]
+    },
+    {
+      "id": "task012-128",
+      "input": "@gojekindonesia . saya mau protes , . saya pesan gocar , . saya back . tidak saya cancel . kenapa semua hilang ? . gopay ke potong 30 ribu . dalam proses kosong . historis kosong",
+      "output": [
+        "@gojekindonesia . saya mau protes , . saya pesan gocar , . saya back . tidak saya cancel . kenapa semua hilang ? . gopay ke potong 30 ribu . dalam proses kosong . historis kosong"
+      ]
+    },
+    {
+      "id": "task012-129",
+      "input": "@detikcom @mromahurmuziy well , tidak ada orang yang kelihatan jahat benar benar jahat dan orang yang kelihatan bersih benar benar bersih . apresiasi sebesar besarnya buat @kpk_ri .",
+      "output": [
+        "@detikcom @mromahurmuziy well , tidak ada orang yang kelihatan jahat benar benar jahat dan orang yang kelihatan bersih benar benar bersih . apresiasi sebesar besarnya buat @kpk_ri ."
+      ]
+    },
+    {
+      "id": "task012-130",
+      "input": "jumat includ tebet promo lt dari jam 10 an smpai jam 7 pagi . diutamakan yg pernah bo yaa . rate lt silahkan dm / wa .",
+      "output": [
+        "jumat include tebet promo lt dari jam 10 an smpai jam 7 pagi . diutamakan yang pernah bo ya . rate lt silahkan dm / wa ."
+      ]
+    },
+    {
+      "id": "task012-131",
+      "input": "shopee apa deep web ni ? https://t.co/sdpicwpmvu",
+      "output": [
+        "shopee apa deep web ni ? https://t.co/sdpicwpmvu"
+      ]
+    },
+    {
+      "id": "task012-132",
+      "input": "@a_munky @sandiuno klo mslh got mampet di jkt gk smpe jam \" an sdh lngsng dikerjakan , krna disetiap kelurahan sdh ada team ppsu . klo mslh ayunan perlu pekerja khusus krna menyangkut keselamatan orng bnyak . sekian pndpt sya , klo ada yg slh mohon pencerahan .",
+      "output": [
+        "@a_munky @sandiuno kalau masalah got mampet di jkt tidak sampai jam \" an sudah langsung dikerjakan , karena disetiap kelurahan sudah ada team ppsu . kalau masalah ayunan perlu pekerja khusus karena menyangkut keselamatan orang banyak . sekian pendapat saya , kalau ada yang salah mohon pencerahan ."
+      ]
+    },
+    {
+      "id": "task012-133",
+      "input": "singkatnya , uda ada 2 gelombang upaya restorasi dari si division ini . nah kita main sbg salah satu agen yg ada di gelombang kedua . kemana gel i nya ? they going rogue , alias membelot . jadi di game ini , selain lo lawan perusuh , musuh lo jg adalah agen rahasia yg survive sebelumnya",
+      "output": [
+        "singkatnya , youda ada 2 gelombang upaya restorasi dari si division ini . nah kita main sebagai salah satu agen yang ada di gelombang kedua . kemana gel i nya ? they going rogue , alias membelot . jadi di game ini , selain kamu lawan perusuh , musuh kamu juga adalah agen rahasia yang survive sebelumnya"
+      ]
+    },
+    {
+      "id": "task012-134",
+      "input": "ahhhhhhhh aku save yaa ka well . syuka banget . @bts_twt . #twitterbestfandom . #teambts . #soompiawards https://t.co/c2ntkbnhke",
+      "output": [
+        "ahhhhhhhh aku save ya ka well . suka sangat . @bts_twt . #twitterbestfandom . #teambts . #soompiawards https://t.co/c2ntkbnhke"
+      ]
+    },
+    {
+      "id": "task012-135",
+      "input": "sayangnya , untuk sementara , akun yang bisa gue ikuti dibatasi twitter sampai ketemu rasio yang seimbang antara \" mengikuti \" dan \" pengikut \" . hehehe . jadi , harus nunggu ada tambahan follower atau yang sudah ku-follow memilih \" follow back \" .",
+      "output": [
+        "sayangnya , untuk sementara , akun yang bisa saya ikuti dibatasi twitter sampai ketemu rasio yang seimbang antara \" mengikuti \" dan \" pengikut \" . hehehe . jadi , harus menunggu ada tambahan follower atau yang sudah ku-follow memilih \" follow back \" ."
+      ]
+    },
+    {
+      "id": "task012-136",
+      "input": "temen gue ini adalah salah satu yg bisa jadi motivasi gua buat selalu maju . karena udh lama temenan dan itsn't going smooth , semua butuh perjuangan . dari jaman susah2 nya kita bener2 ngerasain . yg uang pas2 an . jajan di pinggir jalan , belanja di tanah abang . https://t.co/kmq6u4ygtg",
+      "output": [
+        "teman saya ini adalah salah satu yang bisa jadi motivasi saya buat selalu maju . karena sudah lama temanan dan it is not going smooth , semua butuh perjuangan . dari jaman susah-susah nya kita benar-benar merasakan . yang uang pas-pas an . jajan di pinggir jalan , belanja di tanah abang . https://t.co/kmq6u4ygtg"
+      ]
+    },
+    {
+      "id": "task012-137",
+      "input": "@dustingeinbee @mariance_r @wabun91 @leonkalapis @refyadha77 @spandukroyko @nobtrius @miho17972 @flooqey lu road to apa . ?",
+      "output": [
+        "@dustingeinbee @mariance_r @wabun91 @leonkalapis @refyadha77 @spandukroyko @nobtrius @miho17972 @flooqey kamu road to apa . ?"
+      ]
+    },
+    {
+      "id": "task012-138",
+      "input": "everything went well when i took the more complicated portion . ga ada drama rebutan qs karna mereka bisa kerjain bagian yg lebih gampang sesuai target bahkan lebih cepat . nah sekarang , karna gue khawatir waktunya ga cukup , trus qs gue dikekepin orang lain muluk , deramak deh .",
+      "output": [
+        "everything went well when i took the more complicated portion . tidak ada drama rebutan qs karena mereka bisa kerjain bagian yang lebih gampang sesuai target bahkan lebih cepat . nah sekarang , karena saya khawatir waktunya tidak cukup , terus qs saya dikekepin orang lain muluk , deramak deh ."
+      ]
+    },
+    {
+      "id": "task012-139",
+      "input": "well , dengan menggunakan id yang mudah untuk memancing para bot mampir stalking ke akun saya di tambah pose badan saya yang shirtless menunjukkan hasil gym belakangan ini , saya rasa akan mudah mendapatkan apa yang saya mau",
+      "output": [
+        "well , dengan menggunakan id yang mudah untuk memancing para bot mampir stalking ke akun saya di tambah pose badan saya yang shirtless menunjukkan hasil gym belakangan ini , saya rasa akan mudah mendapatkan apa yang saya mau"
+      ]
+    },
+    {
+      "id": "task012-140",
+      "input": "bangga aku tu ketika bisa memilah mana yang perlu dibeli mana yang engga . welcome back my financial stability ( hope so ) .",
+      "output": [
+        "bangga aku tu ketika bisa memilah mana yang perlu dibeli mana yang tidak . welcome back my financial stability ( hope so ) ."
+      ]
+    },
+    {
+      "id": "task012-141",
+      "input": "@madariyanhadi #garagaratwitter yang awalnya smpet down bgt karena lagi ngalamin the lowest point . ketemu org2 hebat dari segi pola pikir sampe bacotan receh ga penting tp true life . now , here i am",
+      "output": [
+        "@madariyanhadi #garagaratwitter yang awalnya sempat down sangat karena lagi ngalamin the lowest point . ketemu orang-orang hebat dari segi pola pikir sampai bacotan receh tidak penting tapi true life . now , here i am"
+      ]
+    },
+    {
+      "id": "task012-142",
+      "input": "with you all . talking with friends about perfect timing , but i think everything is perfect in that moment . i enjoy the feeling of the fresh air on my face and the wind blowing . https://t.co/if7yrpjcn9",
+      "output": [
+        "with you all . talking with friends about perfect timing , but i think everything is perfect in that moment . i enjoy the feeling of the fresh air on my face and the wind blowing . https://t.co/if7yrpjcn9"
+      ]
+    },
+    {
+      "id": "task012-143",
+      "input": "buat pengusaha seperti saya , gak semua menguntungkan . tapi jika kita berfikir systemic untuk negara , why not ? . #debatpilpres #sandi #sandiagauno #marufamin . https://t.co/e94w2wnhvy",
+      "output": [
+        "buat pengusaha seperti saya , tidak semua menguntungkan . tapi jika kita berpikir systemic untuk negara , why not ? . #debatpilpres #sandi #sandiagauno #marufamin . https://t.co/e94w2wnhvy"
+      ]
+    },
+    {
+      "id": "task012-144",
+      "input": "zach sini join zepes",
+      "output": [
+        "zach sini join zepes"
+      ]
+    },
+    {
+      "id": "task012-145",
+      "input": "i dont mind having a non chinese indo boifren tp stlh bbrp kali ngedate sm mereka i feel like they fetishize chinese girls banget idk if its bcs of japanese porn / kpop girlbands / influencer macem laurentsai yg bikin jd begini but def not cool imma stick with chinese guys for now",
+      "output": [
+        "i do not mind having a non chinese indo boyfriend tapi setelah beberapa kali date sama mereka i feel like they fetishize chinese girls sangat idk if it is because of japanese porn / kpop girlbands / influencer macam laurentsai yang buat jadi begini but def not cool imma stick with chinese guys for now"
+      ]
+    },
+    {
+      "id": "task012-146",
+      "input": "@ferrygreen3 @partaisocmed yg gak pernah marah itu cuma malaikat . manusia mustahil gak . pernah marah . jgn jd pengecut dan penakut doooong . malu sm anak milinial . hahahahaha .",
+      "output": [
+        "@ferrygreen3 @partaisocmed yang tidak pernah marah itu cuma malaikat . manusia mustahil tidak . pernah marah . jangan jadi pengecut dan penakut doong . malu sama anak milinial . hahahahaha ."
+      ]
+    },
+    {
+      "id": "task012-147",
+      "input": "@saturnuest kak , kami cek koneksi lambat dikarenakan sudah melebihi batas fup yaitu 478.96 gb , maka kecepatan yg didapat saat ini up to 4 mbps . trims - aden",
+      "output": [
+        "@saturnuest kak , kami cek koneksi lambat dikarenakan sudah melebihi batas fup yaitu 478.96 gb , maka kecepatan yang didapat saat ini up to 4 mbps . terima kasih - aden"
+      ]
+    },
+    {
+      "id": "task012-148",
+      "input": "when you see this tp kelakuan lu masih tetep kek anjg , aku hanya bisa geleng2 kepala saja hehe https://t.co/dkqviewcju",
+      "output": [
+        "when you see this tapi kelakuan kamu masih tetap seperti anjing , aku hanya bisa geleng-geleng kepala saja hehe https://t.co/dkqviewcju"
+      ]
+    },
+    {
+      "id": "task012-149",
+      "input": "@orangdewasaa serius amat jawab nya",
+      "output": [
+        "@orangdewasaa serius amat jawab nya"
+      ]
+    },
+    {
+      "id": "task012-150",
+      "input": "gw miris sih liatnya kalau ada org yg bnr2 itikad minta maaf tapi feed back kitanya malah gak mencerminkan seseorang yg memanusiakan manusia . please lah , sama2 cari makan dan pahala di dunia saling mengerti aja bisa kok .",
+      "output": [
+        "saya miris sih lihatnya kalau ada orang yang benar-benar itikad minta maaf tapi feed back kitanya malah tidak mencerminkan seseorang yang memanusiakan manusia . please lah , sama-sama cari makan dan pahala di dunia saling mengerti saja bisa kok ."
+      ]
+    },
+    {
+      "id": "task012-151",
+      "input": "kurang lebih gidu aja si , tp intinya gue capek ketawa mulu dan belajar banyak hal dari semua materi komika hari ini . semoga berikutnya , standupindo bs lebih well prepared lg . bukannya gak bagus , tp masih ada yang kurang dikit-dikit . berkah buat semua . aamiiin",
+      "output": [
+        "kurang lebih gidu saja si , tapi intinya saya capek ketawa melulu dan belajar banyak hal dari semua materi komika hari ini . semoga berikutnya , standupindo bisa lebih well prepared lagi . bukannya tidak bagus , tapi masih ada yang kurang dikit-dikit . berkah buat semua . amin"
+      ]
+    },
+    {
+      "id": "task012-152",
+      "input": "@dearcat018 tapi tugasku on going semua yang selesai cuma beberapa",
+      "output": [
+        "@dearcat018 tapi tugasku on going semua yang selesai cuma beberapa"
+      ]
+    },
+    {
+      "id": "task012-153",
+      "input": "any suggestion japanese release mau giveaway apa ? go ahead , we are listening .",
+      "output": [
+        "any suggestion japanese release mau giveaway apa ? go ahead , we are listening ."
+      ]
+    },
+    {
+      "id": "task012-154",
+      "input": "+ . baru saja bertanya , dirinya langsung terbesit pikiran sedikit nakal . \" vin , mau ke pub gak ? gue penat , butuh tempat buat . well you know me . \" . bukan untuk tujuan aneh-aneh . malvin juga sudah tahu dion kan , perihal apa yang dia inginkan jika tempat tujuannya seperti itu ? . +",
+      "output": [
+        "+ . baru saja bertanya , dirinya langsung terbesit pikiran sedikit nakal . \" vin , mau ke pub tidak ? saya penat , butuh tempat buat . well you know me . \" . bukan untuk tujuan aneh-aneh . malvin juga sudah tahu dion kan , perihal apa yang dia inginkan jika tempat tujuannya seperti itu ? . +"
+      ]
+    },
+    {
+      "id": "task012-155",
+      "input": "&lt; qiansha bukan meminta untuk dikasihani . \" orang mah gitu . dia cuma lihat luarnya doang , \" ujar gladys memulai . \" yang penting kamu jangan lupa yang paling tahu keadaan kamu ya diri kamu sendiri . you did well , qi . \" . @theppandora",
+      "output": [
+        "&lt; qiansha bukan meminta untuk dikasihani . \" orang mah begitu . dia cuma lihat luarnya doang , \" ujar gladys memulai . \" yang penting kamu jangan lupa yang paling tahu keadaan kamu ya diri kamu sendiri . you did well , qi . \" . @theppandora"
+      ]
+    },
+    {
+      "id": "task012-156",
+      "input": "the greater the love , the greater the tragedy when it's over - nicholas sparks ( semakin besar rasa cinta , semakin besar pula tragedinya ketika cinta itu berakhir )",
+      "output": [
+        "the greater the love , the greater the tragedy when it is over - nicholas sparks ( semakin besar rasa cinta , semakin besar pula tragedinya ketika cinta itu berakhir )"
+      ]
+    },
+    {
+      "id": "task012-157",
+      "input": "bener aja doong , rata-rata yang naik mrt emang trial banget yang isinya pada poto-poto . gue merasa , \" yes , i'm not alone \" . hahahahha https://t.co/uhi4n3bsda",
+      "output": [
+        "benar saja doong , rata-rata yang naik mrt memang trial sangat yang isinya pada foto-foto . saya merasa , \" yes , i am not alone \" . hahahahha https://t.co/uhi4n3bsda"
+      ]
+    },
+    {
+      "id": "task012-158",
+      "input": "we're gonna be okey . sini pelukkk",
+      "output": [
+        "we are going to be okay . sini peluk"
+      ]
+    },
+    {
+      "id": "task012-159",
+      "input": "@rlthingy handbody , hp dan dompet",
+      "output": [
+        "@rlthingy handbody , hp dan dompet"
+      ]
+    },
+    {
+      "id": "task012-160",
+      "input": "\" great leaders who inspires others start from great teachers \" . itulah tema mukernas ii sekolah al azhar cairo indonesia , sebuah pendidikan islam yang menghasilkan penghafal quran yang . https://t.co/udnzji2yas",
+      "output": [
+        "\" great leaders who inspires others start from great teachers \" . itulah tema mukernas ii sekolah al azhar cairo indonesia , sebuah pendidikan islam yang menghasilkan penghafal quran yang . https://t.co/udnzji2yas"
+      ]
+    },
+    {
+      "id": "task012-161",
+      "input": "@rizanonjomblo @at_abdillahtoha dan kalau kita berteman sama tukang minyak wangi pasti akan terikut wangi . sebaiknya jangan berteman sama maling untuk bicara kejujuran",
+      "output": [
+        "@rizanonjomblo @at_abdillahtoha dan kalau kita berteman sama tukang minyak wangi pasti akan terikut wangi . sebaiknya jangan berteman sama maling untuk bicara kejujuran"
+      ]
+    },
+    {
+      "id": "task012-162",
+      "input": "kek semalem w nntn run jam 1 , trs ada we all lie nya ehhh merinding . hahahay kocak dah ?",
+      "output": [
+        "seperti semalam saya nonton run jam 1 , terus ada we all lie nya ehhh merinding . hahahay kocak dah ?"
+      ]
+    },
+    {
+      "id": "task012-163",
+      "input": "@sweettychocco hbd buat mamah qamuuh semoga makin cantik , dilancarkan rezekinya , hidupnya berkah , sayangg keluargaaa , wish u mom all the best",
+      "output": [
+        "@sweettychocco hbd buat mama kamu semoga makin cantik , dilancarkan rezekinya , hidupnya berkah , sayang keluarga , wish you mom all the best"
+      ]
+    },
+    {
+      "id": "task012-164",
+      "input": "angnya sangat perfeksionis . inginnya segala hal sejalan dan harus perfect ! pernah waktu itu di salah satu show dia salah nyanyiin lirik lagu rokkugo terus waktu turun stage mukanya langsung merah terus nangis di ruang make up sampe di tenangin sama taemin .",
+      "output": [
+        "angnya sangat perfeksionis . inginnya segala hal sejalan dan harus perfect ! pernah waktu itu di salah satu show dia salah nyanyiin lirik lagu rokkugo terus waktu turun stage mukanya langsung merah terus menangis di ruang make up sampai di tenangin sama taemin ."
+      ]
+    }
+  ],
+  "Instance License": [
+    "Unknown"
+  ]
+}

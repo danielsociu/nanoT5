@@ -1,0 +1,2212 @@
+{
+  "Contributors": [
+    "Swaroop Mishra",
+    "Daniel Khashabi"
+  ],
+  "Source": [
+    "MultiLexNorm: Multilingual Lexical Normalization"
+  ],
+  "URL": [
+    "https://noisy-text.github.io/2021/multi-lexnorm.html"
+  ],
+  "Categories": [
+    "Lexical Normalization"
+  ],
+  "Reasoning": [
+    "Temporal Reasoning",
+    "Commonsense Reasoning"
+  ],
+  "Definition": [
+    "Lexical norm"
+  ],
+  "Input_language": [
+    "Multilanguage"
+  ],
+  "Output_language": [
+    "Multilanguage"
+  ],
+  "Instruction_language": [
+    "Multilanguage"
+  ],
+  "Domains": [
+    "Twitter",
+    "Arto",
+    "sms",
+    "forum"
+  ],
+  "Positive Examples": [
+    {
+      "input": "Tommy` sjoe , slaapwel strakskes en verzorgd uw knie nog goed he ! xxxx",
+      "output": "Tommy sjoe , slaap lekker straks en verzorg uw knie nog goed he ! xxxx",
+      "explanation": "The text is now lexically normalized and correct."
+    }
+  ],
+  "Negative Examples": [
+    {
+      "input": "Ja sgoe , ik kom dan nr ma. Kusjes !",
+      "output": "Ja sgoed , ik kom dan no mam Kusjes !",
+      "explanation": "The text is not lexically normalized and it is incorrect."
+    }
+  ],
+  "Instances": [
+    {
+      "id": "task016-0",
+      "input": "kzou het ni wete kzen iere zelve just",
+      "output": [
+        "Ik zou het niet weten ik ben hier zelf juist"
+      ]
+    },
+    {
+      "id": "task016-1",
+      "input": "goh jah tes da eh roodje kzou het ook ni weten :p",
+      "output": [
+        "Goh ja het is die eh rooie ik zou het ook niet weten :p"
+      ]
+    },
+    {
+      "id": "task016-2",
+      "input": "gosh wij drinke oo keerst goed zelle anneke",
+      "output": [
+        "Gosh wij drinken ook eerst goed zelle Anneke"
+      ]
+    },
+    {
+      "id": "task016-3",
+      "input": "dju kzal ng naar de nacht winkel meugen oek dju toch",
+      "output": [
+        "Ja ik zal nog naar de nachtwinkel  mogen ook jij toch"
+      ]
+    },
+    {
+      "id": "task016-4",
+      "input": "ng effeks stillekes zitte eh B_Duck tis bijna gedaan :p",
+      "output": [
+        "Nog even stil zitten eh B_Duck het is bijna gedaan :p"
+      ]
+    },
+    {
+      "id": "task016-5",
+      "input": "zeg B_Duck begint ni eh of ik durf seffes niemer uit mijne zetel",
+      "output": [
+        "Zeg B_Duck begint niet eh of ik durf zelf niet meer uit mijn zetel"
+      ]
+    },
+    {
+      "id": "task016-6",
+      "input": "da willek mss wl nog krijgen van fay poepeklets :p",
+      "output": [
+        "Dat wil ik misschien wel nog krijgen van fay poepeklets :p"
+      ]
+    },
+    {
+      "id": "task016-7",
+      "input": "oohh vriendinne mja da dom spel blijfd hiere hangge",
+      "output": [
+        "Oh vriendinnen maarja dat domme spel blijft hier hangen"
+      ]
+    },
+    {
+      "id": "task016-8",
+      "input": "dieje robot ebbek meegenome naar huis ma dieje lift nieh",
+      "output": [
+        "Die robot heb ik meegenomen naar huis maar die leeft niet"
+      ]
+    },
+    {
+      "id": "task016-9",
+      "input": "kzal ik wel ne potke kaffie pakkn",
+      "output": [
+        "Ik zal ik wel een pot koffie pakken"
+      ]
+    },
+    {
+      "id": "task016-10",
+      "input": "heyla toffeman geeft mene joint is trug joeng",
+      "output": [
+        "Hoi toffeman geef mijn joint is terug jong"
+      ]
+    },
+    {
+      "id": "task016-11",
+      "input": "jej kheb me pluske , kzal zwijge nu",
+      "output": [
+        "Jej ik heb mijn plusje , ik zal zwijgen nu"
+      ]
+    },
+    {
+      "id": "task016-12",
+      "input": "jomme mc-danger op u plekske blijve eh :p",
+      "output": [
+        "Jomme mc-danger op u plek blijven eh :p"
+      ]
+    },
+    {
+      "id": "task016-13",
+      "input": "ale ! stillekes eeh , ze zijn iere wel aant schiete op ik eeh ! :o",
+      "output": [
+        "Ale ! Stil eeh , ze zijn hier wel aan het schieten op mij eeh ! :o"
+      ]
+    },
+    {
+      "id": "task016-14",
+      "input": "B_Duck vastpakken Julieke en zen kopke goe vasthouden : twisted :",
+      "output": [
+        "B_Duck vastpakken Julieke en zijn kop goed vasthouden : twisted :"
+      ]
+    },
+    {
+      "id": "task016-15",
+      "input": "ma ssssht , ak dood ben kank iere niemeer kome",
+      "output": [
+        "Maar ssssht , ik dood ben kan ik hier niet meer komen"
+      ]
+    },
+    {
+      "id": "task016-16",
+      "input": "Tommy` sjoe , slaapwel strakskes en verzorgd uw knie nog goed he ! xxxx",
+      "output": [
+        "Tommy sjoe , slaap lekker straks en verzorg uw knie nog goed he ! xxxx"
+      ]
+    },
+    {
+      "id": "task016-17",
+      "input": "zedde de mense weer aant peste specky ? :p",
+      "output": [
+        "Zijn de mensen weer aan het pesten Specky ? :p"
+      ]
+    },
+    {
+      "id": "task016-18",
+      "input": "euh anders zoude ze ier ni opzitte é hahahahahahaha",
+      "output": [
+        "Euh anders zouden ze hier niet opzitten é hahahahahahaha"
+      ]
+    },
+    {
+      "id": "task016-19",
+      "input": "cooPerke voelt em pcies zo'n kleuterleider zo",
+      "output": [
+        "cooPerke voelt zich precies zo'n kleuterleider zo"
+      ]
+    },
+    {
+      "id": "task016-20",
+      "input": "nja , tis mij iee een te groot kiekeskot , ff msn",
+      "output": [
+        "Ja , het is mij iets een te groot kiekeskot , even MSN"
+      ]
+    },
+    {
+      "id": "task016-21",
+      "input": "slaaplieke zinge se amai euhm effe zoeke se lol",
+      "output": [
+        "Slaapliedje zingen se amai euhm even zoeken zeg lol"
+      ]
+    },
+    {
+      "id": "task016-22",
+      "input": "allé Julieke tis nen toffen AMDtje",
+      "output": [
+        "Allé Julieke het is een toffe AMDtje"
+      ]
+    },
+    {
+      "id": "task016-23",
+      "input": "knuffie aan Fletch 24 euhm ne ol liefde kusjes :p",
+      "output": [
+        "knuffie aan Fletch 24 euhm en onze liefde kusjes :p"
+      ]
+    },
+    {
+      "id": "task016-24",
+      "input": "ze zouden gwoon uwen auto moete omruile me nen electrische :x vind ik",
+      "output": [
+        "Ze zouden gewoon uw auto moeten omruilen met een elektrische :x vind ik"
+      ]
+    },
+    {
+      "id": "task016-25",
+      "input": "naja kweet nii bij mij ist genne smeerlap mmissy",
+      "output": [
+        "Nou ja ik weet niet bij mij is het geen smeerlap Mmissy"
+      ]
+    },
+    {
+      "id": "task016-26",
+      "input": "me koppeke buite steke en zitte hijge :D",
+      "output": [
+        "Mijn kop buiten steken en zitten hijgen :D"
+      ]
+    },
+    {
+      "id": "task016-27",
+      "input": "nja , tzal dus geen luminium eifeltorenke worden vo miyanna eh :))))",
+      "output": [
+        "Ja , het zal dus geen aluminium Eiffeltoren worden voor Miyanna eh :))))"
+      ]
+    },
+    {
+      "id": "task016-28",
+      "input": "als de privès ngenegeerd worde",
+      "output": [
+        "Als de privès genegeerd worden"
+      ]
+    },
+    {
+      "id": "task016-29",
+      "input": "dan zyt ge wreet goe bezig moenek zegn",
+      "output": [
+        "Dan bent u weer goed bezig moet ik zeggen"
+      ]
+    },
+    {
+      "id": "task016-30",
+      "input": "mmissy , alst met een vke is maggek meekomen eh :o",
+      "output": [
+        "Mmissy , als het met een vrouw is mag ik meekomen eh :o"
+      ]
+    },
+    {
+      "id": "task016-31",
+      "input": "hierse jupke :D xxxxxxxxx hoe ist schatteke ?",
+      "output": [
+        "Hier jupke :D xxxxxxxxx hoe is het schatje ?"
+      ]
+    },
+    {
+      "id": "task016-32",
+      "input": "ist ni goe mss ArAgOnnn ? :p",
+      "output": [
+        "Is het niet goed misschien ArAgOnnn ? :p"
+      ]
+    },
+    {
+      "id": "task016-33",
+      "input": "ma dan zalk eersrt ies goe schijte a :p",
+      "output": [
+        "Maar dan zal ik eerst eens goed schijten a :p"
+      ]
+    },
+    {
+      "id": "task016-34",
+      "input": "ze moete ies mijne ond neme sla under tande eruit !",
+      "output": [
+        "Ze moeten eens mijn hond nemen sla hun tanden eruit !"
+      ]
+    },
+    {
+      "id": "task016-35",
+      "input": "ik gon ff vanalles doen , buiten dees :p tot strakkies xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "output": [
+        "Ik ga even van alles doen , buiten deze :p tot straks xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      ]
+    },
+    {
+      "id": "task016-36",
+      "input": "Syrtje zelle belange ni",
+      "output": [
+        "Syrtje zijn belangen niet"
+      ]
+    },
+    {
+      "id": "task016-37",
+      "input": "moa ni bij mij zelle dus iere moede ze ni kome zoeke :p",
+      "output": [
+        "Maar niet bij mij zijn dus hier moeten ze ze niet komen zoeken :p"
+      ]
+    },
+    {
+      "id": "task016-38",
+      "input": "oohh Syrtje gisteren heeft em men voete gemasseerd hahaah :p",
+      "output": [
+        "Oh Syrtje gisteren heeft hij mijn voeten gemasseerd hahaah :p"
+      ]
+    },
+    {
+      "id": "task016-39",
+      "input": "kga peisk mn foto's vnt weekend trg vn facebook verwijderen",
+      "output": [
+        "Ik ga denk ik mijn foto's van het weekend terug van facebook verwijderen"
+      ]
+    },
+    {
+      "id": "task016-40",
+      "input": "neuh , keb een eeeeeeel zuinig ottotje dus da zou mij ne keer gene bom schele",
+      "output": [
+        "Nee , ik heb een heel zuinig autootje dus dat zou mij een keer geen bom schelen"
+      ]
+    },
+    {
+      "id": "task016-41",
+      "input": "ma ofdat dieje chocolat nog in zen dooske zal zitte wetek natuurlijk nieh :$",
+      "output": [
+        "Maar of die chocola nog in zijn doos zal zitten weet ik natuurlijk niet :$"
+      ]
+    },
+    {
+      "id": "task016-42",
+      "input": "mmmm tiens kga weer varrasine krijge vandenacht :p",
+      "output": [
+        "mmmm tiens ik ga weer verrassingen krijgen vannacht :p"
+      ]
+    },
+    {
+      "id": "task016-43",
+      "input": "seg mmissy kheb nog van die teenstrings nodig van airwalk :p",
+      "output": [
+        "Zeg Mmissy ik heb nog van die slippers nodig van Airwalk :p"
+      ]
+    },
+    {
+      "id": "task016-44",
+      "input": "Ist drm dage zo'n janker zijt Lientje ?",
+      "output": [
+        "Is het daarom dagelijks zo'n jankerd is Lientje ?"
+      ]
+    },
+    {
+      "id": "task016-45",
+      "input": "ik gaan slape asik wil oor kep geen stenge papas nodig",
+      "output": [
+        "Ik ga slapen als ik wil hoor ik heb geen strenge vader nodig"
+      ]
+    },
+    {
+      "id": "task016-46",
+      "input": "zal wrs een zalf ofzo krijgen zkr ahja dunno zal wel zien",
+      "output": [
+        "Zal waarschijnlijk een zalf ofzo krijgen zeker ahja weet niet zal wel zien"
+      ]
+    },
+    {
+      "id": "task016-47",
+      "input": "hoh nen pitta zou oek wel smoaken nu",
+      "output": [
+        "Hoh een pizza zou ook wel smaken nu"
+      ]
+    },
+    {
+      "id": "task016-48",
+      "input": "Tis goe kzeg al nietn mji miyanna",
+      "output": [
+        "Het is goed ik zeg al niet mijn Miyanna"
+      ]
+    },
+    {
+      "id": "task016-49",
+      "input": "kzal zelf nen blunt meepakke , gij moogt em vulle :p",
+      "output": [
+        "Ik zal zelf een blunt meepakken , jij mocht hem vullen :p"
+      ]
+    },
+    {
+      "id": "task016-50",
+      "input": "loona magk effe pv kome",
+      "output": [
+        "Loona mag ik even pv komen"
+      ]
+    },
+    {
+      "id": "task016-51",
+      "input": "hahaha wij wel jijgaat een spelletje doen das ni gezellig eh mysterym",
+      "output": [
+        "hahaha wij wel jij gaat een spelletje doen dat is niet gezellig eh mysterym"
+      ]
+    },
+    {
+      "id": "task016-52",
+      "input": "em zal een goei badke nemen eh dan mé veeel schuim",
+      "output": [
+        "Hij zal een goed bad nemen eh dan met veel schuim"
+      ]
+    },
+    {
+      "id": "task016-53",
+      "input": "aiai ik ga vnv keer nt gn pokeren ma gn manillen :p",
+      "output": [
+        "Aiai ik ga vanavond keer niet gaan pokeren maar gaan manillen :p"
+      ]
+    },
+    {
+      "id": "task016-54",
+      "input": "ey ey ey ... moetk is ziingen he :D",
+      "output": [
+        "Hoi hoi hoi ... Moet ik eens zingen he :D"
+      ]
+    },
+    {
+      "id": "task016-55",
+      "input": "kwacht al op nen uurke voor ne gline ofzo",
+      "output": [
+        "Ik wacht al op een uur voor een Gline ofzo"
+      ]
+    },
+    {
+      "id": "task016-56",
+      "input": "Locdog gez ijt menne rug vergete wasse :p",
+      "output": [
+        "Locdog jij bent mijn rug vergeten wassen :p"
+      ]
+    },
+    {
+      "id": "task016-57",
+      "input": "neeh mmissy a gij boos wordt isda zo erug nieh :)",
+      "output": [
+        "Nee Mmissy als jij boos wordt is dat zo erg niet :)"
+      ]
+    },
+    {
+      "id": "task016-58",
+      "input": "ma kheb dieje iere eigelijk nie thuis ligge :$",
+      "output": [
+        "Maar ik heb die hier eigenlijk niet thuis liggen :$"
+      ]
+    },
+    {
+      "id": "task016-59",
+      "input": "oki ^^ :) dan zalt bij mij nog wel erges voor 8 u worre wss",
+      "output": [
+        "Oké ^^ :) dan zal het bij mij nog wel ergens voor 8 uur worden waarschijnlijk"
+      ]
+    },
+    {
+      "id": "task016-60",
+      "input": "jommo Tweetyke ge meot uw tong daarvoor ni uitsteken ééééé :p",
+      "output": [
+        "Jommo Tweetyke jij moet uw tong daarvoor niet uitsteken ééééé :p"
+      ]
+    },
+    {
+      "id": "task016-61",
+      "input": "ds vn die koorts é :p krijget dn heet dn koud dn heet ...",
+      "output": [
+        "Dat is van die koorts é :p krijg het dan heet dan koud dan heet ..."
+      ]
+    },
+    {
+      "id": "task016-62",
+      "input": "oeie mene zetel es oek ni goe genoeg :s",
+      "output": [
+        "Oeie mijn zetel is ook niet goed genoeg :s"
+      ]
+    },
+    {
+      "id": "task016-63",
+      "input": "aja azo ale this goe :p",
+      "output": [
+        "Ja zo ale het is goed :p"
+      ]
+    },
+    {
+      "id": "task016-64",
+      "input": "sonic ik donwload gewoon de lijst in bearshare komk vanalles tegen :p",
+      "output": [
+        "Sonic ik donwload gewoon de lijst in BearShare kom ik van alles tegen :p"
+      ]
+    },
+    {
+      "id": "task016-65",
+      "input": "bij mij kome ze altma vrage die gaste zijde een vrouw of nen man",
+      "output": [
+        "Bij mij komen ze alsmaar vragen die gast is een vrouw of een man"
+      ]
+    },
+    {
+      "id": "task016-66",
+      "input": "Vrijdag zittek me mnne trein were in st-nikloas Liefjuhhh :p",
+      "output": [
+        "Vrijdag zit ik met mijn trein weer in St-Niklaas Liefje :p"
+      ]
+    },
+    {
+      "id": "task016-67",
+      "input": "Moete vr 't vrouwke zorgen ArAgOnn",
+      "output": [
+        "Moet voor het vrouwtje zorgen ArAgOnn"
+      ]
+    },
+    {
+      "id": "task016-68",
+      "input": "khe nen gitaaarspelenden brandweer in menne privee zitte :s",
+      "output": [
+        "Ik heb een gitaarspelende brandweer in mijn privé zitten :s"
+      ]
+    },
+    {
+      "id": "task016-69",
+      "input": "kzoun iere es nief foto's op me profiel moete zette feitlijk",
+      "output": [
+        "Ik zou hier eens niet foto's op mijn profiel moeten zetten feitelijk"
+      ]
+    },
+    {
+      "id": "task016-70",
+      "input": "klapke doene :p khou u deraan é :p",
+      "output": [
+        "Klap doen :p ik hou u daaraan é :p"
+      ]
+    },
+    {
+      "id": "task016-71",
+      "input": "mja goa_ke zolang die bloeme er nog aan hange ist voor mij goe",
+      "output": [
+        "Maar ja goa_ke zolang die bloemen er nog aan hangen is het voor mij goed"
+      ]
+    },
+    {
+      "id": "task016-72",
+      "input": "wat vrage miyanna srr was ff ni aant volge",
+      "output": [
+        "Wat vraagt Miyanna sorry was even niet aan het volgen"
+      ]
+    },
+    {
+      "id": "task016-73",
+      "input": "ist koekebak tss cdv en nva ?",
+      "output": [
+        "Is het koek en ei tussen CD&V en N-VA ?"
+      ]
+    },
+    {
+      "id": "task016-74",
+      "input": "vindje ni daj teveel moe draain voor teweinig geld",
+      "output": [
+        "Vind je niet dat je teveel moet draaien voor te weinig geld"
+      ]
+    },
+    {
+      "id": "task016-75",
+      "input": "nja , als dieje iere weerk omt zitte is ik weg , toedels",
+      "output": [
+        "Ja , als die hier weer komt zitten ben ik weg , Tot ziens"
+      ]
+    },
+    {
+      "id": "task016-76",
+      "input": "Knuffie ooh kheb gistere schattigste ras ooit gezien een americaans kruloor cute :d",
+      "output": [
+        "Knuffie oh ik heb gisteren schattigste ras ooit gezien een Amerikaanse kruloor cute :d"
+      ]
+    },
+    {
+      "id": "task016-77",
+      "input": "pfff Knuffie wrm zou ik kheb nu net een goeie gevonde : lol :",
+      "output": [
+        "Pfff Knuffie waarom zou ik, ik heb nu net een goeie gevonden : lol :"
+      ]
+    },
+    {
+      "id": "task016-78",
+      "input": "probere ma dn moete aan mannekes grake ook ee :)",
+      "output": [
+        "Probeer maar dan moeten aan mannen komen ook ee :)"
+      ]
+    },
+    {
+      "id": "task016-79",
+      "input": "kebbet iere wel 5 keer gevraagd ofdat er iemand augurke moest hebbe",
+      "output": [
+        "Ik heb het hier wel 5 keer gevraagd of er iemand augurken moest hebben"
+      ]
+    },
+    {
+      "id": "task016-80",
+      "input": "brrr olijfkes kem der nog ma weinig goe gegeten",
+      "output": [
+        "Brrr olijven ik heb er nog maar weinig goeie gegeten"
+      ]
+    },
+    {
+      "id": "task016-81",
+      "input": "poezewoeve morge gaaw frietn eten in olland !",
+      "output": [
+        "Poezewoeve morgen gaan we friet eten in Holland !"
+      ]
+    },
+    {
+      "id": "task016-82",
+      "input": "mjah B_Duck kvind nen durum gwn handiger om te eten",
+      "output": [
+        "Ja B_Duck ik vind een durum gewoon handiger om te eten"
+      ]
+    },
+    {
+      "id": "task016-83",
+      "input": "matjah tmoe er goe uitzien é peke 25 :p",
+      "output": [
+        "Maar ja het moet er goed uitzien é Peke 25 :p"
+      ]
+    },
+    {
+      "id": "task016-84",
+      "input": "sebiet ene privè kheb nen banaan",
+      "output": [
+        "Straks even privè ik heb een banaan"
+      ]
+    },
+    {
+      "id": "task016-85",
+      "input": "een schoon zwarteke is ook ni lelijk , maar tmoet een schoontje zijn éh",
+      "output": [
+        "Een schone zwarte is ook niet lelijk , maar het moet een schone zijn éh"
+      ]
+    },
+    {
+      "id": "task016-86",
+      "input": "kwaad kijke trille totk het ni meer uit kan houde :p",
+      "output": [
+        "Kwaad kijken trillen tot ik het niet meer uit kan houden :p"
+      ]
+    },
+    {
+      "id": "task016-87",
+      "input": "dimitri 1981 idd ;o ... Maareuh ja Heeyy :D xxxxx",
+      "output": [
+        "Dimitri 1981 inderdaad ;o ... Maar ja hoi :D xxxxx"
+      ]
+    },
+    {
+      "id": "task016-88",
+      "input": "bwah goed R-design tzal zijnnadelen hebbe ook wss",
+      "output": [
+        "Bah goed R-design het zal zijn nadelen hebben ook waarschijnlijk"
+      ]
+    },
+    {
+      "id": "task016-89",
+      "input": "omg :s kzi gwn ant kijken na groetjes uit salou é",
+      "output": [
+        "Omg :s ik ben gewoon aan het kijken naar groetjes uit Salou é"
+      ]
+    },
+    {
+      "id": "task016-90",
+      "input": "ahja tss gent en lokere weetek",
+      "output": [
+        "Ja tussen Gent en Lokeren weet ik"
+      ]
+    },
+    {
+      "id": "task016-91",
+      "input": "Ik wou met 't dakske openrijden :p mr tis brrr :p haha",
+      "output": [
+        "Ik wou met het dak openrijden :p maar het is koud :p haha"
+      ]
+    },
+    {
+      "id": "task016-92",
+      "input": "kzin locaties ant zoeke voor windelingske vnv",
+      "output": [
+        "Ik ben locaties aan het zoeken voor een wandeling vanavond"
+      ]
+    },
+    {
+      "id": "task016-93",
+      "input": "AMDtje omda da nie em awa :p gij wel meschien",
+      "output": [
+        "AMDtje omdat dat niet hij was :p jij wel misschien"
+      ]
+    },
+    {
+      "id": "task016-94",
+      "input": "nja spiderwoman :) ik kan gwn ni tege da herhalen ... :s",
+      "output": [
+        "Ja Spiderwoman :) ik kan gewoon niet tegen dat herhalen ... :s"
+      ]
+    },
+    {
+      "id": "task016-95",
+      "input": "ahja alé nu zalt ie idd wel goe marcheren :p",
+      "output": [
+        "Ja alé nu zal hij inderdaad wel goed marcheren :p"
+      ]
+    },
+    {
+      "id": "task016-96",
+      "input": "dieje colgate eeft ook al tege mij begonne",
+      "output": [
+        "Die Colgate is ook al tegen mij begonnen"
+      ]
+    },
+    {
+      "id": "task016-97",
+      "input": "ik gon ni blyve prate nieje , kga elisa es zien vanavond :-(",
+      "output": [
+        "Ik ga niet blijven praten nee , ik ga Elisa eens zien vanavond :-("
+      ]
+    },
+    {
+      "id": "task016-98",
+      "input": "ah goed om weten :-) wss zullen we ffkes passeren",
+      "output": [
+        "ah goed om weten :-) waarschijnlijk zullen we even passeren"
+      ]
+    },
+    {
+      "id": "task016-99",
+      "input": "kga mee klimmen :-) kheb er wel de groepsraad voor afgezegd :-P",
+      "output": [
+        "Ik ga mee klimmen :-) Ik heb er wel de groepsraad voor afgezegd :-P"
+      ]
+    },
+    {
+      "id": "task016-100",
+      "input": "kzal het op mijnen todo zetten :-)",
+      "output": [
+        "Ik zal het op mijn todo zetten :-)"
+      ]
+    },
+    {
+      "id": "task016-101",
+      "input": "danku ! tzal nodig zijn :-) gij moet zaterdag wss ?",
+      "output": [
+        "Dankuwel ! Het zal nodig zijn :-) jij moet zaterdag waarschijnlijk ?"
+      ]
+    },
+    {
+      "id": "task016-102",
+      "input": "euhm kga es moeten denken ... mss morgen , kga zien",
+      "output": [
+        "Euhm ik ga eens moeten denken ... Misschien morgen , ik ga zien"
+      ]
+    },
+    {
+      "id": "task016-103",
+      "input": "okee kzal der zijn",
+      "output": [
+        "Oké ik zal er zijn"
+      ]
+    },
+    {
+      "id": "task016-104",
+      "input": "kzal wss wel meegaan , ik kijk er naar uit :-)",
+      "output": [
+        "Ik zal waarschijnlijk wel meegaan , ik kijk er naar uit :-)"
+      ]
+    },
+    {
+      "id": "task016-105",
+      "input": "tzal nog ffkes duren , moet nog vertrekken",
+      "output": [
+        "Het zal nog even duren , moet nog vertrekken"
+      ]
+    },
+    {
+      "id": "task016-106",
+      "input": "meende da ! proficiat !! kzit wel juust op weekend vrijdag :-(",
+      "output": [
+        "Meen je dat ! Proficiat !! Ik zit wel juist op weekend vrijdag :-("
+      ]
+    },
+    {
+      "id": "task016-107",
+      "input": "ja sgoe , hoelaat ?",
+      "output": [
+        "Ja is goed , hoelaat ?"
+      ]
+    },
+    {
+      "id": "task016-108",
+      "input": "ma kwil meezoeken ... keb pauze vanaf 11 u ofzo",
+      "output": [
+        "Maar ik wil meezoeken ... Ik heb pauze vanaf 11 uur ofzo"
+      ]
+    },
+    {
+      "id": "task016-109",
+      "input": "ja wss wel , voorwa ?",
+      "output": [
+        "Ja waarschijnlijk wel , voor wat ?"
+      ]
+    },
+    {
+      "id": "task016-110",
+      "input": "nope , keb da afgezegd",
+      "output": [
+        "Nee , ik heb dat afgezegd"
+      ]
+    },
+    {
+      "id": "task016-111",
+      "input": "maakt nie uit , mss beter excel",
+      "output": [
+        "Maakt niet uit , misschien beter excel"
+      ]
+    },
+    {
+      "id": "task016-112",
+      "input": "ow , kmoe nog ffe stappen second",
+      "output": [
+        "Ow , ik moet nog even stappen second"
+      ]
+    },
+    {
+      "id": "task016-113",
+      "input": "oesje zo serieus plots ... tis mss inderdaad wel het beste xx",
+      "output": [
+        "Oesje zo serieus plots ... Het is misschien inderdaad wel het beste xx"
+      ]
+    },
+    {
+      "id": "task016-114",
+      "input": "kzal het es bekijken straks ... kzal eerst nog es mailen",
+      "output": [
+        "Ik zal het eens bekijken straks ... Ik zal eerst nog eens mailen"
+      ]
+    },
+    {
+      "id": "task016-115",
+      "input": "Wr zijt gij ? App-jacht is voorby ...",
+      "output": [
+        "Waar ben jij ? App-jacht is voorbij ..."
+      ]
+    },
+    {
+      "id": "task016-116",
+      "input": "Tuurlyk , kga toch blyven slapen ? We kunnen mss aant zuid op elkaar wachten ? Kusje , Jan.",
+      "output": [
+        "Tuurlijk , ik ga toch blijven slapen ? We kunnen misschien aan het zuid op elkaar wachten ? Kusje , Jan."
+      ]
+    },
+    {
+      "id": "task016-117",
+      "input": "Gn antwoord mr :(",
+      "output": [
+        "Geen antwoord meer :("
+      ]
+    },
+    {
+      "id": "task016-118",
+      "input": "Kzal morgen ng eens proberen vr overmorgen . Kusje !",
+      "output": [
+        "Ik zal morgen nog eens proberen voor overmorgen . Kusje !"
+      ]
+    },
+    {
+      "id": "task016-119",
+      "input": "Pfff , ze nemen nu alweer ni op :s",
+      "output": [
+        "Pfff , ze nemen nu alweer niet op :s"
+      ]
+    },
+    {
+      "id": "task016-120",
+      "input": "Idem , ben ng ff blyren liggen :p Kusje !",
+      "output": [
+        "Idem , ben nog even blijven liggen :p Kusje !"
+      ]
+    },
+    {
+      "id": "task016-121",
+      "input": "Kga iets later zyn , kmoe myn fietsband vervangen want oppompen helpt niet ...",
+      "output": [
+        "Ik ga iets later zijn , ik moet mijn fietsband vervangen want oppompen helpt niet ..."
+      ]
+    },
+    {
+      "id": "task016-122",
+      "input": "Dag liefje , wanneer mag ik by jou zyn vnv ? Xje !",
+      "output": [
+        "Dag liefje , wanneer mag ik bij jou zijn vanavond ? Xje !"
+      ]
+    },
+    {
+      "id": "task016-123",
+      "input": "Toppie , want kben ng druk aant paperen en kmoe me nog douchen ... Kusje !",
+      "output": [
+        "Top , want ik ben nog druk aan het paperen en ik moet me nog douchen ... Kusje !"
+      ]
+    },
+    {
+      "id": "task016-124",
+      "input": "Wilt ge kome helpen mss ? :p",
+      "output": [
+        "Wil jij komen helpen misschien ? :p"
+      ]
+    },
+    {
+      "id": "task016-125",
+      "input": "Ik vertrek ook byna dus tegen 6 u gaak daar zyn :)",
+      "output": [
+        "Ik vertrek ook bijna dus tegen 6 uur ga ik daar zijn :)"
+      ]
+    },
+    {
+      "id": "task016-126",
+      "input": "Kzou zegge v ni ...",
+      "output": [
+        "Ik zou zeggen van niet ..."
+      ]
+    },
+    {
+      "id": "task016-127",
+      "input": "Hmmm , das idd n beetje gek :p ng 1 maand ! Xje",
+      "output": [
+        "Hmmm , dat is inderdaad een beetje gek :p nog 1 maand ! Kus"
+      ]
+    },
+    {
+      "id": "task016-128",
+      "input": "Kzal u binne n u komen halen .",
+      "output": [
+        "Ik zal u binnen een uur komen halen ."
+      ]
+    },
+    {
+      "id": "task016-129",
+      "input": "Zitte jullie al binne ?",
+      "output": [
+        "Zitten jullie al binnen ?"
+      ]
+    },
+    {
+      "id": "task016-130",
+      "input": "Tsts , ik wil ng wel iéts doen hé :p Ge zult wel zien , goe ? Xje !",
+      "output": [
+        "Tsts , ik wil nog wel iets doen hé :p Jij zal wel zien , goed ? Kus !"
+      ]
+    },
+    {
+      "id": "task016-131",
+      "input": "Slaap zoet , myn hartediefje ! Kben zeker dajje test wel zal lukken :) Dikke kus ! Jan.",
+      "output": [
+        "Slaap zoet , mijn hartendief ! ik ben zeker dat je test wel zal lukken :) Dikke kus ! Jan."
+      ]
+    },
+    {
+      "id": "task016-132",
+      "input": "Dan zal jy nr my moeten komen hé ...",
+      "output": [
+        "Dan zal jij naar mij moeten komen hé ..."
+      ]
+    },
+    {
+      "id": "task016-133",
+      "input": "Toppie , is wel ff geleden dus kzal wa roestig zyn ...",
+      "output": [
+        "Top , is wel even geleden dus ik zal wat roestig zijn ..."
+      ]
+    },
+    {
+      "id": "task016-134",
+      "input": "Hoe laat maggek dan by jou zyn ? Xje !",
+      "output": [
+        "Hoe laat mag ik dan bij jou zijn ? Kus !"
+      ]
+    },
+    {
+      "id": "task016-135",
+      "input": "Kheb n leeg smsje gekregen ...",
+      "output": [
+        "Ik heb een leeg sms'je gekregen ..."
+      ]
+    },
+    {
+      "id": "task016-136",
+      "input": "Toppie , want mn cheques liggen ih huisje ... Xje !",
+      "output": [
+        "Top , want mijn cheques liggen in het huisje ... Kus !"
+      ]
+    },
+    {
+      "id": "task016-137",
+      "input": "Dag liefje , wnn ga je daar zyn ? Xje !",
+      "output": [
+        "Dag liefje , wanneer ga je daar zijn ? Kus !"
+      ]
+    },
+    {
+      "id": "task016-138",
+      "input": "Toppie , wa doen we dan ? Xje !",
+      "output": [
+        "Top , wat doen we dan ? Kus !"
+      ]
+    },
+    {
+      "id": "task016-139",
+      "input": "Héhé , kheb dae reklame ook gezien en ik dacht juist hetzelfde :)",
+      "output": [
+        "Héhé , ik heb de reclame ook gezien en ik dacht juist hetzelfde :)"
+      ]
+    },
+    {
+      "id": "task016-140",
+      "input": "Inschryven op forum . Tis volgende week dond .",
+      "output": [
+        "Inschrijven op forum . Het is volgende week donderdag ."
+      ]
+    },
+    {
+      "id": "task016-141",
+      "input": "Heb ook gn geld mr snoesje ..",
+      "output": [
+        "Heb ook geen geld meer snoesje .."
+      ]
+    },
+    {
+      "id": "task016-142",
+      "input": "Kom dan direct nr huis ? Xje !",
+      "output": [
+        "Kom dan direct naar huis ? Kus !"
+      ]
+    },
+    {
+      "id": "task016-143",
+      "input": "Kga niet eten vnv dus het maakt niet uit ...",
+      "output": [
+        "Ik ga niet eten vanavond dus het maakt niet uit ..."
+      ]
+    },
+    {
+      "id": "task016-144",
+      "input": "Gohja ... Ze moeten er mr tegenkunnen ...",
+      "output": [
+        "Goh ja ... Ze moeten er maarr tegen kunnen ..."
+      ]
+    },
+    {
+      "id": "task016-145",
+      "input": "Binne n halfuurtje , als je wil ? Xje !",
+      "output": [
+        "Binnen een halfuur , als je wil ? Kus !"
+      ]
+    },
+    {
+      "id": "task016-146",
+      "input": "Droom zoet ! Khad je smsje ng ni gezien ... Kusje !",
+      "output": [
+        "Droom zoet ! Ik had je sms'je nog niet gezien ... Kusje !"
+      ]
+    },
+    {
+      "id": "task016-147",
+      "input": "Gy moet my hebbe ?",
+      "output": [
+        "Jij moet mij hebben ?"
+      ]
+    },
+    {
+      "id": "task016-148",
+      "input": "Aah :p we zulle vnv vroeg gn slapen ! Xje !",
+      "output": [
+        "Aah :p we zullen vanavond vroeg gaan slapen ! Kus !"
+      ]
+    },
+    {
+      "id": "task016-149",
+      "input": "No mail ... Hoe gaadet daar ? Xje !",
+      "output": [
+        "No mail ... Hoe gaat het daar ? Kus !"
+      ]
+    },
+    {
+      "id": "task016-150",
+      "input": "Ga er strx nr kyke",
+      "output": [
+        "Ga er straks naar kijken"
+      ]
+    },
+    {
+      "id": "task016-151",
+      "input": "Waarmee ik dus wil vragen wnn jullie hier zyn :p",
+      "output": [
+        "Waarmee ik dus wil vragen wanneer jullie hier zijn :p"
+      ]
+    },
+    {
+      "id": "task016-152",
+      "input": "Mn ouders willen samen iets gn eten , isda goe ? Xje !",
+      "output": [
+        "Mijn ouders willen samen iets gaan eten , is dat goed ? Kus !"
+      ]
+    },
+    {
+      "id": "task016-153",
+      "input": "Weetek ni echt ... Xje !",
+      "output": [
+        "Weet ik niet echt ... Kus !"
+      ]
+    },
+    {
+      "id": "task016-154",
+      "input": "Vnv hé , slimpie . Kdacht dajje wou weten hoe laat ...",
+      "output": [
+        "Vanavond hé , slimmerd . ik dacht dat je wou weten hoe laat ..."
+      ]
+    },
+    {
+      "id": "task016-155",
+      "input": "Ik ook ni liefje ... Kzou liever thuis blyven ... Xje !",
+      "output": [
+        "Ik ook niet liefje ... Ik zou liever thuis blijven ... Kus !"
+      ]
+    },
+    {
+      "id": "task016-156",
+      "input": "Kom mr nr justitiepaleis . Zyn ng iets aant drinken ...",
+      "output": [
+        "Kom maar naarr Justitiepaleis . Zijn nog iets aan het drinken ..."
+      ]
+    },
+    {
+      "id": "task016-157",
+      "input": "Hoezo ? Wnn ga je trouwens thuis zyn ? Xje !",
+      "output": [
+        "Hoezo ? Wanneer ga je trouwens thuis zijn ? Kus !"
+      ]
+    },
+    {
+      "id": "task016-158",
+      "input": "Blykbaar was myn laatste deel wel goe genoeg , kmag morgen al terug naar brussel ... Jan.",
+      "output": [
+        "Blijkbaar was mijn laatste deel wel goed genoeg , ik mag morgen al terug naar Brussel ... Jan."
+      ]
+    },
+    {
+      "id": "task016-159",
+      "input": "20 u mss wel . Kzal ng iets laten weten ...",
+      "output": [
+        "20 uur misschien wel . Ik zal nog iets laten weten ..."
+      ]
+    },
+    {
+      "id": "task016-160",
+      "input": "Ben net mn fiets aant losmaken . Wrm ?",
+      "output": [
+        "Ben net mijn fiets aan het losmaken . Waarom ?"
+      ]
+    },
+    {
+      "id": "task016-161",
+      "input": "Wss wel :p Kzal ng iets laten weten .",
+      "output": [
+        "Waarschijnlijk wel :p ik zal nog iets laten weten ."
+      ]
+    },
+    {
+      "id": "task016-162",
+      "input": "Bwaah , tis hier eigenlyk wel gezellig ...",
+      "output": [
+        "Bwaah , het is hier eigenlijk wel gezellig ..."
+      ]
+    },
+    {
+      "id": "task016-163",
+      "input": "Thx . Tot strx .",
+      "output": [
+        "Bedankt . Tot straks ."
+      ]
+    },
+    {
+      "id": "task016-164",
+      "input": "Ben byna dood dus wss binne n uurtje :p",
+      "output": [
+        "Ben bijna dood dus waarschijnlijk binnen een uurtje :p"
+      ]
+    },
+    {
+      "id": "task016-165",
+      "input": "Ben daar wss binne 30 min",
+      "output": [
+        "Ben daar waarschijnlijk binnen 30 minuten"
+      ]
+    },
+    {
+      "id": "task016-166",
+      "input": "Niets hoor . Gwn dak door ben. .. Tot vnv !",
+      "output": [
+        "Niets hoor . Gewoon dat ik door ben. .. Tot vanavond !"
+      ]
+    },
+    {
+      "id": "task016-167",
+      "input": "Mss . Wnn gaat ge dr zyn ?",
+      "output": [
+        "Misschien . Wanneer ga je er zijn ?"
+      ]
+    },
+    {
+      "id": "task016-168",
+      "input": "Tgaat ni goed , dus wou ik jou lastig vallen ... Xje .",
+      "output": [
+        "Het gaat niet goed , dus wou ik jou lastig vallen ... Xje ."
+      ]
+    },
+    {
+      "id": "task016-169",
+      "input": "Ok , kzal het haar zeggwn",
+      "output": [
+        "Oké , ik zal het haar zeggen"
+      ]
+    },
+    {
+      "id": "task016-170",
+      "input": "Straks , alzek mijn middagpauze neem , of.is er iets drinfend ?",
+      "output": [
+        "Straks , als ik mijn middagpauze neem , of is er iets dringends ?"
+      ]
+    },
+    {
+      "id": "task016-171",
+      "input": "Hmmm , mss wel hè ... Kan jij nog naartoe stad gaan ? Mss naar axeswar ? Xje .",
+      "output": [
+        "Hmmm , misschien wel hè ... Kan jij nog naartoe stad gaan ? Misschien naar Axeswar ? Kus ."
+      ]
+    },
+    {
+      "id": "task016-172",
+      "input": "K. Ik zal gn eten mr nodig hebben , normaalgezien , tenzij het doktersbezoek uitloopt .",
+      "output": [
+        "K. Ik zal geen eten meer nodig hebben , normaal gezien , tenzij het doktersbezoek uitloopt ."
+      ]
+    },
+    {
+      "id": "task016-173",
+      "input": "Héhé , kzal wel op je wachten ..",
+      "output": [
+        "Héhé , ik zal wel op je wachten .."
+      ]
+    },
+    {
+      "id": "task016-174",
+      "input": "Jah , 't treintje doet van traag .. 'k zal mss 'n beetje later zijn .. Hongerrr ! xx",
+      "output": [
+        "Ja , het treintje doet vandaag traag .. Ik zal misschien een beetje later zijn .. Honger ! xx"
+      ]
+    },
+    {
+      "id": "task016-175",
+      "input": "Piepeloe ! Hoe wat waar spreken we af vnv ?",
+      "output": [
+        "Piepeloe ! Hoe wat waar spreken we af vanavond ?"
+      ]
+    },
+    {
+      "id": "task016-176",
+      "input": "Anh okj ja kvond wel mooi ... Ik heb onberpekt smsn :)",
+      "output": [
+        "Anh oké ja ik vond wel mooi ... Ik heb onbeperkt sms'en :)"
+      ]
+    },
+    {
+      "id": "task016-177",
+      "input": "Hallow ! kzit in muziekles x",
+      "output": [
+        "Hallo ! Ik zit in muziekles x"
+      ]
+    },
+    {
+      "id": "task016-178",
+      "input": "Haha tjaa tmoest er keer van komen eah ! ;)",
+      "output": [
+        "Haha ja het moest er keer van komen he ! ;)"
+      ]
+    },
+    {
+      "id": "task016-179",
+      "input": "En hoelang gager mss moete blijven ? x",
+      "output": [
+        "En hoelang ga je er misschien moeten blijven ? x"
+      ]
+    },
+    {
+      "id": "task016-180",
+      "input": "Tziet er idd nog tof uit !",
+      "output": [
+        "Het ziet er inderdaad nog tof uit !"
+      ]
+    },
+    {
+      "id": "task016-181",
+      "input": "Kga slapn slaapwel",
+      "output": [
+        "Ik ga slapen welterusten"
+      ]
+    },
+    {
+      "id": "task016-182",
+      "input": "Ze , moeten noig nadenkem",
+      "output": [
+        "Ze , moeten nog nadenken"
+      ]
+    },
+    {
+      "id": "task016-183",
+      "input": "Hahah kheb ik bijna niets gdaan wh xd x",
+      "output": [
+        "Hahah ik heb ik bijna niets gedaan wh xd x"
+      ]
+    },
+    {
+      "id": "task016-184",
+      "input": "uhu xd wrm ? ;d xx",
+      "output": [
+        "uhu xd waarom ? ;d xx"
+      ]
+    },
+    {
+      "id": "task016-185",
+      "input": "ahja xd omdak nie antwoord opze smsn xd xx",
+      "output": [
+        "Ja xd omdat ik niet antwoord op zijn sms'en xd xx"
+      ]
+    },
+    {
+      "id": "task016-186",
+      "input": "via iemand ? gij dus ook ni zkr ?",
+      "output": [
+        "Via iemand ? Jij dus ook niet zeker ?"
+      ]
+    },
+    {
+      "id": "task016-187",
+      "input": "ja , kwou 't eigenlijk ookal vrage :p",
+      "output": [
+        "Ja , ik wou het eigenlijk ook al vragen :p"
+      ]
+    },
+    {
+      "id": "task016-188",
+      "input": "Kim en marjolein zyn zeer teleurgesteld . Maar ik begryp het hoor kusje",
+      "output": [
+        "Kim en Marjolein zijn zeer teleurgesteld . Maar ik begrijp het hoor kusje"
+      ]
+    },
+    {
+      "id": "task016-189",
+      "input": "Derna ? Om hoelaat ist gedaan ?",
+      "output": [
+        "Er na ? Om hoelaat is het gedaan ?"
+      ]
+    },
+    {
+      "id": "task016-190",
+      "input": "Ga jy vandaag eens kyken voor die sociale lening ? Kus",
+      "output": [
+        "Ga jij vandaag eens kijken voor die sociale lening ? Kus"
+      ]
+    },
+    {
+      "id": "task016-191",
+      "input": "Kzal het met myn visa betalen hé . Kus",
+      "output": [
+        "Ik zal het met mijn Visa betalen hé . Kus"
+      ]
+    },
+    {
+      "id": "task016-192",
+      "input": "Driewerf hoeraaa en groetjes uit amerikaaa ! xxx",
+      "output": [
+        "Driewerf hoera en groetjes uit Amerika ! xxx"
+      ]
+    },
+    {
+      "id": "task016-193",
+      "input": "'t zal hier vermoedelijk wel nog efkes duren :( dus gij gaat guust moeten ophalen he ... x",
+      "output": [
+        "Het zal hier vermoedelijk wel nog even duren :( dus jij gaat Guust moeten ophalen he ... x"
+      ]
+    },
+    {
+      "id": "task016-194",
+      "input": "Allez , guust krijgt een pingpongkameraadje :) proficiat aan mammie en pappie ! X",
+      "output": [
+        "Allez , Guust krijgt een pingpongkameraadje :) proficiat aan mama en papa ! X"
+      ]
+    },
+    {
+      "id": "task016-195",
+      "input": "Vanaaf es iets gn drinken ?",
+      "output": [
+        "Vanavond eens iets gaan drinken ?"
+      ]
+    },
+    {
+      "id": "task016-196",
+      "input": "Kga drna na tv kijke",
+      "output": [
+        "Ik ga daarna naar tv kijken"
+      ]
+    },
+    {
+      "id": "task016-197",
+      "input": "Oeda ? Srr was aant eten x",
+      "output": [
+        "Oeda ? Sorry was aan het eten x"
+      ]
+    },
+    {
+      "id": "task016-198",
+      "input": "Ja das Goe laat nog wel iet weten voor zaterdag grtjs xxx",
+      "output": [
+        "Ja dat is goed laat nog wel iets weten voor zaterdag groetjes xxx"
+      ]
+    },
+    {
+      "id": "task016-199",
+      "input": "ben hier nog effe bezig . zal wel bellen . xxxxxx",
+      "output": [
+        "Ben hier nog even bezig . Zal wel bellen . xxxxxx"
+      ]
+    },
+    {
+      "id": "task016-200",
+      "input": "tzal ong 10 min later zyn",
+      "output": [
+        "Het zal ongeveer 10 minuten later zijn"
+      ]
+    },
+    {
+      "id": "task016-201",
+      "input": "oki , theeft feitelijk wel ng iets grappigs :D x",
+      "output": [
+        "Oké , het heeft feitelijk wel nog iets grappigs :D x"
+      ]
+    },
+    {
+      "id": "task016-202",
+      "input": "Kga der straks ni geraken eignlk ... Ioo x",
+      "output": [
+        "Ik ga er straks niet geraken eigenlijk ... Ioo x"
+      ]
+    },
+    {
+      "id": "task016-203",
+      "input": "Kzit hr toch te sterven zen . Manman ..",
+      "output": [
+        "Ik zit hier toch te sterven zen . Man .."
+      ]
+    },
+    {
+      "id": "task016-204",
+      "input": "Ja sgoe ! Kmoet wel eerst nog wa opruimen . XxX",
+      "output": [
+        "Ja is goed ! Ik moet wel eerst nog wat opruimen . XxX"
+      ]
+    },
+    {
+      "id": "task016-205",
+      "input": "Ela ! Kmoest vandaag niet :-( morgen wel . Vr upperdare , maaike gaat wrschlk ook mee :-) Kusjes !",
+      "output": [
+        "Ela ! Ik moest vandaag niet :-( morgen wel . Voor upperdare , Maaike gaat waarschijnlijk ook mee :-) Kusjes !"
+      ]
+    },
+    {
+      "id": "task016-206",
+      "input": "En hoe ist ? Goe kunnen slapen ? Dikke kusjes !",
+      "output": [
+        "En hoe is het ? Goed kunnen slapen ? Dikke kusjes !"
+      ]
+    },
+    {
+      "id": "task016-207",
+      "input": "Ja das goe :-) juij ! Kusjes !",
+      "output": [
+        "Ja dat is goed :-) juij ! Kusjes !"
+      ]
+    },
+    {
+      "id": "task016-208",
+      "input": "Ja sgoe , ik kom dan nr ma. Kusjes !",
+      "output": [
+        "Ja is goed , ik kom dan naar mama Kusjes !"
+      ]
+    },
+    {
+      "id": "task016-209",
+      "input": "Jij had wrschlk ook gebeld ? Kissies !",
+      "output": [
+        "Jij had waarschijnlijk ook gebeld ? Kus !"
+      ]
+    },
+    {
+      "id": "task016-210",
+      "input": "Kzit bhj ma hé . X",
+      "output": [
+        "Ik zit bij mama hé . X"
+      ]
+    },
+    {
+      "id": "task016-211",
+      "input": "Ela ! Ja kzou graag nog film kijken dus tzal niemeer de moeite zijn ...",
+      "output": [
+        "Ela ! Ja ik zou graag nog film kijken dus het zal niet meer de moeite zijn ..."
+      ]
+    },
+    {
+      "id": "task016-212",
+      "input": "Ela ! Neeje , ben er rond 19 u . Mss nog fitnessen ? Kus !",
+      "output": [
+        "Ela ! Nee , ben er rond 19 uur . Misschien nog fitnessen ? Kus !"
+      ]
+    },
+    {
+      "id": "task016-213",
+      "input": "Kwas hem vergeten , kzal hem morgenochtend binnensteken . Smakelijk ! XxX",
+      "output": [
+        "Ik was hem vergeten , ik zal hem morgenochtend binnensteken . Smakelijk ! XxX"
+      ]
+    },
+    {
+      "id": "task016-214",
+      "input": "Ok kmoe wel nog efkes doorwerken . Pakt tegen 18 u ? Kusjes !",
+      "output": [
+        "Oké ik moet wel nog eventjes doorwerken . Past tegen 18 uur ? Kusjes !"
+      ]
+    },
+    {
+      "id": "task016-215",
+      "input": "Oooh ! Tot strakkies ! XxX",
+      "output": [
+        "Oooh ! Tot straks ! XxX"
+      ]
+    },
+    {
+      "id": "task016-216",
+      "input": "Ela ! Kben nog aant werken ... Kusjes !",
+      "output": [
+        "Ela ! Ik ben nog aan het werken ... Kusjes !"
+      ]
+    },
+    {
+      "id": "task016-217",
+      "input": "Ela ! Kga nog efjes bezig zijn :-( Kusjes !",
+      "output": [
+        "Ela ! ik ga nog even bezig zijn :-( Kusjes !"
+      ]
+    },
+    {
+      "id": "task016-218",
+      "input": "Heej ! Istie het uiteindelijk gaan doen ? Ik heb n acht ! <#> voorwie ben je aant liege hahahaahsbsjsisjsuu \" nee danku ik ga toch al naar de hel want ik ben een kind van de duivel \" 1 is heel cringe om te zeggen en 2 je hebt da nooit gezegd what ??? twitter clout steigt nr jullie hoofd man",
+      "output": [
+        "Heej ! Is die het uiteindelijk gaan doen ? Ik heb een acht ! <#> Voor wie ben je aan het liegen hahahaahsbsjsisjsuu \" nee dankuwel ik ga toch al naar de hel want ik ben een kind van de duivel \" 1 is heel cringe om te zeggen en 2 je hebt dat nooit gezegd what ??? Twitter Cloud steigt naar jullie hoofd man"
+      ]
+    },
+    {
+      "id": "task016-219",
+      "input": "@wierdduk @jasonwalters85 veel vrouwen ook . Die jonge mannen , wel uit bep. hoek zijn bang niet-feministisch te worden gevonden of zo . Dus zin ze voor de boerka . Ja , dat is de nieuwe trend . Wat zou de 1e wet van BArt Croughs hieroverr zeggen ? idd : het abjecte westen , dus VOOR de boerka . En tis verklaard !",
+      "output": [
+        "@wierdduk @jasonwalters85 Veel vrouwen ook . Die jonge mannen , wel uit beperkte hoek zijn bang niet-feministisch te worden gevonden of zo . Dus zijn ze voor de boerka . Ja , dat is de nieuwe trend . Wat zou de 1e wet van Bart Croughs hierover zeggen ? Inderdaad : het abjecte westen , dus voor de boerka . En het is verklaard !"
+      ]
+    },
+    {
+      "id": "task016-220",
+      "input": "@Rina_Shorty Dankie Rina . Maar besig soos altyd . Waar in die wereld bevind Jy jou . Werk jy nog vir Exxaro ?",
+      "output": [
+        "@Rina_Shorty Dankje Rina . Maar bezig zoals altijd . Waar in de wereld bevind jij je . Werk jij nog voor Exxaro ?"
+      ]
+    },
+    {
+      "id": "task016-221",
+      "input": "Baie goeie vraag . Miskien moet ons dit verder debateer ? Wat van die organe van blankes en mense wat afrikaans praat ?",
+      "output": [
+        "Baie goeie vraag . Misschien moeten wij dit verder debateren ? Wat van die organen van blanken en mensen die Afrikaans praten ?"
+      ]
+    },
+    {
+      "id": "task016-222",
+      "input": "RT @DenisZejnelagic : Dit kapsel is gevaaaarlijk makes me wanna give her 6 babies https://t.co/qGShZxKrIJ",
+      "output": [
+        "RT @DenisZejnelagic : Dit kapsel is gevaarlijk makes me wanna give her 6 babies https://t.co/qGShZxKrIJ"
+      ]
+    },
+    {
+      "id": "task016-223",
+      "input": "@PollieStander @Ladybelle4th Elektroniese herstelwerk . Maar iets baie spesifiek , soos net een klas produkte wat getoets en herstel word . Toemaar ek \" tan \" ook elke dag onder die neonligte .",
+      "output": [
+        "@PollieStander @Ladybelle4th Elektronisch herstelwerk . Maar iets baie specifiek , zoals net een klas producten die getoetst en hersteld worden . Toemaar ik \" tan \" ook elke dag onder die neonlichten ."
+      ]
+    },
+    {
+      "id": "task016-224",
+      "input": "Goeiemorgen mensjes . Vandaag gaan we weer verder met vakantie vieren .... Wat we vandaag gaan doen ? Geen idee . Zo meteen urst n eike bakken voor puber en mexelf en ekkes douchen dan zien we wel verder ... Wens jullie allemaal n fijne donderdag",
+      "output": [
+        "Goedemorgen mensen . Vandaag gaan we weer verder met vakantie vieren .... Wat we vandaag gaan doen ? Geen idee . Zo meteen eerst een ei bakken voor puber en mezelf en even douchen dan zien we wel verder ... Wens jullie allemaal een fijne donderdag"
+      ]
+    },
+    {
+      "id": "task016-225",
+      "input": "@1DeliciousVinyl Nou heb liever dat een niqaab word verboden dan dat ie word verplicht . Liever Nederland dan Iran . Inkoppertje lame statement",
+      "output": [
+        "@1DeliciousVinyl Nou heb liever dat een niqaab wordt verboden dan dat ie wordt verplicht . Liever Nederland dan Iran . Inkoppertje lame statement"
+      ]
+    },
+    {
+      "id": "task016-226",
+      "input": "@RvanAsten De handhavers zijn niet zo geïnteresseerd Heeft al jaaaaaren ' geen prioriteit ' Met ruim 45 km/h waar 15 km/h is toegestaan : de servetten waaien van het tafeltje waar mensen gezellig zitten te ete . 3x de toegestane snelheid is toch rijbewijs kwijtraken ?",
+      "output": [
+        "@RvanAsten De handhavers zijn niet zo geïnteresseerd Heeft al jaren ' geen prioriteit ' Met ruim 45 kilometer per uur waar 15 kilometer per uur is toegestaan : de servetten waaien van het tafeltje waar mensen gezellig zitten te eten . 3 keer de toegestane snelheid is toch rijbewijs kwijtraken ?"
+      ]
+    },
+    {
+      "id": "task016-227",
+      "input": "RT @DebusschereFebe : pff oe cute ida aj een bericht krijgt datr iemand u mist",
+      "output": [
+        "RT @DebusschereFebe : Pff hoe cute is het als je een bericht krijgt dat iemand u mist"
+      ]
+    },
+    {
+      "id": "task016-228",
+      "input": "@geertwilderspvv maar goed wanneer gaat u ook het jodendom en christendom bashen , want die twee religies , die zitten ook vol haat barende texten . Oude testament zegt als volgt ; als een vrouw les geeft hak gwn lkkr dr hand er af :)",
+      "output": [
+        "@geertwilderspvv Maar goed wanneer gaat u ook het jodendom en christendom bashen , want die twee religies , die zitten ook vol haat barende teksten . Oude testament zegt als volgt ; als een vrouw les geeft hak gewoon lekker haar hand er af :)"
+      ]
+    },
+    {
+      "id": "task016-229",
+      "input": "Oh jommes voel me extreem jarig . Mensen die zingen in mn whatsapp , mn foon ontploft zowat van alle meldingen en mn socials stromen vol liefs . En dan krijg ik strakkies nog een paar van de fijnste mensen op versiete",
+      "output": [
+        "Oh jommes voel me extreem jarig . Mensen die zingen in mijn whatsapp , mijn telefoon ontploft zowat van alle meldingen en mijn socials stromen vol liefs . En dan krijg ik straks nog een paar van de fijnste mensen op visite"
+      ]
+    },
+    {
+      "id": "task016-230",
+      "input": "Als je iets hebt afgesproken en je laat niks weten is 't kaolo rude om iemand te negeren als die vraagt wassup . In de tijd dat ze dit had gescreend en op Twitter had gezet had ze ALLAAAANG kunnen zeggen \" yo , ik heb eigenlijk geen zin meer",
+      "output": [
+        "Als je iets hebt afgesproken en je laat niks weten is het kaolo rude om iemand te negeren als die vraagt wassup . In de tijd dat ze dit had gescreend en op Twitter had gezet had ze allang kunnen zeggen \" yo , ik heb eigenlijk geen zin meer"
+      ]
+    },
+    {
+      "id": "task016-231",
+      "input": "@Lesufi @afriforum @MulderCorn Vreeslik kordaat met die vingertjie wat rondswaai . Lyk net so pateties soos die Openbare Beskermer , selfde swak tipe standpunt . Instaat tot niks , nog geen tegniese handboek vir enige vak in sy eie moedertaal vertaal",
+      "output": [
+        "@Lesufi @afriforum @MulderCorn Vreselijk kordaat met dat vingertje wat rondswaaien . Lijkt net zo pathetisch zoals die openbare beschermer , zelfde zwakke type standpunt . In staat tot niks , nog geen technisch handboek voor enige vak in zijn eigen moedertaal vertaald"
+      ]
+    },
+    {
+      "id": "task016-232",
+      "input": "even een gevaarlijke tweet hoor . maar dit is gwn ene typische NL-zomer . op een aantal uitschieters na (39/40 gr ) en de lange zomer van 2018, merk ik vrij weinig van climate change . https://t.co/IWC3TvOqVo",
+      "output": [
+        "Even een gevaarlijke tweet hoor . Maar dit is gewoon een typische Nederlandse zomer . Op een aantal uitschieters na (39/40 graden ) en de lange zomer van 2018, merk ik vrij weinig van climate change . https://t.co/IWC3TvOqVo"
+      ]
+    },
+    {
+      "id": "task016-233",
+      "input": "@HendrikxHans Dit wordt echt te gek voor woorden . Elk kind v lkr heeft zo veel geluk om steeds ouder (s) thuis te hebben die hen overal kunnen voeren naar activiteiten ea . en overal kn aan deelnemen . Er is blijkbaar nooit verlof genoeg voor lkr , dit gaat er ver over .",
+      "output": [
+        "@HendrikxHans Dit wordt echt te gek voor woorden . Elk kind van lkr heeft zo veel geluk om steeds ouder (s) thuis te hebben die hen overal kunnen voeren naar activiteiten en anderen . En overal kan aan deelnemen . Er is blijkbaar nooit verlof genoeg voor lkr , dit gaat er ver over ."
+      ]
+    },
+    {
+      "id": "task016-234",
+      "input": "Fucking huisbazin . Ze belde omdat ze de deur van mijn bergkot wil vermaken en begint te bullshiten dat zr een heel nieuwe deur in moet ... ik zeg van weetje cva , kga me sleutel nemen en da kot opendoen voor je om te checken . Begint ze daar van ‘ ooh ma de deur is al open",
+      "output": [
+        "Fucking huisbazin . Ze belde omdat ze de deur van mijn bergkot wil verbouwen en begint te bullshiten dat er een heel nieuwe deur in moet ... Ik zeg van weetje cva , ik ga mijn sleutel nemen en dat kot opendoen voor je om te checken . Begint ze daar van ‘ ooh maar de deur is al open"
+      ]
+    },
+    {
+      "id": "task016-235",
+      "input": "Net 'n dag gelede was daar video van 'n aanval met 'n panga in Duitsland . Jy sal nie hiervan in die media lees nie omdat immigrante van 'n sekere geloof deur die owerhede beskerm word .",
+      "output": [
+        "Net een dag geleden was daar video van een aanval met een panga in Duitsland . Jij zal niet hiervan in die media lezen niet omdat immigranten van een zeker geloof door de overheid beschermd worden ."
+      ]
+    },
+    {
+      "id": "task016-236",
+      "input": "ik denk nie da mensen op werk weten hoe oud ik ben , die blijven mij bolleke , schatteke , lieffie , kinneke , etc noemen ? yall , im actually a grown woman",
+      "output": [
+        "Ik denk niet dat mensen op werk weten hoe oud ik ben , die blijven mij bolletje , schatje , lieverd , kinneeke , etcetera noemen ? yall , im actually a grown woman"
+      ]
+    },
+    {
+      "id": "task016-237",
+      "input": "Ik zoek donaties zodat ik me kan laten tatoeëren slide in DM voor m’n rekeningnr 🤪 donaties voor die YSL tas van 2K zijn ook welkom",
+      "output": [
+        "Ik zoek donaties zodat ik me kan laten tatoeëren slide in DM voor mijn rekeningnummer 🤪 donaties voor die YSL tas van 2 duizend zijn ook welkom"
+      ]
+    },
+    {
+      "id": "task016-238",
+      "input": "@jazzykrap @FR_fansnl Zulke voetballers had Volendam voorheen ook nodig hun namen werden genoemd Hoog neudig en Brood neudig dat laatste is van toepassing op dit Feyenoord waar al een jaar een makkelijk scorende spits ontbreekt door mede slecht scouten ook een probleem van Feyenoord !",
+      "output": [
+        "@jazzykrap @FR_fansnl Zulke voetballers had Volendam voorheen ook nodig hun namen werden genoemd hoog nodig en brood nodig dat laatste is van toepassing op dit Feyenoord waar al een jaar een makkelijk scorende spits ontbreekt door mede slecht scouten ook een probleem van Feyenoord !"
+      ]
+    },
+    {
+      "id": "task016-239",
+      "input": "En op die van dkdeoelkast ( versus de natuurlijk ijsindustrie ). Eigenlijk verloopt de introductie van alle innovatie hetzelfde , prachtig uitgewerkt in Calestous Juna's Enemies of Innovation .",
+      "output": [
+        "En op die van de koelkast ( tegen de natuurlijk ijsindustrie ). Eigenlijk verloopt de introductie van alle innovatie hetzelfde , prachtig uitgewerkt in Calestous Juna's Enemies of Innovation ."
+      ]
+    },
+    {
+      "id": "task016-240",
+      "input": "Het is nen toffen gast , al maak ik mij geen illuszies : szelf szou hij natuurlijk ne toffe of szoietzs gezsged hebben .",
+      "output": [
+        "Het is een toffe gast , al maak ik mij geen illusies : zelf zou hij natuurlijk een toffe of zoiets gezegd hebben ."
+      ]
+    },
+    {
+      "id": "task016-241",
+      "input": "RT @wie_is_ek : Voel jy alleen of eensaam ? Of ken jy iemand wat so voel ? Word deel van die #wieisgeel inisiatief https://t.co/fpT0ErSGHz",
+      "output": [
+        "RT @wie_is_ek : Voel jij alleen of eenzaam ? Of ken jij iemand die zo voelt ? Wordt deel van het #wieisgeel iniatief https://t.co/fpT0ErSGHz"
+      ]
+    },
+    {
+      "id": "task016-242",
+      "input": "@Robert_Prins ik zie een hoop getwitter over kernwaarden etc mbt jullie mooie cluppie . Als we het daar dan toch over hebben : Wat heeft jullie TD het laten liggen om de Seun of God als boegbeeld voor Breda en NAC's kernwaarden binnen te halen . Nu is hij captain bij de Superboeren .",
+      "output": [
+        "@Robert_Prins Ik zie een hoop getwitter over kernwaarden etcetera met betrekking tot jullie mooie club . Als we het daar dan toch over hebben : Wat heeft jullie technisch directeur het laten liggen om de zoon van god als boegbeeld voor Breda en NAC's kernwaarden binnen te halen . Nu is hij captain bij de Superboeren ."
+      ]
+    },
+    {
+      "id": "task016-243",
+      "input": "Kest op mie reken'n , t'is weer 'n uur loater ! #groningen #martinitoren #deollegrieze",
+      "output": [
+        "Jij kan op mij rekenen , het weer een uur later ! #groningen #martinitoren #deollegrieze"
+      ]
+    },
+    {
+      "id": "task016-244",
+      "input": "HAUAHAHHAAHHAAA kga kkr dede om arra en haar theetje op instagram",
+      "output": [
+        "HAUAHAHHAAHHAAA ik ga kanker dood om arra en haar thee op instagram"
+      ]
+    },
+    {
+      "id": "task016-245",
+      "input": "@Elizemte Mense mag dink die donkie sing ook maar ek dink eerder hy lag",
+      "output": [
+        "@Elizemte Mensen mag denk ik die donkie lied ook maar ik denk eerder hij lacht"
+      ]
+    },
+    {
+      "id": "task016-246",
+      "input": "@KarlVanlouwe Ahh ook zo een minderheidscomplex personage ... Man in Brussel spreekt men meerdere talen en Français blijft nu eenmaal de voertaal whatever nva of vb jammeren .",
+      "output": [
+        "@KarlVanlouwe Ahh ook zo een minderheidscomplex personage ... Man in Brussel spreekt men meerdere talen en Frans blijft nu eenmaal de voertaal whatever nva of voorbeeld jammeren ."
+      ]
+    },
+    {
+      "id": "task016-247",
+      "input": "Burqa verbod wordt o.a. genoemd in de context van veiligheid . Ik snap hem niet : iemand kan op elk moment in een drukke supermarkt of station een wapen uit een boodschappentas halen . Wanneer dus de fullbodyscan bij de AH XL ? De strijd tegen terreur win je m.i. niet ' reactief '.",
+      "output": [
+        "Burka verbod wordt onder andere genoemd in de context van veiligheid . Ik snap hem niet : iemand kan op elk moment in een drukke supermarkt of station een wapen uit een boodschappentas halen . Wanneer dus de fullbodyscan bij de Albert Heijn XL ? De strijd tegen terreur win je mijns inziens niet ' reactief '."
+      ]
+    },
+    {
+      "id": "task016-248",
+      "input": "@Willie_Spies is die Direkteur van Hurter Spies Ing . en voorsitter van Pretoria FM . Hy is tans aan die woord by die #VRA - blitsberaad . https://t.co/Ik5gosMOfl",
+      "output": [
+        "@Willie_Spies is die Directeur van Hurter Spies Ing . En voorzitter van Pretoria FM . Hij is tans aan het woord bij die #VRA - blitsberaad . https://t.co/Ik5gosMOfl"
+      ]
+    },
+    {
+      "id": "task016-249",
+      "input": "@LudwigBollaerts @lorreporre6 @openvld Kijk is aan . De Gucht met Assad die wél heel pooulair is bij z'n mensen en zijn land redde van IS barbaren terwijl laffenglobohomo adepten hem als Duivel afschilderen . https://t.co/2vPEKfLUho",
+      "output": [
+        "@LudwigBollaerts @lorreporre6 @openvld Kijk eens aan . De Gucht met Assad die wel heel populair is bij zijn mensen en zijn land redde van IS barbaren terwijl laffe globohomo adepten hem als Duivel afschilderen . https://t.co/2vPEKfLUho"
+      ]
+    },
+    {
+      "id": "task016-250",
+      "input": "@Edenvnh Neverrr kging sebiet bellen dernaar want ik werk vo niemand gratis",
+      "output": [
+        "@Edenvnh Neverrr ik ging straks bellen er naar want ik werk voor niemand gratis"
+      ]
+    },
+    {
+      "id": "task016-251",
+      "input": "Ik mag haar kleur van haar nagels niet kiezen dusssss ik denk dat ik stilaan word geskipt :((( pfff nu moet ik weer sad tweeten",
+      "output": [
+        "Ik mag haar kleur van haar nagels niet kiezen dus ik denk dat ik stilaan word overgeslagen :((( pfff nu moet ik weer sad tweeten"
+      ]
+    },
+    {
+      "id": "task016-252",
+      "input": "@EgbertDijkstra @remcovvd @MinIenW @VVD Ik rijd bijv zelf bijna overal 150 km /h. Dat vind ik een prettige kruissnelheid en je ervaart veel minder last van mede weggebruikers die niet kunnen autorijden . Uiteraard staat mijn waze en flitsmeister altijd aan . Het zevenkoppige monster genaamd de roverheid gun ik nml niks",
+      "output": [
+        "@EgbertDijkstra @remcovvd @MinIenW @VVD Ik rijd bijvoorbeeld zelf bijna overal 150 kilometer per uur. Dat vind ik een prettige kruissnelheid en je ervaart veel minder last van mede weggebruikers die niet kunnen autorijden . Uiteraard staat mijn Waze en Flitsmeister altijd aan . Het zevenkoppige monster genaamd de overheid gun ik namelijk niks"
+      ]
+    },
+    {
+      "id": "task016-253",
+      "input": "@Willie_Spies vra is dit 'n grondwetlike krisis ? Hy meen ons moet kyk na vorige openbare beskermers . @PublicProtector https://t.co/XZAaLRTJTA",
+      "output": [
+        "@Willie_Spies Vraag is dit een grondwettelijke crisis ? Hij vindt dat wij moeten kijken naar vorige openbare beschermers . @PublicProtector https://t.co/XZAaLRTJTA"
+      ]
+    },
+    {
+      "id": "task016-254",
+      "input": "one of my muslim friends zei ooit voor de grap \" tijd om de boel op te blazen \" en om de één of andere reden was een non-muslim meisje beledigd en zei \" wrm mogen jullie wel zulke grappen maken en wij niet \" ?? Wrm vindt JIJ dat je daar recht op hebt",
+      "output": [
+        "One of my muslim friends zei ooit voor de grap \" tijd om de boel op te blazen \" en om de een of andere reden was een non-muslim meisje beledigd en zei \" waarom mogen jullie wel zulke grappen maken en wij niet \" ?? Waarom vindt jij dat je daar recht op hebt"
+      ]
+    },
+    {
+      "id": "task016-255",
+      "input": "welkom bij de AVO dit is de officieele twitterpagina van de AVO dit pakt heeft 3 locaties zuidamerika atlantis en africa heb je vragen en andere shit drop het in een van onze discord servers https://t.co/otW2EtilEs met vriendelijke groet van de lead van de AVO",
+      "output": [
+        "Welkom bij de AVO dit is de officiële twitterpagina van de AVO dit pakket heeft 3 locaties Zuid Amerika Atlantis en Afrika heb je vragen en andere shit stuur het in een van onze discord servers https://t.co/otW2EtilEs met vriendelijke groet van de lead van de AVO"
+      ]
+    },
+    {
+      "id": "task016-256",
+      "input": "It wie in belevenis foar it earst op de PC . @douwegerlof spotte myn moaie plakje tidens de finale #pc2019 #pc166 https://t.co/kPeut5nX49",
+      "output": [
+        "Het was een belevenis voor het eerst op de PC . @douwegerlof spotte mijn mooie plekje tijdens de finale #pc2019 #pc166 https://t.co/kPeut5nX49"
+      ]
+    },
+    {
+      "id": "task016-257",
+      "input": "BOERKA ! Doodeng ! paar ogen die je aankijken ! Genoeg Arabische landen waar dit kan , one way ticket ri daar & in Europa pas je je gewoon aan , aan de waarde & normen van h land ! DAT VIND IK ! Hebben wij ook gedaan 👍 Tunahan Kuzu huilt over tips boerkaverbod ! ‘ Pestwet ’ https://t.co/CbnDRyJ546",
+      "output": [
+        "Burka ! Doodeng ! Paar ogen die je aankijken ! Genoeg Arabische landen waar dit kan , one way ticket richting daar & in Europa pas je je gewoon aan , aan de waarden & normen van het land ! Dat vind ik ! Hebben wij ook gedaan 👍 Tunahan Kuzu huilt over tips burkaverbod ! ‘ Pestwet ’ https://t.co/CbnDRyJ546"
+      ]
+    },
+    {
+      "id": "task016-258",
+      "input": "Enige afstammeling van my wat ooit met die soort meisie by die huis aankom , word op die plek onterf , geteer en geveer en vir ewig verjaag .",
+      "output": [
+        "Enige afstammeling van mij die ooit met dat soort meisje bij dat huis aankomt , wordt op die plek onterfd , geteerd en geweerd en voor eeuwig verjaagd ."
+      ]
+    },
+    {
+      "id": "task016-259",
+      "input": "@MartelizeBrink @johanrademan1 Beteken dit dat julle nou in die oggende bietjie later kan slaap ? Hoop julle geniet die middagure ! Radio bly maar die beste .",
+      "output": [
+        "@MartelizeBrink @johanrademan1 Betekent dit dat jullie nou in die ochtend beetje later kan slapen ? Hoop dat jullie genieten van die middaguren ! Radio bijft maar de beste ."
+      ]
+    },
+    {
+      "id": "task016-260",
+      "input": "jinek is nr .5 trending hashtag in NL in afgelopen 2 uur . https://t.co/OGb21oOoIn #jinek",
+      "output": [
+        "Jinek is nummer .5 trending hashtag in Nederland in afgelopen 2 uur . https://t.co/OGb21oOoIn #jinek"
+      ]
+    },
+    {
+      "id": "task016-261",
+      "input": "Zo , eens even de foto's en filmpjes van de vakantie in Hamburg op de laptop zetten , uitsorteren e.d. en evt. ook weer een album maken op Facebook !",
+      "output": [
+        "Zo , eens even de foto's en filmpjes van de vakantie in Hamburg op de laptop zetten , sorteren en dergelijke en eventueel Ook weer een album maken op Facebook !"
+      ]
+    },
+    {
+      "id": "task016-262",
+      "input": "en dit was net zoiets als wanneer mensen zeggen \" wrm mogen donkere mensen wel het n-woord zeggen en wij niet \" wrm wil je dat zo graag ? dan zeggen ze \" huhuhu ik wil t niet ik vraag t me gew -\" oke als je t niet wil zou t je toch niet moeten boeien denk ik dan",
+      "output": [
+        "En dit was net zoiets als wanneer mensen zeggen \" waarom mogen donkere mensen wel het n-woord zeggen en wij niet \" waarom wil je dat zo graag ? Dan zeggen ze \" huhuhu ik wil het niet ik vraag het me gewoon -\" Oké als je het niet wil zou het je toch niet moeten boeien denk ik dan"
+      ]
+    },
+    {
+      "id": "task016-263",
+      "input": "@womansworldafi mja maar mensen kunnen okk die van andere rten ipv 60 keer t zelfde te tweeten",
+      "output": [
+        "@womansworldafi Maar ja maar mensen kunnen ook die van andere retweeten in plaats van 60 keer het zelfde te tweeten"
+      ]
+    },
+    {
+      "id": "task016-264",
+      "input": "'' Vlgones een oznrdeeok op een Eglnese uvinretsiet mkaat het niet uit in wlkee vloogdre de ltteers in een wrood saatn , het einge wat blegnaijrk is is dat de eretse en de ltaatse ltteer op de jiutse patals saatn .",
+      "output": [
+        "'' Volgens een onderzoek op een Engelse universiteit maakt het niet uit in welke volgorde de letters in een woord staan , het enige wat belangrijk is is dat de eerste en de laatste letter op de juiste plaats staan ."
+      ]
+    },
+    {
+      "id": "task016-265",
+      "input": "aight schat als ge verslaafd zijt ga naar afkik shit of koop van die pleisters bij den apotheek , daarbij me u actief roken stookt ge me uwe vuile lucht ook de passief rokers aan dus stop gwn tis vr nikske goe ze da roken vn u",
+      "output": [
+        "Aight schat als jij verslaafd bent ga naar afkick shit of koop van die pleisters bij de apotheek , daarbij met u actief roken stookt u met uw vuile lucht ook de passieve rokers aan dus stop gewoon het is voor niks goed zeg dat roken van u"
+      ]
+    },
+    {
+      "id": "task016-266",
+      "input": "nav artikel over Trump - Boeven-Tower hier uitgaven onderzoeken oa Bill Clinton tav #Trump",
+      "output": [
+        "Naar aanleiding van artikel over Trump - Boeven-Tower hier uitgaven onderzoeken onder andere Bill Clinton ten aanzien van #Trump"
+      ]
+    },
+    {
+      "id": "task016-267",
+      "input": "@Flemchie .. en da was ook altijd 1st e sprintje naar de vleesafdeling trekken voor ‘t invullen v die gazet .. waart ge altijd e kwartier bezig om het juste vakske van ‘t juste vlees te vinden aan voor -/ achterzijde , Om daarna aan ‘t “ echte winkelen ” te kunnen beginnen",
+      "output": [
+        "@Flemchie .. En dat was ook altijd 1ste  sprint naar de vleesafdeling trekken voor het invullen van die gazet .. Was jij altijd een kwartier bezig om het jusite vak van het juiste vlees te vinden aan voor -/ achterzijde , Om daarna aan het “ echte winkelen ” te kunnen beginnen"
+      ]
+    },
+    {
+      "id": "task016-268",
+      "input": "Ik ga ff alles opzij gooien . Vestering heeft goed haar stokpaardje bandejacht bereden . En nu gaan wij discussie voeren hoe dat geregeld is in belarus ALS de paarden daar naar toegaan . In ovp wacht de paarden ook de dood , zij het lanzaam door slechte conditie enz .",
+      "output": [
+        "Ik ga even alles opzij gooien . Vestering heeft goed haar stokpaardje bandejacht bereden . En nu gaan wij discussie voeren hoe dat geregeld is in Belarus als de paarden daar naar toegaan . In ovp wacht de paarden ook de dood , zij het langzaam door slechte conditie enzo ."
+      ]
+    },
+    {
+      "id": "task016-269",
+      "input": "HAHAHAH mensen zijn echt grappig : ams in de metro botst tegen mijn voet aan en struikelt bijna ? Ze gooit gwn boze oog op me ?????? Ik ging gwn lache whahaha wat denk jij",
+      "output": [
+        "HAHAHAH mensen zijn echt grappig : ams in de metro botst tegen mijn voet aan en struikelt bijna ? Ze gooit gewoon boze ogen op me ?????? Ik ging gewoon lachen whahaha wat denk jij"
+      ]
+    },
+    {
+      "id": "task016-270",
+      "input": "Die wonderlike ding van sosiale media , is dat mits jy lank genoeg soek , jy elke dag 'n rede kan vind om vriende te vinde",
+      "output": [
+        "Dat wonderlijke ding van sociale media , is dat mits jij lang genoeg zoekt , je elke dag een reden kan vinden om vrienden te vinden"
+      ]
+    },
+    {
+      "id": "task016-271",
+      "input": "@WeDeWa Idd ga voor Netflix , https://t.co/6r7YAbfJvx etc in combi met ' echt ' onbeperkt internet only van edpnet ( en geen plafond van 750 GB of wat dan ook )",
+      "output": [
+        "@WeDeWa Inderdaad ga voor Netflix , https://t.co/6r7YAbfJvx etcetera in combinatie met ' echt ' onbeperkt internet only van edpnet ( en geen plafond van 750 GB of wat dan ook )"
+      ]
+    },
+    {
+      "id": "task016-272",
+      "input": "Ma vlucht 10:00u Zaventem . Riskeren we rit met @NMBS Noorderkempen - Zaventem Airport ? Uurregeling : vertrek 08:01 aank 8:49 dus we hebben ruim 1 uur maar dan gaan we er wel van uit dat de @NMBS niet staakt , geen vertraging heeft , niet ontspoort enz",
+      "output": [
+        "Maandag vlucht 10:00 uur Zaventem . Riskeren we rit met @NMBS Noorderkempen - Zaventem Airport ? Uurregeling : vertrek 08:01 aankomst 8:49 dus we hebben ruim 1 uur maar dan gaan we er wel van uit dat de @NMBS niet staakt , geen vertraging heeft , niet ontspoort enzo"
+      ]
+    },
+    {
+      "id": "task016-273",
+      "input": "@ImTheExecutor Wss geen duo tournaments meer en dan wss volgend jaar bij een nieuw world cup zal het alleen solo's en trio's zijn",
+      "output": [
+        "@ImTheExecutor Waarschijnlijk geen duo tournaments meer en dan waarschijnlijk volgend jaar bij een nieuw world cup zal het alleen solo's en trio's zijn"
+      ]
+    },
+    {
+      "id": "task016-274",
+      "input": "@djoiszle Haha nou ik vond knoal iig altijd leuk hoor ! En ff poolen in de mingel met slok teveel op ! Of een date naar de Smokey",
+      "output": [
+        "@djoiszle Haha nou ik vond knoal in ieder geval altijd leuk hoor ! En even poolen in de mingel met slok teveel op ! Of een date naar de Smokey"
+      ]
+    },
+    {
+      "id": "task016-275",
+      "input": "@Flemchie .. mor hoe dikwijls kwam ik niet tot de constatatie - ad kassa , halverwege nr huis , thuis na ‘t uitladen vd wagen , of zelfs nadien pas bij ‘t koken - dat ik die stem ni gehoord had of mn nummerke vergat en compleet vergeten was dat ik vlees besteld maar niet had afgehaald",
+      "output": [
+        "@Flemchie .. Maar hoe dikwijls kwam ik niet tot de constatering - aan de kassa , halverwege naar huis , thuis na het uitladen van de wagen , of zelfs nadien pas bij het koken - dat ik die stem niet gehoord had of mijn nummer vergat en compleet vergeten was dat ik vlees besteld maar niet had afgehaald"
+      ]
+    },
+    {
+      "id": "task016-276",
+      "input": "Vakansietyd in die berge ... lekker chill voor die kaggel #vakansie #rus #chill @ Qunu Falls Lodge https://t.co/aL9aJDvv6M",
+      "output": [
+        "Vakantie tijd in de bergen ... Lekker chill voor de kachel #vakansie #rus #chill @ Qunu Falls Lodge https://t.co/aL9aJDvv6M"
+      ]
+    },
+    {
+      "id": "task016-277",
+      "input": "@DVDHx @senorapeca Ja needed ! Mijn vriendin heeft nu ook twee telefoons en dat is zoooveeeel beter . Gwnlekker alles gescheiden houden babe cuz we doing BUSINESS in this household",
+      "output": [
+        "@DVDHx @senorapeca Ja needed ! Mijn vriendin heeft nu ook twee telefoons en dat is zoveel beter . Gewoon lekker alles gescheiden houden babe cuz we doing business in this household"
+      ]
+    },
+    {
+      "id": "task016-278",
+      "input": "mijn fortnite download zo hoere traag omdat ik geen SSD heb en ook nog eens een vrij oude HDD , dit wordt nog ff wachten hahahaha . heb geluk dat de downtime altijd zo lang duurt maar wss kan ik dr zelfs nog later op",
+      "output": [
+        "Mijn fortnite download zo hoeren traag omdat ik geen SSD heb en ook nog eens een vrij oude HDD , dit wordt nog even wachten hahahaha . Heb geluk dat de downtime altijd zo lang duurt maar waarschijnlijk kan ik er zelfs nog later op"
+      ]
+    },
+    {
+      "id": "task016-279",
+      "input": "@csyflop eerdere trein was we hel voor me geweest want ik was voor mn 2:19 trein al om 6 uur opgestaan omdat mn trein naar deventer ook 2 duurt en ik was even last minute mn tas aan t inpakken",
+      "output": [
+        "@csyflop Eerdere trein was wel hel voor me geweest want ik was voor mijn 2:19 trein al om 6 uur opgestaan omdat mijn trein naar Deventer ook 2 duurt en ik was even last minute mijn tas aan het inpakken"
+      ]
+    },
+    {
+      "id": "task016-280",
+      "input": "@diecees @VloonH @ZusterKlivia2 @parool EUR 210,- p.d hotel met overnachting incl halfpension . Huisartsen bieden tegenwoordig specialistische zorg , maar de scholing hiervoor is ontoereikend vlgs Frans Rampen , dermatoloog . Ogv #ouderenzorg is deze mevr geen visitekaartje . Transparant dat ze haar ware gezicht laat zien .",
+      "output": [
+        "@diecees @VloonH @ZusterKlivia2 @parool Euro 210,- per dag hotel met overnachting inclusief halfpension . Huisartsen bieden tegenwoordig specialistische zorg , maar de scholing hiervoor is ontoereikend volgens Frans Rampen , dermatoloog . Op grond van #ouderenzorg is deze mevrouw geen visitekaartje . Transparant dat ze haar ware gezicht laat zien ."
+      ]
+    },
+    {
+      "id": "task016-281",
+      "input": "Zij zouden ook moeten weten dt er bloedige aanslagen in ( islm ) landen zijn gepleegd op moslims en christenen , dr in niqab of burqa verstopte jihadisten . Gezichtsbedekkende kleding vormt een security risk . Nog los vd ( anti ) sociale aspecten .",
+      "output": [
+        "Zij zouden ook moeten weten dat er bloedige aanslagen in ( islamitische ) landen zijn gepleegd op moslims en christenen , door in niqab of burka verstopte jihadisten . Gezichtsbedekkende kleding vormt een security risk . Nog los van de ( anti ) sociale aspecten ."
+      ]
+    },
+    {
+      "id": "task016-282",
+      "input": "@PSV Gvd tyf toch eens op met die je schaal , we hadden gwn de F’ jes op moeten stellen daar om die onzin van dinsdag te voorkomen",
+      "output": [
+        "@PSV Godverdomme rot toch eens op met die  schaal , we hadden gewoon de F’ jes op moeten stellen daar om die onzin van dinsdag te voorkomen"
+      ]
+    },
+    {
+      "id": "task016-283",
+      "input": "eig is t best lullig als shawn de iichy lyrics live verandert van toronto naar een andere stad want dan is ie echt zovan ' ik ben hier nu met dit uitzicht maar ben eig liever in mn hotelkamer haha fuck jullie",
+      "output": [
+        "Eigenlijk is het best lullig als shawn de iichy lyrics live verandert van Toronto naar een andere stad want dan is hij echt zo van ' ik ben hier nu met dit uitzicht maar ben eigenlijk liever in mijn hotelkamer haha fuck jullie"
+      ]
+    },
+    {
+      "id": "task016-284",
+      "input": "Want een rondhuppelend kind steekt nog iets op ??? Don ’t think so . 3 nl maakt er een gewoonte van om het onderwijs naar beneden aan te passen , zodat iedereen kan meekomen . Het niveau zakt dus al decennia . Kenniseconomie ? Gaat je zo niet lukken iig . 4 je kunt wél iets doen",
+      "output": [
+        "Want een rondhuppelend kind steekt nog iets op ??? Don ’t think so . 3 Nederland maakt er een gewoonte van om het onderwijs naar beneden aan te passen , zodat iedereen kan meekomen . Het niveau zakt dus al decennia . Kenniseconomie ? Gaat je zo niet lukken in ieder geval . 4 je kunt wel iets doen"
+      ]
+    },
+    {
+      "id": "task016-285",
+      "input": "Ik was vannacht te gast bij @WordtNuLaat op @NPORadio2 , oa over keuzes mbt columnisten , interviews en covers : \" Het ergste wat je als mediamaker kan overkomen is dat mensen iets lezen en denken : boeie",
+      "output": [
+        "Ik was vannacht te gast bij @WordtNuLaat op @NPORadio2 , onder andere over keuzes met betrekking tot columnisten , interviews en covers : \" Het ergste wat je als mediamaker kan overkomen is dat mensen iets lezen en denken : boeie"
+      ]
+    },
+    {
+      "id": "task016-286",
+      "input": "Dat is pas erg seg ..😫 Het monster van Frankfurt wordt overstelpd met haatboodschappen op Facebook . Worden de schrijvers ervan nu allemaal vervolgd",
+      "output": [
+        "Dat is pas erg zeg ..😫 Het monster van Frankfurt wordt overstelpd met haatboodschappen op Facebook . Worden de schrijvers ervan nu allemaal vervolgd"
+      ]
+    },
+    {
+      "id": "task016-287",
+      "input": "Ik zou al die manlijke haatbaarden ter verantwoording roepen die die vrouwen dwingen om Niqab ’s , Burka ’s en chadors te dragen . Nergens id Koran staat dat dat moet ! En Amnesty Int kan de pot op ! https://t.co/1U5ZEKhuGk",
+      "output": [
+        "Ik zou al die mannelijke haatbaarden ter verantwoording roepen die die vrouwen dwingen om Niqab ’s , Burka ’s en chadors te dragen . Nergens in de Koran staat dat dat moet ! En Amnesty Internationaal kan de pot op ! https://t.co/1U5ZEKhuGk"
+      ]
+    },
+    {
+      "id": "task016-288",
+      "input": "RT @jangajentaan : @klimatheist Als dat de keuze is , dan Nexit . Maar er zal sowieso een Europa / EU komen van verschillende snelheden . Zowel wb immigratie ( Oost-Europa doet niet mee met Merkeliaanse waanzin ) als in monetair opzicht . Dus NL moet eerst eens eigen positie bepalen en assertiever zijn t.o.v. Brussel .",
+      "output": [
+        "RT @jangajentaan : @klimatheist Als dat de keuze is , dan Nexit . Maar er zal sowieso een Europa / Europese Unie komen van verschillende snelheden . Zowel wat betreft immigratie ( Oost-Europa doet niet mee met Merkeliaanse waanzin ) als in monetair opzicht . Dus Nederland moet eerst eens eigen positie bepalen en assertiever zijn ten opzichte van Brussel ."
+      ]
+    },
+    {
+      "id": "task016-289",
+      "input": "@RonSmallenburg Die twew kanten zijn dexelfde kant van de munt Identitair , autoritair , rechts , paternalustisch , godsdienstig ( in de zin van gelovig ), opportunistisch ( in dpelen op goedgelovigheid van hun / het publiek )",
+      "output": [
+        "@RonSmallenburg Die twee kanten zijn dezelfde kant van de munt Identitair , autoritair , rechts , paternalustisch , godsdienstig ( in de zin van gelovig ), opportunistisch ( in delen op goedgelovigheid van hun / het publiek )"
+      ]
+    },
+    {
+      "id": "task016-290",
+      "input": "Heyyyy @PostNL ZIJN WE WEER ! En weeeer met een klacht . Ik had toch écht aangegeven dat het afleveradres bij PostNL locatie in EEXT !! Moest zijn . Wtf is het nu in Groningen & hóe verwachten jullie dat ik dit op kan halen !?!? https://t.co/Bol0AeCfgP",
+      "output": [
+        "Hoi @PostNL zijn we weer ! En weer met een klacht . Ik had toch echt aangegeven dat het afleveradres bij PostNL locatie in Eext !! Moest zijn . Wtf is het nu in Groningen & hoe verwachten jullie dat ik dit op kan halen !?!? https://t.co/Bol0AeCfgP"
+      ]
+    },
+    {
+      "id": "task016-291",
+      "input": "Damian van temptation praat echt als zo ’n voetballer na een wedstrijd ‘ Ja ... dit uh .. is natuurlijkee niet echt het resultaat waar je wilt zien .... maareh",
+      "output": [
+        "Damian van temptation praat echt als zo een voetballer na een wedstrijd ‘ Ja ... Dit uh .. Is natuurlijk niet echt het resultaat wat je wilt zien .... Maar"
+      ]
+    },
+    {
+      "id": "task016-292",
+      "input": "@luchtigtwitt3r Ik saptne aellen het ltastae wrood neit .",
+      "output": [
+        "@luchtigtwitt3r Ik snapte alleen het laatste woord niet ."
+      ]
+    },
+    {
+      "id": "task016-293",
+      "input": "Vanmorgen bracht @radio1be #deochtend n item over de slachting dr Nazi's op joden tijdens Opstand v Warschau 75 jr geleden . Zal de Vlaamse pers de 75 ste verjaardag van de sadistsiche houding van Stalin tov de Oost-Europese VOLKEREN herdenken vanaf einde december 2019? @vvlg_vl https://t.co/NPsSTAqi3Y",
+      "output": [
+        "Vanmorgen bracht @radio1be #deochtend een item over de slachting door Nazi's op joden tijdens opstand van Warschau 75 jaar geleden . Zal de Vlaamse pers de 75 ste verjaardag van de sadistsiche houding van Stalin ten opzichte van de Oost-Europese volkeren herdenken vanaf einde december 2019? @vvlg_vl https://t.co/NPsSTAqi3Y"
+      ]
+    },
+    {
+      "id": "task016-294",
+      "input": "Mot je goet luistere . Ben bestuurslit Van fvd . Allenig maar manne . Tjerrie , Theo , Henkie , Fransje , noem maar op . Kmoet ook aan me gerief komen , niet dan , teringlijers , homo's .",
+      "output": [
+        "Moet je goed luisteren . Ben bestuurslid Van FVD . Alleen maar mannen . Tjerrie , Theo , Henkie , Fransje , noem maar op . Ik moet ook aan mijn gerief komen , niet dan , teringlijers , homo's ."
+      ]
+    },
+    {
+      "id": "task016-295",
+      "input": "Geluk met jou verjaarsdag Chris Smit ! Mag jy 'n heerlike geseënde dag hê . https://t.co/yc5ApGSWRY",
+      "output": [
+        "Geluk met jou verjaardag Chris Smit ! Mag jij een heerlijke gezonde dag hebben . https://t.co/yc5ApGSWRY"
+      ]
+    },
+    {
+      "id": "task016-296",
+      "input": "@astromaud Kan t niet openen mss door mn kutwificop werk smh maar thanks !!",
+      "output": [
+        "@astromaud Kan het niet openen misschien door mijn kut wifi op werk smh maar thanks !!"
+      ]
+    },
+    {
+      "id": "task016-297",
+      "input": "Beste mannekes , Tis 01/08/2019 en voor sommige onder ons ist DE maand om t studeren dus aan alle studenten die gaan studeren wij kunnen dit . Wij gaan dat knallen . Our last chance to perform . Lets do this . Goodluck y’ all . Grtjs Manneke",
+      "output": [
+        "Beste mannen , Het is 01/08/2019 en voor sommige onder ons is het de maand om te studeren dus aan alle studenten die gaan studeren wij kunnen dit . Wij gaan dat knallen . Our last chance to perform . Lets do this . Goodluck y’ all . Groetjes Manneke"
+      ]
+    },
+    {
+      "id": "task016-298",
+      "input": "Goh , onze eerste ' take down ' notice van Zuck en zijn vrinden nav . klachten over de content . Maar na aanvullend onderzoek vinden ze dat de film toch op FB mag blijven . Bewijst nog maar is hoe nodig de Pride is .",
+      "output": [
+        "Goh , onze eerste ' take down ' notice van Zuck en zijn vrienden naar aanleiding van . Klachten over de content . Maar na aanvullend onderzoek vinden ze dat de film toch op Facebook mag blijven . Bewijst nog maar is hoe nodig de Pride is ."
+      ]
+    },
+    {
+      "id": "task016-299",
+      "input": "@chrisklomp Niet . Maar dat is de motivatie idd niet . Los van evt onderdrukking vind ik het onwenselijk als mensen zich in het openbaar totaal bedekken of geheel ontkleden . In zoverre ben ik voor . Alleen doet het b-verbod alles bijelkaar ws meer kwaad dan goed . Vraag is wat je dan bereikt",
+      "output": [
+        "@chrisklomp Niet . Maar dat is de motivatie inderdaad niet . Los van eventuele onderdrukking vind ik het onwenselijk als mensen zich in het openbaar totaal bedekken of geheel ontkleden . In zoverre ben ik voor . Alleen doet het b-verbod alles bij elkaar waarschijnlijk meer kwaad dan goed . Vraag is wat je dan bereikt"
+      ]
+    },
+    {
+      "id": "task016-300",
+      "input": "RT @AnitaOost87 : Vond je ‘t vorige week te heet ? En klaag je mrgn over #wateroverlast ? Laat dan gratis jouw boom planten in @AmsterdamNL voor regenbestendige stad , meer verkoeling , vogels , mooier uitzicht , frisse lucht etc etc",
+      "output": [
+        "RT @AnitaOost87 : Vond je het vorige week te heet ? En klaag je morgen over #wateroverlast ? Laat dan gratis jouw boom planten in @AmsterdamNL voor regenbestendige stad , meer verkoeling , vogels , mooier uitzicht , frisse lucht etcetera etcetera"
+      ]
+    },
+    {
+      "id": "task016-301",
+      "input": "@saskiathewicked Haha bij mij kwam onlangs iemand van in mijn middelbare school op café tegen mij zeggen : \" Amai gij zijt zo knap geworden , vroeger waart gij zo ne rare gothic \" Euhm well , thanks I guess ?",
+      "output": [
+        "@saskiathewicked Haha bij mij kwam onlangs iemand van in mijn middelbare school op café tegen mij zeggen : \" Amai jij bent zo knap geworden , vroeger was jij zo een rare gothic \" Euhm well , thanks I guess ?"
+      ]
+    },
+    {
+      "id": "task016-302",
+      "input": "Ik wil een mes door me hart steken elke x dat kabouter looking guys horny shit tweeten kga stuk",
+      "output": [
+        "Ik wil een mes door me hart steken elke keer dat kabouter looking guys horny shit tweeten ik ga stuk"
+      ]
+    },
+    {
+      "id": "task016-303",
+      "input": "@Amairosie @geertwilderspvv Gaat niet gebeuren . Ze wonen vnl . in hun enclaves in A’ dam-West , Schilderswijk DH , Overvecht UT . Daar waar wij niet meer zomaar kunnen lopen zonder agressie . Dus niet huilen voordat het gebeurt .",
+      "output": [
+        "@Amairosie @geertwilderspvv Gaat niet gebeuren . Ze wonen voornamelijk . In hun enclaves in Amsterdam West , Schilderswijk Den Haag , Overvecht Utrecht . Daar waar wij niet meer zomaar kunnen lopen zonder agressie . Dus niet huilen voordat het gebeurt ."
+      ]
+    },
+    {
+      "id": "task016-304",
+      "input": "@TheDailyTurbo het is voor mij helaas onmogelijk om naar dit webinar te kijken ivm andere verplichtingen ! Komt er op twitter mss nog een samenvatting ? Bijv . over AMG",
+      "output": [
+        "@TheDailyTurbo Het is voor mij helaas onmogelijk om naar dit webinar te kijken in verband met andere verplichtingen ! Komt er op twitter misschien nog een samenvatting ? Bijvoorbeeld . Over AMG"
+      ]
+    },
+    {
+      "id": "task016-305",
+      "input": "@PeterRdeV Nog steeds mogen moslima's in NL op straat hun gezicht bedekken . Zij beroepen zich op vrije keuze . Steunen zij de zusters in Iran die ook vrij willen kiezen en elke hoofdbedekking weigeren ? Onderstaande Iraanse kreeg 16 jaar cel - wat vinden de NLse gezichtsbedekkers hiervan ?",
+      "output": [
+        "@PeterRdeV Nog steeds mogen moslima's in Nederland op straat hun gezicht bedekken . Zij beroepen zich op vrije keuze . Steunen zij de zusters in Iran die ook vrij willen kiezen en elke hoofdbedekking weigeren ? Onderstaande Iraanse kreeg 16 jaar cel - wat vinden de Nederlandse gezichtsbedekkers hiervan ?"
+      ]
+    },
+    {
+      "id": "task016-306",
+      "input": "@helemaal_mezelf Euh ... ok ! Veel succes dan in uw zoektocht . Milieu allemaal goe en wel maar op diene ene Senseo gaat t ni komen zenne . Die gaan allemaaaaal kapot na een jaar . En dat is NIET mijn schuld voor ik de deur tegen mijn neus krijg over mijn milieu-opmerking .",
+      "output": [
+        "@helemaal_mezelf Euh ... Oké ! Veel succes dan in uw zoektocht . Milieu allemaal goed en wel maar op die ene Senseo gaat het niet komen zenne . Die gaan allemaal kapot na een jaar . En dat is niet mijn schuld voor ik de deur tegen mijn neus krijg over mijn milieu-opmerking ."
+      ]
+    },
+    {
+      "id": "task016-307",
+      "input": "Wil dit weekend fakt ap gaan . eig nu al mr kanniet",
+      "output": [
+        "Wil dit weekend fakt op gaan . Eigenlijk nu al maar kan niet"
+      ]
+    }
+  ],
+  "Instance License": [
+    "Unknown"
+  ]
+}

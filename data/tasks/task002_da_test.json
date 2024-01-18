@@ -1,0 +1,1323 @@
+{
+  "Contributors": [
+    "Swaroop Mishra",
+    "Daniel Khashabi"
+  ],
+  "Source": [
+    "MultiLexNorm: Multilingual Lexical Normalization"
+  ],
+  "URL": [
+    "https://noisy-text.github.io/2021/multi-lexnorm.html"
+  ],
+  "Categories": [
+    "Lexical Normalization"
+  ],
+  "Reasoning": [
+    "Temporal Reasoning",
+    "Commonsense Reasoning"
+  ],
+  "Definition": [
+    "Lexical norm"
+  ],
+  "Input_language": [
+    "Multilanguage"
+  ],
+  "Output_language": [
+    "Multilanguage"
+  ],
+  "Instruction_language": [
+    "Multilanguage"
+  ],
+  "Domains": [
+    "Twitter",
+    "Arto",
+    "sms",
+    "forum"
+  ],
+  "Positive Examples": [
+    {
+      "input": "Carina : * ser helt chokeret pa Tanja * \" det var sgu da ik panten jeg taenkte pa , det var naturen ! \"",
+      "output": "Carina : * ser helt chokeret pa Tanja * \" det var sgu da ikke panten jeg tænkte på , det var naturen ! \"",
+      "explanation": "The text is now lexically normalized and correct."
+    }
+  ],
+  "Negative Examples": [
+    {
+      "input": "Det braender i halsen .",
+      "output": "Det brænder in halen .",
+      "explanation": "The text is not lexically normalized and it is incorrect."
+    }
+  ],
+  "Instances": [
+    {
+      "id": "task002-0",
+      "input": "Jeg skaelver .",
+      "output": [
+        "Jeg skælver ."
+      ]
+    },
+    {
+      "id": "task002-1",
+      "input": "Jeg stryger en taendstik .",
+      "output": [
+        "Jeg stryger en tændstik ."
+      ]
+    },
+    {
+      "id": "task002-2",
+      "input": "Jeg tager den vaek igen .",
+      "output": [
+        "Jeg tager den væk igen ."
+      ]
+    },
+    {
+      "id": "task002-3",
+      "input": "Tag mig vaek .",
+      "output": [
+        "Tag mig væk ."
+      ]
+    },
+    {
+      "id": "task002-4",
+      "input": "Gid de aldrig ville vagne igen .",
+      "output": [
+        "Gid de aldrig ville vågne igen ."
+      ]
+    },
+    {
+      "id": "task002-5",
+      "input": "Det ville vaere rart at slippe vaek herfra .",
+      "output": [
+        "Det ville være rart at slippe væk herfra ."
+      ]
+    },
+    {
+      "id": "task002-6",
+      "input": "Jeg traekker stille i tøjet .",
+      "output": [
+        "Jeg trækker stille i tøjet ."
+      ]
+    },
+    {
+      "id": "task002-7",
+      "input": "Sørger for ikke at ramme saret pa maven .",
+      "output": [
+        "Sørger for ikke at ramme såret pa maven ."
+      ]
+    },
+    {
+      "id": "task002-8",
+      "input": "Ingen lagde maerke til det .",
+      "output": [
+        "Ingen lagde mærke til det ."
+      ]
+    },
+    {
+      "id": "task002-9",
+      "input": "Hvorfor skulle de ogsa det ?",
+      "output": [
+        "Hvorfor skulle de også det ?"
+      ]
+    },
+    {
+      "id": "task002-10",
+      "input": "Deres datter der fejlede da hun naede gymnasiet .",
+      "output": [
+        "Deres datter der fejlede da hun nåede gymnasiet ."
+      ]
+    },
+    {
+      "id": "task002-11",
+      "input": "Hende den misforstaede fejl .",
+      "output": [
+        "Hende den misforståede fejl ."
+      ]
+    },
+    {
+      "id": "task002-12",
+      "input": "Saette saksen i pulsaren .",
+      "output": [
+        "Sætte saksen i pulsåren ."
+      ]
+    },
+    {
+      "id": "task002-13",
+      "input": "Bare for at draebe den indre smerte .",
+      "output": [
+        "Bare for at dræbe den indre smerte ."
+      ]
+    },
+    {
+      "id": "task002-14",
+      "input": "Jeg gar ind pa mit vaerelse .",
+      "output": [
+        "Jeg går ind på mit værelse ."
+      ]
+    },
+    {
+      "id": "task002-15",
+      "input": "Og paenere .",
+      "output": [
+        "Og pænere ."
+      ]
+    },
+    {
+      "id": "task002-16",
+      "input": "Eller druknes .",
+      "output": [
+        "Eller druknes ."
+      ]
+    },
+    {
+      "id": "task002-17",
+      "input": "Det braender i halsen .",
+      "output": [
+        "Det brænder i halsen ."
+      ]
+    },
+    {
+      "id": "task002-18",
+      "input": "Jeg slar hoved bagover .",
+      "output": [
+        "Jeg slår hovedet bagover ."
+      ]
+    },
+    {
+      "id": "task002-19",
+      "input": "Mit vaerelse snurrer rundt .",
+      "output": [
+        "Mit værelse snurrer rundt ."
+      ]
+    },
+    {
+      "id": "task002-20",
+      "input": "Jeg saetter mig ned pa gulvet .",
+      "output": [
+        "Jeg sætter mig ned på gulvet ."
+      ]
+    },
+    {
+      "id": "task002-21",
+      "input": "Det sortner ud .. Mine haender er foran mit ansigt .",
+      "output": [
+        "Det sortner ud .. Mine hænder er foran mit ansigt ."
+      ]
+    },
+    {
+      "id": "task002-22",
+      "input": "Hun prøver at fjerne haenderne fra mine øjne .",
+      "output": [
+        "Hun prøver at fjerne hænderne fra mine øjne ."
+      ]
+    },
+    {
+      "id": "task002-23",
+      "input": "Den er indtraengende .",
+      "output": [
+        "Den er indtrængende ."
+      ]
+    },
+    {
+      "id": "task002-24",
+      "input": "De andre havde fri for laengst .",
+      "output": [
+        "De andre havde fri for længst ."
+      ]
+    },
+    {
+      "id": "task002-25",
+      "input": "Bare hun dog ville lade vaere .",
+      "output": [
+        "Bare hun dog ville lade være ."
+      ]
+    },
+    {
+      "id": "task002-26",
+      "input": "Kan ikke vente til den naeste kommer . '",
+      "output": [
+        "Kan ikke vente til den næste kommer . '"
+      ]
+    },
+    {
+      "id": "task002-27",
+      "input": "Igen er tarerne lige pa renden til at løbe ned af mine kinder .",
+      "output": [
+        "Igen er tarerne lige på renden til at løbe ned af mine kinder ."
+      ]
+    },
+    {
+      "id": "task002-28",
+      "input": "Jeg saetter mig op i badekaret igen .",
+      "output": [
+        "Jeg sætter mig op i badekaret igen ."
+      ]
+    },
+    {
+      "id": "task002-29",
+      "input": "Jeg far en darlig smag i munden .",
+      "output": [
+        "Jeg får en dårlig smag i munden ."
+      ]
+    },
+    {
+      "id": "task002-30",
+      "input": "Prøver med noget skum fra badet , at daekke de sma røde streger der pryder min krop .",
+      "output": [
+        "Prøver med noget skum fra badet , at dække de små røde streger der pryder min krop ."
+      ]
+    },
+    {
+      "id": "task002-31",
+      "input": "Diaeten er ogsa ved at komme pa plads .",
+      "output": [
+        "Diæten er også ved at komme på plads ."
+      ]
+    },
+    {
+      "id": "task002-32",
+      "input": "To rugsbrødsmadder .",
+      "output": [
+        "To rugsbrødsmadder ."
+      ]
+    },
+    {
+      "id": "task002-33",
+      "input": "Jeg er staerk .",
+      "output": [
+        "Jeg er stærk ."
+      ]
+    },
+    {
+      "id": "task002-34",
+      "input": "Jeg skammer mig over mig selv .",
+      "output": [
+        "Jeg skammer mig over mig selv ."
+      ]
+    },
+    {
+      "id": "task002-35",
+      "input": "Følelsen af at vaere udenfor og ensom .",
+      "output": [
+        "Følelsen af at være udenfor og ensom ."
+      ]
+    },
+    {
+      "id": "task002-36",
+      "input": "Da han spurgte om han matte vaere med .",
+      "output": [
+        "Da han spurgte om han måtte være med ."
+      ]
+    },
+    {
+      "id": "task002-37",
+      "input": "Hans arme haenger ned langs siden .",
+      "output": [
+        "Hans arme hænger ned langs siden ."
+      ]
+    },
+    {
+      "id": "task002-38",
+      "input": "Jeg er vaerdsat .",
+      "output": [
+        "Jeg er værdsat ."
+      ]
+    },
+    {
+      "id": "task002-39",
+      "input": "Sagt at han matte vaere med .",
+      "output": [
+        "Sagt at han måtte være med ."
+      ]
+    },
+    {
+      "id": "task002-40",
+      "input": "Jeg ma spise i naeste uge .",
+      "output": [
+        "Jeg må spise i næste uge ."
+      ]
+    },
+    {
+      "id": "task002-41",
+      "input": "Men hører ikke laereren .",
+      "output": [
+        "Men hører ikke læreren ."
+      ]
+    },
+    {
+      "id": "task002-42",
+      "input": "Laengst vaek .",
+      "output": [
+        "Længst væk ."
+      ]
+    },
+    {
+      "id": "task002-43",
+      "input": "Ensom i maengden .",
+      "output": [
+        "Ensom i mængden ."
+      ]
+    },
+    {
+      "id": "task002-44",
+      "input": "End ensom i maengden .",
+      "output": [
+        "End ensom i mængden ."
+      ]
+    },
+    {
+      "id": "task002-45",
+      "input": "Den lille prop , med de sarede øjne .",
+      "output": [
+        "Den lille prop , med de sårede øjne ."
+      ]
+    },
+    {
+      "id": "task002-46",
+      "input": "Gør til ven hvorfor bruger man a-b-c ... i bher hvorfor bruger man a-b-c ... i bher Hvad bruger du skat ?",
+      "output": [
+        "Gør til ven hvorfor bruger man a-b-c ... i bher hvorfor bruger man a-b-c ... i bher Hvad bruger du skat ?"
+      ]
+    },
+    {
+      "id": "task002-47",
+      "input": "Men i enden , er det der vaerd .",
+      "output": [
+        "Men i enden , er det der værd ."
+      ]
+    },
+    {
+      "id": "task002-48",
+      "input": "Jeg vil bare gøre , hva jeg kan lide !",
+      "output": [
+        "Jeg vil bare gøre , hvad jeg kan lide !"
+      ]
+    },
+    {
+      "id": "task002-49",
+      "input": "Men du virker oki nice ...",
+      "output": [
+        "Men du virker okay nice ..."
+      ]
+    },
+    {
+      "id": "task002-50",
+      "input": "mh .",
+      "output": [
+        "mh ."
+      ]
+    },
+    {
+      "id": "task002-51",
+      "input": "jeg'er blevet sa indelukket efter , det med metter , jeg ved ikke hvor mine følser er henne \\ - jeg er jo ikke mig selv mere ? '",
+      "output": [
+        "jeg er blevet så indelukket efter , det med Mette , jeg ved ikke hvor mine følser er henne \\ - jeg er jo ikke mig selv mere ? '"
+      ]
+    },
+    {
+      "id": "task002-52",
+      "input": "mh'jeg savner dig jo pige .",
+      "output": [
+        "jeg savner dig jo pige ."
+      ]
+    },
+    {
+      "id": "task002-53",
+      "input": "sp var du vaek .",
+      "output": [
+        "så var du væk ."
+      ]
+    },
+    {
+      "id": "task002-54",
+      "input": "mh hvem kan jeg komme til nu ?",
+      "output": [
+        "mh hvem kan jeg komme til nu ?"
+      ]
+    },
+    {
+      "id": "task002-55",
+      "input": "' jeg elsker dig forhelvede .",
+      "output": [
+        "' jeg elsker dig forhelvede ."
+      ]
+    },
+    {
+      "id": "task002-56",
+      "input": "jeg savner jo forhelvede alt ved dig skat .",
+      "output": [
+        "jeg savner jo forhelvede alt ved dig skat ."
+      ]
+    },
+    {
+      "id": "task002-57",
+      "input": "Men mere kaerlighed til dig har jeg faet .",
+      "output": [
+        "Men mere kærlighed til dig har jeg fået ."
+      ]
+    },
+    {
+      "id": "task002-58",
+      "input": "Jeg ved godt at jeg ikke har vaeret saerlig romantisk .",
+      "output": [
+        "Jeg ved godt at jeg ikke har været særlig romantisk ."
+      ]
+    },
+    {
+      "id": "task002-59",
+      "input": "Man kan ikke undga at blive misundelig .",
+      "output": [
+        "Man kan ikke undgå at blive misundelig ."
+      ]
+    },
+    {
+      "id": "task002-60",
+      "input": "Jeg ved godt jeg har vaeret et svin .",
+      "output": [
+        "Jeg ved godt jeg har været et svin ."
+      ]
+    },
+    {
+      "id": "task002-61",
+      "input": "Men jeg vil bare vaere din .",
+      "output": [
+        "Men jeg vil bare være din ."
+      ]
+    },
+    {
+      "id": "task002-62",
+      "input": "Min kaerlighed til dig er sa stor .",
+      "output": [
+        "Min kærlighed til dig er så stor ."
+      ]
+    },
+    {
+      "id": "task002-63",
+      "input": "fuck det er smukt Vil habe pigen , du har skrevet det laeser det !",
+      "output": [
+        "fuck det er smukt Vil håbe pigen , du har skrevet det læser det !"
+      ]
+    },
+    {
+      "id": "task002-64",
+      "input": "Man kan jo kun faelde en tare nar man laeser det her .",
+      "output": [
+        "Man kan jo kun fælde en tåre når man læser det her ."
+      ]
+    },
+    {
+      "id": "task002-65",
+      "input": "<3 det sku sødt skat ' Baby jeg ma sgu give dig , at du er en god digter <3 ' Det er sa hudløst aerlig skrevet , jeg kan maerke det hele i min sjael , nar jeg laeser det !",
+      "output": [
+        "<3 det sgu sødt skat ' Baby jeg må sgu give dig , at du er en god digter <3 ' Det er så hudløst ærligt skrevet , jeg kan mærke det hele i min sjæl , når jeg læser det !"
+      ]
+    },
+    {
+      "id": "task002-66",
+      "input": "narh du er saaarh sød <3 .",
+      "output": [
+        "nårh du er så sød <3 ."
+      ]
+    },
+    {
+      "id": "task002-67",
+      "input": "haber pigen du elsker laeser det .",
+      "output": [
+        "håber pigen du elsker læser det ."
+      ]
+    },
+    {
+      "id": "task002-68",
+      "input": "men har osse købt cden xD Downloader normalt min musik , men i tilfaelde som dette , køber jeg CD'ed for at støtte bandet .",
+      "output": [
+        "men har også købt cden xD Downloader normalt min musik , men i tilfælde som dette , køber jeg CD'en for at støtte bandet ."
+      ]
+    },
+    {
+      "id": "task002-69",
+      "input": "har ik downloadet .. og Selfø'lig ska jeg købe den ! !",
+      "output": [
+        "har ikke downloadet .. og selvfølgelig skal jeg købe den ! !"
+      ]
+    },
+    {
+      "id": "task002-70",
+      "input": "liige sa snart den kommer pa butikkerne her i grønland de kommer jo altid senere .. ka ik vente !",
+      "output": [
+        "lige så snart den kommer på butikkerne her i Grønland de kommer jo altid senere .. kan ikke vente !"
+      ]
+    },
+    {
+      "id": "task002-71",
+      "input": ".. <3 3 Vi skal nok hjaelpe jer dreng !",
+      "output": [
+        ".. <3 3 Vi skal nok hjælpe jer dreng !"
+      ]
+    },
+    {
+      "id": "task002-72",
+      "input": "I er de eneste jeg ikk har kunnet fa mig selv til at downloade !",
+      "output": [
+        "I er de eneste jeg ikke har kunnet få mig selv til at downloade !"
+      ]
+    },
+    {
+      "id": "task002-73",
+      "input": "Og nu taenker jeg ikke , uhh ha .. Overtradelse af loven bare .",
+      "output": [
+        "Og nu tænker jeg ikke , uhh ha .. Overtrædelse af loven bare ."
+      ]
+    },
+    {
+      "id": "task002-74",
+      "input": "Taenk hvis alle downloadede ulovligt , sa ville bandet ( uanset hvem ) jo ikke have penge nok , ikke kunne betale sig til alt det man nu skal , ikke kunne lave mere sakin musik , ja selv nye guitare , trommer osv skal der jo ogsa penge til !",
+      "output": [
+        "Tænk hvis alle downloadede ulovligt , så ville bandet ( uanset hvem ) jo ikke have penge nok , ikke kunne betale sig til alt det man nu skal , ikke kunne lave mere sakin musik , ja selv nye guitarer , trommer osv skal der jo også penge til !"
+      ]
+    },
+    {
+      "id": "task002-75",
+      "input": "Jeg har KØBT den , jeg ville aldrig downloade noget musik nar det er sadan et sakin bandt Jeg har da købt den ( : Jeg ville ALDRIG downloade ulovligt !",
+      "output": [
+        "Jeg har KØBT den , jeg ville aldrig downloade noget musik når det er sådan et sakin bandt Jeg har da købt den ( : Jeg ville aldrig downloade ulovligt !"
+      ]
+    },
+    {
+      "id": "task002-76",
+      "input": "I har fuldstaendig ret i det i skriver .",
+      "output": [
+        "I har fuldstændig ret i det i skriver ."
+      ]
+    },
+    {
+      "id": "task002-77",
+      "input": "Det er dumt at downloade .",
+      "output": [
+        "Det er dumt at downloade ."
+      ]
+    },
+    {
+      "id": "task002-78",
+      "input": "Jeg vandt den i en koncurrence .",
+      "output": [
+        "Jeg vandt den i en koncurrence ."
+      ]
+    },
+    {
+      "id": "task002-79",
+      "input": "Som tak smider vi lige den naeste backstage video fra Holstebro op pa siden.Det er sku ´ nok den skøreste til dato . Følg os i tourbussen upclose , overvaer den spaendende finale i Sorteper , se Corfitz blive til Nik fra Backstreet Boys , find ud af hvor lidt Dreams ved om DK ´ s geografi , hør om Hans ´ \" magic mushroom \" osv ..",
+      "output": [
+        "Som tak smider vi lige den næste backstage video fra Holstebro op på siden. Det er sgu ´ nok den skøreste til dato . Følg os i tourbussen upclose , overvær den spændende finale i Sorteper , se Corfitz blive til Nik fra Backstreet Boys , find ud af hvor lidt Dreams ved om DK ´ s geografi , hør om Hans ´ \" magic mushroom \" osv .."
+      ]
+    },
+    {
+      "id": "task002-80",
+      "input": "xD jeg har stemt men lover at stemme 1000gange mere endnu xD + omg !",
+      "output": [
+        "xD jeg har stemt men lover at stemme 1000 gange mere endnu xD + omg !"
+      ]
+    },
+    {
+      "id": "task002-81",
+      "input": "TILLYKKW Skøre og skønne qxD Ledige stillinger !",
+      "output": [
+        "Tillykke Skøre og skønne qxD Ledige stillinger !"
+      ]
+    },
+    {
+      "id": "task002-82",
+      "input": "I hele 7 maneder har du knoklet for at overvinde kraeften i maven pa dig .",
+      "output": [
+        "I hele 7 måneder har du knoklet for at overvinde kræften i maven på dig ."
+      ]
+    },
+    {
+      "id": "task002-83",
+      "input": "Laegerne sagde at du virkelig kaempede for livet , og du ville bare have gode resultater fra røngent , og du skulle havde vaeret til samtale i dag med overlaegen .",
+      "output": [
+        "Lægerne sagde at du virkelig kæmpede for livet , og du ville bare have gode resultater fra røngten , og du skulle havde været til samtale i dag med overlægen ."
+      ]
+    },
+    {
+      "id": "task002-84",
+      "input": "Men alligevel gik jeg laengere og laengere ud .",
+      "output": [
+        "Men alligevel gik jeg længere og længere ud ."
+      ]
+    },
+    {
+      "id": "task002-85",
+      "input": "Haber du har det godt far , _savner_ dig virkelig , og taenker pa dig hele tiden !",
+      "output": [
+        "Håber du har det godt far , savner dig virkelig , og tænker på dig hele tiden !"
+      ]
+    },
+    {
+      "id": "task002-86",
+      "input": "selvom jeg graed meget / ' : Dindindin lotte .",
+      "output": [
+        "selvom jeg græd meget / ' : Dindindin lotte ."
+      ]
+    },
+    {
+      "id": "task002-87",
+      "input": "men jeq siideer sku og tuder nu stakkels diig ja hva med nar du ska giftes nar du ska have børn ?",
+      "output": [
+        "men jeg sidder sgu og tuder nu stakkels dig ja hvad med når du skal giftes når du skal have børn ?"
+      ]
+    },
+    {
+      "id": "task002-88",
+      "input": "han kan ikk vaere der nar du ska giftes han kan ikk se sine bønebørn oohh stakkels diig ) : wow ... det er jeg virkelig ked af at høre / : hvor er det synd for dig .",
+      "output": [
+        "han kan ikke være der når du skal giftes han kan ikke se sine bønebørn oh stakkels dig ) : wow ... det er jeg virkelig ked af at høre / : hvor er det syndt for dig ."
+      ]
+    },
+    {
+      "id": "task002-89",
+      "input": "det ma vaere det vaerste at miste en foraeldre !",
+      "output": [
+        "det må være det værste at miste en forælder !"
+      ]
+    },
+    {
+      "id": "task002-90",
+      "input": "livet er aldrig fair , og i gjorde hvad i kunne <3 har naesten ogsa lige mistet min far .",
+      "output": [
+        "livet er aldrig fair , og i gjorde hvad i kunne <3 har næsten ogsa lige mistet min far ."
+      ]
+    },
+    {
+      "id": "task002-91",
+      "input": "det ma virkelig vaere hardt .",
+      "output": [
+        "det må virkelig være hårdt ."
+      ]
+    },
+    {
+      "id": "task002-92",
+      "input": "jeg er ked af det pa dine vejne .",
+      "output": [
+        "jeg er ked af det på dine vejne ."
+      ]
+    },
+    {
+      "id": "task002-93",
+      "input": "Virkelig rørende at laese .",
+      "output": [
+        "Virkelig rørende at læse ."
+      ]
+    },
+    {
+      "id": "task002-94",
+      "input": "Hvor ma det vaere hardt at miste noget man holder sa meget af .",
+      "output": [
+        "Hvor må det være hårdt at miste noget man holder så meget af ."
+      ]
+    },
+    {
+      "id": "task002-95",
+      "input": "Kan slet ikke taenke mig til det .",
+      "output": [
+        "Kan slet ikke tænke mig til det ."
+      ]
+    },
+    {
+      "id": "task002-96",
+      "input": ":/ Det er virkeliq synd for diq !",
+      "output": [
+        ":/ Det er virkelig syndt for dig !"
+      ]
+    },
+    {
+      "id": "task002-97",
+      "input": "Føler sq med diq søde !",
+      "output": [
+        "Føler sgu med dig søde !"
+      ]
+    },
+    {
+      "id": "task002-98",
+      "input": "<3 føler sku virkelig meget med dig .",
+      "output": [
+        "<3 føler sgu virkelig meget med dig ."
+      ]
+    },
+    {
+      "id": "task002-99",
+      "input": "Ma han hville i fred .",
+      "output": [
+        "Må han hvile i fred ."
+      ]
+    },
+    {
+      "id": "task002-100",
+      "input": "Haber dig & din familie far det godt orgh .",
+      "output": [
+        "Håber dig & din familie får det godt orgh ."
+      ]
+    },
+    {
+      "id": "task002-101",
+      "input": "Sa Kunne det jo godt vaere at man bare ikke maerker et pa samme made ? ?",
+      "output": [
+        "Så Kunne det jo godt være at man bare ikke mærker et på samme måde ? ?"
+      ]
+    },
+    {
+      "id": "task002-102",
+      "input": "Carina : * ser helt chokeret pa Tanja * \" det var sgu da ik panten jeg taenkte pa , det var naturen ! \"",
+      "output": [
+        "Carina : * ser helt chokeret pa Tanja * \" det var sgu da ikke panten jeg tænkte på , det var naturen ! \""
+      ]
+    },
+    {
+      "id": "task002-103",
+      "input": "godt for du blir adrig andet Omg , jeg elsker at vaere et dyr det er fordi hun klaret sig darligt i sit tidligere liv , nu er hun et dyr som straf , sa hun kan laere det YES Jeg er et dyr YES !",
+      "output": [
+        "godt for du bliver aldrig andet Omg , jeg elsker at være et dyr det er fordi hun klaret sig dårligt i sit tidligere liv , nu er hun et dyr som straf , så hun kan lære det YES Jeg er et dyr yes !"
+      ]
+    },
+    {
+      "id": "task002-104",
+      "input": "Gør til ven Hvad er paenest ?",
+      "output": [
+        "Gør til ven hvad er pænest ?"
+      ]
+    },
+    {
+      "id": "task002-105",
+      "input": "men galt klaer dig bedre s : naughty <3 du er jo sa smukka alligevel !",
+      "output": [
+        "men galt klæder dig bedre s : naughty <3 du er jo så smuk alligevel !"
+      ]
+    },
+    {
+      "id": "task002-106",
+      "input": "louise , du er smuk med glattet har , men ogsa med din naturlige made .",
+      "output": [
+        "Louise , du er smuk med glattet hår , men også med din naturlige måde ."
+      ]
+    },
+    {
+      "id": "task002-107",
+      "input": "<3 .. men du er jo paen uanset hvad .",
+      "output": [
+        "<3 .. men du er jo pæn uanset hvad ."
+      ]
+    },
+    {
+      "id": "task002-108",
+      "input": "Krøller og du er paenest Men du er paenest med krøller ... Du er paen uanset hvad , skat !",
+      "output": [
+        "Krøller og du er paenest Men du er pænest med krøller ... Du er pæn uanset hvad , skat !"
+      ]
+    },
+    {
+      "id": "task002-109",
+      "input": "jamen , sadan helt seriøst .",
+      "output": [
+        "jamen , sådan helt seriøst ."
+      ]
+    },
+    {
+      "id": "task002-110",
+      "input": "i er \" ahh , sa vidunderlige \" liiiige indtil man laerer jer at kende ?",
+      "output": [
+        "i er \" ahh , så vidunderlige \" lige indtil man lærer jer at kende ?"
+      ]
+    },
+    {
+      "id": "task002-111",
+      "input": "Jeg er traet af jeres darlige løgne .",
+      "output": [
+        "Jeg er træt af jeres dårlige løgne ."
+      ]
+    },
+    {
+      "id": "task002-112",
+      "input": "Jeg er traet af jeres arrogance .",
+      "output": [
+        "Jeg er træt af jeres arrogance ."
+      ]
+    },
+    {
+      "id": "task002-113",
+      "input": "\" .. øh , vi er jo ikke allesammen sadan ? ! \"",
+      "output": [
+        "\" .. øh , vi er jo ikke allesammen sådan ? ! \""
+      ]
+    },
+    {
+      "id": "task002-114",
+      "input": "jeg vil saaaa gerne tro pa det - _S Å UFATTELIG GERNE !",
+      "output": [
+        "jeg vil så gerne tro på det - så  ufattelig gerne !"
+      ]
+    },
+    {
+      "id": "task002-115",
+      "input": "_men .. man kommer bare til det punkt , hvor man simpelthen har faet nok .",
+      "output": [
+        "men .. man kommer bare til det punkt , hvor man simpelthen har fået nok ."
+      ]
+    },
+    {
+      "id": "task002-116",
+      "input": "& ' .. det er ogsa MIG , som altid siger at man skal tage ved laere af sine fejl .",
+      "output": [
+        "& ' .. det er også MIG , som altid siger at man skal tage ved lære af sine fejl ."
+      ]
+    },
+    {
+      "id": "task002-117",
+      "input": "Gør i fyre nu ogsa det ?",
+      "output": [
+        "Gør i fyre nu også det ?"
+      ]
+    },
+    {
+      "id": "task002-118",
+      "input": "Det burde i , fanme .",
+      "output": [
+        "Det burde i , fandme ."
+      ]
+    },
+    {
+      "id": "task002-119",
+      "input": "Verden bestar af en masse dejlige tøser .",
+      "output": [
+        "Verden består af en masse dejlige tøser ."
+      ]
+    },
+    {
+      "id": "task002-120",
+      "input": "& ' jo .. der er ogsa en masse dejlige fyre .",
+      "output": [
+        "& ' jo .. der er også en masse dejlige fyre ."
+      ]
+    },
+    {
+      "id": "task002-121",
+      "input": "altsa , come on .",
+      "output": [
+        "altså , come on ."
+      ]
+    },
+    {
+      "id": "task002-122",
+      "input": "& sa er der de tøser , som vaelger at blive \" snobbede \" , for at fa drengene til at forsta at _vi_ ikke allesammen er ude efter \" uforpligtigende sex \" .",
+      "output": [
+        "& så er der de tøser , som vælger at blive \" snobbede \" , for at få drengene til at forstå at vi ikke allesammen er ude efter \" uforpligtigende sex \" ."
+      ]
+    },
+    {
+      "id": "task002-123",
+      "input": "ihvertfald ikke , os alle .",
+      "output": [
+        "i hvert fald ikke , os alle ."
+      ]
+    },
+    {
+      "id": "task002-124",
+      "input": "& aerligtalt , sa bebrejder jeg sku ikke jer fyre for at taenke pa sex , i dette tilfaelde .",
+      "output": [
+        "& ærligtalt , så bebrejder jeg sgu ikke jer fyre for at tænke på sex , i dette tilfælde ."
+      ]
+    },
+    {
+      "id": "task002-125",
+      "input": "For sadan er de fleste tøser sku ikke .",
+      "output": [
+        "For sådan er de fleste tøser sgu ikke ."
+      ]
+    },
+    {
+      "id": "task002-126",
+      "input": "& ' .. sa kan det godt vaere at det lyder meget dobbelmoralskt af mig , at skrive alt det her , som om jeg mener \" sadan er fyre bare , punktum ! \"",
+      "output": [
+        "& ' .. så kan det godt være at det lyder meget dobbelmoralskt af mig , at skrive alt det her , som om jeg mener \" sådan er fyre bare , punktum ! \""
+      ]
+    },
+    {
+      "id": "task002-127",
+      "input": "Vi er alle forskellige - _hver & en .",
+      "output": [
+        "Vi er alle forskellige - hver & en ."
+      ]
+    },
+    {
+      "id": "task002-128",
+      "input": "man laerer af sine fejl & udvikler sig deraf .",
+      "output": [
+        "man lærer af sine fejl & udvikler sig deraf ."
+      ]
+    },
+    {
+      "id": "task002-129",
+      "input": "Jeg synes noget af det smukkeste folk kan gøre , er at indrømme at man har begaet en fejl & ikke vaelger at fortryde det , men at laere af det & derved blive staerkere .",
+      "output": [
+        "Jeg synes noget af det smukkeste folk kan gøre , er at indrømme at man har begået en fejl & ikke vælger at fortryde det , men at lære af det & derved blive stærkere ."
+      ]
+    },
+    {
+      "id": "task002-130",
+      "input": "For hvis vi ikke laerer af vores fejl , begar vi dem bare igen , _gang p a gang _ .",
+      "output": [
+        "For hvis vi ikke lærer af vores fejl , begår vi dem bare igen , gang på å gang _ ."
+      ]
+    },
+    {
+      "id": "task002-131",
+      "input": "& ja , jeg har det med at vaere hudløst aerlig .",
+      "output": [
+        "& ja , jeg har det med at være hudløst ærlig ."
+      ]
+    },
+    {
+      "id": "task002-132",
+      "input": "Nej , en hel del er idioter uden scorereplikker .",
+      "output": [
+        "Nej , en hel del er idioter uden scorereplikker ."
+      ]
+    },
+    {
+      "id": "task002-133",
+      "input": "kunne seriøst ikk ' ha ' sagt det bedre selv ' !",
+      "output": [
+        "kunne seriøst ikke ' have ' sagt det bedre selv ' !"
+      ]
+    },
+    {
+      "id": "task002-134",
+      "input": "sa kan de sku ' laerer det ' !",
+      "output": [
+        "så kan de sgu ' lære det ' !"
+      ]
+    },
+    {
+      "id": "task002-135",
+      "input": "Ja , mine børn tager det jo til sig og øver sig . Mai har været kødfri i halvandet år , hun laver affaldsløsninger på sin skole , hun spreder omstillingsbudskaber med masser af positiv kraft og kærlighed på Snapchat - og hun er 12 år . Respekt . … https://t.co/ocxCefRqU7",
+      "output": [
+        "Ja , mine børn tager det jo til sig og øver sig . Mai har været kødfri i halvandet år , hun laver affaldsløsninger på sin skole , hun spreder omstillingsbudskaber med masser af positiv kraft og kærlighed på Snapchat - og hun er 12 år . Respekt . … https://t.co/ocxCefRqU7"
+      ]
+    },
+    {
+      "id": "task002-136",
+      "input": "@VSKAarhus tilbage i 2 . Division . En overraskelse efter trænerskifte og spillerexits i vinters . Har givet plads til unge spillere , der har haft sin ungdom i VSK . Og så er det et meget bedre spillende VSK-hold der kommer tilbage til 2 . Division end det der rykkede ned .",
+      "output": [
+        "@VSKAarhus tilbage i 2 . Division . En overraskelse efter trænerskifte og spillerexits i vinters . Har givet plads til unge spillere , der har haft sin ungdom i VSK . Og så er det et meget bedre spillende VSK-hold der kommer tilbage til 2 . Division end det der rykkede ned ."
+      ]
+    },
+    {
+      "id": "task002-137",
+      "input": "Der tager du grueligt fejl Zeb ! Det er hovedsageligt RV's udlændingepolitik som tangerer landsforræderri af DK . I har solgt ud af ALT dansk via jeres udlændinge politik OG jeres store kærlighed til ALT hvad EU står for . … https://t.co/wb3XUzJTPY",
+      "output": [
+        "Der tager du grueligt fejl Zeb ! Det er hovedsageligt RV's udlændingepolitik som tangerer landsforræderri af DK . I har solgt ud af alt dansk via jeres udlændinge politik og jeres store kærlighed til alt hvad EU står for . … https://t.co/wb3XUzJTPY"
+      ]
+    },
+    {
+      "id": "task002-138",
+      "input": "Enig . Sålænge usikkerheden er baseret på evidens , videnskab & data , ikke blot frygt eller følelser . Der er brugt ( spildt ) uanede midler på at undersøge mulige sammenhænge baseret på en forkert tilgang til forsigtighedsprincippet , midler som istedet kunne være brugt på ex miljøet … https://t.co/NjvHyA1Zg3",
+      "output": [
+        "Enig . Så længe usikkerheden er baseret på evidens , videnskab & data , ikke blot frygt eller følelser . Der er brugt ( spildt ) uanede midler på at undersøge mulige sammenhænge baseret på en forkert tilgang til forsigtighedsprincippet , midler som i stedet kunne være brugt på f.eks. miljøet … https://t.co/NjvHyA1Zg3"
+      ]
+    },
+    {
+      "id": "task002-139",
+      "input": "Den 4 . juni 2019 hængte en mand sig i sin celle efter tre måneders frihedsberøvelse i Udlændingecenter Ellebæk . Dette er ikke det første selvmord i Ellebæk #dkpol #dkmedier https://t.co/oEr36LiZzU",
+      "output": [
+        "Den 4 . juni 2019 hængte en mand sig i sin celle efter tre måneders frihedsberøvelse i Udlændingecenter Ellebæk . Dette er ikke det første selvmord i Ellebæk #dkpol #dkmedier https://t.co/oEr36LiZzU"
+      ]
+    },
+    {
+      "id": "task002-140",
+      "input": "Ja , det er racismen , der gør at det er blevet sådan en nyhed . Da jeg boede i Rosenhøj v / Viby J tilbage i 2000 ' erne gik diverse rødder også rundt med bomberør og skød med dem som bazookaer - men der var ikke en racistisk politiker , der promoverede sig på lige dét - det er der nu . … https://t.co/52SLSMYc82",
+      "output": [
+        "Ja , det er racismen , der gør at det er blevet sådan en nyhed . Da jeg boede i Rosenhøj v / Viby J tilbage i 2000 ' erne gik diverse rødder også rundt med bomberør og skød med dem som bazookaer - men der var ikke en racistisk politiker , der promoverede sig på lige dét - det er der nu . … https://t.co/52SLSMYc82"
+      ]
+    },
+    {
+      "id": "task002-141",
+      "input": "Wtf ? Tænkte , at det måtte være en sjov parodikonto . Det er det ikke . Er dog lidt fascineret af , at den er \" uofficiel \" . Hvis den er for rogue til den officielle SK SoMe-indsats , må det satme være et festligt feed 😳 … https://t.co/BBPNfAsV3x",
+      "output": [
+        "Wtf ? Tænkte , at det måtte være en sjov parodikonto . Det er det ikke . Er dog lidt fascineret af , at den er \" uofficiel \" . Hvis den er for rogue til den officielle SK SoMe-indsats , må det satme være et festligt feed 😳 … https://t.co/BBPNfAsV3x"
+      ]
+    },
+    {
+      "id": "task002-142",
+      "input": "Dæmoniserede had-ytringer inspirerer de marginaliserede , PSYKISK USTABILE ( ! ) mænd på den yderste højrefløj til at gribe til vold mod muslimer Det skriver Elvir , der synes Paludan får alt alt for lang snor af politikerne og retssystem . #dkpol #dkmedier https://t.co/ZVTQtLbvsw… https://t.co/mH9roCN8gk",
+      "output": [
+        "Dæmoniserede had-ytringer inspirerer de marginaliserede , psykisk ustabile ( ! ) mænd på den yderste højrefløj til at gribe til vold mod muslimer Det skriver Elvir , der synes Paludan får alt alt for lang snor af politikerne og retssystem . #dkpol #dkmedier https://t.co/ZVTQtLbvsw… https://t.co/mH9roCN8gk"
+      ]
+    },
+    {
+      "id": "task002-143",
+      "input": "Fodbold kan være en sjov størrelse . Matheus Pereira var udlejet til Nürnberg i Bundesligaen i sidste sæson og var decideret forfærdelig . Med et rødt kort efter 4 minutter i bundkampen mod Düsseldorf , var han også en medvirkende årsag til den senere nedrykning . #bulibold #fcn",
+      "output": [
+        "Fodbold kan være en sjov størrelse . Matheus Pereira var udlejet til Nürnberg i Bundesligaen i sidste sæson og var decideret forfærdelig . Med et rødt kort efter 4 minutter i bundkampen mod Düsseldorf , var han også en medvirkende årsag til den senere nedrykning . #bulibold #fcn"
+      ]
+    },
+    {
+      "id": "task002-144",
+      "input": "Jeg forventede som sagt ikke at det skulle være rationelt , jeg ville blot gerne vide det , for forhåbentligt bedre at forstå det . Jeg synes stadig ikke det er et rimeligt udgangspunkt for en ændring af lovgivningen , at nogle kvinder oplever en irationel frygt / frygtreaktion … https://t.co/5jy6miWRhX",
+      "output": [
+        "Jeg forventede som sagt ikke at det skulle være rationelt , jeg ville blot gerne vide det , for forhåbentligt bedre at forstå det . Jeg synes stadig ikke det er et rimeligt udgangspunkt for en ændring af lovgivningen , at nogle kvinder oplever en irrationel frygt / frygtreaktion … https://t.co/5jy6miWRhX"
+      ]
+    },
+    {
+      "id": "task002-145",
+      "input": "Ha ! Ja , okay , den er nok lidt indforstået 🤓 . Jeg arbejder som søgemaskinenørd & generel løft-tunge-data-type på et bibliotek . Så jeg skriver mest om måder at gøre dataprocessering mere effektiv . Det kan f.eks. bruges til sjov som det her : https://t.co/BWdztFn8ej… https://t.co/guANZDqvFX",
+      "output": [
+        "Ha ! Ja , okay , den er nok lidt indforstået 🤓 . Jeg arbejder som søgemaskinenørd & generel løft-tunge-data-type på et bibliotek . Så jeg skriver mest om måder at gøre dataprocessering mere effektiv . Det kan f.eks. bruges til sjov som det her : https://t.co/BWdztFn8ej… https://t.co/guANZDqvFX"
+      ]
+    },
+    {
+      "id": "task002-146",
+      "input": "Det er fornuftigt at begrænse udlændinges sommerhuskøb : Der er et klimamæssigt argument for at beholde lovgivningen , og så giver det byboere en kærlighed til Vesterhavet , til Guldborgsund eller de milde fynske strande og til Danmarks mangfoldighed ( abon . ) . https://t.co/hWM11Jjvkv",
+      "output": [
+        "Det er fornuftigt at begrænse udlændinges sommerhuskøb : Der er et klimamæssigt argument for at beholde lovgivningen , og så giver det byboere en kærlighed til Vesterhavet , til Guldborgsund eller de milde fynske strande og til Danmarks mangfoldighed ( abon . ) . https://t.co/hWM11Jjvkv"
+      ]
+    },
+    {
+      "id": "task002-147",
+      "input": "Istidsruten Der bliver masser af sjov og ballade at glæde sig til den 16 . og 17 . maj , når cykelruten Istidsruten bliver indviet flere steder i Sorø Kommune . Planlægningen af den store indvielsesfest for den 390 kilometer lange cykelrute Istidsruten er … https://t.co/OfID1BDKa1",
+      "output": [
+        "Istidsruten Der bliver masser af sjov og ballade at glæde sig til den 16 . og 17 . maj , når cykelruten Istidsruten bliver indviet flere steder i Sorø Kommune . Planlægningen af den store indvielsesfest for den 390 kilometer lange cykelrute Istidsruten er … https://t.co/OfID1BDKa1"
+      ]
+    },
+    {
+      "id": "task002-148",
+      "input": "Jeg synes at du fremstår som et utrolig hadefuld og fordomsfuldt menneske , uden næstekærlighed og plads til mangfoldighed ! Du mangler i den grad rummelighed , empati og kærlighed og forståelse for , at der skal være plads til andre mennesker end dem du politisk er enige med . … https://t.co/NOOSarVlkv",
+      "output": [
+        "Jeg synes at du fremstår som et utrolig hadefuld og fordomsfuldt menneske , uden næstekærlighed og plads til mangfoldighed ! Du mangler i den grad rummelighed , empati og kærlighed og forståelse for , at der skal være plads til andre mennesker end dem du politisk er enige med . … https://t.co/NOOSarVlkv"
+      ]
+    },
+    {
+      "id": "task002-149",
+      "input": "God formiddag i søde mennesker derude . Jeg frygt de næste 4 år med den røde regningen , hvor de danske børnfamilier skal måles og vejes . Som jeg har skrivet til Udlændinge - og integrationsminister Mattias ... https://t.co/EugNAo2GcG",
+      "output": [
+        "God formiddag i søde mennesker derude . Jeg frygter de næste 4 år med den røde regningen , hvor de danske børnefamilier skal måles og vejes . Som jeg har skrevet til udlændinge - og integrationsminister Mattias ... https://t.co/EugNAo2GcG"
+      ]
+    },
+    {
+      "id": "task002-150",
+      "input": "Næste hvidvin var også lidt af en overraskelse , nemlig en #gewurztraminer fra #languedoc … en Pays d ’ Oc vin fra vinhuset #domainedelorangeriedemontrabech som ligger i Lézignan i Aude regionen #houlbergsblog #winelover #wineblogger 4/7 … https://t.co/GvVNHhOjbx",
+      "output": [
+        "Næste hvidvin var også lidt af en overraskelse , nemlig en #gewurztraminer fra #languedoc … en Pays d ’ Oc vin fra vinhuset #domainedelorangeriedemontrabech som ligger i Lézignan i Aude regionen #houlbergsblog #winelover #wineblogger 4/7 … https://t.co/GvVNHhOjbx"
+      ]
+    },
+    {
+      "id": "task002-151",
+      "input": "Er du boligejer nu , så glæd dig , men : 6 ud af 10 er usikre på , hvad boligskattereform betyder Der er stor usikkerhed om , hvad den nye boligskattereform kommer til at betyde , viser undersøgelse . Men for de fleste giver den skattelettelser . https://t.co/CeR9XxSeFq",
+      "output": [
+        "Er du boligejer nu , så glæd dig , men : 6 ud af 10 er usikre på , hvad boligskattereform betyder der er stor usikkerhed om , hvad den nye boligskattereform kommer til at betyde , viser undersøgelse . Men for de fleste giver den skattelettelser . https://t.co/CeR9XxSeFq"
+      ]
+    },
+    {
+      "id": "task002-152",
+      "input": "Det var rigtig lækkert . Altsaa ikke smerten naar fingeren blev rettet ud der paa lokummet hvor jeg sad og morgensked og pissede samtidig nej Dejligt at rette ud trods voldsom smerte Men saa kunne jeg tørre min Røv i god ro og orden igen og føle at selv jeg var maaske ud over dét",
+      "output": [
+        "Det var rigtig lækkert . Altså ikke smerten når fingeren blev rettet ud der på lokummet hvor jeg sad og morgensked og pissede samtidig nej dejligt at rette ud trods voldsom smerte men så kunne jeg tørre min røv i god ro og orden igen og føle at selv jeg var måske ud over dét"
+      ]
+    },
+    {
+      "id": "task002-153",
+      "input": "Tillykke kære Danskere . Lige det i har bedt om .. Og der er meget mere på vej . Stormufti Mullah Østergaard arbejder på højtryk ... Nyd det ! ! ! Levakovic-familien rykker ind i nyt område : Skaber frygt blandt naboer | BT Krimi - https://t.co/1Ob2Y91Eqb https://t.co/LpaDlZTTRT",
+      "output": [
+        "Tillykke kære danskere . Lige det i har bedt om .. Og der er meget mere på vej . Stormufti Mullah Østergaard arbejder på højtryk ... Nyd det ! ! ! Levakovic-familien rykker ind i nyt område : Skaber frygt blandt naboer | BT Krimi - https://t.co/1Ob2Y91Eqb https://t.co/LpaDlZTTRT"
+      ]
+    },
+    {
+      "id": "task002-154",
+      "input": "Dem der så meget som tænker tanken at Bendtner tilbage til #sldk er større end da Agger tog turen hjem . Er virkelig ikke for skarpe i pæren . Bendtner er hjemme pga . Nød Agger tog hjem af lyst og kærlighed til #BIF valgte så vidst jeg husker Barcelona fra !",
+      "output": [
+        "Dem der så meget som tænker tanken at Bendtner tilbage til #sldk er større end da Agger tog turen hjem . Er virkelig ikke for skarpe i pæren . Bendtner er hjemme pga . nød Agger tog hjem af lyst og kærlighed til #BIF valgte så vidst jeg husker Barcelona fra !"
+      ]
+    },
+    {
+      "id": "task002-155",
+      "input": "Hvem skulle ellers være blevet nomineret ? Jeg kunne tænke på Lupita Nyong'o og Yeo-jeong Jo , som måske er snubs . Tror du , det er fordi Akademiet er racistisk ? … https://t.co/veJldmuRlD",
+      "output": [
+        "Hvem skulle ellers være blevet nomineret ? Jeg kunne tænke på Lupita Nyong'o og Yeo-jeong Jo , som måske er snubs . Tror du , det er fordi Akademiet er racistisk ? … https://t.co/veJldmuRlD"
+      ]
+    },
+    {
+      "id": "task002-156",
+      "input": "Jeg fik en uddannelse , blev skilt , fik stres , fandt min livsmission , mødte mit livs kærlighed , stiftede DigiPippi og meget andet 😘 … https://t.co/VhAmdnSxxH",
+      "output": [
+        "Jeg fik en uddannelse , blev skilt , fik stress , fandt min livsmission , mødte mit livs kærlighed , stiftede DigiPippi og meget andet 😘 … https://t.co/VhAmdnSxxH"
+      ]
+    },
+    {
+      "id": "task002-157",
+      "input": "Ej slap af brother jeg laver sjov holde hovedet højt prøv ik og tilt så meget og vis du ik føler dig motiveret bare Quit lortet asså … https://t.co/d4QTDjEcha",
+      "output": [
+        "Ej slap af brother jeg laver sjov hold hovedet højt prøv ikke og tilte så meget og hvis du ikke føler dig motiveret bare quit lortet altså … https://t.co/d4QTDjEcha"
+      ]
+    },
+    {
+      "id": "task002-158",
+      "input": "Populær tv-serie om Julie og Jesper er skarp , sjov og stærkt vanedannende Tredje sæson af ’ 29 ’ , der nu er nået til ’ 31 ’ , er sjov og replikkerne spot on , men der er også lidt for mange lige vel karikerede sitcomlignende stereotyper , mener tv-anmelderen . https://t.co/nrCb3KHWKx",
+      "output": [
+        "Populær tv-serie om Julie og Jesper er skarp , sjov og stærkt vanedannende tredje sæson af ’ 29 ’ , der nu er nået til ’ 31 ’ , er sjov og replikkerne spot on , men der er også lidt for mange lige vel karikerede sitcomlignende stereotyper , mener tv-anmelderen . https://t.co/nrCb3KHWKx"
+      ]
+    },
+    {
+      "id": "task002-159",
+      "input": "Billig ? Jeg er ikke politiker og lever ikke af andres likes på SoMe . Det er tilgengæld billigt at føre politik ved at skabe had , frygt - og tale nedladende om mennesker man er uenig med . Uvidenhed eller mangel på empati , det er ikke hende , der risikerer at ende som klimaflygtning … https://t.co/j4cbfx9EJ0",
+      "output": [
+        "Billig ? Jeg er ikke politiker og lever ikke af andres likes på SoMe . Det er til gengæld billigt at føre politik ved at skabe had , frygt - og tale nedladende om mennesker man er uenig med . Uvidenhed eller mangel på empati , det er ikke hende , der risikerer at ende som klimaflygtning … https://t.co/j4cbfx9EJ0"
+      ]
+    },
+    {
+      "id": "task002-160",
+      "input": "Øv hvor jeg forstår dig.Min fibro er også gået amok - min krop skriger af smerte og hovedet har jeg tabt et eller andet sted jeg ikke kan huske . Tror det er vejrskifte og sygdom hos familie der vælter mig , men det er så frustrerende når det lige gik så godt 👿 Kram herfra ❤ … https://t.co/uR7wNSpxmk",
+      "output": [
+        "Øv hvor jeg forstår dig . Min fibromyalgi er også gået amok - min krop skriger af smerte og hovedet har jeg tabt et eller andet sted jeg ikke kan huske . Tror det er vejrskifte og sygdom hos familie der vælter mig , men det er så frustrerende når det lige gik så godt 👿 Kram herfra ❤ … https://t.co/uR7wNSpxmk"
+      ]
+    },
+    {
+      "id": "task002-161",
+      "input": "Det er ikke nyt at fake news kommer ud af para-offentlige institutioner , og de færreste trækker historierne , DMI havde hele 2 sager denne sommer 🌸 Nu har jeg vedhæftet data , og som du ser er både nedbør og temperaturer normale 🤦 ♂ https://t.co/BJKUYV3k5u https://t.co/8V6P0xmh1D… https://t.co/4O6p7KRIxU",
+      "output": [
+        "Det er ikke nyt at fake news kommer ud af paraoffentlige institutioner , og de færreste trækker historierne , DMI havde hele 2 sager denne sommer 🌸 Nu har jeg vedhæftet data , og som du ser er både nedbør og temperaturer normale 🤦 ♂ https://t.co/BJKUYV3k5u https://t.co/8V6P0xmh1D… https://t.co/4O6p7KRIxU"
+      ]
+    },
+    {
+      "id": "task002-162",
+      "input": "Gammel kærlighed mellem Ståle og Aalborg . Anyway , synes han er en spændende spiller og han har slet ikke nået max endnu . Hvis N'Doye snart er for gammel eller hvis man ikke tror nok på Pyrus ? … https://t.co/bKgbXICPeb",
+      "output": [
+        "Gammel kærlighed mellem Ståle og Aalborg . Anyway , synes han er en spændende spiller og han har slet ikke nået max endnu . Hvis N'Doye snart er for gammel eller hvis man ikke tror nok på Pyrus ? … https://t.co/bKgbXICPeb"
+      ]
+    },
+    {
+      "id": "task002-163",
+      "input": "Eftertryk Magasin udgav tidligere på måneden to reportager fra de danske udlændingecentre , Sjælsmark og Ellebæk . Her kan du læse den ene . Se tråd for den anden . https://t.co/2bGWeh3I0q #dkpol",
+      "output": [
+        "Eftertryk Magasin udgav tidligere på måneden to reportager fra de danske udlændingecentre , Sjælsmark og Ellebæk . Her kan du læse den ene . Se tråd for den anden . https://t.co/2bGWeh3I0q #dkpol"
+      ]
+    },
+    {
+      "id": "task002-164",
+      "input": "Nu hvor kedo ikke er aktive længere , må manageren ( og vores største groupie ) jo kaste sin kærlighed over nogle andre . Og det blev så et eller andet upcoming efterskoleband ved navn @kashmirofficial . Hmm , vi kender dem ikke rigtigt , men deres bassist ( bass-Mads ) ser cool ud 😎 . … https://t.co/y14gikUxD3",
+      "output": [
+        "Nu hvor kedo ikke er aktiv længere , må manageren ( og vores største groupie ) jo kaste sin kærlighed over nogle andre . Og det blev så et eller andet upcoming efterskoleband ved navn @kashmirofficial . Hmm , vi kender dem ikke rigtigt , men deres bassist ( bass-Mads ) ser cool ud 😎 . … https://t.co/y14gikUxD3"
+      ]
+    },
+    {
+      "id": "task002-165",
+      "input": "👌 🏻 Jeg har haft en sjov rejse med ham . Faldt ikke i min smag . Syntes ikke hans karikerede stemmer var særligt gennemførste . Udspillede øjne . Så over tid . Nogle klip og en special senere . Nu griner jeg bare han svinger med håret 😄 ( Keanu Reeves-joke var jeg flad over ) … https://t.co/caNy269aIh",
+      "output": [
+        "👌 🏻 Jeg har haft en sjov rejse med ham . Faldt ikke i min smag . Syntes ikke hans karikerede stemmer var særligt gennemførte . Udspillede øjne . Så over tid . Nogle klip og en special senere . Nu griner jeg bare han svinger med håret 😄 ( Keanu Reeves-joke var jeg flad over ) … https://t.co/caNy269aIh"
+      ]
+    },
+    {
+      "id": "task002-166",
+      "input": "Sjov tekst fra en tidligere kønsforsker om pseudovidenskabeligheden i feltet . Heldigvis er det udgivet i Quillette og kan uden videre affejes som \" højreorienteret \" . https://t.co/avXRedMOTW",
+      "output": [
+        "Sjov tekst fra en tidligere kønsforsker om pseudovidenskabeligheden i feltet . Heldigvis er det udgivet i Quillette og kan uden videre affejes som \" højreorienteret \" . https://t.co/avXRedMOTW"
+      ]
+    },
+    {
+      "id": "task002-167",
+      "input": "😊 Jeg får det stramt af Kvindernes Kampdag og Pride fordi dagene minder mig om hvad jeg har imod mig på samme tid med at jeg føler mig fremmedgjort i sagernes kernespaces og intet slår den ensomhed man kan føle steder hvor man burde høre til men ikke gør det her er en sjov GIF … https://t.co/l4BR2oqzlY",
+      "output": [
+        "😊 Jeg får det stramt af Kvindernes Kampdag og Pride fordi dagene minder mig om hvad jeg har imod mig på samme tid med at jeg føler mig fremmedgjort i sagernes kernespaces og intet slår den ensomhed man kan føle steder hvor man burde høre til men ikke gør det her er en sjov GIF … https://t.co/l4BR2oqzlY"
+      ]
+    },
+    {
+      "id": "task002-168",
+      "input": "Kvinde , vær smuk og hold din mund ! MissDK er toppen af pyramiden i præstationsræset som unge knækker nakken på . Du har én opgave : at opretholde illusionen om den søde unge kvinde , mens du produktgøres og lægger krop til grov overtrædelse af dine rettigheder https://t.co/sgmgtBHKrI",
+      "output": [
+        "Kvinde , vær smuk og hold din mund ! MissDK er toppen af pyramiden i præstationsræset som unge knækker nakken på . Du har én opgave : At opretholde illusionen om den søde unge kvinde , mens du produktgøres og lægger krop til grov overtrædelse af dine rettigheder https://t.co/sgmgtBHKrI"
+      ]
+    },
+    {
+      "id": "task002-169",
+      "input": "Så det at få én gave , én overraskelse stresser mig ret meget i sig selv . \" Jamen hvad nu hvis det er noget du har ønsket dig ? \" tænker du måske . Hah , jeg tror du undervurderer hvor detaljeorienteret og obsessive en autist kan være . Hvis jeg f.eks. har ønsket mig 7/20",
+      "output": [
+        "Så det at få én gave , én overraskelse stresser mig ret meget i sig selv . \" Jamen hvad nu hvis det er noget du har ønsket dig ? \" tænker du måske . Hah , jeg tror du undervurderer hvor detaljeorienteret og obsessive en autist kan være . Hvis jeg f.eks. har ønsket mig 7/20"
+      ]
+    },
+    {
+      "id": "task002-170",
+      "input": "Er meget spændt på hvordan MF vil tackle embedsværket i STM . Hendes tid i BM og JM var fyldt med historier om meget lidt kærlighed til embedsværket , ja der fandtes særlige regler for hvem , der ikke måtte være med til møder hos ministeren . … https://t.co/GcQMavtEQR",
+      "output": [
+        "Er meget spændt på hvordan MF vil tackle embedsværket i STM . Hendes tid i BM og JM var fyldt med historier om meget lidt kærlighed til embedsværket , ja der fandtes særlige regler for hvem , der ikke måtte være med til møder hos ministeren . … https://t.co/GcQMavtEQR"
+      ]
+    },
+    {
+      "id": "task002-171",
+      "input": "En stærk doku af en tidl . nazist , som bl.a. taler med andre tidl. højreradikale og islamister . Pointen , som jeg er enig i : Hårdt mod hårdt løser intet , kun kærlighed og tilgivelse . Der findes ikke nogen der ikke kan reddes . https://t.co/JpoQnhDAQL #dkmedier #dkkrim #dkpol",
+      "output": [
+        "En stærk dokumentar af en tidligere . nazist , som bl.a. taler med andre tidligere højreradikale og islamister . Pointen , som jeg er enig i : Hårdt mod hårdt løser intet , kun kærlighed og tilgivelse . Der findes ikke nogen der ikke kan reddes . https://t.co/JpoQnhDAQL #dkmedier #dkkrim #dkpol"
+      ]
+    },
+    {
+      "id": "task002-172",
+      "input": "Sådan skal det også være . Som fan håber jeg hver gang der kommer ny trøje , at det en trøje jeg har lyst til at købe . Det er desværre bare længe siden det har været sådan , med Hummels kreationer ( Stampetrøjen undtaget ) . Kærlighed til byen behøver imø ikke skiltes , den er implicit … https://t.co/COF3gOLYK6",
+      "output": [
+        "Sådan skal det også være . Som fan håber jeg hver gang der kommer ny trøje , at det en trøje jeg har lyst til at købe . Det er desværre bare længe siden det har været sådan , med Hummels kreationer ( Stampetrøjen undtaget ) . Kærlighed til byen behøver imø ikke skiltes , den er implicit … https://t.co/COF3gOLYK6"
+      ]
+    },
+    {
+      "id": "task002-173",
+      "input": "Islamistisk terror er ikke en tilfældighed . Da Muhamed kom til Medina og blev landevejsrøver , så fik han følgere , fordi slavekvinder , røvergods og frygt var tiltrækkende . https://t.co/6JA0y5psmQ",
+      "output": [
+        "Islamistisk terror er ikke en tilfældighed . Da Muhamed kom til Medina og blev landevejsrøver , så fik han følgere , fordi slavekvinder , røvergods og frygt var tiltrækkende . https://t.co/6JA0y5psmQ"
+      ]
+    },
+    {
+      "id": "task002-174",
+      "input": "Tysk profil sendt til ' tælling ' - blev knockoutet af knytnæve Paul Drux fik sig noget af en overraskelse , da Tyskland torsdag aften indledte mellemrunden med en 31-23- sejr over Hviderusland . https://t.co/HnvYL6Gg5D",
+      "output": [
+        "Tysk profil sendt til ' tælling ' - blev knockoutet af knytnæve Paul Drux fik sig noget af en overraskelse , da Tyskland torsdag aften indledte mellemrunden med en 31-23 sejr over Hviderusland . https://t.co/HnvYL6Gg5D"
+      ]
+    },
+    {
+      "id": "task002-175",
+      "input": "Overraskede tobakstyv i hvid skjorte på Søvænget Faldsled : Beboeren i et hjem på Søvænget i Faldsled fik sig en grim overraskelse , da vedkommende kom hjem og overraskede en tyv i sin bolig . Gerningsmanden var kommet ind gennem en ulåst hoveddør , og … https://t.co/4miGmlygiL",
+      "output": [
+        "Overraskede tobakstyv i hvid skjorte på Søvænget Faldsled : Beboeren i et hjem på Søvænget i Faldsled fik sig en grim overraskelse , da vedkommende kom hjem og overraskede en tyv i sin bolig . Gerningsmanden var kommet ind gennem en ulåst hoveddør , og … https://t.co/4miGmlygiL"
+      ]
+    },
+    {
+      "id": "task002-176",
+      "input": "Her er Lennart Johanssons interview med Tipsbladet om , hvordan han kraftigt mistænkte præsidentvalget i Paris i 1998 for at være købt . Havde ingen kærlighed til overs for Sepp Blatter og Michel Platini . https://t.co/V1yobjLRoF",
+      "output": [
+        "Her er Lennart Johanssons interview med Tipsbladet om , hvordan han kraftigt mistænkte præsidentvalget i Paris i 1998 for at være købt . Havde ingen kærlighed til overs for Sepp Blatter og Michel Platini . https://t.co/V1yobjLRoF"
+      ]
+    },
+    {
+      "id": "task002-177",
+      "input": "Taber desværre den 5 . kamp og er ude af kvallen ... Hård skæbne på en dag , hvor spillet ellers er fremragende .. Gullit , R9 og Vieira på 2 bar latenstid er bare ikke for sjov desværre - Vi kæmper videre .. 🙃",
+      "output": [
+        "Taber desværre den 5 . kamp og er ude af kvalifikationen ... Hård skæbne på en dag , hvor spillet ellers er fremragende .. Gullit , R9 og Vieira på 2 bar latenstid er bare ikke for sjov desværre - Vi kæmper videre .. 🙃"
+      ]
+    },
+    {
+      "id": "task002-178",
+      "input": "Jeg synes faktisk at Pernille Rosenkrantz-Theil og Poul Schlüter havde rigtigt godt greb om netop dét , da de efterhånden for længe siden var valg-kommentatorer . Jeg husker den som gennemgående saglige og når de engang i mellem ikke var det , var det i sjov . … https://t.co/z08OJPpoXv",
+      "output": [
+        "Jeg synes faktisk at Pernille Rosenkrantz-Theil og Poul Schlüter havde rigtig godt greb om netop dét , da de efterhånden for længe siden var valgkommentatorer . Jeg husker den som gennemgående saglige og når de engang i mellem ikke var det , var det i sjov . … https://t.co/z08OJPpoXv"
+      ]
+    },
+    {
+      "id": "task002-179",
+      "input": "Tidligere topspiller bruger musik og dans til fodbold - danske børn trænes for hårdt , mener han Den tidligere fodboldstjerne Razak Pimpongs træning er meget anderledes , men den er også sjov og motiverende , lyder det fra to unge fodboldtalenter . https://t.co/Z5Xp3jeNj8",
+      "output": [
+        "Tidligere topspiller bruger musik og dans til fodbold - danske børn trænes for hårdt , mener han Den tidligere fodboldstjerne Razak Pimpongs træning er meget anderledes , men den er også sjov og motiverende , lyder det fra to unge fodboldtalenter . https://t.co/Z5Xp3jeNj8"
+      ]
+    },
+    {
+      "id": "task002-180",
+      "input": "Et kommunikationsmæssigt højdepunkt , da vi ramte #Natholdet i sidste uge . #DyrkSammenholdet med samlej ... nej mener sanglege ... 😂 . Vi har kun det sjov , vi selv laver - og firmaidræt og kollegamotion er skægt ... … https://t.co/peqm4gaoJf",
+      "output": [
+        "Et kommunikationsmæssigt højdepunkt , da vi ramte #Natholdet i sidste uge . #DyrkSammenholdet med samleje ... nej mener sanglege ... 😂 . Vi har kun det sjov , vi selv laver - og firmaidræt og kollegamotion er skægt ... … https://t.co/peqm4gaoJf"
+      ]
+    }
+  ],
+  "Instance License": [
+    "Unknown"
+  ]
+}

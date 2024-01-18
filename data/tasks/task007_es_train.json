@@ -1,0 +1,4032 @@
+{
+  "Contributors": [
+    "Swaroop Mishra",
+    "Daniel Khashabi"
+  ],
+  "Source": [
+    "MultiLexNorm: Multilingual Lexical Normalization"
+  ],
+  "URL": [
+    "https://noisy-text.github.io/2021/multi-lexnorm.html"
+  ],
+  "Categories": [
+    "Lexical Normalization"
+  ],
+  "Reasoning": [
+    "Temporal Reasoning",
+    "Commonsense Reasoning"
+  ],
+  "Definition": [
+    "Lexical norm"
+  ],
+  "Input_language": [
+    "Multilanguage"
+  ],
+  "Output_language": [
+    "Multilanguage"
+  ],
+  "Instruction_language": [
+    "Multilanguage"
+  ],
+  "Domains": [
+    "Twitter",
+    "Arto",
+    "sms",
+    "forum"
+  ],
+  "Positive Examples": [
+    {
+      "input": "seño ricardo no ira al cole esta semana. mañana ire para que le mandes trabajos para la semana, esta todavia malito con fiebre. un beso",
+      "output": "señor ricardo no ira al cole esta semana. mañana iré para que le mandes trabajos para la semana, esta todavía malito con fiebre. un beso",
+      "explanation": "The text is now lexically normalized and correct."
+    }
+  ],
+  "Negative Examples": [
+    {
+      "input": "#twitterosquemecaenbiensinconocer @djoytwihard porque es mi gemela *__*",
+      "output": "#twitterosquemecaenbiensinconocer @djoytwihard porque es m goemela *__*",
+      "explanation": "The text is not lexically normalized and it is incorrect."
+    }
+  ],
+  "Instances": [
+    {
+      "id": "task007-0",
+      "input": "la gente no cambia por que quiere, sino por que le hicieron daño y se vio obligada a dejar de ser quien era ..",
+      "output": [
+        "la gente no cambia por que quiere, sino por que le hicieron daño y se vio obligada a dejar de ser quien era .."
+      ]
+    },
+    {
+      "id": "task007-1",
+      "input": "hoy llevo la camiseta de batman jdjejdkahflwkdjwpvqh .",
+      "output": [
+        "hoy llevo la camiseta de batman jdjejdkahflwkdjwpvqh ."
+      ]
+    },
+    {
+      "id": "task007-2",
+      "input": "el siestón que me voy a echar hoy va a ser digno...!",
+      "output": [
+        "el siestón que me voy a echar hoy va a ser digno...!"
+      ]
+    },
+    {
+      "id": "task007-3",
+      "input": "@xheartbreaker_ ay dios, hoy acabo en el hospital por ataques.",
+      "output": [
+        "@xheartbreaker_ ay dios, hoy acabo en el hospital por ataques."
+      ]
+    },
+    {
+      "id": "task007-4",
+      "input": "esperando walking dead . a ver como acaba...",
+      "output": [
+        "esperando walking dead . a ver como acaba..."
+      ]
+    },
+    {
+      "id": "task007-5",
+      "input": "@ursulaa5 me esquivocao y estoy en el donald del piolin ya estoy yendo. http://t.co/q9kq4daxfv",
+      "output": [
+        "@ursulaa5 me he_equivocado y estoy en el donald del piolín ya estoy yendo. http://t.co/q9kq4daxfv"
+      ]
+    },
+    {
+      "id": "task007-6",
+      "input": "@cristinasorisa @lorenahl16 @rocioortiz954 @pilar_2212 @silvia_sg_95 de paluegos del fanegol jajajajajajajajajjajajajajajaja me meoooo",
+      "output": [
+        "@cristinasorisa @lorenahl16 @rocioortiz954 @pilar_2212 @silvia_sg_95 de paluegos del fanegol ja me meo"
+      ]
+    },
+    {
+      "id": "task007-7",
+      "input": "* vega del codorno * actualizado: 02-04-2013 05:02 utc * temperatura: 2,1 ºc ( máx. : 2,8 / mín. : 2,1 ) * humedad:... http://t.co/yvq0k7mws4",
+      "output": [
+        "* vega del codorno * actualizado: 02-04-2013 05:02 utc * temperatura: 2,1 ºc ( máxima : 2,8 / mínima : 2,1 ) * humedad:... http://t.co/yvq0k7mws4"
+      ]
+    },
+    {
+      "id": "task007-8",
+      "input": "@loresinte @rubitamalaguita @bea_diamonds miedo me da chicas!! miedo me da xq el año pasao acabamos to jamas porai jajaja",
+      "output": [
+        "@loresinte @rubitamalaguita @bea_diamonds miedo me da chicas!! miedo me da xq el año pasado acabamos todo jamas por_ahí jajaja"
+      ]
+    },
+    {
+      "id": "task007-9",
+      "input": "@danisantostv a mi sobre todo la reacción de miriam #noentiendonada #miriampasucasa #gh14",
+      "output": [
+        "@danisantostv a mi sobre todo la reacción de míriam #noentiendonada #miriampasucasa #gh14"
+      ]
+    },
+    {
+      "id": "task007-10",
+      "input": "@amaya_fitness y q es mejor, lentas o rapidas las repeticiones?",
+      "output": [
+        "@amaya_fitness y q es mejor, lentas o rápidas las repeticiones?"
+      ]
+    },
+    {
+      "id": "task007-11",
+      "input": "no se que responderte! .. ok? suena borde, vale? tambien suena borde, gracias? no lo merece, que te digo?.. pues mejor me callo y fin.",
+      "output": [
+        "no se que responderte! .. ok? suena borde, vale? también suena borde, gracias? no lo merece, que te digo?.. pues mejor me callo y fin."
+      ]
+    },
+    {
+      "id": "task007-12",
+      "input": "#lavidaesmásfácilcuando te has fumado unos porros, no hay problemas ni preocupaciones.",
+      "output": [
+        "#lavidaesmásfácilcuando te has fumado unos porros, no hay problemas ni preocupaciones."
+      ]
+    },
+    {
+      "id": "task007-13",
+      "input": "voy aaa seguir el camino con el mooovil apagado que caasi no tengo bateriaa . adioos twitteer y adios justin biebeer's :)",
+      "output": [
+        "voy aaa seguir el camino con el móvil apagado que casi no tengo batería . adiós twitter y adios justin bieber :)"
+      ]
+    },
+    {
+      "id": "task007-14",
+      "input": "felicidades a mi omega, el mas fuerte d tds , que tienes un corazón enorme. te echo de menos compi . cuidate mucho. te quiero @nachitopeerez12",
+      "output": [
+        "felicidades a mi omega, el mas fuerte d todos , que tienes un corazón enorme. te echo de menos compañero . cuidate mucho. te quiero @nachitopeerez12"
+      ]
+    },
+    {
+      "id": "task007-15",
+      "input": "@marixu93 ooooooooohhhhh yo tambien te quiero, y quiero verte ya!!! guapa!",
+      "output": [
+        "@marixu93 ooooooooohhhhh yo también te quiero, y quiero verte ya!!! guapa!"
+      ]
+    },
+    {
+      "id": "task007-16",
+      "input": "@solopuedekedar1 @kicamqm @martafuentesb porque tan abajo ? eso no puede ser",
+      "output": [
+        "@solopuedekedar1 @kicamqm @martafuentesb porque tan abajo ? eso no puede ser"
+      ]
+    },
+    {
+      "id": "task007-17",
+      "input": "@jose04011988 @nereidamarquez6a q siii no a cambiado nadaa jajaja",
+      "output": [
+        "@jose04011988 @nereidamarquez6a q sí no a cambiado nada jajaja"
+      ]
+    },
+    {
+      "id": "task007-18",
+      "input": "ea tenía q llover... -.-",
+      "output": [
+        "ea tenía q llover... -.-"
+      ]
+    },
+    {
+      "id": "task007-19",
+      "input": "qiero ver a @rociomrales17 @anabelgarcia97 @paulanadales96 @laura_pdz97 @mariagc_97 @noeliacastro212 @bonizc @pedriitohd17 @albamartinez_96",
+      "output": [
+        "quiero ver a @rociomrales17 @anabelgarcia97 @paulanadales96 @laura_pdz97 @mariagc_97 @noeliacastro212 @bonizc @pedriitohd17 @albamartinez_96"
+      ]
+    },
+    {
+      "id": "task007-20",
+      "input": "@agusvaras10 aaah buenoo esqe digo pa qe madrugará este jajaja",
+      "output": [
+        "@agusvaras10 aaah bueno es_que digo para qué madrugará este jajaja"
+      ]
+    },
+    {
+      "id": "task007-21",
+      "input": "@sergiomaravish jajajaja que lo sepaaas ;)",
+      "output": [
+        "@sergiomaravish jajajaja que lo sepas ;)"
+      ]
+    },
+    {
+      "id": "task007-22",
+      "input": "vamos al lío que ya era hora de empezar!",
+      "output": [
+        "vamos al lío que ya era hora de empezar!"
+      ]
+    },
+    {
+      "id": "task007-23",
+      "input": "ostia k putada yo d romeria to la noche ole ole",
+      "output": [
+        "ostia k putada yo d romería toda la noche ole ole"
+      ]
+    },
+    {
+      "id": "task007-24",
+      "input": "@mariadelmar816 no creo que a nadie le sorprenda jajajajaj ya ves que ya me humillo yo, no hace falta que lo hagas tu jajajajaj ;)",
+      "output": [
+        "@mariadelmar816 no creo que a nadie le sorprenda ja ya ves que ya me humillo yo, no hace falta que lo hagas tu ja ;)"
+      ]
+    },
+    {
+      "id": "task007-25",
+      "input": "#meteoalarm en #granada para el 03-04-2013 01:00:00 sobre viento de nivel #blanco",
+      "output": [
+        "#meteoalarm en #granada para el 03-04-2013 01:00:00 sobre viento de nivel #blanco"
+      ]
+    },
+    {
+      "id": "task007-26",
+      "input": "i'm at cercanías el casar - @renfe ( getafe , comunidad de madrid ) http://t.co/jx1ynjmjex",
+      "output": [
+        "i'm at cercanías el casar - @renfe ( getafe , comunidad de madrid ) http://t.co/jx1ynjmjex"
+      ]
+    },
+    {
+      "id": "task007-27",
+      "input": "#meteoalarm en #toledo para el 01-04-2013 17:06:00 sobre niebla de nivel #blanco",
+      "output": [
+        "#meteoalarm en #toledo para el 01-04-2013 17:06:00 sobre niebla de nivel #blanco"
+      ]
+    },
+    {
+      "id": "task007-28",
+      "input": "ya en el rosal, entreno con el b, a seguir currando !!",
+      "output": [
+        "ya en el rosal, entreno con el b, a seguir currando !!"
+      ]
+    },
+    {
+      "id": "task007-29",
+      "input": "siento mariposas en el estómago.. creo que tengo de dejar de comerlas.",
+      "output": [
+        "siento mariposas en el estómago.. creo que tengo de dejar de comerlas."
+      ]
+    },
+    {
+      "id": "task007-30",
+      "input": "y decir como todos los dias a @carrasco_111 que hoy ha sido un dia increíble!,te amo!!!!",
+      "output": [
+        "y decir como todos los dias a @carrasco_111 que hoy ha sido un dia increíble!,te amo!!!!"
+      ]
+    },
+    {
+      "id": "task007-31",
+      "input": "@_mariola_ esq veo esas cosillas y no puedo evitar pensar en mi media naranjilla de valencia jaajja",
+      "output": [
+        "@_mariola_ es_que veo esas cosillas y no puedo evitar pensar en mi media naranjilla de valencia ja"
+      ]
+    },
+    {
+      "id": "task007-32",
+      "input": "@fco_jose96 me encantas, lo sabes?:$.",
+      "output": [
+        "@fco_jose96 me encantas, lo sabes?:$."
+      ]
+    },
+    {
+      "id": "task007-33",
+      "input": "yo lo he intentado pero no recibo señales",
+      "output": [
+        "yo lo he intentado pero no recibo señales"
+      ]
+    },
+    {
+      "id": "task007-34",
+      "input": "dios mio ! la puerta de mi habitación se ha abierto sola! estaba cerrada totalmente! que yuyu xd",
+      "output": [
+        "dios mío ! la puerta de mi habitación se ha abierto sola! estaba cerrada totalmente! que yuyu xd"
+      ]
+    },
+    {
+      "id": "task007-35",
+      "input": "no tengo sueño por su culpaa (::",
+      "output": [
+        "no tengo sueño por su culpa (::"
+      ]
+    },
+    {
+      "id": "task007-36",
+      "input": "y esas son las cosas que se me vienen a la cabeza un lunes a las 2:05.",
+      "output": [
+        "y esas son las cosas que se me vienen a la cabeza un lunes a las 2:05."
+      ]
+    },
+    {
+      "id": "task007-37",
+      "input": "no quiero entrar a claseee ,,,,",
+      "output": [
+        "no quiero entrar a clase ,,,,"
+      ]
+    },
+    {
+      "id": "task007-38",
+      "input": "yo creo que por hoy ya vale, #buenasnoches",
+      "output": [
+        "yo creo que por hoy ya vale, #buenasnoches"
+      ]
+    },
+    {
+      "id": "task007-39",
+      "input": "mi sonrisa es mas grande que mis problemas.",
+      "output": [
+        "mi sonrisa es mas grande que mis problemas."
+      ]
+    },
+    {
+      "id": "task007-40",
+      "input": "oins q agustito en el.#sooufa!",
+      "output": [
+        "oins q agustito en el.#sooufa!"
+      ]
+    },
+    {
+      "id": "task007-41",
+      "input": "#twitterosquemecaenbiensinconocer @djoytwihard porque es mi gemela *__*",
+      "output": [
+        "#twitterosquemecaenbiensinconocer @djoytwihard porque es mi gemela *__*"
+      ]
+    },
+    {
+      "id": "task007-42",
+      "input": "'abrir la ventana, colgar los problemas al sol'",
+      "output": [
+        "'abrir la ventana, colgar los problemas al sol'"
+      ]
+    },
+    {
+      "id": "task007-43",
+      "input": "a descansar un pokitin y a las claseeeesss",
+      "output": [
+        "a descansar un poquitín y a las clases"
+      ]
+    },
+    {
+      "id": "task007-44",
+      "input": "que pronto se acaba lo bueno! buena #acampada2013 :)",
+      "output": [
+        "que pronto se acaba lo bueno! buena #acampada2013 :)"
+      ]
+    },
+    {
+      "id": "task007-45",
+      "input": "@mace_44 rojas verdes y amarillas!, ami me gustan las pastillas!!!! jajajajajajaja!, que de risas por dios! xddddd",
+      "output": [
+        "@mace_44 rojas verdes y amarillas!, ami me gustan las pastillas!!!! jajajajajajaja!, que de risas por dios! xddddd"
+      ]
+    },
+    {
+      "id": "task007-46",
+      "input": "@faroleraaaaa ojala sus padres les enseñen en casa y le pongan eres maricon en la nevera y se tengan que follar a su madre.",
+      "output": [
+        "@faroleraaaaa ojala sus padres les enseñen en casa y le pongan eres maricón en la nevera y se tengan que follar a su madre."
+      ]
+    },
+    {
+      "id": "task007-47",
+      "input": "@lluch_miguel y que va a decir su madre si estará avergonzada de tener la hija que tiene y de lo que esta haciendo.... #yanohayboda",
+      "output": [
+        "@lluch_miguel y que va a decir su madre si estará avergonzada de tener la hija que tiene y de lo que esta haciendo.... #yanohayboda"
+      ]
+    },
+    {
+      "id": "task007-48",
+      "input": "@migueleferndez8 eres inconfundible dejando espacios antes de los signos de interrogación",
+      "output": [
+        "@migueleferndez8 eres inconfundible dejando espacios antes de los signos de interrogación"
+      ]
+    },
+    {
+      "id": "task007-49",
+      "input": "pues nada, tendre que moverme.",
+      "output": [
+        "pues nada, tendré que moverme."
+      ]
+    },
+    {
+      "id": "task007-50",
+      "input": "@martapellisso @mariadelmarg7 ohhh mis niñas preciosas tengo muchas ganas de veros !! os quiero♥",
+      "output": [
+        "@martapellisso @mariadelmarg7 ohhh mis niñas preciosas tengo muchas ganas de veros !! os quiero♥"
+      ]
+    },
+    {
+      "id": "task007-51",
+      "input": "@kurtcomeback_ si te llamas nacho y haces fotos muy buenas no es asi o he quedado mal?",
+      "output": [
+        "@kurtcomeback_ si te llamas nacho y haces fotos muy buenas no es asi o he quedado mal?"
+      ]
+    },
+    {
+      "id": "task007-52",
+      "input": "@alph4dan ay gaona , ¡qué hombre! ^^",
+      "output": [
+        "@alph4dan ay gaona , ¡qué hombre! ^^"
+      ]
+    },
+    {
+      "id": "task007-53",
+      "input": "todo en exceso es malo menos las vacaciones",
+      "output": [
+        "todo en exceso es malo menos las vacaciones"
+      ]
+    },
+    {
+      "id": "task007-54",
+      "input": "k mala suerte coñooo se me a roto el móvil",
+      "output": [
+        "k mala suerte coño se me a roto el móvil"
+      ]
+    },
+    {
+      "id": "task007-55",
+      "input": "@sergiomrqz10 jajajpero esq si no hubiera sido por esa preciosa llamda no me hubieras visto;) que era muy tarde ya jo era hora de levantarse",
+      "output": [
+        "@sergiomrqz10 ja_pero es_que si no hubiera sido por esa preciosa llamada no me hubieras visto;) que era muy tarde ya jo era hora de levantarse"
+      ]
+    },
+    {
+      "id": "task007-56",
+      "input": "recuerda qur lo hice por ti..",
+      "output": [
+        "recuerda que lo hice por ti.."
+      ]
+    },
+    {
+      "id": "task007-57",
+      "input": "sin un derroche, ni un gesto de impaciencia ni una costosa recaída en el entusiasmo.",
+      "output": [
+        "sin un derroche, ni un gesto de impaciencia ni una costosa recaída en el entusiasmo."
+      ]
+    },
+    {
+      "id": "task007-58",
+      "input": "@marta10mc @asundelosreyes @mane15amnesia @marialguacil97 @carmen19696 diiiiiiioooooooo jajjajajajajajajajajajajajajajajajajajajajajaja",
+      "output": [
+        "@marta10mc @asundelosreyes @mane15amnesia @marialguacil97 @carmen19696 dios ja"
+      ]
+    },
+    {
+      "id": "task007-59",
+      "input": "me levantado diciendo laura hace mucho sol que quiero ponerme morena..",
+      "output": [
+        "me levantado diciendo laura hace mucho sol que quiero ponerme morena.."
+      ]
+    },
+    {
+      "id": "task007-60",
+      "input": "#markoslibertad defender a nuestro pais no es un delito",
+      "output": [
+        "#markoslibertad defender a nuestro país no es un delito"
+      ]
+    },
+    {
+      "id": "task007-61",
+      "input": "(+) y el gilipollas de mourinho lo único que está haciendo es destruir el madridismo desde dentro.",
+      "output": [
+        "(+) y el gilipollas de mourinho lo único que está haciendo es destruir el madridismo desde dentro."
+      ]
+    },
+    {
+      "id": "task007-62",
+      "input": "@arribassara @siilviia_diaz cri cri, yo te puedo con un dedo sara :)",
+      "output": [
+        "@arribassara @siilviia_diaz cri cri, yo te puedo con un dedo sara :)"
+      ]
+    },
+    {
+      "id": "task007-63",
+      "input": "con mi último rt dejo patente que es imposible que no esté enganchada a twitter .",
+      "output": [
+        "con mi último rt dejo patente que es imposible que no esté enganchada a twitter ."
+      ]
+    },
+    {
+      "id": "task007-64",
+      "input": "¡nuestra web ya está publicada! si no podéis esperar, visitad: http://t.co/vtajp2sume",
+      "output": [
+        "¡nuestra web ya está publicada! si no podéis esperar, visitad: http://t.co/vtajp2sume"
+      ]
+    },
+    {
+      "id": "task007-65",
+      "input": "no aguanto al tipico sevillano/a egocentrico ,lo siento asi pienso y he pnsao to mi vida y ojo!mi novio es sevillano y part d mis amig@s tb ..",
+      "output": [
+        "no aguanto al tipico sevillano/a egocéntrico ,lo siento asi pienso y he pensado toda mi vida y ojo!mi novio es sevillano y parte d mis amigos también .."
+      ]
+    },
+    {
+      "id": "task007-66",
+      "input": "@fernandof_88 @_lucia4 @javier_galgero ostia !! sii ?? jajajajajajaja pues yo te aviso primoo ajajajjaja me partoo :) !!!!",
+      "output": [
+        "@fernandof_88 @_lucia4 @javier_galgero ostia !! sí ?? jajajajajajaja pues yo te aviso primo ja me parto :) !!!!"
+      ]
+    },
+    {
+      "id": "task007-67",
+      "input": "@bigmartus ola ker lo que tu aseh",
+      "output": [
+        "@bigmartus ola qué_es lo que tu haces"
+      ]
+    },
+    {
+      "id": "task007-68",
+      "input": "@adrianhill661 jajajaja tssss !!! si dspue abandonas!!",
+      "output": [
+        "@adrianhill661 jajajaja chis !!! si después abandonas!!"
+      ]
+    },
+    {
+      "id": "task007-69",
+      "input": "@alfredocalle9 mis pumas en verano metieron 80 goles.. asinque ..preparate para no moverte..jajajaja",
+      "output": [
+        "@alfredocalle9 mis pumas en verano metieron 80 goles.. así_que ..preparate para no moverte..jajajaja"
+      ]
+    },
+    {
+      "id": "task007-70",
+      "input": "lo mejor es que me da igual todo soi feliz",
+      "output": [
+        "lo mejor es que me da igual todo soy feliz"
+      ]
+    },
+    {
+      "id": "task007-71",
+      "input": "hoy a algunas personas les daba una pa tada en la boca para que se callaran.",
+      "output": [
+        "hoy a algunas personas les daba una para tada en la boca para que se callaran."
+      ]
+    },
+    {
+      "id": "task007-72",
+      "input": "no quiero dormirme pa que no llegue mañana.... #odiandolarutina",
+      "output": [
+        "no quiero dormirme pa que no llegue mañana.... #odiandolarutina"
+      ]
+    },
+    {
+      "id": "task007-73",
+      "input": "sale el anuncio en la radio del centro comercial de la zenia y dicen: de la z a la a. y dice mi madre: o sea que zara sí que está jajajajaja",
+      "output": [
+        "sale el anuncio en la radio del centro comercial de la zenia y dicen: de la z a la a. y dice mi madre: o sea que zara sí que está jajajajaja"
+      ]
+    },
+    {
+      "id": "task007-74",
+      "input": "@sandraflamencah @mariaespinoosa @mantoniatenorio evidentemente q para gusto...pero maría es artista d los pies a la cabeza,al igual q toñi !",
+      "output": [
+        "@sandraflamencah @mariaespinoosa @mantoniatenorio evidentemente q para gusto...pero maría es artista d los pies a la cabeza,al igual q toñi !"
+      ]
+    },
+    {
+      "id": "task007-75",
+      "input": "joder no me quito la lluvia macho.",
+      "output": [
+        "joder no me quito la lluvia macho."
+      ]
+    },
+    {
+      "id": "task007-76",
+      "input": "@marinnyadira me ha faltao el canto un duro pa montar yo el drama allí.... ☹",
+      "output": [
+        "@marinnyadira me ha faltado el canto un duro para montar yo el drama allí.... ☹"
+      ]
+    },
+    {
+      "id": "task007-77",
+      "input": "@danielplugin o shine acoustic :)",
+      "output": [
+        "@danielplugin o shine acoustic :)"
+      ]
+    },
+    {
+      "id": "task007-78",
+      "input": "@adriiaanaa1 a mi no me hace graciiaaaaa -_-",
+      "output": [
+        "@adriiaanaa1 a mi no me hace gracia -_-"
+      ]
+    },
+    {
+      "id": "task007-79",
+      "input": "@b17bebeto y que gane 2 a 0 dos de demarco",
+      "output": [
+        "@b17bebeto y que gane 2 a 0 dos de demarco"
+      ]
+    },
+    {
+      "id": "task007-80",
+      "input": "apuntada en el gym , a ver cuanto duro. suena subreal.",
+      "output": [
+        "apuntada en el gym , a ver cuanto duro. suena subreal."
+      ]
+    },
+    {
+      "id": "task007-81",
+      "input": "hace sol, llueve, hace sol, graniza... hace un día igual de bipolar que yo.",
+      "output": [
+        "hace sol, llueve, hace sol, graniza... hace un día igual de bipolar que yo."
+      ]
+    },
+    {
+      "id": "task007-82",
+      "input": "@aaronlo7 jaja que boooonico l",
+      "output": [
+        "@aaronlo7 jaja que bonico l"
+      ]
+    },
+    {
+      "id": "task007-83",
+      "input": "ahi va la gorda nenee !!!!",
+      "output": [
+        "ahí va la gorda nene !!!!"
+      ]
+    },
+    {
+      "id": "task007-84",
+      "input": "al final el que no ha cambiado la hora ha sido don pabliukas guti vega",
+      "output": [
+        "al final el que no ha cambiado la hora ha sido don pabliukas guti vega"
+      ]
+    },
+    {
+      "id": "task007-85",
+      "input": "pensaba que era diferente, pero es igual de idiota que lo demás.",
+      "output": [
+        "pensaba que era diferente, pero es igual de idiota que lo demás."
+      ]
+    },
+    {
+      "id": "task007-86",
+      "input": "@juanfribenitez @99franka99 jajaja tuu solito te das por aludido.. es qe te encanta ser el centro de atención ooogggg !!! jajajaja",
+      "output": [
+        "@juanfribenitez @99franka99 jajaja tú solito te das por aludido.. es que te encanta ser el centro de atención oh !!! jajajaja"
+      ]
+    },
+    {
+      "id": "task007-87",
+      "input": "de café y cartas en el olivo con @josediego217 @juanfrancisco_8",
+      "output": [
+        "de café y cartas en el olivo con @josediego217 @juanfrancisco_8"
+      ]
+    },
+    {
+      "id": "task007-88",
+      "input": "entre la lluvia y los cojones fritos esta noche no estoi durmiendo una mierda. q rayadas d cabeza q asco i q asco.",
+      "output": [
+        "entre la lluvia y los cojones fritos esta noche no estoy durmiendo una mierda. q rayadas d cabeza q asco i q asco."
+      ]
+    },
+    {
+      "id": "task007-89",
+      "input": "de vuelta de semana santa un domingo desde logroño se lîa por un perrito y nunca pararemos en esa gasolinera http://t.co/nvd77bwzbz",
+      "output": [
+        "de vuelta de semana santa un domingo desde logroño se lía por un perrito y nunca pararemos en esa gasolinera http://t.co/nvd77bwzbz"
+      ]
+    },
+    {
+      "id": "task007-90",
+      "input": "ria se me ha vuelto a poner de morena (?) me encanta.",
+      "output": [
+        "ria se me ha vuelto a poner de morena (?) me encanta."
+      ]
+    },
+    {
+      "id": "task007-91",
+      "input": "@jary_17 y yo la musica;) jajajajajaj tu y yo tenemos charlita pendiente eh jajaja",
+      "output": [
+        "@jary_17 y yo la musica;) ja tu y yo tenemos charlita pendiente eh jajaja"
+      ]
+    },
+    {
+      "id": "task007-92",
+      "input": "montate de cada dia que pasa tu propia pelicula sin importarte el protagonismo que llege a tener .",
+      "output": [
+        "montate de cada dia que pasa tu propia película sin importarte el protagonismo que llegue a tener ."
+      ]
+    },
+    {
+      "id": "task007-93",
+      "input": "y hoy de vuelta a ortuella :)",
+      "output": [
+        "y hoy de vuelta a ortuella :)"
+      ]
+    },
+    {
+      "id": "task007-94",
+      "input": "@nestur9 tendre que ahorrar para ir en tren..",
+      "output": [
+        "@nestur9 tendré que ahorrar para ir en tren.."
+      ]
+    },
+    {
+      "id": "task007-95",
+      "input": "pues han sido unas muy buenas meriendas hasta ahora, las mejores, yo creo q ya ns despedimos hasta el año q viene!!;)",
+      "output": [
+        "pues han sido unas muy buenas meriendas hasta ahora, las mejores, yo creo q ya nos despedimos hasta el año q viene!!;)"
+      ]
+    },
+    {
+      "id": "task007-96",
+      "input": "@pinnkvelvet no puedo con tu foto jajajajajjajaj , preciosa &lt;3",
+      "output": [
+        "@pinnkvelvet no puedo con tu foto ja , preciosa &lt;3"
+      ]
+    },
+    {
+      "id": "task007-97",
+      "input": "y esto de que la gente ya este durmiendo o se valla a dormir y yo me puedo quedar asta que quiera por que mañana no tenho clase mola :))",
+      "output": [
+        "y esto de que la gente ya este durmiendo o se valla a dormir y yo me puedo quedar asta que quiera por que mañana no tengo clase mola :))"
+      ]
+    },
+    {
+      "id": "task007-98",
+      "input": "todo va a salir bien @arteaga_jm !!! te quiero y siempre estaré a tu lado.",
+      "output": [
+        "todo va a salir bien @arteaga_jm !!! te quiero y siempre estaré a tu lado."
+      ]
+    },
+    {
+      "id": "task007-99",
+      "input": "no quiero levantarme todavía quiero dormir hasta las tres joder #misionimposibleenmicasa",
+      "output": [
+        "no quiero levantarme todavía quiero dormir hasta las tres joder #misionimposibleenmicasa"
+      ]
+    },
+    {
+      "id": "task007-100",
+      "input": "todos los que veraneamos en vera tenemos que seguir a @veraenfurecida y @postureovera",
+      "output": [
+        "todos los que veraneamos en vera tenemos que seguir a @veraenfurecida y @postureovera"
+      ]
+    },
+    {
+      "id": "task007-101",
+      "input": "#sinhambreporlavida juum :| :| :|",
+      "output": [
+        "#sinhambreporlavida hum :| :| :|"
+      ]
+    },
+    {
+      "id": "task007-102",
+      "input": "y me consumo como una vela no queda nadie a mi alrededor",
+      "output": [
+        "y me consumo como una vela no queda nadie a mi alrededor"
+      ]
+    },
+    {
+      "id": "task007-103",
+      "input": "@ubuntu_apps no. de momento podrá competir con windows phone , firefoxos y poco mas...",
+      "output": [
+        "@ubuntu_apps no. de momento podrá competir con windows phone , firefox_os y poco mas..."
+      ]
+    },
+    {
+      "id": "task007-104",
+      "input": "valla putooo dia de mierda ..... q ascoo de todo",
+      "output": [
+        "valla puto dia de mierda ..... q asco de todo"
+      ]
+    },
+    {
+      "id": "task007-105",
+      "input": "@suso07 atlético fans hooligans , un tio imparcial, con criterio.",
+      "output": [
+        "@suso07 atlético fans hooligans , un tío imparcial, con criterio."
+      ]
+    },
+    {
+      "id": "task007-106",
+      "input": "0. mencioname para saber que estas haciendo el cuestionario: 450 preguntas. ( @nikinikida )",
+      "output": [
+        "0. mencioname para saber que estas haciendo el cuestionario: 450 preguntas. ( @nikinikida )"
+      ]
+    },
+    {
+      "id": "task007-107",
+      "input": "el que se rie del mal del vecino ... el suyo viene de camino ...",
+      "output": [
+        "el que se ríe del mal del vecino ... el suyo viene de camino ..."
+      ]
+    },
+    {
+      "id": "task007-108",
+      "input": "siempre me pasa lo mismo.",
+      "output": [
+        "siempre me pasa lo mismo."
+      ]
+    },
+    {
+      "id": "task007-109",
+      "input": "quiero saber el secreto de el helado!!!! universo escuchame que luego no te enteras!!",
+      "output": [
+        "quiero saber el secreto de el helado!!!! universo escuchame que luego no te enteras!!"
+      ]
+    },
+    {
+      "id": "task007-110",
+      "input": "ven que vamos hacer un pacto yo y tu sonrisa",
+      "output": [
+        "ven que vamos hacer un pacto yo y tu sonrisa"
+      ]
+    },
+    {
+      "id": "task007-111",
+      "input": "yo me entierrro , me pierdo x la tierra paso de la situación",
+      "output": [
+        "yo me entierro , me pierdo x la tierra paso de la situación"
+      ]
+    },
+    {
+      "id": "task007-112",
+      "input": "ni contigo, ni sin ti.",
+      "output": [
+        "ni contigo, ni sin ti."
+      ]
+    },
+    {
+      "id": "task007-113",
+      "input": "os dejo la entrevista que me han realizado en @hiphunters sobre moda, curiosidades,... en inglés y en español. :) http://t.co/bk5l7ar2z0",
+      "output": [
+        "os dejo la entrevista que me han realizado en @hiphunters sobre moda, curiosidades,... en inglés y en español. :) http://t.co/bk5l7ar2z0"
+      ]
+    },
+    {
+      "id": "task007-114",
+      "input": "¿porqué me tengo que levantar ahora con lo agusto que estaba durmiendo? buenos días de todas formas.",
+      "output": [
+        "¿porqué me tengo que levantar ahora con lo agusto que estaba durmiendo? buenos días de todas formas."
+      ]
+    },
+    {
+      "id": "task007-115",
+      "input": "tarde de playita con el danes y @miguellorente89 jaja",
+      "output": [
+        "tarde de playita con el danés y @miguellorente89 jaja"
+      ]
+    },
+    {
+      "id": "task007-116",
+      "input": "buenos días ahora sí que me levanto como la princesa de @celiaa_fdez12",
+      "output": [
+        "buenos días ahora sí que me levanto como la princesa de @celiaa_fdez12"
+      ]
+    },
+    {
+      "id": "task007-117",
+      "input": "@didss95 no no no. la coca. primer aviso",
+      "output": [
+        "@didss95 no no no. la coca. primer aviso"
+      ]
+    },
+    {
+      "id": "task007-118",
+      "input": "no vale pena llorar, por un amor que se fue si el decidió marcharse que le valla bien(8)",
+      "output": [
+        "no vale pena llorar, por un amor que se fue si el decidió marcharse que le valla bien(8)"
+      ]
+    },
+    {
+      "id": "task007-119",
+      "input": "de nuevo una semana de ilusión a raudales, la misma que tiene el bueno de @iturra_colocho. ahí va una foto con él.",
+      "output": [
+        "de nuevo una semana de ilusión a raudales, la misma que tiene el bueno de @iturra_colocho. ahí va una foto con él."
+      ]
+    },
+    {
+      "id": "task007-120",
+      "input": "@dj_rebee si puede ser que le salte los sesos a la fanfarrona esta me esta artando mucho y al final se va a liar y muy gorda. #nodigomas !!",
+      "output": [
+        "@dj_rebee si puede ser que le salte los sesos a la fanfarrona esta me esta hartando mucho y al final se va a liar y muy gorda. #nodigomas !!"
+      ]
+    },
+    {
+      "id": "task007-121",
+      "input": "de puente a puente y dejo que me lleve la corriente",
+      "output": [
+        "de puente a puente y dejo que me lleve la corriente"
+      ]
+    },
+    {
+      "id": "task007-122",
+      "input": "@josedivieso y tu no eres jilipollas a que no?",
+      "output": [
+        "@josedivieso y tu no eres gilipollas a que no?"
+      ]
+    },
+    {
+      "id": "task007-123",
+      "input": "que dia mas triste no verte mas te quiero siempre estaras con nosotrs",
+      "output": [
+        "que dia mas triste no verte mas te quiero siempre estarás con nosotros"
+      ]
+    },
+    {
+      "id": "task007-124",
+      "input": "he muerto en rl intento de dormir y @raquel1209 se rie de miii :(",
+      "output": [
+        "he muerto en el intento de dormir y @raquel1209 se ríe de mí :("
+      ]
+    },
+    {
+      "id": "task007-125",
+      "input": "huuuuyy como está la cosa no?? si el gallo no canta será porque tiene algo en la garganta, no??",
+      "output": [
+        "uy como está la cosa no?? si el gallo no canta será porque tiene algo en la garganta, no??"
+      ]
+    },
+    {
+      "id": "task007-126",
+      "input": "@_innmaa95vp jajaaa ija puta...lo restriegas por toa la cara?",
+      "output": [
+        "@_innmaa95vp ja hija puta...lo restriegas por toa la cara?"
+      ]
+    },
+    {
+      "id": "task007-127",
+      "input": "siempre senti cosaas qe el corazon fue testigo...",
+      "output": [
+        "siempre sentí cosas que el corazón fue testigo..."
+      ]
+    },
+    {
+      "id": "task007-128",
+      "input": "@bipp_ip mira: documento histórico https://t.co/x30idmzqar",
+      "output": [
+        "@bipp_ip mira: documento histórico https://t.co/x30idmzqar"
+      ]
+    },
+    {
+      "id": "task007-129",
+      "input": "@mariajosu68 qué tal el sábado? @cristina_jaen y yo nos quedamos con ganas de verte",
+      "output": [
+        "@mariajosu68 qué tal el sábado? @cristina_jaen y yo nos quedamos con ganas de verte"
+      ]
+    },
+    {
+      "id": "task007-130",
+      "input": "después de una semama inmejorable, me preparo para volver a empezar. con más ganas que nunca. buenas noches.",
+      "output": [
+        "después de una semana inmejorable, me preparo para volver a empezar. con más ganas que nunca. buenas noches."
+      ]
+    },
+    {
+      "id": "task007-131",
+      "input": "\"mi boca nunca se acaba\".",
+      "output": [
+        "\"mi boca nunca se acaba\"."
+      ]
+    },
+    {
+      "id": "task007-132",
+      "input": "si no puedo dormir y son las 7 y me levanto alas 9? #mevoyamorir #mematanlosnervios",
+      "output": [
+        "si no puedo dormir y son las 7 y me levanto alas 9? #mevoyamorir #mematanlosnervios"
+      ]
+    },
+    {
+      "id": "task007-133",
+      "input": "@carmenparda no hay conductora mas sexy . te quiero preciosa",
+      "output": [
+        "@carmenparda no hay conductora mas sexy . te quiero preciosa"
+      ]
+    },
+    {
+      "id": "task007-134",
+      "input": "@paula_villarej ñaves sígueme y calla",
+      "output": [
+        "@paula_villarej ñaves sígueme y calla"
+      ]
+    },
+    {
+      "id": "task007-135",
+      "input": "@jurgi1998 lo de no te vayas haces gaupasa with my o algo asin",
+      "output": [
+        "@jurgi1998 lo de no te vayas haces gaupasa with my o algo asín"
+      ]
+    },
+    {
+      "id": "task007-136",
+      "input": "ps a dormir mosqueada al saber q el viernes, si, este viernes, fiesta d primavera, llueve.",
+      "output": [
+        "pues a dormir mosqueada al saber q el viernes, si, este viernes, fiesta d primavera, llueve."
+      ]
+    },
+    {
+      "id": "task007-137",
+      "input": "hoy es día de regresos. a la noche derrick rose vuelve a las pistas. pero antes @rafaction4 vuelve al gym . #thereturn",
+      "output": [
+        "hoy es día de regresos. a la noche derrick rose vuelve a las pistas. pero antes @rafaction4 vuelve al gym . #thereturn"
+      ]
+    },
+    {
+      "id": "task007-138",
+      "input": "http://t.co/amzsncfhgd ai como le echo de menos.",
+      "output": [
+        "http://t.co/amzsncfhgd ai como le echo de menos."
+      ]
+    },
+    {
+      "id": "task007-139",
+      "input": "@javimerinomusic joe ! me los tengo que pillar ;) jejeje",
+      "output": [
+        "@javimerinomusic joder ! me los tengo que pillar ;) jejeje"
+      ]
+    },
+    {
+      "id": "task007-140",
+      "input": "no te fijes en lo que has perdido, sino en lo que te queda por ganar, @davidmenendezv",
+      "output": [
+        "no te fijes en lo que has perdido, sino en lo que te queda por ganar, @davidmenendezv"
+      ]
+    },
+    {
+      "id": "task007-141",
+      "input": "#elpetaitodemontesion iva empujando este #misteriocoche http://t.co/8pf5asxcvb el solo jajaja",
+      "output": [
+        "#elpetaitodemontesion iva empujando este #misteriocoche http://t.co/8pf5asxcvb el solo jajaja"
+      ]
+    },
+    {
+      "id": "task007-142",
+      "input": "si no luchas por lo que tienes. no llores por lo que pierdes.... @andressitocm @jonahtancabezas",
+      "output": [
+        "si no luchas por lo que tienes. no llores por lo que pierdes.... @andressitocm @jonahtancabezas"
+      ]
+    },
+    {
+      "id": "task007-143",
+      "input": "¿qué sería de @belendelgador y de mí sin esa señal de tráfico para estirar después de la pechá q nos hemos metido en el parque?",
+      "output": [
+        "¿qué sería de @belendelgador y de mí sin esa señal de tráfico para estirar después de la pechada q nos hemos metido en el parque?"
+      ]
+    },
+    {
+      "id": "task007-144",
+      "input": "@cartones01 a qué hora te dormistes anoche? yo a las 12 largittaa ..",
+      "output": [
+        "@cartones01 a qué hora te dormiste anoche? yo a las 12 larguita .."
+      ]
+    },
+    {
+      "id": "task007-145",
+      "input": "@hugorusadir madre mía! aquí estamos mosqueados pero por otras cosas, no por eso",
+      "output": [
+        "@hugorusadir madre mía! aquí estamos mosqueados pero por otras cosas, no por eso"
+      ]
+    },
+    {
+      "id": "task007-146",
+      "input": "despues de una buena visitilla de @sancheez13 , a seguir con el dibujiito",
+      "output": [
+        "después de una buena visitilla de @sancheez13 , a seguir con el dibujito"
+      ]
+    },
+    {
+      "id": "task007-147",
+      "input": "es que el bbk es tan perfecto...",
+      "output": [
+        "es que el bbk es tan perfecto..."
+      ]
+    },
+    {
+      "id": "task007-148",
+      "input": "me da igual que no me traiga un regalo de allí, el mejor regalo lo tengo día tras día. http://t.co/icttqtk5lq",
+      "output": [
+        "me da igual que no me traiga un regalo de allí, el mejor regalo lo tengo día tras día. http://t.co/icttqtk5lq"
+      ]
+    },
+    {
+      "id": "task007-149",
+      "input": "@fati_241 no lo sabías? soy el má guay y el má malo y richi es pene largo digo corto* #lgdc",
+      "output": [
+        "@fati_241 no lo sabías? soy el más guay y el más malo y richi es pene largo digo corto* #lgdc"
+      ]
+    },
+    {
+      "id": "task007-150",
+      "input": "para mi ya no eres nada solo una sucia ramera.",
+      "output": [
+        "para mi ya no eres nada solo una sucia ramera."
+      ]
+    },
+    {
+      "id": "task007-151",
+      "input": "@adricastro6 nbeeeaaa y eso? que le pasa a tu ojiyo ? :d",
+      "output": [
+        "@adricastro6 no_veas y eso? que le pasa a tu ojillo ? :d"
+      ]
+    },
+    {
+      "id": "task007-152",
+      "input": "con ganas de que venga a verme @juananmarley mi hermaanito me tiene abandonaa !!! :((",
+      "output": [
+        "con ganas de que venga a verme @juananmarley mi hermanito me tiene abandonada !!! :(("
+      ]
+    },
+    {
+      "id": "task007-153",
+      "input": "lo malo no es trompezar con la piedra si no que te guste.",
+      "output": [
+        "lo malo no es tropezar con la piedra si no que te guste."
+      ]
+    },
+    {
+      "id": "task007-154",
+      "input": "tengo ganas de que llegues ah casa yo mas....",
+      "output": [
+        "tengo ganas de que llegues ah casa yo mas...."
+      ]
+    },
+    {
+      "id": "task007-155",
+      "input": "loo exoo maazooo dee menooss puuff :(",
+      "output": [
+        "loo echo mazo de menos puf :("
+      ]
+    },
+    {
+      "id": "task007-156",
+      "input": "oye oye. k pasa aki eh. :'( @lauuuura99 @triihdd",
+      "output": [
+        "oye oye. k pasa aquí eh. :'( @lauuuura99 @triihdd"
+      ]
+    },
+    {
+      "id": "task007-157",
+      "input": "ya sabes que no resisto mucho una mirada, mucho menos una tuya.",
+      "output": [
+        "ya sabes que no resisto mucho una mirada, mucho menos una tuya."
+      ]
+    },
+    {
+      "id": "task007-158",
+      "input": "\" la sonrisa mas bella llega después de la lagrima mas dolorosa.\"",
+      "output": [
+        "\" la sonrisa mas bella llega después de la lagrima mas dolorosa.\""
+      ]
+    },
+    {
+      "id": "task007-159",
+      "input": "@mariagodino94 @kimbherlynmo :o al vais a banda habra ke veros xdd",
+      "output": [
+        "@mariagodino94 @kimbherlynmo :o al vais a banda habrá que veros xdd"
+      ]
+    },
+    {
+      "id": "task007-160",
+      "input": "pues en mi pueblo no cae ni gota. vivir en el culo del mundo, mola.",
+      "output": [
+        "pues en mi pueblo no cae ni gota. vivir en el culo del mundo, mola."
+      ]
+    },
+    {
+      "id": "task007-161",
+      "input": "empezando fuerte abril, con un desayuno como dios manda; gofre y cola-cao ^^ http://t.co/op5wyez9mw",
+      "output": [
+        "empezando fuerte abril, con un desayuno como dios manda; gofre y cola_cao ^^ http://t.co/op5wyez9mw"
+      ]
+    },
+    {
+      "id": "task007-162",
+      "input": "a veces la solución está en desaparecer por un tiempo.",
+      "output": [
+        "a veces la solución está en desaparecer por un tiempo."
+      ]
+    },
+    {
+      "id": "task007-163",
+      "input": "@borjez_fdez96 no se me ha perdido nada en francia :p pero si quisiese lo haria",
+      "output": [
+        "@borjez_fdez96 no se me ha perdido nada en francia :p pero si quisiese lo haría"
+      ]
+    },
+    {
+      "id": "task007-164",
+      "input": "@alwayslibelula @anadelafebravo @xemaa_14 no quereis camping? tomo nota",
+      "output": [
+        "@alwayslibelula @anadelafebravo @xemaa_14 no queréis camping? tomo nota"
+      ]
+    },
+    {
+      "id": "task007-165",
+      "input": "quiero tranquileo del bueno hoy..!!!",
+      "output": [
+        "quiero tranquilidad del bueno hoy..!!!"
+      ]
+    },
+    {
+      "id": "task007-166",
+      "input": "no sabes el daño que haces.",
+      "output": [
+        "no sabes el daño que haces."
+      ]
+    },
+    {
+      "id": "task007-167",
+      "input": "antes no la queria y ahora quiero verla todos los dias",
+      "output": [
+        "antes no la quería y ahora quiero verla todos los dias"
+      ]
+    },
+    {
+      "id": "task007-168",
+      "input": "riesgo de lluvia hoy? me cago en tus muertos",
+      "output": [
+        "riesgo de lluvia hoy? me cago en tus muertos"
+      ]
+    },
+    {
+      "id": "task007-169",
+      "input": "@anita_9930 macho tiras todo torpe",
+      "output": [
+        "@anita_9930 macho tiras todo torpe"
+      ]
+    },
+    {
+      "id": "task007-170",
+      "input": "@crishmc asdfggbjkkkl ¿si? joder tengo que estar en primera fila como sea.",
+      "output": [
+        "@crishmc asdfggbjkkkl ¿si? joder tengo que estar en primera fila como sea."
+      ]
+    },
+    {
+      "id": "task007-171",
+      "input": "@mariakodak ay no lo creo pero me has alegradp la mañana con este despertar. guapa tú! .buenos dias.",
+      "output": [
+        "@mariakodak ay no lo creo pero me has alegrado la mañana con este despertar. guapa tú! .buenos dias."
+      ]
+    },
+    {
+      "id": "task007-172",
+      "input": "@ann_gv @marisanchezt12 y yo a tii pelurroja:3",
+      "output": [
+        "@ann_gv @marisanchezt12 y yo a ti pelurroja:3"
+      ]
+    },
+    {
+      "id": "task007-173",
+      "input": "creo que despues de dar un paseito con simba me tumbare un ratito en el sillón",
+      "output": [
+        "creo que después de dar un paseito con simba me tumbare un ratito en el sillón"
+      ]
+    },
+    {
+      "id": "task007-174",
+      "input": "tu sabrás a lo que juegas,pero a mi no me la vuelves a jugar.",
+      "output": [
+        "tu sabrás a lo que juegas,pero a mi no me la vuelves a jugar."
+      ]
+    },
+    {
+      "id": "task007-175",
+      "input": "@karinbourguigno pues sii aver si me dejan en el trabajo un poco pues ya nos kedan 2 o asi asik genial la verdad ktal vosotrs ??un besitoo",
+      "output": [
+        "@karinbourguigno pues sí aver si me dejan en el trabajo un poco pues ya nos quedan 2 o asi así_que genial la verdad qué_tal vosotros ??un besito"
+      ]
+    },
+    {
+      "id": "task007-176",
+      "input": "@mtrin93 lo de angustia sobra jajajajajaajaja",
+      "output": [
+        "@mtrin93 lo de angustia sobra ja"
+      ]
+    },
+    {
+      "id": "task007-177",
+      "input": "buena caminata la de hoy cn @cato_alicun casi tres horas y unos 13km jaja",
+      "output": [
+        "buena caminata la de hoy con @cato_alicun casi tres horas y unos 13km jaja"
+      ]
+    },
+    {
+      "id": "task007-178",
+      "input": "en hora y media me voy para coruña... ¡qué pereza!",
+      "output": [
+        "en hora y media me voy para coruña... ¡qué pereza!"
+      ]
+    },
+    {
+      "id": "task007-179",
+      "input": "en la vida con cuidado hay que caminar #andandoconzapatosdecristal",
+      "output": [
+        "en la vida con cuidado hay que caminar #andandoconzapatosdecristal"
+      ]
+    },
+    {
+      "id": "task007-180",
+      "input": "@elduke96 pues por que ayer estuve en tu pueblooo !!",
+      "output": [
+        "@elduke96 pues por que ayer estuve en tu pueblo !!"
+      ]
+    },
+    {
+      "id": "task007-181",
+      "input": "@ralfdez muchas gracias por seguirme :))) me a sorprendido ;)",
+      "output": [
+        "@ralfdez muchas gracias por seguirme :))) me a sorprendido ;)"
+      ]
+    },
+    {
+      "id": "task007-182",
+      "input": "@soyelcapi muy cierto, a mi me ha pasado!!",
+      "output": [
+        "@soyelcapi muy cierto, a mi me ha pasado!!"
+      ]
+    },
+    {
+      "id": "task007-183",
+      "input": "@nea_rufi @mariiaaro @chuskasf @nataalia10 @carmen_xd_90 guapaaa !!ganas pr vernos y echar unas risitas siii ,por lo demás nooo !!!jajajajaja",
+      "output": [
+        "@nea_rufi @mariiaaro @chuskasf @nataalia10 @carmen_xd_90 guapa !!ganas para vernos y echar unas risitas sí ,por lo demás no !!!jajajajaja"
+      ]
+    },
+    {
+      "id": "task007-184",
+      "input": "no os esforcéis por encontrar a la mejor, por que la tengo yo. http://t.co/44ypmt2ifn",
+      "output": [
+        "no os esforcéis por encontrar a la mejor, por que la tengo yo. http://t.co/44ypmt2ifn"
+      ]
+    },
+    {
+      "id": "task007-185",
+      "input": "como mola retwitear a las tontas de la zona. jejejejejejejejeje",
+      "output": [
+        "como mola retwittear a las tontas de la zona. jejejejejejejejeje"
+      ]
+    },
+    {
+      "id": "task007-186",
+      "input": "momentos de estos despues de una semana santa...son los que me gustan!!!!! :d",
+      "output": [
+        "momentos de estos después de una semana santa...son los que me gustan!!!!! :d"
+      ]
+    },
+    {
+      "id": "task007-187",
+      "input": "típico: te ven en la calle y no te saludan, te conectas y te dicen \"te vi\"",
+      "output": [
+        "típico: te ven en la calle y no te saludan, te conectas y te dicen \"te vi\""
+      ]
+    },
+    {
+      "id": "task007-188",
+      "input": "la gente se piensa que soy estúpido ... bueh si soy estúpido pero me doy cuenta de que me están boludeando #aviso",
+      "output": [
+        "la gente se piensa que soy estúpido ... bah si soy estúpido pero me doy cuenta de que me están boludeando #aviso"
+      ]
+    },
+    {
+      "id": "task007-189",
+      "input": "#dormiresdecobardes tony parker 23 ptos / 5 rbts / 11 asis",
+      "output": [
+        "#dormiresdecobardes tony parker 23 puntos / 5 rebotes / 11 asis"
+      ]
+    },
+    {
+      "id": "task007-190",
+      "input": "@mariomarin35 yo tambien que? jaja",
+      "output": [
+        "@mariomarin35 yo también que? jaja"
+      ]
+    },
+    {
+      "id": "task007-191",
+      "input": "alomejor no nos a pillao todo el chaparron corriendo @manumartinezca1 jajajajaaja #qemotivados ;p",
+      "output": [
+        "a_lo_mejor no nos a pillado todo el chaparrón corriendo @manumartinezca1 ja #qemotivados ;p"
+      ]
+    },
+    {
+      "id": "task007-192",
+      "input": "@mariaperez89 @luceromexico @lucerofanespana pasaa link creo que estoy registrado? pero hace mucho que no me meto",
+      "output": [
+        "@mariaperez89 @luceromexico @lucerofanespana pasa link creo que estoy registrado? pero hace mucho que no me meto"
+      ]
+    },
+    {
+      "id": "task007-193",
+      "input": "k #bien me a sentado esta ducha k me akabo d dar!!",
+      "output": [
+        "k #bien me a sentado esta ducha k me acabo d dar!!"
+      ]
+    },
+    {
+      "id": "task007-194",
+      "input": "me quieren quitar el mobil al volver al instituto... em vereis , o me gravais un puto disco con mi musica o me pego un tiro, no jodais",
+      "output": [
+        "me quieren quitar el móvil al volver al instituto... eh veréis , o me grabáis un puto disco con mi musica o me pego un tiro, no jodáis"
+      ]
+    },
+    {
+      "id": "task007-195",
+      "input": "en londres sin parar y yo con estos pelos... la culpa es de mi adorada rosa, pero a mí me encantan. #sarnacongusto http://t.co/p5sjzorrli",
+      "output": [
+        "en londres sin parar y yo con estos pelos... la culpa es de mi adorada rosa, pero a mí me encantan. #sarnacongusto http://t.co/p5sjzorrli"
+      ]
+    },
+    {
+      "id": "task007-196",
+      "input": "la vida nos da lo que nos merecemos si tratas a todos por igual la vida te tratara como a todos.",
+      "output": [
+        "la vida nos da lo que nos merecemos si tratas a todos por igual la vida te tratara como a todos."
+      ]
+    },
+    {
+      "id": "task007-197",
+      "input": "yo flipo demasiado, ai mai .",
+      "output": [
+        "yo flipo demasiado, ai mai ."
+      ]
+    },
+    {
+      "id": "task007-198",
+      "input": "@criss_alcompas jajajajajaja entonces tu alli con la vecina no te aburres jajajajaja",
+      "output": [
+        "@criss_alcompas jajajajajaja entonces tu allí con la vecina no te aburres jajajajaja"
+      ]
+    },
+    {
+      "id": "task007-199",
+      "input": "mirian sabe lo q ha echo po eso llama a su mama zorraica",
+      "output": [
+        "mirian sabe lo q ha echo por eso llama a su mama zorraica"
+      ]
+    },
+    {
+      "id": "task007-200",
+      "input": "esa violencia que teneis dentro de donde ha salio ? vas a explotar señooooor",
+      "output": [
+        "esa violencia que tenéis dentro de donde ha salio ? vas a explotar señor"
+      ]
+    },
+    {
+      "id": "task007-201",
+      "input": "@carmenccano @maria17ll iraaaaaaa jajajaa no no no lo contrario jejej",
+      "output": [
+        "@carmenccano @maria17ll ira ja no no no lo contrario je"
+      ]
+    },
+    {
+      "id": "task007-202",
+      "input": "@sorayacf tu mini con zodiac ! que bien vivís! un beso http://t.co/itkud2y56v",
+      "output": [
+        "@sorayacf tu mini con zódiac ! que bien vivís! un beso http://t.co/itkud2y56v"
+      ]
+    },
+    {
+      "id": "task007-203",
+      "input": "otro dia sin dormir jaja esto empieza a convertirse en mala costumbre",
+      "output": [
+        "otro dia sin dormir jaja esto empieza a convertirse en mala costumbre"
+      ]
+    },
+    {
+      "id": "task007-204",
+      "input": "no siempre los chicos son imbeciles http://t.co/pm1jozkhd5",
+      "output": [
+        "no siempre los chicos son imbéciles http://t.co/pm1jozkhd5"
+      ]
+    },
+    {
+      "id": "task007-205",
+      "input": "peliculita cn mi compare @aleefranco16",
+      "output": [
+        "peliculita con mi compare @aleefranco16"
+      ]
+    },
+    {
+      "id": "task007-206",
+      "input": "lo que esta lloviendo por cuevas bajas madre mia",
+      "output": [
+        "lo que esta lloviendo por cuevas bajas madre mía"
+      ]
+    },
+    {
+      "id": "task007-207",
+      "input": "\"pasaran los años pero tu seguiras formando parte de mi historia.\"",
+      "output": [
+        "\"pasaran los años pero tu seguirás formando parte de mi historia.\""
+      ]
+    },
+    {
+      "id": "task007-208",
+      "input": "@dami85ho así es amiga mía, cuando menos te esperas va la vida y te sorprende, a mí digamos que me lo ha demostrado también :d",
+      "output": [
+        "@dami85ho así es amiga mía, cuando menos te esperas va la vida y te sorprende, a mí digamos que me lo ha demostrado también :d"
+      ]
+    },
+    {
+      "id": "task007-209",
+      "input": "si, mi madre es aurori la peluquera. pero… @carloshr1995 http://t.co/vdmsbukiti",
+      "output": [
+        "si, mi madre es aurori la peluquera. pero… @carloshr1995 http://t.co/vdmsbukiti"
+      ]
+    },
+    {
+      "id": "task007-210",
+      "input": "@nachogm27 yam jajaja te has ganado una colleja xd",
+      "output": [
+        "@nachogm27 yam jajaja te has ganado una colleja xd"
+      ]
+    },
+    {
+      "id": "task007-211",
+      "input": "@fatiiifati ya eh? es ke no aguanto na ... jajajjaja",
+      "output": [
+        "@fatiiifati ya eh? es que no aguanto nada ... ja"
+      ]
+    },
+    {
+      "id": "task007-212",
+      "input": "a yo digo k va ser un empate la verdad jaja",
+      "output": [
+        "a yo digo k va ser un empate la verdad jaja"
+      ]
+    },
+    {
+      "id": "task007-213",
+      "input": "un dia me dijeron q si una persona no expresa sus sentimiento de lo q siente o lo q quiere acer en un futuro no sera nadiee ;)",
+      "output": [
+        "un dia me dijeron q si una persona no expresa sus sentimiento de lo q siente o lo q quiere hacer en un futuro no sera nadie ;)"
+      ]
+    },
+    {
+      "id": "task007-214",
+      "input": "@lauraloveom jajaja, yo mas bubu , chica loca :3",
+      "output": [
+        "@lauraloveom jajaja, yo mas bubu , chica loca :3"
+      ]
+    },
+    {
+      "id": "task007-215",
+      "input": "muy buenos dias!! empezamos c0n buenn pien el mes!!!!:p",
+      "output": [
+        "muy buenos dias!! empezamos c0n buen pie el mes!!!!:p"
+      ]
+    },
+    {
+      "id": "task007-216",
+      "input": "@bykikomatamoros qué te pasa a ti con iker ? diego y valdés lo estarán haciendo bien, pero que rápido olvidamos. a mou le falta humildad.",
+      "output": [
+        "@bykikomatamoros qué te pasa a ti con íker ? diego y valdés lo estarán haciendo bien, pero que rápido olvidamos. a mou le falta humildad."
+      ]
+    },
+    {
+      "id": "task007-217",
+      "input": "'me ahogo en un vaso de agua si no estás'",
+      "output": [
+        "'me ahogo en un vaso de agua si no estás'"
+      ]
+    },
+    {
+      "id": "task007-218",
+      "input": "viendo a @inmaps_91 en la tele como toca la #trompeta",
+      "output": [
+        "viendo a @inmaps_91 en la tele como toca la #trompeta"
+      ]
+    },
+    {
+      "id": "task007-219",
+      "input": "@mariagm1999 jajajajaja que tonnnntica eres l",
+      "output": [
+        "@mariagm1999 jajajajaja que tontica eres l"
+      ]
+    },
+    {
+      "id": "task007-220",
+      "input": "la pesadilla del hombre que tenía el pene oculto.",
+      "output": [
+        "la pesadilla del hombre que tenía el pene oculto."
+      ]
+    },
+    {
+      "id": "task007-221",
+      "input": "me toco clary fray. ¿has leido el libro? si. ¿te gusta? me encanta, soy nefilim hasta la muerte.",
+      "output": [
+        "me toco clary fray. ¿has leído el libro? si. ¿te gusta? me encanta, soy nefilim hasta la muerte."
+      ]
+    },
+    {
+      "id": "task007-222",
+      "input": "@sardinazoologic gracias x seguime",
+      "output": [
+        "@sardinazoologic gracias x seguirme"
+      ]
+    },
+    {
+      "id": "task007-223",
+      "input": "\"perdoname por querer entregarte mi vida,por querer darte mis ilusiones,mi tiempo, mis ganas y curar tus heridas\"..",
+      "output": [
+        "\"perdoname por querer entregarte mi vida,por querer darte mis ilusiones,mi tiempo, mis ganas y curar tus heridas\".."
+      ]
+    },
+    {
+      "id": "task007-224",
+      "input": "¿qué más cosas faltan por sacar de la monarquía?.",
+      "output": [
+        "¿qué más cosas faltan por sacar de la monarquía?."
+      ]
+    },
+    {
+      "id": "task007-225",
+      "input": "@tammaruchi esk esta empiieza kn buen piie sii jajajajaha venga a mandar trabajos diiios mioo las vacaciones la an sentao mu mal jajajaj",
+      "output": [
+        "@tammaruchi es_que esta empieza con buen pie sí jajajajaha venga a mandar trabajos dios mío las vacaciones la an sentado mu mal ja"
+      ]
+    },
+    {
+      "id": "task007-226",
+      "input": "a sido muy genial porque eh estado con @elenarb15 y ella es lo mejor ya sabes... ;) tequieromucho !",
+      "output": [
+        "a sido muy genial porque eh estado con @elenarb15 y ella es lo mejor ya sabes... ;) te_quiero_mucho !"
+      ]
+    },
+    {
+      "id": "task007-227",
+      "input": "@lidia_ypunto vaya tela cada vez q ve mi mami algo relacionado con gh me pregunta por @martasanchezgh le vo a dar el fono de mami a marta :)",
+      "output": [
+        "@lidia_ypunto vaya tela cada vez q ve mi mami algo relacionado con gh me pregunta por @martasanchezgh le voy a dar el teléfono de mami a marta :)"
+      ]
+    },
+    {
+      "id": "task007-228",
+      "input": "un 'te prometo que siempre estaré ahí para todo pequeña' es lo que necesito.",
+      "output": [
+        "un 'te prometo que siempre estaré ahí para todo pequeña' es lo que necesito."
+      ]
+    },
+    {
+      "id": "task007-229",
+      "input": "@adri_pobe hoy ya no puedes qedar no?",
+      "output": [
+        "@adri_pobe hoy ya no puedes quedar no?"
+      ]
+    },
+    {
+      "id": "task007-230",
+      "input": "\"@edencontrerasde: me tengo que poner en forma, hoy toca correr\" a ver si es verdad!! q ya esta aqui el veranito!!",
+      "output": [
+        "\"@edencontrerasde: me tengo que poner en forma, hoy toca correr\" a ver si es verdad!! q ya esta aquí el veranito!!"
+      ]
+    },
+    {
+      "id": "task007-231",
+      "input": "¿cómo no os puede gustar este hombre? http://t.co/ynppbljuxo",
+      "output": [
+        "¿cómo no os puede gustar este hombre? http://t.co/ynppbljuxo"
+      ]
+    },
+    {
+      "id": "task007-232",
+      "input": "1 mes para los 15, dulces sueños",
+      "output": [
+        "1 mes para los 15, dulces sueños"
+      ]
+    },
+    {
+      "id": "task007-233",
+      "input": "vaya basura de tt solo se salva twd",
+      "output": [
+        "vaya basura de tt solo se salva twd"
+      ]
+    },
+    {
+      "id": "task007-234",
+      "input": "@likanena jajaj al final si que se va acabar el mundo como sigan asi",
+      "output": [
+        "@likanena ja al final si que se va acabar el mundo como sigan asi"
+      ]
+    },
+    {
+      "id": "task007-235",
+      "input": "una sonrisa significa mucho. dura un segundo pero su recuerdo, a veces, nunca se borra.",
+      "output": [
+        "una sonrisa significa mucho. dura un segundo pero su recuerdo, a veces, nunca se borra."
+      ]
+    },
+    {
+      "id": "task007-236",
+      "input": "@dani31youtube @raulblandezr no están bien colocadas. ahí*",
+      "output": [
+        "@dani31youtube @raulblandezr no están bien colocadas. ahí*"
+      ]
+    },
+    {
+      "id": "task007-237",
+      "input": "@lucasito_18 q coxinooooo , como dice antoniojajaj",
+      "output": [
+        "@lucasito_18 q cochino , como dice antonio_ja"
+      ]
+    },
+    {
+      "id": "task007-238",
+      "input": "guía de seguridad en wordpress (i) http://t.co/y0n8c7wjay",
+      "output": [
+        "guía de seguridad en wordpress (i) http://t.co/y0n8c7wjay"
+      ]
+    },
+    {
+      "id": "task007-239",
+      "input": "descargando las 1.300 fotos de @misionposible en mi ordenador. qué locura!!! #mp2013",
+      "output": [
+        "descargando las 1.300 fotos de @misionposible en mi ordenador. qué locura!!! #mp2013"
+      ]
+    },
+    {
+      "id": "task007-240",
+      "input": "@alex_marti hola me llamo alejandro y cago mas que un oso (; lo cnoces colegui ?",
+      "output": [
+        "@alex_marti hola me llamo alejandro y cago mas que un oso (; lo conoces colega ?"
+      ]
+    },
+    {
+      "id": "task007-241",
+      "input": "ola q ase , eres cabra ? ola q ase!!",
+      "output": [
+        "ola q ase , eres cabra ? ola q ase!!"
+      ]
+    },
+    {
+      "id": "task007-242",
+      "input": "#meteoalarm en #almería para el 03-04-2013 17:18:00 sobre tormentas de nivel #blanco",
+      "output": [
+        "#meteoalarm en #almería para el 03-04-2013 17:18:00 sobre tormentas de nivel #blanco"
+      ]
+    },
+    {
+      "id": "task007-243",
+      "input": "solo la tuya mi amol",
+      "output": [
+        "solo la tuya mi amol"
+      ]
+    },
+    {
+      "id": "task007-244",
+      "input": "@anacg511 ya pero yo bajare pa el 20 pico de mayo... o la primera semana se junio",
+      "output": [
+        "@anacg511 ya pero yo bajare pa el 20 pico de mayo... o la primera semana se junio"
+      ]
+    },
+    {
+      "id": "task007-245",
+      "input": "si no lo intentas no podrás averiguarlo! :)",
+      "output": [
+        "si no lo intentas no podrás averiguarlo! :)"
+      ]
+    },
+    {
+      "id": "task007-246",
+      "input": "felicidades a los feos de @evavalinovelez y @davidbecerra8 por sus 2 mesecitos :)",
+      "output": [
+        "felicidades a los feos de @evavalinovelez y @davidbecerra8 por sus 2 mesecitos :)"
+      ]
+    },
+    {
+      "id": "task007-247",
+      "input": "lo tuyo es un amor de mentira, no eres feliz con el y pase lo que pase vas a ser mia ...",
+      "output": [
+        "lo tuyo es un amor de mentira, no eres feliz con el y pase lo que pase vas a ser mía ..."
+      ]
+    },
+    {
+      "id": "task007-248",
+      "input": "solo una vez más -.* @arasiprat",
+      "output": [
+        "solo una vez más -.* @arasiprat"
+      ]
+    },
+    {
+      "id": "task007-249",
+      "input": "te quejas de la caza, de que matan animales indefensos, que pobrecillos y tal y cual, pero luego vas a casa y te inflas a filetes.",
+      "output": [
+        "te quejas de la caza, de que matan animales indefensos, que pobrecillos y tal y cual, pero luego vas a casa y te inflas a filetes."
+      ]
+    },
+    {
+      "id": "task007-250",
+      "input": "es más fácil culpar a otros de la situación actual que reconocer la propia culpa. las cc.aa. \"ricas\" tienen tanta culpa como las otras 17.",
+      "output": [
+        "es más fácil culpar a otros de la situación actual que reconocer la propia culpa. las cc.aa. \"ricas\" tienen tanta culpa como las otras 17."
+      ]
+    },
+    {
+      "id": "task007-251",
+      "input": "hahahahahaha omg el icon de justin .",
+      "output": [
+        "hahahahahaha omg el icono de justin ."
+      ]
+    },
+    {
+      "id": "task007-252",
+      "input": "@clariss39188207 hola bella muy bien y tu?",
+      "output": [
+        "@clariss39188207 hola bella muy bien y tu?"
+      ]
+    },
+    {
+      "id": "task007-253",
+      "input": "ver una peli y luego morirme de sueño fuando me tenga que poner a estudiar? decisiones duras...",
+      "output": [
+        "ver una película y luego morirme de sueño cuando me tenga que poner a estudiar? decisiones duras..."
+      ]
+    },
+    {
+      "id": "task007-254",
+      "input": "me voy al xaaanadu (:",
+      "output": [
+        "me voy al xanadú (:"
+      ]
+    },
+    {
+      "id": "task007-255",
+      "input": "@melycactus jajajaa que bien vivimos",
+      "output": [
+        "@melycactus ja que bien vivimos"
+      ]
+    },
+    {
+      "id": "task007-256",
+      "input": "primer baño del año @username los álamos http://t.co/pxl0c3zgf3",
+      "output": [
+        "primer baño del año @username los álamos http://t.co/pxl0c3zgf3"
+      ]
+    },
+    {
+      "id": "task007-257",
+      "input": "hola! new ! @username cayenablanca studio http://t.co/axfahcgx27",
+      "output": [
+        "hola! new ! @username cayenablanca studio http://t.co/axfahcgx27"
+      ]
+    },
+    {
+      "id": "task007-258",
+      "input": "@mcpompis jajaja queva queva no has visto que me a explotado el globo ?eso es que no me quiere",
+      "output": [
+        "@mcpompis jajaja qué_va qué_va no has visto que me a explotado el globo ?eso es que no me quiere"
+      ]
+    },
+    {
+      "id": "task007-259",
+      "input": "@mariarteaga90 gracias i ninia aver si t veo muaxh !!",
+      "output": [
+        "@mariarteaga90 gracias i niña aver si t veo mua !!"
+      ]
+    },
+    {
+      "id": "task007-260",
+      "input": "\"si robas, que sea un beso. si lloras, que sea de felicidad. si pierdes, que sea el miedo. si ganas, que sea un amigo.\"",
+      "output": [
+        "\"si robas, que sea un beso. si lloras, que sea de felicidad. si pierdes, que sea el miedo. si ganas, que sea un amigo.\""
+      ]
+    },
+    {
+      "id": "task007-261",
+      "input": "@evita_vallekas ajajajajajaa tu duerme duerme (;",
+      "output": [
+        "@evita_vallekas ja tu duerme duerme (;"
+      ]
+    },
+    {
+      "id": "task007-262",
+      "input": "@anadochay amoor , pode dar #rt nesse link ? https://t.co/7nuevlkb3o . te divulgo 3x :)) . obg !",
+      "output": [
+        "@anadochay amoor , pode dar #rt nesse link ? https://t.co/7nuevlkb3o . te divulgo 3x :)) . obg !"
+      ]
+    },
+    {
+      "id": "task007-263",
+      "input": "@nereapleon o de barro caliente",
+      "output": [
+        "@nereapleon o de barro caliente"
+      ]
+    },
+    {
+      "id": "task007-264",
+      "input": "@adrianacoleram mañana te llevo un artículo del periódico en el que venía. he supuesto que te podría interesar…",
+      "output": [
+        "@adrianacoleram mañana te llevo un artículo del periódico en el que venía. he supuesto que te podría interesar…"
+      ]
+    },
+    {
+      "id": "task007-265",
+      "input": "#tito es ahora una tendencia en #madrid http://t.co/lvso6nyayn",
+      "output": [
+        "#tito es ahora una tendencia en #madrid http://t.co/lvso6nyayn"
+      ]
+    },
+    {
+      "id": "task007-266",
+      "input": "a descansar wapita de face que hoy a sido un dia largo y mñana hay q levantarse cn las pilas recargadas :-) #teqm16 @inmagandul #tuereseso",
+      "output": [
+        "a descansar guapita de face que hoy a sido un dia largo y mañana hay q levantarse con las pilas recargadas :-) #teqm16 @inmagandul #tuereseso"
+      ]
+    },
+    {
+      "id": "task007-267",
+      "input": "quiero pasar calor, hartarme de tintito tira en el cesped .. quiero verano yaa !!!:) http://t.co/z4wmbmjigg",
+      "output": [
+        "quiero pasar calor, hartarme de tintito tira en el césped .. quiero verano ya !!!:) http://t.co/z4wmbmjigg"
+      ]
+    },
+    {
+      "id": "task007-268",
+      "input": "\"me trayó una ola del pacifico y llego un punto que la ola me trayó y pense ah! mi orechio jodido\"",
+      "output": [
+        "\"me tragó una ola del pacifico y llego un punto que la ola me tragó y pensé ah! mi orechio jodido\""
+      ]
+    },
+    {
+      "id": "task007-269",
+      "input": "por el #diamundialdelautismo esta noche el estadio mediterráneo tendrá una iluminación especialmente dedicado a ellos.",
+      "output": [
+        "por el #diamundialdelautismo esta noche el estadio mediterráneo tendrá una iluminación especialmente dedicado a ellos."
+      ]
+    },
+    {
+      "id": "task007-270",
+      "input": "aqui en musica que no ha venido la ticher -.-",
+      "output": [
+        "aquí en musica que no ha venido la ticher -.-"
+      ]
+    },
+    {
+      "id": "task007-271",
+      "input": "pufff ... me parece a miii q todo esta teniendo un color demasiado...oscuro ains !!!! kiero pùrpura !!!!!!",
+      "output": [
+        "puf ... me parece a mí q todo esta teniendo un color demasiado...oscuro ains !!!! quiero púrpura !!!!!!"
+      ]
+    },
+    {
+      "id": "task007-272",
+      "input": "cuidado con las palabras, son armas peligrosas que no necesitan licencia.",
+      "output": [
+        "cuidado con las palabras, son armas peligrosas que no necesitan licencia."
+      ]
+    },
+    {
+      "id": "task007-273",
+      "input": "ay jo, el insti :'3",
+      "output": [
+        "ay jo, el instituto :'3"
+      ]
+    },
+    {
+      "id": "task007-274",
+      "input": "desearle a mi @mariiluna8 que tenga un buen viaje de vuelta y que te voy a echar mucho de menos!! en unos meses te veo otra vez :)",
+      "output": [
+        "desearle a mi @mariiluna8 que tenga un buen viaje de vuelta y que te voy a echar mucho de menos!! en unos meses te veo otra vez :)"
+      ]
+    },
+    {
+      "id": "task007-275",
+      "input": "jamás podremos cambiar el mundo. pero si podremos comprendernos más.",
+      "output": [
+        "jamás podremos cambiar el mundo. pero si podremos comprendernos más."
+      ]
+    },
+    {
+      "id": "task007-276",
+      "input": "un poquito de ejercicios antes de cenar!! ;)",
+      "output": [
+        "un poquito de ejercicios antes de cenar!! ;)"
+      ]
+    },
+    {
+      "id": "task007-277",
+      "input": "juan carlos noooo :'( :'(",
+      "output": [
+        "juan carlos no :'( :'("
+      ]
+    },
+    {
+      "id": "task007-278",
+      "input": "@lorensh98 priiimito donde te vas?",
+      "output": [
+        "@lorensh98 primito donde te vas?"
+      ]
+    },
+    {
+      "id": "task007-279",
+      "input": "@alexelangel1 @ignasi_pr @jordipvermelles *te miro*como esta ignasi ?",
+      "output": [
+        "@alexelangel1 @ignasi_pr @jordipvermelles *te miro*como esta ignasi ?"
+      ]
+    },
+    {
+      "id": "task007-280",
+      "input": "@atsidirdam84 como me felicite mi idolo muero seguro.. jajaja que tonto eres.",
+      "output": [
+        "@atsidirdam84 como me felicite mi ídolo muero seguro.. jajaja que tonto eres."
+      ]
+    },
+    {
+      "id": "task007-281",
+      "input": "@manuelbn75 jajajaja abe cuando vienes conmigo un diita maricona",
+      "output": [
+        "@manuelbn75 jajajaja abe cuando vienes conmigo un diíta maricona"
+      ]
+    },
+    {
+      "id": "task007-282",
+      "input": "@mariacortes1997 eso es en todos los institutos?",
+      "output": [
+        "@mariacortes1997 eso es en todos los institutos?"
+      ]
+    },
+    {
+      "id": "task007-283",
+      "input": "no me merezco nada ahora mismo.. me arrepieento que flipas",
+      "output": [
+        "no me merezco nada ahora mismo.. me arrepiento que flipas"
+      ]
+    },
+    {
+      "id": "task007-284",
+      "input": "ultimamente me da.igual de todo",
+      "output": [
+        "últimamente me da.igual de todo"
+      ]
+    },
+    {
+      "id": "task007-285",
+      "input": "si quieres ir a la moda en gafas no dudes en comprar unas @knockaround_sp ;) ;) !!",
+      "output": [
+        "si quieres ir a la moda en gafas no dudes en comprar unas @knockaround_sp ;) ;) !!"
+      ]
+    },
+    {
+      "id": "task007-286",
+      "input": "buuueno puuues llego laa roomeeriiia :)",
+      "output": [
+        "bueno pues llego la romería :)"
+      ]
+    },
+    {
+      "id": "task007-287",
+      "input": "no todas las arrugas se pueden hacer mariposas",
+      "output": [
+        "no todas las arrugas se pueden hacer mariposas"
+      ]
+    },
+    {
+      "id": "task007-288",
+      "input": "mas de una tenéis el síndrome de abeja que os creéis reinas y sois un simple bicho",
+      "output": [
+        "mas de una tenéis el síndrome de abeja que os creéis reinas y sois un simple bicho"
+      ]
+    },
+    {
+      "id": "task007-289",
+      "input": "@cpartyforever que estoy enfadada contigo!... yo tambien te quiero mucho y tu me haces muchisimo de sufrir!",
+      "output": [
+        "@cpartyforever que estoy enfadada contigo!... yo también te quiero mucho y tu me haces muchísimo de sufrir!"
+      ]
+    },
+    {
+      "id": "task007-290",
+      "input": "que hace tiempo que noto que ya me da igual que le regales tu boca a cualquier niña tonta perdida que quiera pillar",
+      "output": [
+        "que hace tiempo que noto que ya me da igual que le regales tu boca a cualquier niña tonta perdida que quiera pillar"
+      ]
+    },
+    {
+      "id": "task007-291",
+      "input": "@irenee_90 noo ? tendremos que empezar otraa juumpeee ..",
+      "output": [
+        "@irenee_90 no ? tendremos que empezar otra juumpeee .."
+      ]
+    },
+    {
+      "id": "task007-292",
+      "input": "indescriptible lo que le quiero y lo que me ayuda, mi niññño gracias por todo y felices 15;) @a3_garcia",
+      "output": [
+        "indescriptible lo que le quiero y lo que me ayuda, mi niño gracias por todo y felices 15;) @a3_garcia"
+      ]
+    },
+    {
+      "id": "task007-293",
+      "input": "y en breve otro ruleo con alguien aún más perro, @jonathanvara",
+      "output": [
+        "y en breve otro ruleo con alguien aún más perro, @jonathanvara"
+      ]
+    },
+    {
+      "id": "task007-294",
+      "input": "@ruben_milinko8 #malosvirus por tu cuerpo.... la lluvia no tiene pa culpa... #muchoalcohol",
+      "output": [
+        "@ruben_milinko8 #malosvirus por tu cuerpo.... la lluvia no tiene la culpa... #muchoalcohol"
+      ]
+    },
+    {
+      "id": "task007-295",
+      "input": "buen día de colegio, pero ojala llegase ya el maldito verano y a tomar por saco todo.",
+      "output": [
+        "buen día de colegio, pero ojala llegase ya el maldito verano y a tomar por saco todo."
+      ]
+    },
+    {
+      "id": "task007-296",
+      "input": "@erre4mania no me digas...dime algo que no sepa jajaja",
+      "output": [
+        "@erre4mania no me digas...dime algo que no sepa jajaja"
+      ]
+    },
+    {
+      "id": "task007-297",
+      "input": "con la nueva revista de @canamo y sus dos semillas de cream mandarine y moham ram ! solo digo.. #fuckyeahhh",
+      "output": [
+        "con la nueva revista de @canamo y sus dos semillas de cream mandarine y moham ram ! solo digo.. #fuckyeahhh"
+      ]
+    },
+    {
+      "id": "task007-298",
+      "input": "que monas me han quedado las uñas jajajaj",
+      "output": [
+        "que monas me han quedado las uñas ja"
+      ]
+    },
+    {
+      "id": "task007-299",
+      "input": "ayayayayyay ya están aquí mis pulseritas de @patixula_abal jijiji",
+      "output": [
+        "ay ya están aquí mis pulseritas de @patixula_abal ji"
+      ]
+    },
+    {
+      "id": "task007-300",
+      "input": "2 de abril día del autismo, 1 apoyo a todas las familias k viven cada día con 1 miembro en sus familias #ánimo",
+      "output": [
+        "2 de abril día del autismo, 1 apoyo a todas las familias k viven cada día con 1 miembro en sus familias #ánimo"
+      ]
+    },
+    {
+      "id": "task007-301",
+      "input": "pues vuelta a la rutina diaria. volvemos a la facultad!!!",
+      "output": [
+        "pues vuelta a la rutina diaria. volvemos a la facultad!!!"
+      ]
+    },
+    {
+      "id": "task007-302",
+      "input": "si esque eres monísimo :')",
+      "output": [
+        "si es_que eres monísimo :')"
+      ]
+    },
+    {
+      "id": "task007-303",
+      "input": "@alvaroolopez25 estoy en ciu ... como no te lo envie por whatsapp jajaja",
+      "output": [
+        "@alvaroolopez25 estoy en ciu ... como no te lo envíe por whatsapp jajaja"
+      ]
+    },
+    {
+      "id": "task007-304",
+      "input": "a mi mundo lo único que le falta para ser perfecto eres tu!! #venya! :)",
+      "output": [
+        "a mi mundo lo único que le falta para ser perfecto eres tu!! #venya! :)"
+      ]
+    },
+    {
+      "id": "task007-305",
+      "input": "que alegria da salir a esta hora de la facultad y que sea de dia :))",
+      "output": [
+        "que alegría da salir a esta hora de la facultad y que sea de dia :))"
+      ]
+    },
+    {
+      "id": "task007-306",
+      "input": "yo no podría estar hoy en clase, me moriría",
+      "output": [
+        "yo no podría estar hoy en clase, me moriría"
+      ]
+    },
+    {
+      "id": "task007-307",
+      "input": "un diaaa perfectooo ...si sale todo lo q hoy me han propuesto...x finnnn nos podremosss reir d la vidaaa mi hijo y yoppp ...",
+      "output": [
+        "un día perfecto ...si sale todo lo q hoy me han propuesto...x fin nos podremos reir d la vida mi hijo y yo ..."
+      ]
+    },
+    {
+      "id": "task007-308",
+      "input": "se acabó lo que se daba. #twitteroff",
+      "output": [
+        "se acabó lo que se daba. #twitteroff"
+      ]
+    },
+    {
+      "id": "task007-309",
+      "input": "@angelillo20ney buenas nochess pequeñooo !! muacks !",
+      "output": [
+        "@angelillo20ney buenas noches pequeño !! mua !"
+      ]
+    },
+    {
+      "id": "task007-310",
+      "input": "los sueños son para los soñadores, la realidad para los valientes.",
+      "output": [
+        "los sueños son para los soñadores, la realidad para los valientes."
+      ]
+    },
+    {
+      "id": "task007-311",
+      "input": "esta que está aqui se va ya:-) #off.",
+      "output": [
+        "esta que está aquí se va ya:-) #off."
+      ]
+    },
+    {
+      "id": "task007-312",
+      "input": "@leyyperez9 que fuerte como se llamaba? jajajaja",
+      "output": [
+        "@leyyperez9 que fuerte como se llamaba? jajajaja"
+      ]
+    },
+    {
+      "id": "task007-313",
+      "input": "a pesar de todo siempre, para mi eres la mejor y teamo muchisimo !!",
+      "output": [
+        "a pesar de todo siempre, para mi eres la mejor y te_amo muchísimo !!"
+      ]
+    },
+    {
+      "id": "task007-314",
+      "input": "ha vuelto otra vez @acolitodllibra",
+      "output": [
+        "ha vuelto otra vez @acolitodllibra"
+      ]
+    },
+    {
+      "id": "task007-315",
+      "input": "los #periodistas que estén en #madrid el 11 de abril no se pierdan el @gvsp2013 organizado por los alumnos de #gabinetesucm en @ccinf_ucm",
+      "output": [
+        "los #periodistas que estén en #madrid el 11 de abril no se pierdan el @gvsp2013 organizado por los alumnos de #gabinetesucm en @ccinf_ucm"
+      ]
+    },
+    {
+      "id": "task007-316",
+      "input": "viendo #kickboxer con pedrin pedrete el pajarete!!",
+      "output": [
+        "viendo #kickboxer con pedrín pedrete el pajarete!!"
+      ]
+    },
+    {
+      "id": "task007-317",
+      "input": "venga.. gabriela ... tu puedes.. venga...",
+      "output": [
+        "venga.. gabriela ... tu puedes.. venga..."
+      ]
+    },
+    {
+      "id": "task007-318",
+      "input": "“petición de firmas para que metal gear solid v: the phantom pain llegue doblado al castellano” da para abrazo o no da para abrazo?",
+      "output": [
+        "“petición de firmas para que metal gear solid v: the phantom pain llegue doblado al castellano” da para abrazo o no da para abrazo?"
+      ]
+    },
+    {
+      "id": "task007-319",
+      "input": "@isabevi97 sageraaaá tu me superas d:& lt;",
+      "output": [
+        "@isabevi97 exagerada tu me superas d:& lt;"
+      ]
+    },
+    {
+      "id": "task007-320",
+      "input": "@meca_raulhotmai jajajajajajajjaaj kee echoo polvooooo",
+      "output": [
+        "@meca_raulhotmai ja qué hecho polvo"
+      ]
+    },
+    {
+      "id": "task007-321",
+      "input": "@oscarmartinez76 @pabloalboran @cadena100 no nos dejeis con la intriga! jaja que ganas y que nervios!! :)",
+      "output": [
+        "@oscarmartinez76 @pabloalboran @cadena100 no nos dejéis con la intriga! jaja que ganas y que nervios!! :)"
+      ]
+    },
+    {
+      "id": "task007-322",
+      "input": "y luego la pica soy yo jajaja flipo .",
+      "output": [
+        "y luego la pica soy yo jajaja flipo ."
+      ]
+    },
+    {
+      "id": "task007-323",
+      "input": "una duxita y a la puta calle pero ya!",
+      "output": [
+        "una duchita y a la puta calle pero ya!"
+      ]
+    },
+    {
+      "id": "task007-324",
+      "input": "levantarse por la mañana y escuchar aires de triana no tiene precio :)",
+      "output": [
+        "levantarse por la mañana y escuchar aires de triana no tiene precio :)"
+      ]
+    },
+    {
+      "id": "task007-325",
+      "input": "@juanelcierrabar madre el sandungero jajajjaja",
+      "output": [
+        "@juanelcierrabar madre el sandunguero ja"
+      ]
+    },
+    {
+      "id": "task007-326",
+      "input": "entre broma y broma uno de los dos se enamora.",
+      "output": [
+        "entre broma y broma uno de los dos se enamora."
+      ]
+    },
+    {
+      "id": "task007-327",
+      "input": "@mariajose_fefi he estado alli , no me habras visto...jajajajaja",
+      "output": [
+        "@mariajose_fefi he estado allí , no me habrás visto...jajajajaja"
+      ]
+    },
+    {
+      "id": "task007-328",
+      "input": "de marzo me quedo con ese pedazo de viaje a madrid y la visita de dos grandes a sevilla",
+      "output": [
+        "de marzo me quedo con ese pedazo de viaje a madrid y la visita de dos grandes a sevilla"
+      ]
+    },
+    {
+      "id": "task007-329",
+      "input": "con @javieralmazn en fyqqqq !! pppff me aburro",
+      "output": [
+        "con @javieralmazn en fin !! puf me aburro"
+      ]
+    },
+    {
+      "id": "task007-330",
+      "input": "pero me da pena borrarla de los planos, había quedado tan bonita :')",
+      "output": [
+        "pero me da pena borrarla de los planos, había quedado tan bonita :')"
+      ]
+    },
+    {
+      "id": "task007-331",
+      "input": "se acabo lo bueno. . .vuelta a la rutina :(",
+      "output": [
+        "se acabo lo bueno. . .vuelta a la rutina :("
+      ]
+    },
+    {
+      "id": "task007-332",
+      "input": "me voi .. no puedo mas..",
+      "output": [
+        "me voy .. no puedo mas.."
+      ]
+    },
+    {
+      "id": "task007-333",
+      "input": "@nereaparron23 a mi mee pareces perfecta tuu rubiaa :') asiquee ya sabes lo que tocaa hooy :) te quiero muchoo :)",
+      "output": [
+        "@nereaparron23 a mi mee pareces perfecta tú rubia :') así_que ya sabes lo que toca hoy :) te quiero mucho :)"
+      ]
+    },
+    {
+      "id": "task007-334",
+      "input": "bueenoo yoo me vooy a dormiir ke mañanaa me esperaa un largo diiia",
+      "output": [
+        "bueno yo me voy a dormir que mañana me espera un largo día"
+      ]
+    },
+    {
+      "id": "task007-335",
+      "input": "pues hoy si son muy buenas noches despues de una maravillosa conver con una gran persona , que siempre formara parte de vida @rosa4393 tq :)",
+      "output": [
+        "pues hoy si son muy buenas noches después de una maravillosa conversación con una gran persona , que siempre formara parte de vida @rosa4393 te_quiero :)"
+      ]
+    },
+    {
+      "id": "task007-336",
+      "input": "con mi gente en el recreo",
+      "output": [
+        "con mi gente en el recreo"
+      ]
+    },
+    {
+      "id": "task007-337",
+      "input": "@jona1412 te he inviyado aceptame",
+      "output": [
+        "@jona1412 te he invitado aceptame"
+      ]
+    },
+    {
+      "id": "task007-338",
+      "input": "es bonita y zorra a partes iguales.",
+      "output": [
+        "es bonita y zorra a partes iguales."
+      ]
+    },
+    {
+      "id": "task007-339",
+      "input": "@ismaelharotazi gracias ati me tube qe buscar la vida para ir al insti esta mñn .. 1 negativo para usted -.-",
+      "output": [
+        "@ismaelharotazi gracias a_ti me tuve que buscar la vida para ir al instituto esta mañana .. 1 negativo para usted -.-"
+      ]
+    },
+    {
+      "id": "task007-340",
+      "input": "olvida lo que te hizo daño en el pasado, pero jamás olvides lo que te enseñó.",
+      "output": [
+        "olvida lo que te hizo daño en el pasado, pero jamás olvides lo que te enseñó."
+      ]
+    },
+    {
+      "id": "task007-341",
+      "input": "@inmaculadafrut jajajaja siii noo laa hemos encendioo !!",
+      "output": [
+        "@inmaculadafrut jajajaja si no la hemos encendido !!"
+      ]
+    },
+    {
+      "id": "task007-342",
+      "input": "una tarde, tú y yo, viendo una peli , aquí... http://t.co/ywbxubv9af",
+      "output": [
+        "una tarde, tú y yo, viendo una película , aquí... http://t.co/ywbxubv9af"
+      ]
+    },
+    {
+      "id": "task007-343",
+      "input": "@marialarubia79 buenos dias princesa feliz dia que tengas u bonito dia como bonita tu eres un besazo enorme",
+      "output": [
+        "@marialarubia79 buenos dias princesa feliz dia que tengas u bonito dia como bonita tu eres un besazo enorme"
+      ]
+    },
+    {
+      "id": "task007-344",
+      "input": "seño ricardo no ira al cole esta semana. mañana ire para que le mandes trabajos para la semana, esta todavia malito con fiebre. un beso",
+      "output": [
+        "señor ricardo no ira al cole esta semana. mañana iré para que le mandes trabajos para la semana, esta todavía malito con fiebre. un beso"
+      ]
+    },
+    {
+      "id": "task007-345",
+      "input": "aleluya @sergio_gettin alfin se despierta!",
+      "output": [
+        "aleluya @sergio_gettin al_fin se despierta!"
+      ]
+    },
+    {
+      "id": "task007-346",
+      "input": "el gol que te merecias por tu trabajo y empeño http://t.co/ixkofkmmnw",
+      "output": [
+        "el gol que te merecías por tu trabajo y empeño http://t.co/ixkofkmmnw"
+      ]
+    },
+    {
+      "id": "task007-347",
+      "input": "@blancam252 :o no vas a venir a mi cumple ? ok.",
+      "output": [
+        "@blancam252 :o no vas a venir a mi cumple ? ok."
+      ]
+    },
+    {
+      "id": "task007-348",
+      "input": "305 mensajes en unas horas.. menos mal que había dicho que iba a estar sin wpp ,q pesadosss",
+      "output": [
+        "305 mensajes en unas horas.. menos mal que había dicho que iba a estar sin whatsapp ,q pesados"
+      ]
+    },
+    {
+      "id": "task007-349",
+      "input": "dormí o no dormí, eza eh la cuehtion",
+      "output": [
+        "dormí o no dormí, esa eh la cuestión"
+      ]
+    },
+    {
+      "id": "task007-350",
+      "input": "\" amoss adri que son la unaaaaaaaaaaa \" jajajaj a",
+      "output": [
+        "\" vamos adri que son la una \" ja a"
+      ]
+    },
+    {
+      "id": "task007-351",
+      "input": "@danmanso91 jajajaj si si si!! esto esta preparao para q salga la #zorrasca en cuanto empiece el buen tiempo ya sabes que voy al puebli !",
+      "output": [
+        "@danmanso91 jajajaj si si si!! esto esta preparado para q salga la #zorrasca en cuanto empiece el buen tiempo ya sabes que voy al pueblo !"
+      ]
+    },
+    {
+      "id": "task007-352",
+      "input": "@97directioner_1 jajjajjajja dioa lo amo!!!! se me ha hecho muy corta :)",
+      "output": [
+        "@97directioner_1 ja dios lo amo!!!! se me ha hecho muy corta :)"
+      ]
+    },
+    {
+      "id": "task007-353",
+      "input": "que bolsa mas llena llevamos ya de corujas",
+      "output": [
+        "que bolsa mas llena llevamos ya de corujas"
+      ]
+    },
+    {
+      "id": "task007-354",
+      "input": "hoy no puedo decir buenos días, me va a caducar el whatsapp .",
+      "output": [
+        "hoy no puedo decir buenos días, me va a caducar el whatsapp ."
+      ]
+    },
+    {
+      "id": "task007-355",
+      "input": "@sofiamcr tenemos la misma opinión, ya te digo que el resto igual... es indignante",
+      "output": [
+        "@sofiamcr tenemos la misma opinión, ya te digo que el resto igual... es indignante"
+      ]
+    },
+    {
+      "id": "task007-356",
+      "input": "#lavidaesmásfácilcuando él esta a mi lado.",
+      "output": [
+        "#lavidaesmásfácilcuando él esta a mi lado."
+      ]
+    },
+    {
+      "id": "task007-357",
+      "input": "os dejo con vuestros temillas esos raros. hasta mañana",
+      "output": [
+        "os dejo con vuestros temillas esos raros. hasta mañana"
+      ]
+    },
+    {
+      "id": "task007-358",
+      "input": "@abelpintos si se sintio a la distancia yo te kiero curar esa garganta\"\"",
+      "output": [
+        "@abelpintos si se sintió a la distancia yo te quiero curar esa garganta\"\""
+      ]
+    },
+    {
+      "id": "task007-359",
+      "input": "buenaaas ncheees !! relaax de cuerpo y mente en marcha!! #twitteroff",
+      "output": [
+        "buenas noches !! relax de cuerpo y mente en marcha!! #twitteroff"
+      ]
+    },
+    {
+      "id": "task007-360",
+      "input": "me e dado cuenta que la gente.que realmente la e importado y se que nunca me.va a fallar.y cumplir lo que dicen son los de peñalsordo !!",
+      "output": [
+        "me e dado cuenta que la gente.que realmente la e importado y se que nunca me.va a fallar.y cumplir lo que dicen son los de peñalsordo !!"
+      ]
+    },
+    {
+      "id": "task007-361",
+      "input": "'es como intentar hacerlos entender que dios no existe, llevan años de ventaja en sus mentiras y eso es triste'",
+      "output": [
+        "'es como intentar hacerlos entender que dios no existe, llevan años de ventaja en sus mentiras y eso es triste'"
+      ]
+    },
+    {
+      "id": "task007-362",
+      "input": "voy a acabar con los problemas voy a matar al profesor de matematicas .",
+      "output": [
+        "voy a acabar con los problemas voy a matar al profesor de matemáticas ."
+      ]
+    },
+    {
+      "id": "task007-363",
+      "input": "pos una horita de clases y a miriendar con mi bebi @claudiatero :)!",
+      "output": [
+        "pues una horita de clases y a merendar con mi bebi @claudiatero :)!"
+      ]
+    },
+    {
+      "id": "task007-364",
+      "input": "@myriamswanbwoy io sí q t kiero tkmmmmmmm",
+      "output": [
+        "@myriamswanbwoy yo sí q t quiero te_quiero_mucho"
+      ]
+    },
+    {
+      "id": "task007-365",
+      "input": "@abichuelascala no me lo digas dos veces k me voy!! xk esto no puede segir asi!",
+      "output": [
+        "@abichuelascala no me lo digas dos veces k me voy!! porque esto no puede seguir asi!"
+      ]
+    },
+    {
+      "id": "task007-366",
+      "input": "resiien comiita y artica de. to de come anca mii.gordii@sandra toloc !!",
+      "output": [
+        "recién comidita y hartica de. todo de come anca mii.gordii@sandra toloc !!"
+      ]
+    },
+    {
+      "id": "task007-367",
+      "input": "otro abrazo para ti @crm_huelva. nos vemos pronto!",
+      "output": [
+        "otro abrazo para ti @crm_huelva. nos vemos pronto!"
+      ]
+    },
+    {
+      "id": "task007-368",
+      "input": "bueno, esta tarde tiene su recompensa :)))",
+      "output": [
+        "bueno, esta tarde tiene su recompensa :)))"
+      ]
+    },
+    {
+      "id": "task007-369",
+      "input": "a hacer faena y una duchita ! #twitteroff",
+      "output": [
+        "a hacer faena y una duchita ! #twitteroff"
+      ]
+    },
+    {
+      "id": "task007-370",
+      "input": "puto ruedas que salidos jajajajaj",
+      "output": [
+        "puto ruedas que salidos ja"
+      ]
+    },
+    {
+      "id": "task007-371",
+      "input": "@wifito_tuitero @siemprefiel999 @kenia_ds jajaja xd casi se me va el dedo y le digo a daralika que me llame chochete",
+      "output": [
+        "@wifito_tuitero @siemprefiel999 @kenia_ds jajaja xd casi se me va el dedo y le digo a daralika que me llame chochete"
+      ]
+    },
+    {
+      "id": "task007-372",
+      "input": "sevilla entera bonita de triana a san pablo y asta mi giralda yo la quiero ver..8'",
+      "output": [
+        "sevilla entera bonita de triana a san pablo y asta mi giralda yo la quiero ver..8'"
+      ]
+    },
+    {
+      "id": "task007-373",
+      "input": "@merypepinilla anda maria pa q veas lo q te aprecio:)) jajaja",
+      "output": [
+        "@merypepinilla anda maría para q veas lo q te aprecio:)) jajaja"
+      ]
+    },
+    {
+      "id": "task007-374",
+      "input": "me estoy convirtiendo en una tia sin sentimientos.",
+      "output": [
+        "me estoy convirtiendo en una tía sin sentimientos."
+      ]
+    },
+    {
+      "id": "task007-375",
+      "input": "ella de las pastillas remix ? frak",
+      "output": [
+        "ella de las pastillas remix ? frak"
+      ]
+    },
+    {
+      "id": "task007-376",
+      "input": "hoy en clase de derecho concursal del master de la abogacía analizando el concurso de acreedores. [ pic ]: http://t.co/boy7g6u4ls",
+      "output": [
+        "hoy en clase de derecho concursal del master de la abogacía analizando el concurso de acreedores. [ pic ]: http://t.co/boy7g6u4ls"
+      ]
+    },
+    {
+      "id": "task007-377",
+      "input": "@mariinuxis o. o venga ya!! jajajajajajjajajaja",
+      "output": [
+        "@mariinuxis o. o venga ya!! ja"
+      ]
+    },
+    {
+      "id": "task007-378",
+      "input": "@florsterialason bienvenidos a nuestro twitter !",
+      "output": [
+        "@florsterialason bienvenidos a nuestro twitter !"
+      ]
+    },
+    {
+      "id": "task007-379",
+      "input": "si mi mami me.hace estos desayunos da gusto quedarse malita en casa",
+      "output": [
+        "si mi mamá me.hace estos desayunos da gusto quedarse malita en casa"
+      ]
+    },
+    {
+      "id": "task007-380",
+      "input": "que pesada la madre coñoo !!! #gh8",
+      "output": [
+        "que pesada la madre coño !!! #gh8"
+      ]
+    },
+    {
+      "id": "task007-381",
+      "input": "ea pues @_pablocrespo me ha echo llorar! echaba de menos esos mensajes tuyos sin venir a cuento. te quiero! :)",
+      "output": [
+        "ea pues @_pablocrespo me ha echo llorar! echaba de menos esos mensajes tuyos sin venir a cuento. te quiero! :)"
+      ]
+    },
+    {
+      "id": "task007-382",
+      "input": "semana santaa tuu sigue pasandoo facturaaa ....q bien mee caess !",
+      "output": [
+        "semana santa tú sigue pasando factura ....q bien mee caes !"
+      ]
+    },
+    {
+      "id": "task007-383",
+      "input": "algunos madrugando para irse de fiesta.. y nosotras asimilando que estamos ya en madrid .,, bueno días niña! @raquelmc32",
+      "output": [
+        "algunos madrugando para irse de fiesta.. y nosotras asimilando que estamos ya en madrid .,, bueno días niña! @raquelmc32"
+      ]
+    },
+    {
+      "id": "task007-384",
+      "input": "@pau_hdezt tu dejaste de buscar porqe ya eres una mujer casada jajajajaja",
+      "output": [
+        "@pau_hdezt tu dejaste de buscar porque ya eres una mujer casada jajajajaja"
+      ]
+    },
+    {
+      "id": "task007-385",
+      "input": "como odio escribir a estas horas a alguien y me ponga 1 de abril y lo primero q pienso es..mierda mañana colee",
+      "output": [
+        "como odio escribir a estas horas a alguien y me ponga 1 de abril y lo primero q pienso es..mierda mañana colee"
+      ]
+    },
+    {
+      "id": "task007-386",
+      "input": "tarde política con #fernando xd",
+      "output": [
+        "tarde política con #fernando xd"
+      ]
+    },
+    {
+      "id": "task007-387",
+      "input": "un 33% de los trending topics del sábado 30 en españa fueron hashtags : http://t.co/ca0mxq5fcw",
+      "output": [
+        "un 33% de los trending topics del sábado 30 en españa fueron hashtags : http://t.co/ca0mxq5fcw"
+      ]
+    },
+    {
+      "id": "task007-388",
+      "input": "pero qué guapo han puesto hoy a miguel! le sienta bien la siesta ☺ @trisulloa @granreserva_tve",
+      "output": [
+        "pero qué guapo han puesto hoy a miguel! le sienta bien la siesta ☺ @trisulloa @granreserva_tve"
+      ]
+    },
+    {
+      "id": "task007-389",
+      "input": "podré perder la batalla, pero nunca la guerra. still .",
+      "output": [
+        "podré perder la batalla, pero nunca la guerra. still ."
+      ]
+    },
+    {
+      "id": "task007-390",
+      "input": "buenos dias!!! amos aver ke hacemos jaja xd",
+      "output": [
+        "buenos dias!!! amos aver qué hacemos jaja xd"
+      ]
+    },
+    {
+      "id": "task007-391",
+      "input": "buenos dias.que asco de dia los lunes son malisimos",
+      "output": [
+        "buenos dias.que asco de dia los lunes son malísimos"
+      ]
+    },
+    {
+      "id": "task007-392",
+      "input": "@paulaglezmorato @minervarol jaja tu amiga.me a dixo se.lo tengo k subir .... tu baaaajaa ... jajajj",
+      "output": [
+        "@paulaglezmorato @minervarol jaja tu amiga.me a dicho se.lo tengo k subir .... tu baja ... ja"
+      ]
+    },
+    {
+      "id": "task007-393",
+      "input": "acabo de entrar en el selecto club de jugadores de primera división en \"temporadas\" en el fifa13 de xbox360.",
+      "output": [
+        "acabo de entrar en el selecto club de jugadores de primera división en \"temporadas\" en el fifa13 de xbox360."
+      ]
+    },
+    {
+      "id": "task007-394",
+      "input": "@javicamujavier cuuxamee sii peroo veen yaa eem",
+      "output": [
+        "@javicamujavier escúchame sí pero ven ya eh"
+      ]
+    },
+    {
+      "id": "task007-395",
+      "input": "@fraskoabla @maitetresvillas me llevo a la lola pa almeria a cenar esta noche. @username marideblasico http://t.co/zsp5gxz21g",
+      "output": [
+        "@fraskoabla @maitetresvillas me llevo a la lola para almería a cenar esta noche. @username mari_de_blasico http://t.co/zsp5gxz21g"
+      ]
+    },
+    {
+      "id": "task007-396",
+      "input": "buenos dias! calor, verano, sol, veeeeeeeen joddeeeer ! #gafasdesol #camisetassinmangas #oakley",
+      "output": [
+        "buenos dias! calor, verano, sol, ven joder ! #gafasdesol #camisetassinmangas #oakley"
+      ]
+    },
+    {
+      "id": "task007-397",
+      "input": "@mariomaldonad10 @alvarosanchezl4 @marikiya230911 @patriciamf19 me kiero ir otra vez jajaj",
+      "output": [
+        "@mariomaldonad10 @alvarosanchezl4 @marikiya230911 @patriciamf19 me quiero ir otra vez ja"
+      ]
+    },
+    {
+      "id": "task007-398",
+      "input": "piazon se queda fuera? por qué? no lo entiendo...",
+      "output": [
+        "piazón se queda fuera? por qué? no lo entiendo..."
+      ]
+    },
+    {
+      "id": "task007-399",
+      "input": "ofertas liberar iphone oficial de movistar por 5 euros rt plis mas info en openmovil.imei@gmail.com http://t.co/eh4gslk2f3",
+      "output": [
+        "ofertas liberar iphone oficial de movistar por 5 euros rt plis mas información en openmovil.imei@gmail.com http://t.co/eh4gslk2f3"
+      ]
+    },
+    {
+      "id": "task007-400",
+      "input": "cafe + 1/2 tostada 1,60 € http://t.co/imkour57q4",
+      "output": [
+        "café + 1/2 tostada 1,60 € http://t.co/imkour57q4"
+      ]
+    },
+    {
+      "id": "task007-401",
+      "input": "@gj_nury espero que no se me note mucho mas jaja:). eres increíble.",
+      "output": [
+        "@gj_nury espero que no se me note mucho mas jaja:). eres increíble."
+      ]
+    },
+    {
+      "id": "task007-402",
+      "input": "jajaja ay dios, cada uno me recomendáis a uno para mi trabajo jajajaja la cosa es que shm al ser tres...a lo mejor me sube más la nota jaja",
+      "output": [
+        "jajaja ay dios, cada uno me recomendáis a uno para mi trabajo jajajaja la cosa es que shm al ser tres...a lo mejor me sube más la nota jaja"
+      ]
+    },
+    {
+      "id": "task007-403",
+      "input": "@charlyappletree afeitate ya!!! que ya va siendo hora...jajaja",
+      "output": [
+        "@charlyappletree afeitate ya!!! que ya va siendo hora...jajaja"
+      ]
+    },
+    {
+      "id": "task007-404",
+      "input": "@miguelangeldaza vale!! westfallenstadion , comúnmente conocido como signal iduna park , por temas de publicidad y eso. :)",
+      "output": [
+        "@miguelangeldaza vale!! westfallenstadion , comúnmente conocido como signal iduna park , por temas de publicidad y eso. :)"
+      ]
+    },
+    {
+      "id": "task007-405",
+      "input": "como se nota que es el ultimo dia y que estais todos dormidos aprovechando.... despertaos #meaburro",
+      "output": [
+        "como se nota que es el ultimo dia y que estáis todos dormidos aprovechando.... despertaos #meaburro"
+      ]
+    },
+    {
+      "id": "task007-406",
+      "input": "que mañana es mi cumpleee",
+      "output": [
+        "que mañana es mi cumpleaños"
+      ]
+    },
+    {
+      "id": "task007-407",
+      "input": "en serio no paro de pensar en la palabra ratópodo por culpa de @marinalozano13 y encima me rio sola #locaparezcoportuculpa",
+      "output": [
+        "en serio no paro de pensar en la palabra ratópodo por culpa de @marinalozano13 y encima me río sola #locaparezcoportuculpa"
+      ]
+    },
+    {
+      "id": "task007-408",
+      "input": "voy a coger y no me vais a encontrar mas vaya",
+      "output": [
+        "voy a coger y no me vais a encontrar mas vaya"
+      ]
+    },
+    {
+      "id": "task007-409",
+      "input": "@neejl creo q te has saltado la primavera... jajaja",
+      "output": [
+        "@neejl creo q te has saltado la primavera... jajaja"
+      ]
+    },
+    {
+      "id": "task007-410",
+      "input": "http://t.co/tq6lbuud8j con los terroristahhh jajajajaja",
+      "output": [
+        "http://t.co/tq6lbuud8j con los terroristas jajajajaja"
+      ]
+    },
+    {
+      "id": "task007-411",
+      "input": "ruth ( la hermana de liam ) esta en el concierto de los chicos :)",
+      "output": [
+        "ruth ( la hermana de liam ) esta en el concierto de los chicos :)"
+      ]
+    },
+    {
+      "id": "task007-412",
+      "input": "sabéis que? que quiero muchísimo a @caarlostorres92 :')",
+      "output": [
+        "sabéis que? que quiero muchísimo a @caarlostorres92 :')"
+      ]
+    },
+    {
+      "id": "task007-413",
+      "input": "le deseo mucha suerte a mi chica @anaparra97 que seguro que se le da muy bien! te quiero cieloo :)",
+      "output": [
+        "le deseo mucha suerte a mi chica @anaparra97 que seguro que se le da muy bien! te quiero cielo :)"
+      ]
+    },
+    {
+      "id": "task007-414",
+      "input": "@sitevasnovuelv1 @miriam_180811 me estáis petando el twitaaaah",
+      "output": [
+        "@sitevasnovuelv1 @miriam_180811 me estáis petando el twitter"
+      ]
+    },
+    {
+      "id": "task007-415",
+      "input": "@josequeroq @franjimenezsan nunca se olvida el.banco q por debajo metias el gol,la pared q te devolvia la pelota d tenis lasombradelolivo",
+      "output": [
+        "@josequeroq @franjimenezsan nunca se olvida el.banco q por debajo metías el gol,la pared q te devolvía la pelota d tenis la_sombra_del_olivo"
+      ]
+    },
+    {
+      "id": "task007-416",
+      "input": "empezamos bien la vuelta de vacaciones, sin agua caliente!!!",
+      "output": [
+        "empezamos bien la vuelta de vacaciones, sin agua caliente!!!"
+      ]
+    },
+    {
+      "id": "task007-417",
+      "input": "joder mis vecinos estan peleando pero chillio limpio dioss y son hermanos con parado con justin y sus hermanos xd",
+      "output": [
+        "joder mis vecinos están peleando pero chillido limpio dios y son hermanos con parado con justin y sus hermanos xd"
+      ]
+    },
+    {
+      "id": "task007-418",
+      "input": "amo esos abrazos en los que sin querer se te cierran los ojos.",
+      "output": [
+        "amo esos abrazos en los que sin querer se te cierran los ojos."
+      ]
+    },
+    {
+      "id": "task007-419",
+      "input": "@ruben_minuesa jajaja si tu lo dicees",
+      "output": [
+        "@ruben_minuesa jajaja si tu lo dices"
+      ]
+    },
+    {
+      "id": "task007-420",
+      "input": "que siesta me voy a homenajear.",
+      "output": [
+        "que siesta me voy a homenajear."
+      ]
+    },
+    {
+      "id": "task007-421",
+      "input": "despues de una tarde de ejercicio, una burna fruta para agarrar energias http://t.co/sgwvhi2rzn",
+      "output": [
+        "después de una tarde de ejercicio, una buena fruta para agarrar energías http://t.co/sgwvhi2rzn"
+      ]
+    },
+    {
+      "id": "task007-422",
+      "input": "afuu lo que se lee por aquii ... jajajaja",
+      "output": [
+        "afuu lo que se lee por aquí ... jajajaja"
+      ]
+    },
+    {
+      "id": "task007-423",
+      "input": "¿pero por que a mi?",
+      "output": [
+        "¿pero por que a mi?"
+      ]
+    },
+    {
+      "id": "task007-424",
+      "input": "@mario_gti loquiii mñna me acoplo a ti jaja para el #gym jejejjej xd xd",
+      "output": [
+        "@mario_gti loquita mañana me acoplo a ti jaja para el #gym je xd xd"
+      ]
+    },
+    {
+      "id": "task007-425",
+      "input": "hoy me acabo death note =) #llegoasufín",
+      "output": [
+        "hoy me acabo death note =) #llegoasufín"
+      ]
+    },
+    {
+      "id": "task007-426",
+      "input": "impresionante final de temporada de the walking dead .una obra maestra.para mi el mejor capitulo de las tres temporadas",
+      "output": [
+        "impresionante final de temporada de the walking dead .una obra maestra.para mi el mejor capitulo de las tres temporadas"
+      ]
+    },
+    {
+      "id": "task007-427",
+      "input": "@g_hermano_ @susanistaa entonces según tu..el esta enamorado de susana n??porque yo le veo muchísimo cuento..!",
+      "output": [
+        "@g_hermano_ @susanistaa entonces según tu..el esta enamorado de susana n??porque yo le veo muchísimo cuento..!"
+      ]
+    },
+    {
+      "id": "task007-428",
+      "input": "@lauragh12 @mariasanchezzgh y la criticais cuando tneis mcho en cmun cn ella, la myoria de los #wallistas hems sido lauristas o/y maristas!",
+      "output": [
+        "@lauragh12 @mariasanchezzgh y la criticáis cuando tenéis mucho en común con ella, la mayoría de los #wallistas hemos sido lauristas o/y maristas!"
+      ]
+    },
+    {
+      "id": "task007-429",
+      "input": "@anitamarcano ya lo se bonita jajajaja",
+      "output": [
+        "@anitamarcano ya lo se bonita jajajaja"
+      ]
+    },
+    {
+      "id": "task007-430",
+      "input": "en eso no estoi deacuerdo",
+      "output": [
+        "en eso no estoy de_acuerdo"
+      ]
+    },
+    {
+      "id": "task007-431",
+      "input": "@lydicastillo igual nos encontramos x el bus xd",
+      "output": [
+        "@lydicastillo igual nos encontramos x el bus xd"
+      ]
+    },
+    {
+      "id": "task007-432",
+      "input": "apesar de todo saber que tengo a personas hay que me ayudan y se preocupan hacen que todo lo malo se perdone!",
+      "output": [
+        "apesar de todo saber que tengo a personas hay que me ayudan y se preocupan hacen que todo lo malo se perdone!"
+      ]
+    },
+    {
+      "id": "task007-433",
+      "input": "@t5granhermano a míriam . igor es mi empalmado, y los gemelos me caen bien y son de mi tierra. así que expulsaría a míriam .",
+      "output": [
+        "@t5granhermano a míriam . igor es mi empalmado, y los gemelos me caen bien y son de mi tierra. así que expulsaría a míriam ."
+      ]
+    },
+    {
+      "id": "task007-434",
+      "input": "madre mia eso es un colegio o un yo te jode y tu me jodes ?",
+      "output": [
+        "madre mía eso es un colegio o un yo te jode y tu me jodes ?"
+      ]
+    },
+    {
+      "id": "task007-435",
+      "input": "@alyalicia_ y tu puta.. tss",
+      "output": [
+        "@alyalicia_ y tu puta.. chis"
+      ]
+    },
+    {
+      "id": "task007-436",
+      "input": "tío, me petan el tl solo dos usuarios colega, vaya vicio.. xd",
+      "output": [
+        "tío, me petan el tl solo dos usuarios colega, vaya vicio.. xd"
+      ]
+    },
+    {
+      "id": "task007-437",
+      "input": "\" you can count on me like 1 2 3... i'll be there ...\" buenas noches a tod@s ...dulces sueños o hermosas pesadillas!!!!!!! :)",
+      "output": [
+        "\" you can count on me like 1 2 3... i'll be there ...\" buenas noches a todos_y_todas ...dulces sueños o hermosas pesadillas!!!!!!! :)"
+      ]
+    },
+    {
+      "id": "task007-438",
+      "input": "como aprovechas 1~ tk @birectioner4e @jose_barroso16 :-)",
+      "output": [
+        "como aprovechas 1~ tk @birectioner4e @jose_barroso16 :-)"
+      ]
+    },
+    {
+      "id": "task007-439",
+      "input": "como cuestaa volver ala normalidad dspues d esta semana santa poco cofrade...lo unico que me alegra es mi betis estaa nochee con @jgarciaber",
+      "output": [
+        "como cuesta volver ala normalidad después d esta semana santa poco cofrade...lo único que me alegra es mi betis esta noche con @jgarciaber"
+      ]
+    },
+    {
+      "id": "task007-440",
+      "input": "@blasauryn a mii tambiien me gustaria muchoo quee tu algun dia me siguieras ... lo veo imposible pero bueno jajaja",
+      "output": [
+        "@blasauryn a mí también me gustaría mucho que tu algún dia me siguieras ... lo veo imposible pero bueno jajaja"
+      ]
+    },
+    {
+      "id": "task007-441",
+      "input": "@robolesbian hacemos chistes sobre guerras entre paises tu crees que no podemos hacer chistes sobre los \"\"\"\"sentimientos\"\"\"\"\"?",
+      "output": [
+        "@robolesbian hacemos chistes sobre guerras entre países tu crees que no podemos hacer chistes sobre los \"\"\"\"sentimientos\"\"\"\"\"?"
+      ]
+    },
+    {
+      "id": "task007-442",
+      "input": "a miriam solo le falta decir. estoy llorando xq me tengo que casar con el!! #ghdirecto",
+      "output": [
+        "a míriam solo le falta decir. estoy llorando porque me tengo que casar con el!! #ghdirecto"
+      ]
+    },
+    {
+      "id": "task007-443",
+      "input": "y creo que muero si no siento el roce de tu cuerpo junto a mi!!!! #platero",
+      "output": [
+        "y creo que muero si no siento el roce de tu cuerpo junto a mi!!!! #platero"
+      ]
+    },
+    {
+      "id": "task007-444",
+      "input": "pues en el 2 ya :) a clases se ha dicho.. dsd luego no tengo cuerpo.. en modo #zombi jaaja #bn",
+      "output": [
+        "pues en el 2 ya :) a clases se ha dicho.. desde luego no tengo cuerpo.. en modo #zombi ja #bn"
+      ]
+    },
+    {
+      "id": "task007-445",
+      "input": "pues buena peli diamante de sangre !!",
+      "output": [
+        "pues buena película diamante de sangre !!"
+      ]
+    },
+    {
+      "id": "task007-446",
+      "input": "estamos preparando algo muy gordo para el 5 de abril, y ese mes va a dar mucho que hablar. 600 744 924 listas",
+      "output": [
+        "estamos preparando algo muy gordo para el 5 de abril, y ese mes va a dar mucho que hablar. 600 744 924 listas"
+      ]
+    },
+    {
+      "id": "task007-447",
+      "input": "@warwithg pero... si vivo en vigo ... snif .",
+      "output": [
+        "@warwithg pero... si vivo en vigo ... snif ."
+      ]
+    },
+    {
+      "id": "task007-448",
+      "input": "ojala pudiera dormir asi todas las noches :) muack l #buenasnoches",
+      "output": [
+        "ojala pudiera dormir asi todas las noches :) mua l #buenasnoches"
+      ]
+    },
+    {
+      "id": "task007-449",
+      "input": "@cortacablerojo cada semana más grandes!!!!! yeahhhhhh http://t.co/vynqzbjwsx",
+      "output": [
+        "@cortacablerojo cada semana más grandes!!!!! yeahhhhhh http://t.co/vynqzbjwsx"
+      ]
+    },
+    {
+      "id": "task007-450",
+      "input": "jooo con lo bien que me caía a mí juancar .. #gh8",
+      "output": [
+        "jo con lo bien que me caía a mí juancar .. #gh8"
+      ]
+    },
+    {
+      "id": "task007-451",
+      "input": "pues dormir k mañana curro",
+      "output": [
+        "pues dormir k mañana curro"
+      ]
+    },
+    {
+      "id": "task007-452",
+      "input": "muerto de sueño en el gimnasio",
+      "output": [
+        "muerto de sueño en el gimnasio"
+      ]
+    },
+    {
+      "id": "task007-453",
+      "input": "@ikuste que me gusta la canción. xd",
+      "output": [
+        "@ikuste que me gusta la canción. xd"
+      ]
+    },
+    {
+      "id": "task007-454",
+      "input": "“@sitabilis: levanta la cabeza princesa que se te nota la papada.” @danaemorillo",
+      "output": [
+        "“@sitabilis: levanta la cabeza princesa que se te nota la papada.” @danaemorillo"
+      ]
+    },
+    {
+      "id": "task007-455",
+      "input": "maldito abril, solo viene a recordarte que ya no eres feliz.",
+      "output": [
+        "maldito abril, solo viene a recordarte que ya no eres feliz."
+      ]
+    },
+    {
+      "id": "task007-456",
+      "input": "muchisimas felicidades feeaaa :p pasalo en grande!!que no se cumplen 18 todos los dias :) espero que me invites a algo eh!!! jaja @95maria12",
+      "output": [
+        "muchísimas felicidades fea :p pasalo en grande!!que no se cumplen 18 todos los dias :) espero que me invites a algo eh!!! jaja @95maria12"
+      ]
+    },
+    {
+      "id": "task007-457",
+      "input": "pues aqi la menda se va a apretar un colacaito con bizcochos de la abu q estan tremendamente ricos!! #vayaqesi",
+      "output": [
+        "pues aquí la menda se va a apretar un colacaíto con bizcochos de la abu q están tremendamente ricos!! #vayaqesi"
+      ]
+    },
+    {
+      "id": "task007-458",
+      "input": "'guasa', ' triceps ' y ' borja ' es ahora una tendencia en #seville http://t.co/markkxb7jx",
+      "output": [
+        "'guasa', ' tríceps ' y ' borja ' es ahora una tendencia en #seville http://t.co/markkxb7jx"
+      ]
+    },
+    {
+      "id": "task007-459",
+      "input": "jajajaa tía @inesparis_13 , ahora te digo un secreto por whatsapp ,verás que casualidad. pd : no digo lo de las compras baby ,digo sábado jeje.",
+      "output": [
+        "ja tía @inesparis_13 , ahora te digo un secreto por whatsapp ,verás que casualidad. p.d. : no digo lo de las compras baby ,digo sábado jeje."
+      ]
+    },
+    {
+      "id": "task007-460",
+      "input": "y hoy darle la enhorabuena a @danicampuzanom jaja pedazo de tio vas a ser... a cuidarle mucho eh me alegro mucho un besazo",
+      "output": [
+        "y hoy darle la enhorabuena a @danicampuzanom jaja pedazo de tío vas a ser... a cuidarle mucho eh me alegro mucho un besazo"
+      ]
+    },
+    {
+      "id": "task007-461",
+      "input": "viendo fotos de hace unos años :') qué tiempos aquellos",
+      "output": [
+        "viendo fotos de hace unos años :') qué tiempos aquellos"
+      ]
+    },
+    {
+      "id": "task007-462",
+      "input": "@blancawouh_98 jajajajajajaja noo :( tu q ase cosa guapa?:)",
+      "output": [
+        "@blancawouh_98 jajajajajajaja no :( tu q ase cosa guapa?:)"
+      ]
+    },
+    {
+      "id": "task007-463",
+      "input": "@amadoratm jajajajajjaja pf ...yo me despertare biiien que a primera tengo educacion fisica : sss jajaja",
+      "output": [
+        "@amadoratm ja puf ...yo me despertare bien que a primera tengo educación física : sss jajaja"
+      ]
+    },
+    {
+      "id": "task007-464",
+      "input": "un día me harán una analítica para poder embarcar, absurdo.",
+      "output": [
+        "un día me harán una analítica para poder embarcar, absurdo."
+      ]
+    },
+    {
+      "id": "task007-465",
+      "input": "salir de la facultad y que sea de dia es otro rollo",
+      "output": [
+        "salir de la facultad y que sea de dia es otro rollo"
+      ]
+    },
+    {
+      "id": "task007-466",
+      "input": "@5eva1 ya las dichoo tuu noo ?? buenoo .... jejejejeje",
+      "output": [
+        "@5eva1 ya las dicho tú no ?? bueno .... jejejejeje"
+      ]
+    },
+    {
+      "id": "task007-467",
+      "input": "@anacg27 el mas mejor jajjajajaaj puta ana",
+      "output": [
+        "@anacg27 el mas mejor ja puta ana"
+      ]
+    },
+    {
+      "id": "task007-468",
+      "input": "@myriamastorga @paulitaglvez entonces como lo sabes jajajajaajajaja",
+      "output": [
+        "@myriamastorga @paulitaglvez entonces como lo sabes ja"
+      ]
+    },
+    {
+      "id": "task007-469",
+      "input": "después de ver @gh14telecinco me voy a la camita q ya es hora. buenas noches #twitteroff :)",
+      "output": [
+        "después de ver @gh14telecinco me voy a la camita q ya es hora. buenas noches #twitteroff :)"
+      ]
+    },
+    {
+      "id": "task007-470",
+      "input": "@costalcofrade aquí??? o el tuenti ?",
+      "output": [
+        "@costalcofrade aquí??? o el tuenti ?"
+      ]
+    },
+    {
+      "id": "task007-471",
+      "input": "gira española de @manuchao en mayo http://t.co/2detpt15uz ourense , l'hospitalet y rivas vaciamadrid",
+      "output": [
+        "gira española de @manuchao en mayo http://t.co/2detpt15uz ourense , l'hospitalet y rivas vaciamadrid"
+      ]
+    },
+    {
+      "id": "task007-472",
+      "input": "@19lillo @sandrasand29 pa mi tu cola!!! jajajajajajajajajajajajajajaja",
+      "output": [
+        "@19lillo @sandrasand29 para mi tu cola!!! jajajajajajajajajajajajajajaja"
+      ]
+    },
+    {
+      "id": "task007-473",
+      "input": "@lymonynada posiblemente no llege a tiempo para este finde pero lo voy a intentar. nos tienes ganas o q?jajaja",
+      "output": [
+        "@lymonynada posiblemente no llegue a tiempo para este fin_de_semana pero lo voy a intentar. nos tienes ganas o q?jajaja"
+      ]
+    },
+    {
+      "id": "task007-474",
+      "input": "@lostislamichist as did isabel and ferdinand in #granada #andalucia #espana",
+      "output": [
+        "@lostislamichist as did isabella and ferdinand in #granada #andalucia #espana"
+      ]
+    },
+    {
+      "id": "task007-475",
+      "input": "que os follen mucho mucho el culete a los que no madrugueis mañana, que yo tengo examen de francés. to la suerte pa ' mi. nanit .",
+      "output": [
+        "que os follen mucho mucho el culete a los que no madruguéis mañana, que yo tengo examen de francés. toda la suerte para ' mi. nanit ."
+      ]
+    },
+    {
+      "id": "task007-476",
+      "input": "mañana me han dicho que habrá una orda de zombies en la escuela de arte no?",
+      "output": [
+        "mañana me han dicho que habrá una horda de zombis en la escuela de arte no?"
+      ]
+    },
+    {
+      "id": "task007-477",
+      "input": "y mañana veo a las tontas de @paola_rojas22 @saragarcia7_ y @nereanmg :)",
+      "output": [
+        "y mañana veo a las tontas de @paola_rojas22 @saragarcia7_ y @nereanmg :)"
+      ]
+    },
+    {
+      "id": "task007-478",
+      "input": "@ade1984 @silvia_roman @silvi_ortega @meririzos @myrijerez @myriamdetroya la silvita esta muy perdidita la pobre mia ...jeje",
+      "output": [
+        "@ade1984 @silvia_roman @silvi_ortega @meririzos @myrijerez @myriamdetroya la silvita esta muy perdidita la pobre mía ...jeje"
+      ]
+    },
+    {
+      "id": "task007-479",
+      "input": "buenos días desde mi camita.",
+      "output": [
+        "buenos días desde mi camita."
+      ]
+    },
+    {
+      "id": "task007-480",
+      "input": "primera hora libre. dios, lo necesitaba..",
+      "output": [
+        "primera hora libre. dios, lo necesitaba.."
+      ]
+    },
+    {
+      "id": "task007-481",
+      "input": "ahora tengo un felino que nombre quieres que le ponga? @laurarivsob",
+      "output": [
+        "ahora tengo un felino que nombre quieres que le ponga? @laurarivsob"
+      ]
+    },
+    {
+      "id": "task007-482",
+      "input": "con las locas @isainvernon @patriciia_nieto",
+      "output": [
+        "con las locas @isainvernon @patriciia_nieto"
+      ]
+    },
+    {
+      "id": "task007-483",
+      "input": "@guijo_gomez jajajajajes si esque te quiero mas #sinellanada :)) tequieroo",
+      "output": [
+        "@guijo_gomez ja si es_que te quiero mas #sinellanada :)) te_quiero"
+      ]
+    },
+    {
+      "id": "task007-484",
+      "input": "@genko jajajaja debe ser eso :d",
+      "output": [
+        "@genko jajajaja debe ser eso :d"
+      ]
+    },
+    {
+      "id": "task007-485",
+      "input": "después de 7 horas y media de viaje y estar ahora 4 horas hablando por móvil me voy a dormir que mañana será un buen día, buenas noches. #j",
+      "output": [
+        "después de 7 horas y media de viaje y estar ahora 4 horas hablando por móvil me voy a dormir que mañana será un buen día, buenas noches. #j"
+      ]
+    },
+    {
+      "id": "task007-486",
+      "input": "meterte la mano en el bolsillo y encontrarte 5€ es empezar bien el día!",
+      "output": [
+        "meterte la mano en el bolsillo y encontrarte 5€ es empezar bien el día!"
+      ]
+    },
+    {
+      "id": "task007-487",
+      "input": "me ha encantodo todos los \"pues si\"con los que me ha despertado mi @jose_rojasoliva ya estoy contenta todo el dia",
+      "output": [
+        "me ha encantado todos los \"pues si\"con los que me ha despertado mi @jose_rojasoliva ya estoy contenta todo el dia"
+      ]
+    },
+    {
+      "id": "task007-488",
+      "input": "voy a poner mi twitter un poco mas porno :$",
+      "output": [
+        "voy a poner mi twitter un poco mas porno :$"
+      ]
+    },
+    {
+      "id": "task007-489",
+      "input": "@drunkeado @itsbiebercody @muyayo__ @marinadiaz_98 no.",
+      "output": [
+        "@drunkeado @itsbiebercody @muyayo__ @marinadiaz_98 no."
+      ]
+    },
+    {
+      "id": "task007-490",
+      "input": "@232cristian pues nose que decirte... porque encima mi cerebro juega con el corazon a su antojo...",
+      "output": [
+        "@232cristian pues no_sé que decirte... porque encima mi cerebro juega con el corazón a su antojo..."
+      ]
+    },
+    {
+      "id": "task007-491",
+      "input": "creo que no tardare en irme",
+      "output": [
+        "creo que no tardare en irme"
+      ]
+    },
+    {
+      "id": "task007-492",
+      "input": "me piro a dormir, nas noches!",
+      "output": [
+        "me piro a dormir, buenas noches!"
+      ]
+    },
+    {
+      "id": "task007-493",
+      "input": "el cafe que quiero en mis mañanas es el de tus ojos.",
+      "output": [
+        "el café que quiero en mis mañanas es el de tus ojos."
+      ]
+    },
+    {
+      "id": "task007-494",
+      "input": "si es que tenia yo razon pasando x la isla estaba el desvio para zaragoza jajajaja @lidiamardel @dolc_eviita ♥♥♥ http://t.co/cvnx8j4qse",
+      "output": [
+        "si es que tenia yo razón pasando x la isla estaba el desvio para zaragoza jajajaja @lidiamardel @dolc_eviita ♥♥♥ http://t.co/cvnx8j4qse"
+      ]
+    },
+    {
+      "id": "task007-495",
+      "input": "@isaacue jajajaja ok, ok! es que estamos siempre muy atentos a todo xd",
+      "output": [
+        "@isaacue jajajaja ok, ok! es que estamos siempre muy atentos a todo xd"
+      ]
+    },
+    {
+      "id": "task007-496",
+      "input": "susargistas !!! a las 18:00 gran lluvia de votos!! tenemos q sacar a los gemelos de la casa!! nosotros tenemos el poder!! gh gemelos 27450 rt",
+      "output": [
+        "susargistas !!! a las 18:00 gran lluvia de votos!! tenemos q sacar a los gemelos de la casa!! nosotros tenemos el poder!! gh gemelos 27450 rt"
+      ]
+    },
+    {
+      "id": "task007-497",
+      "input": "que dia mas largo!! por fin me voy a dormir, #twitteroff",
+      "output": [
+        "que dia mas largo!! por fin me voy a dormir, #twitteroff"
+      ]
+    },
+    {
+      "id": "task007-498",
+      "input": "y de nuevo vuelta a la poco agradable rutina de correr todas la mañanas, aún así buenos días ;)",
+      "output": [
+        "y de nuevo vuelta a la poco agradable rutina de correr todas la mañanas, aún así buenos días ;)"
+      ]
+    },
+    {
+      "id": "task007-499",
+      "input": "he de reconocer que ha veces el twitter me da ansia...",
+      "output": [
+        "he de reconocer que ha veces el twitter me da ansia..."
+      ]
+    },
+    {
+      "id": "task007-500",
+      "input": "@aroiitaaaa aajajajajajajajaj aiiiii las mejores visitas las de mi inflaaa joeee !! #quetequieroooyoatiiiiicabesa!!",
+      "output": [
+        "@aroiitaaaa ja ay las mejores visitas las de mi inflada joder !! #quetequieroooyoatiiiiicabesa!!"
+      ]
+    },
+    {
+      "id": "task007-501",
+      "input": "@dbloodflowers *vuelve a mirar su entrepierna* lo siento pero yo solo veo almeja",
+      "output": [
+        "@dbloodflowers *vuelve a mirar su entrepierna* lo siento pero yo solo veo almeja"
+      ]
+    },
+    {
+      "id": "task007-502",
+      "input": "@cazaescorias d miiii ? perdona pero no sé d q m hablas mira por aquí ni m hables o por mensajes o por tuenti pero no m lies",
+      "output": [
+        "@cazaescorias d mí ? perdona pero no sé d q m hablas mira por aquí ni m hables o por mensajes o por tuenti pero no m líes"
+      ]
+    },
+    {
+      "id": "task007-503",
+      "input": "@anaamilo ola k ase k no duerme",
+      "output": [
+        "@anaamilo ola k ase k no duerme"
+      ]
+    },
+    {
+      "id": "task007-504",
+      "input": "noches de ron, coca cola y vatios",
+      "output": [
+        "noches de ron, coca cola y vatios"
+      ]
+    },
+    {
+      "id": "task007-505",
+      "input": "te estas quedando sola y ahora te das cuenta que lo has hecho mal y vienes pidiendo perdon ?, para mi jamas volveras a ser la misma.",
+      "output": [
+        "te estas quedando sola y ahora te das cuenta que lo has hecho mal y vienes pidiendo perdón ?, para mi jamas volverás a ser la misma."
+      ]
+    },
+    {
+      "id": "task007-506",
+      "input": "@manoloc13 mira los vídeos que he retuiteao y fliparás ... :s",
+      "output": [
+        "@manoloc13 mira los vídeos que he retuiteado y fliparás ... :s"
+      ]
+    },
+    {
+      "id": "task007-507",
+      "input": "siempre tiene que pasar algo..",
+      "output": [
+        "siempre tiene que pasar algo.."
+      ]
+    },
+    {
+      "id": "task007-508",
+      "input": "@officialcritika a todas las dreamer's #unmesdreamerscys y por supuesto a ti y a @officialsaik :)",
+      "output": [
+        "@officialcritika a todas las dreamer's #unmesdreamerscys y por supuesto a ti y a @officialsaik :)"
+      ]
+    },
+    {
+      "id": "task007-509",
+      "input": "@anngeleescastro graciias grandullonaa ...... jajajajajaj claroo q te invitooo .. y tuu pagas vale?? jajajaj tee quierooo graciias !!",
+      "output": [
+        "@anngeleescastro gracias grandullona ...... ja claro q te invito .. y tú pagas vale?? ja te quiero gracias !!"
+      ]
+    },
+    {
+      "id": "task007-510",
+      "input": "'cuanto mas grande la cigala, más feliz era yo. mi familia me daba las patas, porque me encantaban!' by @missadrianaabad",
+      "output": [
+        "'cuanto mas grande la cigala, más feliz era yo. mi familia me daba las patas, porque me encantaban!' by @missadrianaabad"
+      ]
+    },
+    {
+      "id": "task007-511",
+      "input": "hay días que es mejor no hablar con nadie.",
+      "output": [
+        "hay días que es mejor no hablar con nadie."
+      ]
+    },
+    {
+      "id": "task007-512",
+      "input": "no juzgues un libro por su portada, te puedes equivocar y muy feo",
+      "output": [
+        "no juzgues un libro por su portada, te puedes equivocar y muy feo"
+      ]
+    },
+    {
+      "id": "task007-513",
+      "input": "@ainoa_gb pero eso es porque ya te he dicho q tu tiras pa arriba y yo pa abajo .",
+      "output": [
+        "@ainoa_gb pero eso es porque ya te he dicho q tu tiras para arriba y yo para abajo ."
+      ]
+    },
+    {
+      "id": "task007-514",
+      "input": "@grayovictor no hay q darle mas caña al suceso d los panaderos lo mejor es pasar y dejarlo como anecdota ,ya q eran momentos de incertidumbre",
+      "output": [
+        "@grayovictor no hay q darle mas caña al suceso d los panaderos lo mejor es pasar y dejarlo como anécdota ,ya q eran momentos de incertidumbre"
+      ]
+    },
+    {
+      "id": "task007-515",
+      "input": "te cambio un si por ese ya no puedo",
+      "output": [
+        "te cambio un si por ese ya no puedo"
+      ]
+    },
+    {
+      "id": "task007-516",
+      "input": "quien viste a mercedes mila ? #elcuponerodelapuertadelchare :) cateta.es",
+      "output": [
+        "quien viste a mercedes milá ? #elcuponerodelapuertadelchare :) cateta.es"
+      ]
+    },
+    {
+      "id": "task007-517",
+      "input": "ojalá todo el mundo se de cuenta de como eres en realidad.",
+      "output": [
+        "ojalá todo el mundo se de cuenta de como eres en realidad."
+      ]
+    },
+    {
+      "id": "task007-518",
+      "input": "esto de tener pavo es muy sacrificado, hay que controlarse mucho qe si no en medio de clase te levantas y haces el gilipollas :d",
+      "output": [
+        "esto de tener pavo es muy sacrificado, hay que controlarse mucho que si no en medio de clase te levantas y haces el gilipollas :d"
+      ]
+    },
+    {
+      "id": "task007-519",
+      "input": "no menos importante el 2 plato que nos hemos metido para el body, una riquísima pizza \" piemontese \" @miriamcullen7",
+      "output": [
+        "no menos importante el 2 plato que nos hemos metido para el body, una riquísima pizza \" piamontesa \" @miriamcullen7"
+      ]
+    },
+    {
+      "id": "task007-520",
+      "input": "alguno mas habra , no se me ocurren mas",
+      "output": [
+        "alguno mas habrá , no se me ocurren mas"
+      ]
+    },
+    {
+      "id": "task007-521",
+      "input": "tengo más hambre que el tamagochi de un sordo.",
+      "output": [
+        "tengo más hambre que el tamagotchi de un sordo."
+      ]
+    },
+    {
+      "id": "task007-522",
+      "input": "hechoo de menos a mi mami :'(",
+      "output": [
+        "echo de menos a mi mamá :'("
+      ]
+    },
+    {
+      "id": "task007-523",
+      "input": "buenos dias camino de clase vamos a hechar la semanita de recuperaciones q hay que aprovar #sisi",
+      "output": [
+        "buenos dias camino de clase vamos a echar la semanita de recuperaciones q hay que aprobar #sisi"
+      ]
+    },
+    {
+      "id": "task007-524",
+      "input": "@andres10vera el finde que viene no, este, más y mejor!! ;) te quieeeeero",
+      "output": [
+        "@andres10vera el fin_de_semana que viene no, este, más y mejor!! ;) te quiero"
+      ]
+    },
+    {
+      "id": "task007-525",
+      "input": "arrancate tartaja yaaaa jodee jajajja que grande",
+      "output": [
+        "arrancate tartaja ya joder ja que grande"
+      ]
+    },
+    {
+      "id": "task007-526",
+      "input": "@saraydino @guadaotero97 anda k noo jajajajaja",
+      "output": [
+        "@saraydino @guadaotero97 anda k no jajajajaja"
+      ]
+    },
+    {
+      "id": "task007-527",
+      "input": "los rt's de justin me dan miedo, esta planeando algo..",
+      "output": [
+        "los rts de justin me dan miedo, esta planeando algo.."
+      ]
+    },
+    {
+      "id": "task007-528",
+      "input": "café, magdalenas y hostias en la cara.",
+      "output": [
+        "café, magdalenas y hostias en la cara."
+      ]
+    },
+    {
+      "id": "task007-529",
+      "input": "#gh8 me encanta todo!! es mui interesante ui ui uiii k lio lio ... jujuuuuu",
+      "output": [
+        "#gh8 me encanta todo!! es muy interesante ui ui uy k lío lío ... ju"
+      ]
+    },
+    {
+      "id": "task007-530",
+      "input": "porque todo el mundo es feliz? moriros todos.",
+      "output": [
+        "porque todo el mundo es feliz? moriros todos."
+      ]
+    },
+    {
+      "id": "task007-531",
+      "input": "anoche con todas las catalanas!! (: http://t.co/r6llwjltid",
+      "output": [
+        "anoche con todas las catalanas!! (: http://t.co/r6llwjltid"
+      ]
+    },
+    {
+      "id": "task007-532",
+      "input": "y ahora con una pseudopija del atleti ??si ya te digo yo que... que te como la cara jajajaja #subnormal #apastarcolega http://t.co/xzxqak0eh1",
+      "output": [
+        "y ahora con una pseudopija del atleti ??si ya te digo yo que... que te como la cara jajajaja #subnormal #apastarcolega http://t.co/xzxqak0eh1"
+      ]
+    },
+    {
+      "id": "task007-533",
+      "input": "mi diario ha muerto ya :c",
+      "output": [
+        "mi diario ha muerto ya :c"
+      ]
+    },
+    {
+      "id": "task007-534",
+      "input": "@annahb86 @melibea__ jajajaja siii",
+      "output": [
+        "@annahb86 @melibea__ jajajaja sí"
+      ]
+    },
+    {
+      "id": "task007-535",
+      "input": "-papá ¿soy adoptado? -te elegimos negro para no tener esta conversación.",
+      "output": [
+        "-papá ¿soy adoptado? -te elegimos negro para no tener esta conversación."
+      ]
+    },
+    {
+      "id": "task007-536",
+      "input": "uff como va esta esta noxe gh !! preparada! vamos! :-)",
+      "output": [
+        "uf como va esta esta noche gh !! preparada! vamos! :-)"
+      ]
+    },
+    {
+      "id": "task007-537",
+      "input": "@albitasolamente pero sí hoy está lloviendo tambien ! jajajaja",
+      "output": [
+        "@albitasolamente pero sí hoy está lloviendo también ! jajajaja"
+      ]
+    },
+    {
+      "id": "task007-538",
+      "input": "asii es la viida de caprichosa ..",
+      "output": [
+        "así es la viida de caprichosa .."
+      ]
+    },
+    {
+      "id": "task007-539",
+      "input": "pero me doy cuenta que esta todo perdido ...",
+      "output": [
+        "pero me doy cuenta que esta todo perdido ..."
+      ]
+    },
+    {
+      "id": "task007-540",
+      "input": "cenitaaaaa @jaiimecalvo @nereamontes :) http://t.co/jldytdtlog",
+      "output": [
+        "cenita @jaiimecalvo @nereamontes :) http://t.co/jldytdtlog"
+      ]
+    },
+    {
+      "id": "task007-541",
+      "input": "\"que sea difícil no significa que sea imposible, que sea imposible no significa que debas rendirte\"",
+      "output": [
+        "\"que sea difícil no significa que sea imposible, que sea imposible no significa que debas rendirte\""
+      ]
+    },
+    {
+      "id": "task007-542",
+      "input": "discutir con uno dl #ppfachamentiroso d @ppcerroamate en twitter y lo único q sabe contestar es @artorrijos comió marisco #nivel0dedebate",
+      "output": [
+        "discutir con uno dl #ppfachamentiroso d @ppcerroamate en twitter y lo único q sabe contestar es @artorrijos comió marisco #nivel0dedebate"
+      ]
+    },
+    {
+      "id": "task007-543",
+      "input": "@patribeceiro que pasa patri siges con alvaero ? o ya en casa espero que estes bien",
+      "output": [
+        "@patribeceiro que pasa patri sigues con alvaro ? o ya en casa espero que estes bien"
+      ]
+    },
+    {
+      "id": "task007-544",
+      "input": "aggg 74.280 en.el.paro.en. jaen .una.cifra catastrofica . mas del.40%de la poblacion #yovoyaemigraryamismo",
+      "output": [
+        "ah 74.280 en.el.paro.en. jaén .una.cifra catastrófica . mas del.40%de la población #yovoyaemigraryamismo"
+      ]
+    },
+    {
+      "id": "task007-545",
+      "input": "@raque_30995 jaja graciaas feaa :) traere algunos regalilloss y valla voi a pasarmeloo como nadaa :)",
+      "output": [
+        "@raque_30995 jaja gracias fea :) traeré algunos regalillos y valla voy a pasármelo como nada :)"
+      ]
+    },
+    {
+      "id": "task007-546",
+      "input": "@martalovedrew @raquelsanchez96 nos hemos libradoo de la mongolitaa !",
+      "output": [
+        "@martalovedrew @raquelsanchez96 nos hemos librado de la mongolita !"
+      ]
+    },
+    {
+      "id": "task007-547",
+      "input": "bbqscreen , comparte la pantalla de tu dispositivo android con el pc http://t.co/wakiwwyv2a",
+      "output": [
+        "bbqscreen , comparte la pantalla de tu dispositivo android con el pc http://t.co/wakiwwyv2a"
+      ]
+    },
+    {
+      "id": "task007-548",
+      "input": "@ainarahurtado piensalo bien, qe te puedo parti las muelas jajaja",
+      "output": [
+        "@ainarahurtado piensalo bien, que te puedo partir las muelas jajaja"
+      ]
+    },
+    {
+      "id": "task007-549",
+      "input": "sacale todo el juego a la vida. buenos dias",
+      "output": [
+        "sacale todo el juego a la vida. buenos dias"
+      ]
+    },
+    {
+      "id": "task007-550",
+      "input": "camara trasera recibida. ahora a ver cuando la monto http://t.co/e2hb1yozvw",
+      "output": [
+        "cámara trasera recibida. ahora a ver cuando la monto http://t.co/e2hb1yozvw"
+      ]
+    },
+    {
+      "id": "task007-551",
+      "input": "@pilarochoagh @rubenmagallon77 muy guapos! con la bici estática os mantenéis en buena forma",
+      "output": [
+        "@pilarochoagh @rubenmagallon77 muy guapos! con la bici estática os mantenéis en buena forma"
+      ]
+    },
+    {
+      "id": "task007-552",
+      "input": "las nuevas generaciones están perdidas desde el primer día.",
+      "output": [
+        "las nuevas generaciones están perdidas desde el primer día."
+      ]
+    },
+    {
+      "id": "task007-553",
+      "input": "@sofiaverdutti jajaa eso es porque me quieres ;)",
+      "output": [
+        "@sofiaverdutti ja eso es porque me quieres ;)"
+      ]
+    },
+    {
+      "id": "task007-554",
+      "input": "con la rubia para el bus",
+      "output": [
+        "con la rubia para el bus"
+      ]
+    },
+    {
+      "id": "task007-555",
+      "input": "igor gracias no sabia que te importara tanto joo tio !! pero es que eres mu feote sorry",
+      "output": [
+        "igor gracias no sabia que te importara tanto jo tío !! pero es que eres mu feote sorry"
+      ]
+    },
+    {
+      "id": "task007-556",
+      "input": "en un mes tengo examen de natu .",
+      "output": [
+        "en un mes tengo examen de natu ."
+      ]
+    },
+    {
+      "id": "task007-557",
+      "input": "@davidmj93 eso tengo que verlo yo!!",
+      "output": [
+        "@davidmj93 eso tengo que verlo yo!!"
+      ]
+    },
+    {
+      "id": "task007-558",
+      "input": "como se me abre la boca... #quesueño",
+      "output": [
+        "como se me abre la boca... #quesueño"
+      ]
+    },
+    {
+      "id": "task007-559",
+      "input": "\"cada vez que pasa por mi lado siento el corazón acelerado\".",
+      "output": [
+        "\"cada vez que pasa por mi lado siento el corazón acelerado\"."
+      ]
+    },
+    {
+      "id": "task007-560",
+      "input": "para mi tu eres primero, segundo y tercero (8)",
+      "output": [
+        "para mi tu eres primero, segundo y tercero (8)"
+      ]
+    },
+    {
+      "id": "task007-561",
+      "input": "los de verdad son los de siempre #buenasnoches.",
+      "output": [
+        "los de verdad son los de siempre #buenasnoches."
+      ]
+    },
+    {
+      "id": "task007-562",
+      "input": "\"@dijowhatsapp: las charlas con amigos a la madrugada, las mejores.\"",
+      "output": [
+        "\"@dijowhatsapp: las charlas con amigos a la madrugada, las mejores.\""
+      ]
+    },
+    {
+      "id": "task007-563",
+      "input": "\"@eu_leon: en cope sevilla para intervenir en el programa de @pacorobles63 http://t.co/rjmrsrkvju\" malajosamente desenfocada como es naturá",
+      "output": [
+        "\"@eu_leon: en cope sevilla para intervenir en el programa de @pacorobles63 http://t.co/rjmrsrkvju\" malajosamente desenfocada como es natural"
+      ]
+    },
+    {
+      "id": "task007-564",
+      "input": "buuenoo poos mee voii muu contentaa despuees dee unaa tardeecita enteraa ablando con el!! bn !!",
+      "output": [
+        "bueno pues mee voy muy contenta después de una tardeecita entera ablando con el!! bien !!"
+      ]
+    },
+    {
+      "id": "task007-565",
+      "input": "las mas guapas @mirylin @mcortesus @pifdezcordoba http://t.co/8v6tpy7jkc",
+      "output": [
+        "las mas guapas @mirylin @mcortesus @pifdezcordoba http://t.co/8v6tpy7jkc"
+      ]
+    },
+    {
+      "id": "task007-566",
+      "input": "la mejor forma de ser positivos es con una sonrisa, vamos a por esa mañana lunes.",
+      "output": [
+        "la mejor forma de ser positivos es con una sonrisa, vamos a por esa mañana lunes."
+      ]
+    },
+    {
+      "id": "task007-567",
+      "input": "se presenta un buen martess #bdias",
+      "output": [
+        "se presenta un buen martes #bdias"
+      ]
+    }
+  ],
+  "Instance License": [
+    "Unknown"
+  ]
+}
