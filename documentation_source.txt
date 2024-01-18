@@ -1,0 +1,177 @@
+ % This must be in the first 5 lines to tell arXiv to use pdfLaTeX, which is strongly recommended.
+\pdfoutput=1
+% In particular, the hyperref package requires pdfLaTeX in order to break URLs across lines.
+
+\documentclass[11pt]{article}
+
+% Remove the "review" option to generate the final version.
+\usepackage[review]{acl}
+
+% Standard package includes
+\usepackage{times}
+\usepackage{latexsym}
+
+% For proper rendering and hyphenation of words containing Latin characters (including in bib files)
+\usepackage[T1]{fontenc}
+% For Vietnamese characters
+% \usepackage[T5]{fontenc}
+% See https://www.latex-project.org/help/documentation/encguide.pdf for other character sets
+
+% This assumes your files are encoded as UTF8
+\usepackage[utf8]{inputenc}
+
+\usepackage{graphicx}
+
+% This is not strictly necessary, and may be commented out,
+% but it will improve the layout of the manuscript,
+% and will typically save some space.
+\usepackage{microtype}
+
+% If the title and author information does not fit in the area allocated, uncomment the following
+%
+%\setlength\titlebox{<dim>}
+%
+% and set <dim> to something 5cm or larger.
+
+\title{Lexical Normalization \\ as a Machine Translation problem \\
+		\hfill \\
+		\hfill \\
+		\small{-documentation-}}
+
+  \author{Constantin Gabriel-Adrian \\
+  \texttt{gabriel.constantin13@s.unibuc.ro } \\\And
+  Sociu Daniel \\
+  \texttt{ daniel.sociu@s.unibuc.ro} \\}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Transformers are one of the go-to models used in solving tasks sequence-to-sequence.
+In this project, we explore how a text-to-text T5 model can be used for machine translation for multiple languages. Similarly with nanoT5, we explore different T5-based pretrained architectures. We fine-tune them on MultiLexNorm, a lexical normalization dataset containing various languages, and compare and discuss the results.
+\end{abstract}
+
+
+\section{Introduction}
+\label{section:intro}
+
+Lexical normalization involves correcting the data to the usual canonical form. This usually means correcting abbreviation or mistaken words to the correct grammatical or dictionary form.
+
+We chose this topic for our research because such an approach can prove very useful as a preprocessing method for various datasets that contain comments or posts from social media sources, given that a major problem in NLP is the lack of quality annotated data. In this instance, the challenge goes beyond just correction when considering a multi-language approach.
+
+Aside from reading related research and understanding the models which were specific to both of us, here is a summary of contributions to the project of each member:
+
+Constantin Gabriel-Adrian
+\begin{enumerate}
+    \item elaborated the scripts for plotting the result, processing the dataset and constructing the files needed in order to leverage the nanoT5 implementation
+    \item proposed and experimented with T5-small model baselines on English language
+    \item proposed and experimented with reduce learning rate on plateau and early stopping
+    \item elaborated the introduction, theory and description of the approach and possible limitations of the research paper
+\end{enumerate}
+
+Sociu Daniel
+\begin{enumerate}
+    \item forked the implementation from T5 and adapted it for our task
+    \item proposed and experimented various experimental setups with multilingualT5-small and different batch sizes
+    \item elaborated on the software tools used for implementation and performance comparisons sections of the research paper
+\end{enumerate}
+
+In order to develop this kind of correction model, the initial phase entails the representation of tokens (words) from the dataset as (numerical) embeddings. This can be accomplished fairly easy with the help of a transformer. In this study, we have explored the T5 model (Text-to-Text Transfer Transformer) \cite{Ts} which is pretrained on diverse and way bigger datasets from multiple languages: "C4" dataset ("Colossal Clean Crawled Corpus").
+
+A similar goal could also be achieved with the help of Mixtral \cite{mixtral}. Mixtral follows a similar shape to a classic transformer. What sets it apart is the fact that, after the attention heads, instead of using a feed forward network and thus the same set of weights for each attention head output, it proposes using multiple "experts". These experts follow the same idea that inspired the splitting of the attention heads in a sparse manner. As such, each output can be passed to a different expert i.e. FFN. In order to decide which expert should be applied for current input, they use a routing neural network. This not only provides the benefit of running different experts, but also helps with paralelization on multiple GPUs.
+
+For the dataset, we are using Lexical Normalization Dataset \cite{multilexnorm}. This data represents texts extracted from posts originating mainly from Twitter. These messages have been collected from 12 languages.
+
+\section{Approach}
+\label{section:approach}
+
+As previously mentioned, we will be using various T5-based models for the aforementioned dataset.
+
+In order to use the texts in our model, we created multiple language-based json files for train and test set containing a pair of positive-negative example for context for the model and several pairs of given input - corrected output.
+
+Considering that the input statements have different lengths (number of tokens), to pass them through a transformer we would have to make all of them a specific length. This was done by splitting the longer statements in multiple parts of max length 1024, and the rest that didn't reach the set length, we padded them. For the output, we set the maximum sequence length to 128.
+
+
+As previously mentioned, we used T5 as the overall architecture of our model.
+
+A transformer is a deep learning model whose goal is solving "sequence to sequence" tasks i.e. encode-decoder. Transformers are similar with recurrent neural networks (RNN), the main difference being that they don't process the data in a specific order. Thus, a given sequence is analyzed in parallel and the influence or importance of each part of the sequence is determined at every step. This sequence is passed to the encoder part which uses the self-attention mechanism. Given the fact that by paralelizing this task the initial order is forgotten, the transformer adds for each embedding a positional encoding.
+
+The second part, the decoder follows a similar patter, but in this case using casual self-attention, which enables the model to only use past outputs. Each attention block is split into multiple heads which are independent, the output being the concatenation of the results from each head.
+As such, the model receives overall a text for context, this being the input data (the message, such as the positive-negative pairs we previously mentioned), and based on this it generates the required output in the form of text. This enables the T5 model to be used on a variety of tasks, such as text classification, question answering, text sumarisation and even machine translation, tasks on which the model proposed has already been pretrained.
+
+Regarding the actual training process, we relied on nanoT5 \cite{nanot}, which facilitates fine-tuning of T5-style models. This represents training the model starting from the weights of the pre-trained model and also updating the output head to be corresponding for our task. In our case, the weights are sourced from the T5 model pretrained on the C4 dataset.
+
+We have explored several models:
+\begin{itemize}
+	\item T5-small
+	\item mT5-small (Multilingual T5-small)
+\end{itemize}
+
+We started off with the T5-small model, which was trained and tested only on the English dataset. This was done such that we would have not only a sanity-check result in order to ensure that the code was working properly and the model was learning, but also to have a baseline and see how the performance changes when switching to the multilingual task.
+
+We used AdamW as an optimizer and reduced the learning rate when encountering a plateau region. This represents a sequence of 5 epochs when the loss on the validation dataset hasn't improved. When this situation occurs, the initial learning rate is gradually reduced by a factor of 0.5.
+
+The previously mentioned scheduler replaced the scheduler that the nanoT5 was using on the finetuning task (LambdaLR scheduler), which improved the results slightly. Though, to achieve this imporovement, reducing the batch size was also requried.
+
+We are also stopping the training if the validation accuracy hasn't improved, and we save the model with the best performance.
+
+We started from the nanoT5 github repository \cite{original-code} which is specifically optimized to fine-tune big models efficiently and also maintain a very close accuracy to the original model, which is all implemented using PyTorch. For loading the transformers model architecture, tokenizer and other various utils for batch encoding, we used the 'transformers' framework. Therefore we used this highly optimized repository to train each model for 25 epochs, the training on the EN subset takes 10 minutes, whereas the one on the whole dataset (multilingual) takes approximately 40 minutes. They all use the initial learning rate of 5e-5.
+
+In order to evaluate the performance of the models, we used accuracy and Rouge-L, which measures the number of matching n-grams between the reference text and the generated output text.
+
+The results we obtained can be seen in Table \ref{table-results} and the plots for the best model can be viewed in Fig. \ref{fig:plots_model}.
+
+As we can see, the best performing model on the multilingual task was the T5-small, with an accuracy on validation dataset of $55.1$ and a Rouge-L of $71.3$
+
+\begin{table*}
+	\centering
+	\begin{tabular}{lcclccc}
+		\hline
+		\textbf{Model} & \textbf{Dataset Lang.} & \textbf{Batch size} & \textbf{Scheduler} & \textbf{Train Acc.} & \textbf{Val Acc.} & \textbf{Rouge-L}\\
+		\hline
+		T5-small & EN & 16 & LambdaLR & 58.5 & 53.5 & 50.2 \\
+		T5-small & Multilingual & 16 & LambdaLR & 42.5 & 41.8 & 60.5 \\
+            mT5-small & Multilingual & 8 & LambdaLR & 48.0 & 45.9 & 70.8 \\
+            T5-small & EN & 4 & ReduceLROnPlateau & \textit{65.9} & \textit{58.8} & \textit{54.6} \\
+            T5-small & Multilingual & 4 & ReduceLROnPlateau & \textbf{59.7} & \textbf{55.1} & \textbf{71.3} \\
+            mT5-small & Multilingual & 4 & ReduceLROnPlateau & 58.2 & 53.8 & 67.8 \\
+		\hline
+	\end{tabular}
+	\caption{\label{table-results}
+		Results of training on MultiLexNorm dataset using nanoT5. In \textbf{bold}, the best performance on multilingual dataset and in \textit{italic} the best performance on English
+	}
+\end{table*}
+
+All the code, documentation and presentation is available on our github repository here \cite{our-code}.
+
+\section{Limitations}
+\label{section:limitations}
+One major limitation in our experiments was the lack of computational resources, notably GPU processing power. This not only reflects in the training and inference time, but also in the number of parameters that we used inside the model. This is why we used the small variants of the T5 and Multilingual T5 models.
+We have also tried to experiment with Mixtral, however, as previously mentioned, it uses multiple experts as FNN. According to the original paper \cite{mixtral}, the number of experts needed is 8, but the model uses the top-2. This means that all these experts need to be loaded in memory, which results in very high VRAM usage.
+
+Another limitation is given to the relatively small size of the dataset. It contain 1200 sentences on the training set and another 1200 on the test set. Also, as stated by the author of the Lexical Normalization Dataset \cite{multilexnorm}, there are differences between the annotations of the 12 languages since they used both manual and automatic methods. These can potentially have an impact on the ability of the model to generalize on multiple languages as our task requires.
+
+\section{Conclusions and Future Work}
+\label{section:conclusions}
+
+We demonstrated that a multilingual approach for lexical normalization is possible using transformers, and that finding the right set of parameters can yield interesting results even an small models. We would have loved to have more computational resources such that we could train at least on medium models, or on models that require a lot of parameters such as Mixtral.
+
+One way we could have ameliorated this issue and improve the experimentation would have been maybe to freeze some layers and only train with those left, however this might have had a significant impact on the performance, since the models have not been pretrained on tasks with similar goals.
+
+All in all, we are glad that we were able to learn about new models, experiment with different setups and write about it in conference-styled report.
+
+
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[scale=0.5]{accuracies.png}
+    \includegraphics[scale=0.5]{losses.png}
+    \caption{The accuracy and loss plots of our best multilingual model.}
+    \label{fig:plots_model}
+\end{figure}
+
+\newpage
+
+\bibliography{anthology,custom}
+\bibliographystyle{acl_natbib}
+
+
+\end{document}
