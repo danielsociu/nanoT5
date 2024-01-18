@@ -25,10 +25,12 @@ data:
 optim:
   name: adamw
   base_lr: 5e-5
-  batch_size: 16
+  batch_size: 4
   epochs: 25
   warmup_steps: 0
-  lr_scheduler: constant
+  lr_scheduler: plateau
+  # lr_scheduler: constant
+  early_patience: 5
   weight_decay: 0.0
   grad_clip: 0.0
   grad_acc: 1

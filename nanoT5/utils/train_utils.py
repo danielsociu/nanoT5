@@ -189,6 +189,7 @@ def train(model, train_dataloader, test_dataloader, accelerator, lr_scheduler,
     train_accuracies = []
 
     max_acc = 0.0
+    last_epoch = 0
     val_losses = []
     val_accuracies = []
 
@@ -213,7 +214,8 @@ def train(model, train_dataloader, test_dataloader, accelerator, lr_scheduler,
                 train_averager.update(stats)
 
                 optimizer.step()
-                lr_scheduler.step()
+                if args.optim.lr_scheduler != 'plateau':
+                    lr_scheduler.step()
                 optimizer.zero_grad(set_to_none=True)
 
                 maybe_logging(train_averager, args, model, optimizer, logger)
@@ -228,6 +230,8 @@ def train(model, train_dataloader, test_dataloader, accelerator, lr_scheduler,
         # add data resulsts
         train_avg = train_averager.average()
         train_averager.reset()
+        if args.optim.lr_scheduler == 'plateau':
+            lr_scheduler.step(val_avg['loss'])
         train_losses.append(train_avg['loss'])
         val_losses.append(val_avg['loss'])
         train_accuracies.append(train_avg['accuracy'])
@@ -235,8 +239,12 @@ def train(model, train_dataloader, test_dataloader, accelerator, lr_scheduler,
 
         if max_acc < val_accuracies[-1]:
             torch.save(model.state_dict(), "best_state_dict.pt")
+            last_epoch = args.current_epoch + 1
             max_acc = val_accuracies[-1]
         args.current_epoch += 1
+        if last_epoch - args.current_epoch > args.optim.early_patience:
+            print("Early stopping stopped the training as it doesn't learn anymore")
+            break
 
     # also do some plotting
     plt.plot(train_losses, color='g', label="Loss on train data")
