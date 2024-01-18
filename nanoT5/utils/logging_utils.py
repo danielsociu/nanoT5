@@ -27,7 +27,6 @@ class Averager:
         averaged_stats = {
             key: tot / self.counter[key] for key, tot in self.total.items()
         }
-        self.reset()
 
         return averaged_stats
 

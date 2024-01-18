@@ -17,7 +17,6 @@ from .utils import (
     get_config,
 )
 
-
 @hydra.main(config_path="configs", config_name="default", version_base='1.1')
 def main(args):
     accelerator = Accelerator(
@@ -32,6 +31,7 @@ def main(args):
     lr_scheduler = get_lr_scheduler(optimizer, args, logger)
     train_dataloader, test_dataloader = get_dataloaders(tokenizer, config, args)
 
+    print(args['optim'])
     logger.log_args(args)
 
     (
